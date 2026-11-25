@@ -1,0 +1,76 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "component": "rehearsal-component",
+    "dashboard": 280000002,
+    "itype": "rehearsal-itype",
+    "member": "rehearsal-member",
+    "org": "rehearsal-org",
+    "orgsa": "rehearsal-orgsa",
+    "page": "rehearsal-page",
+    "role": "rehearsal-role",
+    "roleUser": "rehearsal-roleUser",
+    "routingPolicy": "rehearsal-routingPolicy",
+    "ruleA": "rehearsal-ruleA",
+    "ruleB": "rehearsal-ruleB",
+    "rum": "rehearsal-rum",
+    "sa": "rehearsal-sa",
+    "slo": "rehearsal-slo",
+    "subteam": "rehearsal-subteam",
+    "team": "rehearsal-team"
+  },
+  "interactions": [
+    {
+      "method": "GET",
+      "path": "/api/v2/sensitive-data-scanner/config",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"id\":\"example-id\",\"relationships\":{\"groups\":{\"data\":[]}}},\"included\":[],\"meta\":{}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/sensitive-data-scanner/config",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"id\":\"example-id\",\"relationships\":{\"groups\":{\"data\":[]}}},\"included\":[],\"meta\":{}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v2/sensitive-data-scanner/config",
+      "body": "{\"data\":{\"id\":\"example-id\",\"relationships\":{\"groups\":{\"data\":[{\"id\":\"example-id-1\",\"type\":\"sensitive_data_scanner_group\"},{\"id\":\"example-id-2\",\"type\":\"sensitive_data_scanner_group\"}]}},\"type\":\"sensitive_data_scanner_configuration\"},\"meta\":{}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"id\":\"example-id\",\"relationships\":{\"groups\":{\"data\":[{\"id\":\"example-id-1\",\"type\":\"sensitive_data_scanner_group\"},{\"id\":\"example-id-2\",\"type\":\"sensitive_data_scanner_group\"}]}},\"type\":\"sensitive_data_scanner_configuration\"},\"included\":[],\"meta\":{}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/sensitive-data-scanner/config",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"id\":\"example-id\",\"relationships\":{\"groups\":{\"data\":[{\"id\":\"example-id-1\",\"type\":\"sensitive_data_scanner_group\"},{\"id\":\"example-id-2\",\"type\":\"sensitive_data_scanner_group\"}]}},\"type\":\"sensitive_data_scanner_configuration\"},\"included\":[],\"meta\":{}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/sensitive-data-scanner/config",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"id\":\"example-id\",\"relationships\":{\"groups\":{\"data\":[{\"id\":\"example-id-1\",\"type\":\"sensitive_data_scanner_group\"},{\"id\":\"example-id-2\",\"type\":\"sensitive_data_scanner_group\"}]}},\"type\":\"sensitive_data_scanner_configuration\"},\"included\":[],\"meta\":{}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/sensitive-data-scanner/config",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"id\":\"example-id\",\"relationships\":{\"groups\":{\"data\":[{\"id\":\"example-id-1\",\"type\":\"sensitive_data_scanner_group\"},{\"id\":\"example-id-2\",\"type\":\"sensitive_data_scanner_group\"}]}},\"type\":\"sensitive_data_scanner_configuration\"},\"included\":[],\"meta\":{}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v2/sensitive-data-scanner/config",
+      "body": "{\"data\":{\"id\":\"example-id\",\"relationships\":{\"groups\":{\"data\":[]}},\"type\":\"sensitive_data_scanner_configuration\"},\"meta\":{}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"id\":\"example-id\",\"relationships\":{\"groups\":{\"data\":[]}},\"type\":\"sensitive_data_scanner_configuration\"},\"included\":[],\"meta\":{}}\n"
+    }
+  ]
+}

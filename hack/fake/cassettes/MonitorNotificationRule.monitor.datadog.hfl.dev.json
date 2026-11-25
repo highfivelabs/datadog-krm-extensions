@@ -1,0 +1,99 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "dashboard": 280000002,
+    "sa": "rehearsal-sa",
+    "slo": "rehearsal-slo",
+    "subteam": "rehearsal-subteam",
+    "team": "rehearsal-team"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/api/v2/monitor/notification_rule",
+      "body": "{\"data\":{\"attributes\":{\"filter\":{\"tags\":[\"hfl-live:{{name}}\"]},\"name\":\"{{name}}\",\"recipients\":[\"{{name}}@example.com\"]},\"type\":\"monitor-notification-rule\"}}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"filter\":{\"tags\":[\"hfl-live:{{name}}\"]},\"name\":\"{{name}}\",\"recipients\":[\"{{name}}@example.com\"]},\"id\":270000019,\"relationships\":{},\"type\":\"monitor-notification-rule\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/monitor/notification_rule/270000019",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"filter\":{\"tags\":[\"hfl-live:{{name}}\"]},\"name\":\"{{name}}\",\"recipients\":[\"{{name}}@example.com\"]},\"id\":270000019,\"relationships\":{},\"type\":\"monitor-notification-rule\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/monitor/notification_rule/270000019",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"filter\":{\"tags\":[\"hfl-live:{{name}}\"]},\"name\":\"{{name}}\",\"recipients\":[\"{{name}}@example.com\"]},\"id\":270000019,\"relationships\":{},\"type\":\"monitor-notification-rule\"}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v2/monitor/notification_rule/270000019",
+      "body": "{\"data\":{\"attributes\":{\"filter\":{\"tags\":[\"hfl-live:{{name}}\"]},\"name\":\"{{name}}-changed\",\"recipients\":[\"{{name}}@example.com\"]},\"id\":\"270000019\",\"type\":\"monitor-notification-rule\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"filter\":{\"tags\":[\"hfl-live:{{name}}\"]},\"name\":\"{{name}}-changed\",\"recipients\":[\"{{name}}@example.com\"]},\"id\":\"270000019\",\"relationships\":{},\"type\":\"monitor-notification-rule\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/monitor/notification_rule/270000019",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"filter\":{\"tags\":[\"hfl-live:{{name}}\"]},\"name\":\"{{name}}-changed\",\"recipients\":[\"{{name}}@example.com\"]},\"id\":\"270000019\",\"relationships\":{},\"type\":\"monitor-notification-rule\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/monitor/notification_rule/270000019",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"filter\":{\"tags\":[\"hfl-live:{{name}}\"]},\"name\":\"{{name}}-changed\",\"recipients\":[\"{{name}}@example.com\"]},\"id\":\"270000019\",\"relationships\":{},\"type\":\"monitor-notification-rule\"}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v2/monitor/notification_rule/270000019",
+      "body": "{\"data\":{\"attributes\":{\"filter\":{\"tags\":[\"hfl-live:{{name}}\"]},\"name\":\"{{name}}-drift\",\"recipients\":[\"{{name}}@example.com\"]},\"id\":\"270000019\",\"relationships\":{},\"type\":\"monitor-notification-rule\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"filter\":{\"tags\":[\"hfl-live:{{name}}\"]},\"name\":\"{{name}}-drift\",\"recipients\":[\"{{name}}@example.com\"]},\"id\":\"270000019\",\"relationships\":{},\"type\":\"monitor-notification-rule\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/monitor/notification_rule/270000019",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"filter\":{\"tags\":[\"hfl-live:{{name}}\"]},\"name\":\"{{name}}-drift\",\"recipients\":[\"{{name}}@example.com\"]},\"id\":\"270000019\",\"relationships\":{},\"type\":\"monitor-notification-rule\"}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v2/monitor/notification_rule/270000019",
+      "body": "{\"data\":{\"attributes\":{\"filter\":{\"tags\":[\"hfl-live:{{name}}\"]},\"name\":\"{{name}}-changed\",\"recipients\":[\"{{name}}@example.com\"]},\"id\":\"270000019\",\"type\":\"monitor-notification-rule\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"filter\":{\"tags\":[\"hfl-live:{{name}}\"]},\"name\":\"{{name}}-changed\",\"recipients\":[\"{{name}}@example.com\"]},\"id\":\"270000019\",\"relationships\":{},\"type\":\"monitor-notification-rule\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/monitor/notification_rule/270000019",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"filter\":{\"tags\":[\"hfl-live:{{name}}\"]},\"name\":\"{{name}}-changed\",\"recipients\":[\"{{name}}@example.com\"]},\"id\":\"270000019\",\"relationships\":{},\"type\":\"monitor-notification-rule\"}}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v2/monitor/notification_rule/270000019",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/monitor/notification_rule/270000019",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

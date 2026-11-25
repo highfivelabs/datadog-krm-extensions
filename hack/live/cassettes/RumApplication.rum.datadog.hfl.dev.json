@@ -1,0 +1,94 @@
+{
+  "recorded": "2026-11-20T23:57:40Z",
+  "target": "Datadog trial",
+  "vars": {
+    "dashboard": "ur8-afc-sum",
+    "itype": "fb183ac5-a636-4c9e-b864-de008dda88bb",
+    "role": "26806b04-e53e-11f1-807b-da7ad0900005",
+    "sa": "16307311-e53e-11f1-b3f2-e693e7c43799",
+    "slo": "3704e6ae4bac5b54b241a727ff6ab03b",
+    "subteam": "d4c1dd6f-4ea7-42e9-9847-c995ec31b739",
+    "team": "48e3aed2-a7e1-4fee-9037-ce9c9f4b4952"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/api/v2/rum/applications",
+      "body": "{\"data\":{\"attributes\":{\"name\":\"{{name}}\",\"type\":\"browser\"},\"type\":\"rum_application_create\"}}",
+      "status": 201,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"attributes\":{\"api_key_id\":1613676,\"apm_rum_flat_sampling_replay_enabled\":true,\"apm_rum_flat_sampling_replay_sample_rate\":1,\"application_id\":\"67e20f36-6578-44ba-b170-61bcb7836eca\",\"client_token\":\"{{redacted}}\",\"created_at\":1795219059394,\"created_by_handle\":\"{{email}}\",\"error_tracking_exclusion_filter_enabled\":false,\"external_feeds\":[],\"is_active\":false,\"name\":\"{{name}}\",\"ootb_metrics_installed\":false,\"org_id\":1000000000,\"product_analytics_replay_sample_rate\":100,\"product_scales\":{\"product_analytics_retention_scale\":{\"last_modified_at\":1795219059394,\"state\":\"NONE\"},\"rum_event_processing_scale\":{\"last_modified_at\":1795219059394,\"state\":\"ALL\"}},\"short_name\":\"{{name_}}\",\"tags\":[],\"type\":\"browser\",\"updated_at\":1795219059394,\"updated_by_handle\":\"{{email}}\"},\"id\":\"67e20f36-6578-44ba-b170-61bcb7836eca\",\"type\":\"rum_application\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/rum/applications/67e20f36-6578-44ba-b170-61bcb7836eca",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"attributes\":{\"api_key_id\":1613676,\"apm_rum_flat_sampling_replay_enabled\":true,\"apm_rum_flat_sampling_replay_sample_rate\":1,\"application_id\":\"67e20f36-6578-44ba-b170-61bcb7836eca\",\"client_token\":\"{{redacted}}\",\"created_at\":1795219059394,\"created_by_handle\":\"{{email}}\",\"error_tracking_exclusion_filter_enabled\":false,\"external_feeds\":[],\"is_active\":false,\"name\":\"{{name}}\",\"ootb_metrics_installed\":false,\"org_id\":1000000000,\"product_analytics_replay_sample_rate\":100,\"product_scales\":{\"product_analytics_retention_scale\":{\"last_modified_at\":1795219059394,\"state\":\"NONE\"},\"rum_event_processing_scale\":{\"last_modified_at\":1795219059394,\"state\":\"ALL\"}},\"short_name\":\"{{name_}}\",\"tags\":[],\"type\":\"browser\",\"updated_at\":1795219059394,\"updated_by_handle\":\"{{email}}\"},\"id\":\"67e20f36-6578-44ba-b170-61bcb7836eca\",\"type\":\"rum_application\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/rum/applications/67e20f36-6578-44ba-b170-61bcb7836eca",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"attributes\":{\"api_key_id\":1613676,\"apm_rum_flat_sampling_replay_enabled\":true,\"apm_rum_flat_sampling_replay_sample_rate\":1,\"application_id\":\"67e20f36-6578-44ba-b170-61bcb7836eca\",\"client_token\":\"{{redacted}}\",\"created_at\":1795219059394,\"created_by_handle\":\"{{email}}\",\"error_tracking_exclusion_filter_enabled\":false,\"external_feeds\":[],\"is_active\":false,\"name\":\"{{name}}\",\"ootb_metrics_installed\":false,\"org_id\":1000000000,\"product_analytics_replay_sample_rate\":100,\"product_scales\":{\"product_analytics_retention_scale\":{\"last_modified_at\":1795219059394,\"state\":\"NONE\"},\"rum_event_processing_scale\":{\"last_modified_at\":1795219059394,\"state\":\"ALL\"}},\"short_name\":\"{{name_}}\",\"tags\":[],\"type\":\"browser\",\"updated_at\":1795219059394,\"updated_by_handle\":\"{{email}}\"},\"id\":\"67e20f36-6578-44ba-b170-61bcb7836eca\",\"type\":\"rum_application\"}}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v2/rum/applications/67e20f36-6578-44ba-b170-61bcb7836eca",
+      "body": "{\"data\":{\"attributes\":{\"name\":\"{{name}}-changed\",\"type\":\"browser\"},\"id\":\"67e20f36-6578-44ba-b170-61bcb7836eca\",\"type\":\"rum_application_update\"}}",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"attributes\":{\"api_key_id\":1613676,\"apm_rum_flat_sampling_replay_enabled\":true,\"apm_rum_flat_sampling_replay_sample_rate\":1,\"application_id\":\"67e20f36-6578-44ba-b170-61bcb7836eca\",\"client_token\":\"{{redacted}}\",\"created_at\":1795219059394,\"created_by_handle\":\"{{email}}\",\"error_tracking_exclusion_filter_enabled\":false,\"external_feeds\":[],\"is_active\":false,\"name\":\"{{name}}-changed\",\"ootb_metrics_installed\":false,\"org_id\":1000000000,\"product_analytics_replay_sample_rate\":100,\"product_scales\":{\"product_analytics_retention_scale\":{\"last_modified_at\":1795219059394,\"state\":\"NONE\"},\"rum_event_processing_scale\":{\"last_modified_at\":1795219059394,\"state\":\"ALL\"}},\"short_name\":\"{{name_}}\",\"tags\":[],\"type\":\"browser\",\"updated_at\":1795219059734,\"updated_by_handle\":\"{{email}}\"},\"id\":\"67e20f36-6578-44ba-b170-61bcb7836eca\",\"type\":\"rum_application\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/rum/applications/67e20f36-6578-44ba-b170-61bcb7836eca",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"attributes\":{\"api_key_id\":1613676,\"apm_rum_flat_sampling_replay_enabled\":true,\"apm_rum_flat_sampling_replay_sample_rate\":1,\"application_id\":\"67e20f36-6578-44ba-b170-61bcb7836eca\",\"client_token\":\"{{redacted}}\",\"created_at\":1795219059394,\"created_by_handle\":\"{{email}}\",\"error_tracking_exclusion_filter_enabled\":false,\"external_feeds\":[],\"is_active\":false,\"name\":\"{{name}}-changed\",\"ootb_metrics_installed\":false,\"org_id\":1000000000,\"product_analytics_replay_sample_rate\":100,\"product_scales\":{\"product_analytics_retention_scale\":{\"last_modified_at\":1795219059394,\"state\":\"NONE\"},\"rum_event_processing_scale\":{\"last_modified_at\":1795219059394,\"state\":\"ALL\"}},\"short_name\":\"{{name_}}\",\"tags\":[],\"type\":\"browser\",\"updated_at\":1795219059734,\"updated_by_handle\":\"{{email}}\"},\"id\":\"67e20f36-6578-44ba-b170-61bcb7836eca\",\"type\":\"rum_application\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/rum/applications/67e20f36-6578-44ba-b170-61bcb7836eca",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"attributes\":{\"api_key_id\":1613676,\"apm_rum_flat_sampling_replay_enabled\":true,\"apm_rum_flat_sampling_replay_sample_rate\":1,\"application_id\":\"67e20f36-6578-44ba-b170-61bcb7836eca\",\"client_token\":\"{{redacted}}\",\"created_at\":1795219059394,\"created_by_handle\":\"{{email}}\",\"error_tracking_exclusion_filter_enabled\":false,\"external_feeds\":[],\"is_active\":false,\"name\":\"{{name}}-changed\",\"ootb_metrics_installed\":false,\"org_id\":1000000000,\"product_analytics_replay_sample_rate\":100,\"product_scales\":{\"product_analytics_retention_scale\":{\"last_modified_at\":1795219059394,\"state\":\"NONE\"},\"rum_event_processing_scale\":{\"last_modified_at\":1795219059394,\"state\":\"ALL\"}},\"short_name\":\"{{name_}}\",\"tags\":[],\"type\":\"browser\",\"updated_at\":1795219059734,\"updated_by_handle\":\"{{email}}\"},\"id\":\"67e20f36-6578-44ba-b170-61bcb7836eca\",\"type\":\"rum_application\"}}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v2/rum/applications/67e20f36-6578-44ba-b170-61bcb7836eca",
+      "body": "{\"data\":{\"attributes\":{\"name\":\"{{name}}-drift\",\"type\":\"browser\"},\"id\":\"67e20f36-6578-44ba-b170-61bcb7836eca\",\"type\":\"rum_application_update\"}}",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"attributes\":{\"api_key_id\":1613676,\"apm_rum_flat_sampling_replay_enabled\":true,\"apm_rum_flat_sampling_replay_sample_rate\":1,\"application_id\":\"67e20f36-6578-44ba-b170-61bcb7836eca\",\"client_token\":\"{{redacted}}\",\"created_at\":1795219059394,\"created_by_handle\":\"{{email}}\",\"error_tracking_exclusion_filter_enabled\":false,\"external_feeds\":[],\"is_active\":false,\"name\":\"{{name}}-drift\",\"ootb_metrics_installed\":false,\"org_id\":1000000000,\"product_analytics_replay_sample_rate\":100,\"product_scales\":{\"product_analytics_retention_scale\":{\"last_modified_at\":1795219059394,\"state\":\"NONE\"},\"rum_event_processing_scale\":{\"last_modified_at\":1795219059394,\"state\":\"ALL\"}},\"short_name\":\"{{name_}}\",\"tags\":[],\"type\":\"browser\",\"updated_at\":1795219060037,\"updated_by_handle\":\"{{email}}\"},\"id\":\"67e20f36-6578-44ba-b170-61bcb7836eca\",\"type\":\"rum_application\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/rum/applications/67e20f36-6578-44ba-b170-61bcb7836eca",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"attributes\":{\"api_key_id\":1613676,\"apm_rum_flat_sampling_replay_enabled\":true,\"apm_rum_flat_sampling_replay_sample_rate\":1,\"application_id\":\"67e20f36-6578-44ba-b170-61bcb7836eca\",\"client_token\":\"{{redacted}}\",\"created_at\":1795219059394,\"created_by_handle\":\"{{email}}\",\"error_tracking_exclusion_filter_enabled\":false,\"external_feeds\":[],\"is_active\":false,\"name\":\"{{name}}-drift\",\"ootb_metrics_installed\":false,\"org_id\":1000000000,\"product_analytics_replay_sample_rate\":100,\"product_scales\":{\"product_analytics_retention_scale\":{\"last_modified_at\":1795219059394,\"state\":\"NONE\"},\"rum_event_processing_scale\":{\"last_modified_at\":1795219059394,\"state\":\"ALL\"}},\"short_name\":\"{{name_}}\",\"tags\":[],\"type\":\"browser\",\"updated_at\":1795219060037,\"updated_by_handle\":\"{{email}}\"},\"id\":\"67e20f36-6578-44ba-b170-61bcb7836eca\",\"type\":\"rum_application\"}}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v2/rum/applications/67e20f36-6578-44ba-b170-61bcb7836eca",
+      "body": "{\"data\":{\"attributes\":{\"name\":\"{{name}}-changed\",\"type\":\"browser\"},\"id\":\"67e20f36-6578-44ba-b170-61bcb7836eca\",\"type\":\"rum_application_update\"}}",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"attributes\":{\"api_key_id\":1613676,\"apm_rum_flat_sampling_replay_enabled\":true,\"apm_rum_flat_sampling_replay_sample_rate\":1,\"application_id\":\"67e20f36-6578-44ba-b170-61bcb7836eca\",\"client_token\":\"{{redacted}}\",\"created_at\":1795219059394,\"created_by_handle\":\"{{email}}\",\"error_tracking_exclusion_filter_enabled\":false,\"external_feeds\":[],\"is_active\":false,\"name\":\"{{name}}-changed\",\"ootb_metrics_installed\":false,\"org_id\":1000000000,\"product_analytics_replay_sample_rate\":100,\"product_scales\":{\"product_analytics_retention_scale\":{\"last_modified_at\":1795219059394,\"state\":\"NONE\"},\"rum_event_processing_scale\":{\"last_modified_at\":1795219059394,\"state\":\"ALL\"}},\"short_name\":\"{{name_}}\",\"tags\":[],\"type\":\"browser\",\"updated_at\":1795219060243,\"updated_by_handle\":\"{{email}}\"},\"id\":\"67e20f36-6578-44ba-b170-61bcb7836eca\",\"type\":\"rum_application\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/rum/applications/67e20f36-6578-44ba-b170-61bcb7836eca",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"attributes\":{\"api_key_id\":1613676,\"apm_rum_flat_sampling_replay_enabled\":true,\"apm_rum_flat_sampling_replay_sample_rate\":1,\"application_id\":\"67e20f36-6578-44ba-b170-61bcb7836eca\",\"client_token\":\"{{redacted}}\",\"created_at\":1795219059394,\"created_by_handle\":\"{{email}}\",\"error_tracking_exclusion_filter_enabled\":false,\"external_feeds\":[],\"is_active\":false,\"name\":\"{{name}}-changed\",\"ootb_metrics_installed\":false,\"org_id\":1000000000,\"product_analytics_replay_sample_rate\":100,\"product_scales\":{\"product_analytics_retention_scale\":{\"last_modified_at\":1795219059394,\"state\":\"NONE\"},\"rum_event_processing_scale\":{\"last_modified_at\":1795219059394,\"state\":\"ALL\"}},\"short_name\":\"{{name_}}\",\"tags\":[],\"type\":\"browser\",\"updated_at\":1795219060243,\"updated_by_handle\":\"{{email}}\"},\"id\":\"67e20f36-6578-44ba-b170-61bcb7836eca\",\"type\":\"rum_application\"}}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v2/rum/applications/67e20f36-6578-44ba-b170-61bcb7836eca",
+      "status": 204
+    }
+  ]
+}

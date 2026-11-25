@@ -1,0 +1,104 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "component": "rehearsal-component",
+    "dashboard": 280000002,
+    "itype": "rehearsal-itype",
+    "member": "rehearsal-member",
+    "org": "rehearsal-org",
+    "orgsa": "rehearsal-orgsa",
+    "page": "rehearsal-page",
+    "role": "rehearsal-role",
+    "roleUser": "rehearsal-roleUser",
+    "routingPolicy": "rehearsal-routingPolicy",
+    "ruleA": "rehearsal-ruleA",
+    "ruleB": "rehearsal-ruleB",
+    "rum": "rehearsal-rum",
+    "sa": "rehearsal-sa",
+    "slo": "rehearsal-slo",
+    "subteam": "rehearsal-subteam",
+    "team": "rehearsal-team"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/api/v2/security_monitoring/configuration/suppressions",
+      "body": "{\"data\":{\"attributes\":{\"enabled\":true,\"name\":\"Custom suppression\",\"rule_query\":\"type:log_detection source:cloudtrail\"},\"type\":\"suppressions\"}}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"enabled\":true,\"name\":\"Custom suppression\",\"rule_query\":\"type:log_detection source:cloudtrail\"},\"id\":270000087,\"type\":\"suppressions\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/security_monitoring/configuration/suppressions/270000087",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"enabled\":true,\"name\":\"Custom suppression\",\"rule_query\":\"type:log_detection source:cloudtrail\"},\"id\":270000087,\"type\":\"suppressions\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/security_monitoring/configuration/suppressions/270000087",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"enabled\":true,\"name\":\"Custom suppression\",\"rule_query\":\"type:log_detection source:cloudtrail\"},\"id\":270000087,\"type\":\"suppressions\"}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v2/security_monitoring/configuration/suppressions/270000087",
+      "body": "{\"data\":{\"attributes\":{\"enabled\":true,\"name\":\"Custom suppression\",\"rule_query\":\"type:log_detection source:cloudtrail\"},\"type\":\"changed-type\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"enabled\":true,\"name\":\"Custom suppression\",\"rule_query\":\"type:log_detection source:cloudtrail\"},\"id\":270000087,\"type\":\"changed-type\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/security_monitoring/configuration/suppressions/270000087",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"enabled\":true,\"name\":\"Custom suppression\",\"rule_query\":\"type:log_detection source:cloudtrail\"},\"id\":270000087,\"type\":\"changed-type\"}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v2/security_monitoring/configuration/suppressions/270000087",
+      "body": "{\"data\":{\"type\":\"hfl-live-drift\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"enabled\":true,\"name\":\"Custom suppression\",\"rule_query\":\"type:log_detection source:cloudtrail\"},\"id\":270000087,\"type\":\"hfl-live-drift\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/security_monitoring/configuration/suppressions/270000087",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"enabled\":true,\"name\":\"Custom suppression\",\"rule_query\":\"type:log_detection source:cloudtrail\"},\"id\":270000087,\"type\":\"hfl-live-drift\"}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v2/security_monitoring/configuration/suppressions/270000087",
+      "body": "{\"data\":{\"attributes\":{\"enabled\":true,\"name\":\"Custom suppression\",\"rule_query\":\"type:log_detection source:cloudtrail\"},\"type\":\"changed-type\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"enabled\":true,\"name\":\"Custom suppression\",\"rule_query\":\"type:log_detection source:cloudtrail\"},\"id\":270000087,\"type\":\"changed-type\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/security_monitoring/configuration/suppressions/270000087",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"enabled\":true,\"name\":\"Custom suppression\",\"rule_query\":\"type:log_detection source:cloudtrail\"},\"id\":270000087,\"type\":\"changed-type\"}}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v2/security_monitoring/configuration/suppressions/270000087",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/security_monitoring/configuration/suppressions/270000087",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

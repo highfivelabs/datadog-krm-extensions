@@ -1,0 +1,62 @@
+terraform: [datadog_team_sync]
+shape: upsert
+envelope: data
+bodyEnvelope: data
+stays: the configuration is paused (frequency paused), not deleted
+params:
+  source: {field: attributes.source}
+  sync_type: {field: attributes.type}
+fields:
+  type:
+    type: string
+    enum: [team_sync_bulk]
+  attributes:
+    type: object
+    required: [source, type]
+    properties:
+      source:
+        type: string
+        enum: [github, servicenow]
+        description: The external source platform for team synchronization.
+      type:
+        type: string
+        enum: [link, provision]
+        description: The type of synchronization operation. "link" connects teams by matching names. "provision" creates new teams when no match is found.
+      frequency:
+        type: string
+        enum: [once, continuously, paused]
+        description: How often the sync process should be run. Defaults to `once` when not provided.
+      sync_membership:
+        type: boolean
+        description: Whether to sync members from the external team to the Datadog team. Defaults to `false` when not provided.
+      selection_state:
+        type: array
+        description: Specifies which teams or organizations to sync. When provided, synchronization is limited to the specified items and their subtrees.
+        items:
+          type: object
+          required: [external_id]
+          properties:
+            external_id:
+              type: object
+              required: [type, value]
+              properties:
+                type: {type: string, enum: [team, organization]}
+                value: {type: string}
+            operation: {type: string, enum: [include], description: The operation to perform on the selected hierarchy.}
+            scope: {type: string, enum: [subtree]}
+required: [type, attributes]
+sample:
+  type: team_sync_bulk
+  attributes: {source: github, type: link, frequency: continuously, sync_membership: true}
+read:
+  method: GET
+  path: /api/v2/team/sync
+  query: {"filter[source]": "{source}"}
+  envelope: data/0
+update:
+  method: POST
+  path: /api/v2/team/sync
+delete:
+  method: POST
+  path: /api/v2/team/sync
+  body: {type: team_sync_bulk, attributes: {source: "{source}", type: "{sync_type}", frequency: paused}}

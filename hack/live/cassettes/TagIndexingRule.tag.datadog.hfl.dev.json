@@ -1,0 +1,101 @@
+{
+  "recorded": "2026-11-20T23:57:37Z",
+  "target": "Datadog trial",
+  "vars": {
+    "dashboard": "ur8-afc-sum",
+    "itype": "fb183ac5-a636-4c9e-b864-de008dda88bb",
+    "role": "26806b04-e53e-11f1-807b-da7ad0900005",
+    "sa": "16307311-e53e-11f1-b3f2-e693e7c43799",
+    "slo": "3704e6ae4bac5b54b241a727ff6ab03b",
+    "subteam": "d4c1dd6f-4ea7-42e9-9847-c995ec31b739",
+    "team": "48e3aed2-a7e1-4fee-9037-ce9c9f4b4952"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/api/v2/metrics/tag-indexing-rules",
+      "body": "{\"data\":{\"attributes\":{\"metric_name_matches\":[\"hfl.live.{{name_}}\"],\"name\":\"{{name}}\"},\"type\":\"tag_indexing_rules\"}}",
+      "status": 201,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"attributes\":{\"created_at\":\"2026-11-20T23:57:36.428679Z\",\"created_by_handle\":\"{{email}}\",\"exclude_tags_mode\":false,\"ignored_metric_name_matches\":[],\"metric_name_matches\":[\"hfl.live.{{name_}}\"],\"modified_at\":\"2026-11-20T23:57:36.428679Z\",\"modified_by_handle\":\"{{email}}\",\"name\":\"{{name}}\",\"options\":{\"data\":{\"manage_preexisting_metrics\":true,\"override_previous_rules\":false},\"version\":1},\"rule_order\":1,\"tags\":[]},\"id\":\"6e4de4bf-88bd-4989-8937-fcb9632ae05b\",\"type\":\"tag_indexing_rules\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/metrics/tag-indexing-rules/6e4de4bf-88bd-4989-8937-fcb9632ae05b",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"attributes\":{\"created_at\":\"2026-11-20T23:57:36.428679Z\",\"created_by_handle\":\"{{email}}\",\"exclude_tags_mode\":false,\"ignored_metric_name_matches\":[],\"metric_name_matches\":[\"hfl.live.{{name_}}\"],\"modified_at\":\"2026-11-20T23:57:36.428679Z\",\"modified_by_handle\":\"{{email}}\",\"name\":\"{{name}}\",\"options\":{\"data\":{\"manage_preexisting_metrics\":true,\"override_previous_rules\":false},\"version\":1},\"rule_order\":1,\"tags\":[]},\"id\":\"6e4de4bf-88bd-4989-8937-fcb9632ae05b\",\"type\":\"tag_indexing_rules\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/metrics/tag-indexing-rules/6e4de4bf-88bd-4989-8937-fcb9632ae05b",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"attributes\":{\"created_at\":\"2026-11-20T23:57:36.428679Z\",\"created_by_handle\":\"{{email}}\",\"exclude_tags_mode\":false,\"ignored_metric_name_matches\":[],\"metric_name_matches\":[\"hfl.live.{{name_}}\"],\"modified_at\":\"2026-11-20T23:57:36.428679Z\",\"modified_by_handle\":\"{{email}}\",\"name\":\"{{name}}\",\"options\":{\"data\":{\"manage_preexisting_metrics\":true,\"override_previous_rules\":false},\"version\":1},\"rule_order\":1,\"tags\":[]},\"id\":\"6e4de4bf-88bd-4989-8937-fcb9632ae05b\",\"type\":\"tag_indexing_rules\"}}"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v2/metrics/tag-indexing-rules/6e4de4bf-88bd-4989-8937-fcb9632ae05b",
+      "body": "{\"data\":{\"attributes\":{\"metric_name_matches\":[\"hfl.live.{{name_}}\"],\"name\":\"{{name}}-changed\"},\"type\":\"tag_indexing_rules\"}}",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"attributes\":{\"created_at\":\"2026-11-20T23:57:36.428679Z\",\"created_by_handle\":\"{{email}}\",\"exclude_tags_mode\":false,\"ignored_metric_name_matches\":[],\"metric_name_matches\":[\"hfl.live.{{name_}}\"],\"modified_at\":\"2026-11-20T23:57:36.870569Z\",\"modified_by_handle\":\"{{email}}\",\"name\":\"{{name}}-changed\",\"options\":{\"data\":{\"manage_preexisting_metrics\":true,\"override_previous_rules\":false},\"version\":1},\"rule_order\":1,\"tags\":[]},\"id\":\"6e4de4bf-88bd-4989-8937-fcb9632ae05b\",\"type\":\"tag_indexing_rules\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/metrics/tag-indexing-rules/6e4de4bf-88bd-4989-8937-fcb9632ae05b",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"attributes\":{\"created_at\":\"2026-11-20T23:57:36.428679Z\",\"created_by_handle\":\"{{email}}\",\"exclude_tags_mode\":false,\"ignored_metric_name_matches\":[],\"metric_name_matches\":[\"hfl.live.{{name_}}\"],\"modified_at\":\"2026-11-20T23:57:36.870569Z\",\"modified_by_handle\":\"{{email}}\",\"name\":\"{{name}}-changed\",\"options\":{\"data\":{\"manage_preexisting_metrics\":true,\"override_previous_rules\":false},\"version\":1},\"rule_order\":1,\"tags\":[]},\"id\":\"6e4de4bf-88bd-4989-8937-fcb9632ae05b\",\"type\":\"tag_indexing_rules\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/metrics/tag-indexing-rules/6e4de4bf-88bd-4989-8937-fcb9632ae05b",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"attributes\":{\"created_at\":\"2026-11-20T23:57:36.428679Z\",\"created_by_handle\":\"{{email}}\",\"exclude_tags_mode\":false,\"ignored_metric_name_matches\":[],\"metric_name_matches\":[\"hfl.live.{{name_}}\"],\"modified_at\":\"2026-11-20T23:57:36.870569Z\",\"modified_by_handle\":\"{{email}}\",\"name\":\"{{name}}-changed\",\"options\":{\"data\":{\"manage_preexisting_metrics\":true,\"override_previous_rules\":false},\"version\":1},\"rule_order\":1,\"tags\":[]},\"id\":\"6e4de4bf-88bd-4989-8937-fcb9632ae05b\",\"type\":\"tag_indexing_rules\"}}"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v2/metrics/tag-indexing-rules/6e4de4bf-88bd-4989-8937-fcb9632ae05b",
+      "body": "{\"data\":{\"attributes\":{\"metric_name_matches\":[\"hfl.live.{{name_}}\"],\"name\":\"{{name}}-drift\"},\"id\":\"6e4de4bf-88bd-4989-8937-fcb9632ae05b\",\"type\":\"tag_indexing_rules\"}}",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"attributes\":{\"created_at\":\"2026-11-20T23:57:36.428679Z\",\"created_by_handle\":\"{{email}}\",\"exclude_tags_mode\":false,\"ignored_metric_name_matches\":[],\"metric_name_matches\":[\"hfl.live.{{name_}}\"],\"modified_at\":\"2026-11-20T23:57:37.208481Z\",\"modified_by_handle\":\"{{email}}\",\"name\":\"{{name}}-drift\",\"options\":{\"data\":{\"manage_preexisting_metrics\":true,\"override_previous_rules\":false},\"version\":1},\"rule_order\":1,\"tags\":[]},\"id\":\"6e4de4bf-88bd-4989-8937-fcb9632ae05b\",\"type\":\"tag_indexing_rules\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/metrics/tag-indexing-rules/6e4de4bf-88bd-4989-8937-fcb9632ae05b",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"attributes\":{\"created_at\":\"2026-11-20T23:57:36.428679Z\",\"created_by_handle\":\"{{email}}\",\"exclude_tags_mode\":false,\"ignored_metric_name_matches\":[],\"metric_name_matches\":[\"hfl.live.{{name_}}\"],\"modified_at\":\"2026-11-20T23:57:37.208481Z\",\"modified_by_handle\":\"{{email}}\",\"name\":\"{{name}}-drift\",\"options\":{\"data\":{\"manage_preexisting_metrics\":true,\"override_previous_rules\":false},\"version\":1},\"rule_order\":1,\"tags\":[]},\"id\":\"6e4de4bf-88bd-4989-8937-fcb9632ae05b\",\"type\":\"tag_indexing_rules\"}}"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v2/metrics/tag-indexing-rules/6e4de4bf-88bd-4989-8937-fcb9632ae05b",
+      "body": "{\"data\":{\"attributes\":{\"metric_name_matches\":[\"hfl.live.{{name_}}\"],\"name\":\"{{name}}-changed\"},\"type\":\"tag_indexing_rules\"}}",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"attributes\":{\"created_at\":\"2026-11-20T23:57:36.428679Z\",\"created_by_handle\":\"{{email}}\",\"exclude_tags_mode\":false,\"ignored_metric_name_matches\":[],\"metric_name_matches\":[\"hfl.live.{{name_}}\"],\"modified_at\":\"2026-11-20T23:57:37.40673Z\",\"modified_by_handle\":\"{{email}}\",\"name\":\"{{name}}-changed\",\"options\":{\"data\":{\"manage_preexisting_metrics\":true,\"override_previous_rules\":false},\"version\":1},\"rule_order\":1,\"tags\":[]},\"id\":\"6e4de4bf-88bd-4989-8937-fcb9632ae05b\",\"type\":\"tag_indexing_rules\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/metrics/tag-indexing-rules/6e4de4bf-88bd-4989-8937-fcb9632ae05b",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"attributes\":{\"created_at\":\"2026-11-20T23:57:36.428679Z\",\"created_by_handle\":\"{{email}}\",\"exclude_tags_mode\":false,\"ignored_metric_name_matches\":[],\"metric_name_matches\":[\"hfl.live.{{name_}}\"],\"modified_at\":\"2026-11-20T23:57:37.40673Z\",\"modified_by_handle\":\"{{email}}\",\"name\":\"{{name}}-changed\",\"options\":{\"data\":{\"manage_preexisting_metrics\":true,\"override_previous_rules\":false},\"version\":1},\"rule_order\":1,\"tags\":[]},\"id\":\"6e4de4bf-88bd-4989-8937-fcb9632ae05b\",\"type\":\"tag_indexing_rules\"}}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v2/metrics/tag-indexing-rules/6e4de4bf-88bd-4989-8937-fcb9632ae05b",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/metrics/tag-indexing-rules/6e4de4bf-88bd-4989-8937-fcb9632ae05b",
+      "status": 404,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"errors\":[\"Tag indexing rule not found\"]}"
+    }
+  ]
+}

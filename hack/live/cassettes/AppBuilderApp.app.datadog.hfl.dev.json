@@ -1,0 +1,102 @@
+{
+  "recorded": "2026-11-20T23:57:28Z",
+  "target": "Datadog trial",
+  "vars": {
+    "dashboard": "ur8-afc-sum",
+    "itype": "fb183ac5-a636-4c9e-b864-de008dda88bb",
+    "sa": "16307311-e53e-11f1-b3f2-e693e7c43799",
+    "slo": "3704e6ae4bac5b54b241a727ff6ab03b",
+    "subteam": "d4c1dd6f-4ea7-42e9-9847-c995ec31b739",
+    "team": "48e3aed2-a7e1-4fee-9037-ce9c9f4b4952"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/api/v2/app-builder/apps",
+      "body": "{\"data\":{\"attributes\":{\"components\":[],\"description\":\"first\",\"name\":\"{{name}}\",\"queries\":[],\"rootInstanceName\":\"grid0\"},\"type\":\"appDefinitions\"}}",
+      "status": 201,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"id\":\"8066d6dd-1f58-4aaf-a546-4f3a286b09cc\",\"type\":\"appDefinitions\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/app-builder/apps/8066d6dd-1f58-4aaf-a546-4f3a286b09cc",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"attributes\":{\"components\":[],\"description\":\"first\",\"favorite\":false,\"isHighCodeApp\":false,\"isStaticApp\":false,\"name\":\"{{name}}\",\"protectionLevel\":\"direct_publish\",\"queries\":[],\"rootInstanceName\":\"grid0\",\"selfService\":false,\"tags\":[]},\"id\":\"8066d6dd-1f58-4aaf-a546-4f3a286b09cc\",\"meta\":{\"created_at\":\"2026-11-20T23:57:27.255829Z\",\"deleted_at\":\"0001-01-01T00:00:00Z\",\"org_id\":1000000000,\"run_as_user\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"updated_at\":\"2026-11-20T23:57:27.255829Z\",\"updated_since_deployment\":false,\"user_id\":11329284,\"user_name\":\"{{email}}\",\"user_uuid\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"version\":1,\"version_id\":\"c9d22264-40ab-451f-bb28-56064efe2bdf\"},\"type\":\"appDefinitions\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/app-builder/apps/8066d6dd-1f58-4aaf-a546-4f3a286b09cc",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"attributes\":{\"components\":[],\"description\":\"first\",\"favorite\":false,\"isHighCodeApp\":false,\"isStaticApp\":false,\"name\":\"{{name}}\",\"protectionLevel\":\"direct_publish\",\"queries\":[],\"rootInstanceName\":\"grid0\",\"selfService\":false,\"tags\":[]},\"id\":\"8066d6dd-1f58-4aaf-a546-4f3a286b09cc\",\"meta\":{\"created_at\":\"2026-11-20T23:57:27.255829Z\",\"deleted_at\":\"0001-01-01T00:00:00Z\",\"org_id\":1000000000,\"run_as_user\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"updated_at\":\"2026-11-20T23:57:27.255829Z\",\"updated_since_deployment\":false,\"user_id\":11329284,\"user_name\":\"{{email}}\",\"user_uuid\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"version\":1,\"version_id\":\"c9d22264-40ab-451f-bb28-56064efe2bdf\"},\"type\":\"appDefinitions\"}}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v2/app-builder/apps/8066d6dd-1f58-4aaf-a546-4f3a286b09cc",
+      "body": "{\"data\":{\"attributes\":{\"components\":[],\"description\":\"second\",\"name\":\"{{name}}\",\"queries\":[],\"rootInstanceName\":\"grid0\"},\"id\":\"8066d6dd-1f58-4aaf-a546-4f3a286b09cc\",\"type\":\"appDefinitions\"}}",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"attributes\":{\"components\":[],\"description\":\"second\",\"favorite\":false,\"isHighCodeApp\":false,\"isStaticApp\":false,\"name\":\"{{name}}\",\"protectionLevel\":\"direct_publish\",\"queries\":[],\"rootInstanceName\":\"grid0\",\"selfService\":false,\"tags\":[]},\"id\":\"8066d6dd-1f58-4aaf-a546-4f3a286b09cc\",\"meta\":{\"created_at\":\"2026-11-20T23:57:27.255829Z\",\"deleted_at\":\"0001-01-01T00:00:00Z\",\"org_id\":1000000000,\"run_as_user\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"updated_at\":\"2026-11-20T23:57:27.725832Z\",\"updated_since_deployment\":false,\"user_id\":11329284,\"user_name\":\"{{email}}\",\"user_uuid\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"version\":2,\"version_id\":\"1d795b58-3022-4f0e-9b1b-d1da27e0e0ca\"},\"type\":\"appDefinitions\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/app-builder/apps/8066d6dd-1f58-4aaf-a546-4f3a286b09cc",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"attributes\":{\"components\":[],\"description\":\"second\",\"favorite\":false,\"isHighCodeApp\":false,\"isStaticApp\":false,\"name\":\"{{name}}\",\"protectionLevel\":\"direct_publish\",\"queries\":[],\"rootInstanceName\":\"grid0\",\"selfService\":false,\"tags\":[]},\"id\":\"8066d6dd-1f58-4aaf-a546-4f3a286b09cc\",\"meta\":{\"created_at\":\"2026-11-20T23:57:27.255829Z\",\"deleted_at\":\"0001-01-01T00:00:00Z\",\"org_id\":1000000000,\"run_as_user\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"updated_at\":\"2026-11-20T23:57:27.725832Z\",\"updated_since_deployment\":false,\"user_id\":11329284,\"user_name\":\"{{email}}\",\"user_uuid\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"version\":2,\"version_id\":\"1d795b58-3022-4f0e-9b1b-d1da27e0e0ca\"},\"type\":\"appDefinitions\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/app-builder/apps/8066d6dd-1f58-4aaf-a546-4f3a286b09cc",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"attributes\":{\"components\":[],\"description\":\"second\",\"favorite\":false,\"isHighCodeApp\":false,\"isStaticApp\":false,\"name\":\"{{name}}\",\"protectionLevel\":\"direct_publish\",\"queries\":[],\"rootInstanceName\":\"grid0\",\"selfService\":false,\"tags\":[]},\"id\":\"8066d6dd-1f58-4aaf-a546-4f3a286b09cc\",\"meta\":{\"created_at\":\"2026-11-20T23:57:27.255829Z\",\"deleted_at\":\"0001-01-01T00:00:00Z\",\"org_id\":1000000000,\"run_as_user\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"updated_at\":\"2026-11-20T23:57:27.725832Z\",\"updated_since_deployment\":false,\"user_id\":11329284,\"user_name\":\"{{email}}\",\"user_uuid\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"version\":2,\"version_id\":\"1d795b58-3022-4f0e-9b1b-d1da27e0e0ca\"},\"type\":\"appDefinitions\"}}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v2/app-builder/apps/8066d6dd-1f58-4aaf-a546-4f3a286b09cc",
+      "body": "{\"data\":{\"attributes\":{\"components\":[],\"description\":\"drift\",\"name\":\"{{name}}\",\"queries\":[],\"rootInstanceName\":\"grid0\"},\"id\":\"8066d6dd-1f58-4aaf-a546-4f3a286b09cc\",\"meta\":{\"created_at\":\"2026-11-20T23:57:27.255829Z\",\"deleted_at\":\"0001-01-01T00:00:00Z\",\"org_id\":1000000000,\"run_as_user\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"updated_at\":\"2026-11-20T23:57:27.725832Z\",\"updated_since_deployment\":false,\"user_id\":11329284,\"user_name\":\"{{email}}\",\"user_uuid\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"version\":2,\"version_id\":\"1d795b58-3022-4f0e-9b1b-d1da27e0e0ca\"},\"type\":\"appDefinitions\"}}",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"attributes\":{\"components\":[],\"description\":\"drift\",\"favorite\":false,\"isHighCodeApp\":false,\"isStaticApp\":false,\"name\":\"{{name}}\",\"protectionLevel\":\"direct_publish\",\"queries\":[],\"rootInstanceName\":\"grid0\",\"selfService\":false,\"tags\":[]},\"id\":\"8066d6dd-1f58-4aaf-a546-4f3a286b09cc\",\"meta\":{\"created_at\":\"2026-11-20T23:57:27.255829Z\",\"deleted_at\":\"0001-01-01T00:00:00Z\",\"org_id\":1000000000,\"run_as_user\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"updated_at\":\"2026-11-20T23:57:28.133444Z\",\"updated_since_deployment\":false,\"user_id\":11329284,\"user_name\":\"{{email}}\",\"user_uuid\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"version\":3,\"version_id\":\"8509f872-6c3d-4592-9beb-cc0201f5f266\"},\"type\":\"appDefinitions\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/app-builder/apps/8066d6dd-1f58-4aaf-a546-4f3a286b09cc",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"attributes\":{\"components\":[],\"description\":\"drift\",\"favorite\":false,\"isHighCodeApp\":false,\"isStaticApp\":false,\"name\":\"{{name}}\",\"protectionLevel\":\"direct_publish\",\"queries\":[],\"rootInstanceName\":\"grid0\",\"selfService\":false,\"tags\":[]},\"id\":\"8066d6dd-1f58-4aaf-a546-4f3a286b09cc\",\"meta\":{\"created_at\":\"2026-11-20T23:57:27.255829Z\",\"deleted_at\":\"0001-01-01T00:00:00Z\",\"org_id\":1000000000,\"run_as_user\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"updated_at\":\"2026-11-20T23:57:28.133444Z\",\"updated_since_deployment\":false,\"user_id\":11329284,\"user_name\":\"{{email}}\",\"user_uuid\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"version\":3,\"version_id\":\"8509f872-6c3d-4592-9beb-cc0201f5f266\"},\"type\":\"appDefinitions\"}}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v2/app-builder/apps/8066d6dd-1f58-4aaf-a546-4f3a286b09cc",
+      "body": "{\"data\":{\"attributes\":{\"components\":[],\"description\":\"second\",\"name\":\"{{name}}\",\"queries\":[],\"rootInstanceName\":\"grid0\"},\"id\":\"8066d6dd-1f58-4aaf-a546-4f3a286b09cc\",\"type\":\"appDefinitions\"}}",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"attributes\":{\"components\":[],\"description\":\"second\",\"favorite\":false,\"isHighCodeApp\":false,\"isStaticApp\":false,\"name\":\"{{name}}\",\"protectionLevel\":\"direct_publish\",\"queries\":[],\"rootInstanceName\":\"grid0\",\"selfService\":false,\"tags\":[]},\"id\":\"8066d6dd-1f58-4aaf-a546-4f3a286b09cc\",\"meta\":{\"created_at\":\"2026-11-20T23:57:27.255829Z\",\"deleted_at\":\"0001-01-01T00:00:00Z\",\"org_id\":1000000000,\"run_as_user\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"updated_at\":\"2026-11-20T23:57:28.411301Z\",\"updated_since_deployment\":false,\"user_id\":11329284,\"user_name\":\"{{email}}\",\"user_uuid\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"version\":4,\"version_id\":\"ac51b02f-30fd-4884-9282-63d74390c22f\"},\"type\":\"appDefinitions\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/app-builder/apps/8066d6dd-1f58-4aaf-a546-4f3a286b09cc",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"attributes\":{\"components\":[],\"description\":\"second\",\"favorite\":false,\"isHighCodeApp\":false,\"isStaticApp\":false,\"name\":\"{{name}}\",\"protectionLevel\":\"direct_publish\",\"queries\":[],\"rootInstanceName\":\"grid0\",\"selfService\":false,\"tags\":[]},\"id\":\"8066d6dd-1f58-4aaf-a546-4f3a286b09cc\",\"meta\":{\"created_at\":\"2026-11-20T23:57:27.255829Z\",\"deleted_at\":\"0001-01-01T00:00:00Z\",\"org_id\":1000000000,\"run_as_user\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"updated_at\":\"2026-11-20T23:57:28.411301Z\",\"updated_since_deployment\":false,\"user_id\":11329284,\"user_name\":\"{{email}}\",\"user_uuid\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"version\":4,\"version_id\":\"ac51b02f-30fd-4884-9282-63d74390c22f\"},\"type\":\"appDefinitions\"}}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v2/app-builder/apps/8066d6dd-1f58-4aaf-a546-4f3a286b09cc",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"id\":\"8066d6dd-1f58-4aaf-a546-4f3a286b09cc\",\"type\":\"appDefinitions\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/app-builder/apps/8066d6dd-1f58-4aaf-a546-4f3a286b09cc",
+      "status": 404,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"errors\":[{\"status\":\"404\",\"id\":\"37063f8e-44e2-4341-aa28-168b07e2ba02\",\"title\":\"app not found\",\"detail\":\"app with id 8066d6dd-1f58-4aaf-a546-4f3a286b09cc not found\"}]}"
+    }
+  ]
+}

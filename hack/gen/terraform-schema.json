@@ -1,0 +1,58 @@
+{
+ "provider": "DataDog/datadog",
+ "resources": {
+  "datadog_child_organization": {
+   "attributes": {
+    "api_key": {
+     "computed": true
+    },
+    "application_key": {
+     "computed": true
+    },
+    "id": {
+     "computed": true,
+     "optional": true,
+     "type": "string"
+    },
+    "name": {
+     "required": true,
+     "type": "string"
+    },
+    "public_id": {
+     "computed": true
+    },
+    "settings": {
+     "computed": true
+    },
+    "user": {
+     "computed": true
+    }
+   }
+  },
+  "datadog_datastore_item": {
+   "attributes": {
+    "datastore_id": {
+     "required": true,
+     "type": "string"
+    },
+    "id": {
+     "computed": true
+    },
+    "item_key": {
+     "required": true,
+     "type": "string"
+    },
+    "value": {
+     "required": true,
+     "type": [
+      "map",
+      "string"
+     ]
+    }
+   }
+  }
+ },
+ "source": "terraform providers schema -json; facts only (no descriptions: the provider is MPL-2.0)",
+ "terraform": "1.17.2",
+ "version": "4.30.0"
+}

@@ -1,0 +1,115 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "dashboard": 280000002,
+    "itype": "rehearsal-itype",
+    "role": "rehearsal-role",
+    "rum": "rehearsal-rum",
+    "sa": "rehearsal-sa",
+    "slo": "rehearsal-slo",
+    "subteam": "rehearsal-subteam",
+    "team": "rehearsal-team"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/api/v2/rum/applications",
+      "body": "{\"data\":{\"attributes\":{\"name\":\"{{name}}\",\"type\":\"browser\"},\"type\":\"rum_application_create\"}}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"_stub\":\"rehearsal stand-in: the fake API has no such resource\",\"data\":{\"attributes\":{\"name\":\"{{name}}\",\"type\":\"browser\"},\"type\":\"rum_application_create\"},\"id\":280000014}\n"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v2/rum/applications/rehearsal-rum/retention_filters/exclusion",
+      "body": "{\"data\":{\"attributes\":{\"enabled\":false,\"name\":\"{{name}}\",\"query\":\"@service:{{name}}\"},\"type\":\"exclusion_filters\"}}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"enabled\":false,\"name\":\"{{name}}\",\"query\":\"@service:{{name}}\"},\"id\":270000037,\"meta\":{},\"type\":\"exclusion_filters\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/rum/applications/rehearsal-rum/retention_filters/exclusion/270000037",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"enabled\":false,\"name\":\"{{name}}\",\"query\":\"@service:{{name}}\"},\"id\":270000037,\"meta\":{},\"type\":\"exclusion_filters\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/rum/applications/rehearsal-rum/retention_filters/exclusion/270000037",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"enabled\":false,\"name\":\"{{name}}\",\"query\":\"@service:{{name}}\"},\"id\":270000037,\"meta\":{},\"type\":\"exclusion_filters\"}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v2/rum/applications/rehearsal-rum/retention_filters/exclusion/270000037",
+      "body": "{\"data\":{\"attributes\":{\"enabled\":false,\"name\":\"{{name}}-changed\",\"query\":\"@service:{{name}}\"},\"id\":\"270000037\",\"type\":\"exclusion_filters\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"enabled\":false,\"name\":\"{{name}}-changed\",\"query\":\"@service:{{name}}\"},\"id\":\"270000037\",\"meta\":{},\"type\":\"exclusion_filters\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/rum/applications/rehearsal-rum/retention_filters/exclusion/270000037",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"enabled\":false,\"name\":\"{{name}}-changed\",\"query\":\"@service:{{name}}\"},\"id\":\"270000037\",\"meta\":{},\"type\":\"exclusion_filters\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/rum/applications/rehearsal-rum/retention_filters/exclusion/270000037",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"enabled\":false,\"name\":\"{{name}}-changed\",\"query\":\"@service:{{name}}\"},\"id\":\"270000037\",\"meta\":{},\"type\":\"exclusion_filters\"}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v2/rum/applications/rehearsal-rum/retention_filters/exclusion/270000037",
+      "body": "{\"data\":{\"attributes\":{\"enabled\":false,\"name\":\"{{name}}-drift\",\"query\":\"@service:{{name}}\"},\"id\":\"270000037\",\"meta\":{},\"type\":\"exclusion_filters\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"enabled\":false,\"name\":\"{{name}}-drift\",\"query\":\"@service:{{name}}\"},\"id\":\"270000037\",\"meta\":{},\"type\":\"exclusion_filters\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/rum/applications/rehearsal-rum/retention_filters/exclusion/270000037",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"enabled\":false,\"name\":\"{{name}}-drift\",\"query\":\"@service:{{name}}\"},\"id\":\"270000037\",\"meta\":{},\"type\":\"exclusion_filters\"}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v2/rum/applications/rehearsal-rum/retention_filters/exclusion/270000037",
+      "body": "{\"data\":{\"attributes\":{\"enabled\":false,\"name\":\"{{name}}-changed\",\"query\":\"@service:{{name}}\"},\"id\":\"270000037\",\"type\":\"exclusion_filters\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"enabled\":false,\"name\":\"{{name}}-changed\",\"query\":\"@service:{{name}}\"},\"id\":\"270000037\",\"meta\":{},\"type\":\"exclusion_filters\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/rum/applications/rehearsal-rum/retention_filters/exclusion/270000037",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"enabled\":false,\"name\":\"{{name}}-changed\",\"query\":\"@service:{{name}}\"},\"id\":\"270000037\",\"meta\":{},\"type\":\"exclusion_filters\"}}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v2/rum/applications/rehearsal-rum/retention_filters/exclusion/270000037",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/rum/applications/rehearsal-rum/retention_filters/exclusion/270000037",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v2/rum/applications/rehearsal-rum",
+      "status": 204
+    }
+  ]
+}

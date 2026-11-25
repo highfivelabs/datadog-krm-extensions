@@ -1,0 +1,376 @@
+# Inputs to krm-rest-runtime/gen/krmgen.py. Specs are pinned to the commit in each url;
+# hack/gen/fetch-specs.sh downloads them. overrides: map (Terraform type -> API item path),
+# exclude (Terraform types), excludePaths (API item paths).
+vendor: datadog
+title: Datadog
+groupSuffix: datadog.hfl.dev
+# Some Datadog items are written with a POST to the path they are read from:
+# UpdateRestrictionPolicy (POST /api/v2/restriction_policy/{resource_id}) and
+# SetOnDemandConcurrencyCap (POST /api/v2/synthetics/settings/on_demand_concurrency_cap).
+# Paths this also pairs wrongly are in overrides.excludePaths.
+postUpdates: true
+connectionKind: Connection
+credentialKeys:
+- apiKey
+- appKey
+baseURLHelp: Datadog API base URL; default from the Secret's optional `site` key (e.g. datadoghq.eu), else https://api.datadoghq.com.
+terraform:
+  provider: DataDog/datadog
+  prefix: datadog
+  gaps: terraform-gaps.json
+specs:
+- file: specs/datadog-v1.yaml
+  url: https://raw.githubusercontent.com/DataDog/datadog-api-client-go/8f7c1eede09a7216d358551a261b3286687e500d/.generator/schemas/v1/openapi.yaml
+- file: specs/datadog-v2.yaml
+  url: https://raw.githubusercontent.com/DataDog/datadog-api-client-go/8f7c1eede09a7216d358551a261b3286687e500d/.generator/schemas/v2/openapi.yaml
+# Hand-made supplements (sources at the top of each).
+- file: supplement/organization-settings.yaml
+- file: supplement/service-accounts.yaml
+- file: supplement/pagerduty-integration.yaml
+envelope:
+  response:
+  - data
+  # GetOrg answers {"org": {...}} (OrganizationSettings).
+  - org
+  request:
+  - data
+  # JSON:API: an update names the item in data.id too (krm-rest-runtime updateID).
+  updateID: id
+# Resources whose calls no OpenAPI path pairing finds (a team connection:
+# made in bulk on its collection, listed there, and deleted there by a body
+# naming it), or that the spec leaves out (Cloud Inventory's sync
+# configurations): one hand-written file each in kinds/, citing its sources.
+handwritten:
+  dir: kinds
+overrides:
+  map:
+    datadog_agentless_scanning_aws_scan_options: /api/v2/agentless_scanning/accounts/aws/{account_id}
+    datadog_agentless_scanning_azure_scan_options: /api/v2/agentless_scanning/accounts/azure/{subscription_id}
+    datadog_agentless_scanning_gcp_scan_options: /api/v2/agentless_scanning/accounts/gcp/{project_id}
+    datadog_appsec_waf_custom_rule: /api/v2/remote_config/products/asm/waf/custom_rules/{custom_rule_id}
+    datadog_appsec_waf_exclusion_filter: /api/v2/remote_config/products/asm/waf/exclusion_filters/{exclusion_filter_id}
+    # v2 current-user application keys (CreateCurrentUserApplicationKey), which work in
+    # organizations with one-time-read keys; the v1 API (/api/v1/application_key) does not.
+    datadog_application_key: /api/v2/current_user/application_keys/{app_key_id}
+    datadog_aws_wif_identity_mapping: /api/v2/wif/aws/persona_mapping/{persona_mapping_id}
+    datadog_github_oidc_identity_mapping: /api/v2/wif/github/persona_mapping/{persona_mapping_id}
+    datadog_github_oidc_intake_mapping: /api/v2/wif/github/intake_mapping/{intake_mapping_id}
+    datadog_csm_threats_agent_rule: /api/v2/remote_config/products/cws/agent_rules/{agent_rule_id}
+    # Deprecated by the provider in favour of datadog_csm_threats_agent_rule; the old
+    # cloud_workload_security agent rule API is read-only in the spec now.
+    datadog_cloud_workload_security_agent_rule: /api/v2/remote_config/products/cws/agent_rules/{agent_rule_id}
+    datadog_csm_threats_policy: /api/v2/remote_config/products/cws/policy/{policy_id}
+    datadog_custom_allocation_rule: /api/v2/cost/arbitrary_rule/{rule_id}
+    datadog_integration_opsgenie_service_object: /api/v2/integration/opsgenie/services/{integration_service_id}
+    datadog_integration_pagerduty_service_object: /api/v1/integration/pagerduty/configuration/services/{service_name}
+    datadog_logs_custom_pipeline: /api/v1/logs/config/pipelines/{pipeline_id}
+    datadog_observability_pipeline: /api/v2/obs-pipelines/pipelines/{pipeline_id}
+    datadog_spans_metric: /api/v2/apm/config/metrics/{metric_id}
+    datadog_status_page: /api/v2/statuspages/{page_id}
+    datadog_status_page_component: /api/v2/statuspages/{page_id}/components/{component_id}
+    datadog_status_page_degradation_template: /api/v2/statuspages/{page_id}/degradation_templates/{template_id}
+    datadog_status_page_maintenance_template: /api/v2/statuspages/{page_id}/maintenance_templates/{template_id}
+    datadog_synthetics_global_variable: /api/v1/synthetics/variables/{variable_id}
+    datadog_tag_pipeline_ruleset: /api/v2/tags/enrichment/{ruleset_id}
+    datadog_workflow_automation: /api/v2/workflows/{workflow_id}
+    datadog_metric_metadata: /api/v1/metrics/{metric_name}
+    # Read and deleted at .../budget/{budget_id}/custom-forecast, made and
+    # replaced by UpsertCustomForecast (overrides.updates below).
+    datadog_cost_custom_forecast: /api/v2/cost/budget/{budget_id}/custom-forecast
+    # A link of a RUM operation to a journey (a feature): made by
+    # CreateRUMOperationStrongLink, confirmed or rejected and deleted at
+    # .../strong_links/{rum_operation_id}/{feature_id}, read from
+    # ListRUMOperationStrongLinks (overrides.readFrom below).
+    datadog_rum_operation_journey_link: /api/v2/rum/operations/strong_links/{rum_operation_id}/{feature_id}
+    # Made by CreateCustomFramework, then read, replaced and deleted at
+    # .../{handle}/{version}, the body's attributes.handle and attributes.version.
+    datadog_compliance_custom_framework: /api/v2/cloud_security_management/custom_frameworks/{handle}/{version}
+    # A user's role: a link (overrides.assocs below).
+    datadog_user_role: /api/v2/roles/{role_id}/users
+    # UpdateResourceEvaluationFilters merges the accounts it is sent; a read answers every
+    # account's filters, and only those in the spec are compared.
+    datadog_compliance_resource_evaluation_filter: /api/v2/cloud_security_management/resource_filters
+    datadog_metric_tag_configuration: /api/v2/metrics/{metric_name}/tags
+    datadog_tag_indexing_rule_exemption: /api/v2/metrics/{metric_name}/tag-indexing-rule-exemptions
+    datadog_integration_aws_account_ccm_config: /api/v2/integration/aws/accounts/{aws_account_config_id}/ccm_config
+    datadog_fleet_schedule: /api/v2/fleet/schedules/{id}
+    # Read from a list (overrides.readFrom below).
+    datadog_integration_gcp_sts: /api/v2/integration/gcp/accounts/{account_id}
+    # In hand-made supplements (hack/gen/supplement).
+    datadog_organization_settings: /api/v1/org/{public_id}
+    datadog_integration_pagerduty: /api/v1/integration/pagerduty
+    datadog_service_account: /api/v2/users/{service_account_id}
+    datadog_restriction_policy: /api/v2/restriction_policy/{resource_id}
+    datadog_synthetics_concurrency_cap: /api/v2/synthetics/settings/on_demand_concurrency_cap
+    # The *_json types and datadog_cloud_configuration_rule manage the same API objects as
+    # the structured kinds (the provider sends the same calls), so they share the kind.
+    datadog_dashboard_json: /api/v1/dashboard/{dashboard_id}
+    datadog_dashboard_v2: /api/v1/dashboard/{dashboard_id}
+    datadog_monitor_json: /api/v1/monitor/{monitor_id}
+    datadog_security_monitoring_rule: /api/v2/security_monitoring/rules/{rule_id}
+    datadog_security_monitoring_rule_json: /api/v2/security_monitoring/rules/{rule_id}
+    datadog_cloud_configuration_rule: /api/v2/security_monitoring/rules/{rule_id}
+  # postUpdates pairs these collection paths as a singleton the caller writes with POST;
+  # each is a list or a bulk action instead (POST adds one, GET lists all, DELETE takes a body).
+  excludePaths:
+  - /api/v1/integration/aws/event_bridge
+  - /api/v2/integration/gcp/sts_delegate
+  - /api/v2/team/connections
+  # GET needs filter[source] and answers a list.
+  - /api/v2/team/sync
+  # Made by a POST elsewhere, or by a POST on the item path itself (then PUT/PATCH update it).
+  creates:
+    # UpsertBudget: a PUT of the collection creates a budget, and replaces
+    # the one its body's data.id names (updates below).
+    /api/v2/cost/budget/{budget_id}: {path: /api/v2/cost/budget, method: put}
+    /api/v2/metrics/{metric_name}/tags: /api/v2/metrics/{metric_name}/tags
+    # CreateServiceAccount; then the users API (supplement/service-accounts.yaml).
+    /api/v2/users/{service_account_id}: /api/v2/service_accounts
+    # CreateFleetSchedule and DeleteFleetSchedule are on /api/unstable; GetFleetScheduleV2 on /api/v2.
+    /api/v2/fleet/schedules/{id}: /api/unstable/fleet/schedules
+    /api/v2/rum/operations/strong_links/{rum_operation_id}/{feature_id}: /api/v2/rum/operations/strong_links
+    /api/v2/cloud_security_management/custom_frameworks/{handle}/{version}: /api/v2/cloud_security_management/custom_frameworks
+    /api/v2/metrics/{metric_name}/tag-indexing-rule-exemptions: /api/v2/metrics/{metric_name}/tag-indexing-rule-exemptions
+    /api/v2/integration/aws/accounts/{aws_account_config_id}/ccm_config: /api/v2/integration/aws/accounts/{aws_account_config_id}/ccm_config
+  deletes:
+    /api/v2/fleet/schedules/{id}: /api/unstable/fleet/schedules/{id}
+  # Keep existing kinds' names (and their live records) where more Terraform types share the path.
+  kindNames:
+    /api/v1/dashboard/{dashboard_id}: DashboardV2
+    /api/v1/monitor/{monitor_id}: Monitor
+    /api/v2/security_monitoring/rules/{rule_id}: SecurityMonitoringRule
+    /api/v1/integration/pagerduty/configuration/services/{service_name}: IntegrationPagerduty
+    /api/v2/remote_config/products/cws/agent_rules/{agent_rule_id}: CsmThreatsAgentRule
+    # datadog_integration_pagerduty; IntegrationPagerduty is the service objects' kind.
+    /api/v1/integration/pagerduty: IntegrationPagerdutySettings
+  # Items the API writes and deletes but has no GET for one of: read, as the provider
+  # does, by finding the item in a list (its JSON:API data array, the kind's envelope).
+  readFrom:
+    # ListRUMOperationStrongLinks for the operation (operation_id, below), by
+    # the journey's ID, as the provider reads a link.
+    /api/v2/rum/operations/strong_links/{rum_operation_id}/{feature_id}: {path: /api/v2/rum/operations/strong_links, list: data, field: attributes.feature_id}
+    # The sensitive data scanner's groups and rules are read in its whole
+    # configuration (GET /api/v2/sensitive-data-scanner/config), each an
+    # element of its included list, by id, as the provider reads them.
+    /api/v2/sensitive-data-scanner/config/groups/{group_id}: {path: "/api/v2/sensitive-data-scanner/config", list: included, field: id}
+    /api/v2/sensitive-data-scanner/config/rules/{rule_id}: {path: "/api/v2/sensitive-data-scanner/config", list: included, field: id}
+    # ListGCPSTSAccounts, by id. The provider also calls MakeGCPSTSDelegate before a
+    # create: the organization's Datadog delegate service account must exist (README).
+    /api/v2/integration/gcp/accounts/{account_id}: {path: "/api/v2/integration/gcp/accounts", list: data, field: id}
+    # ListOrgConnections, by id: an organization's connections, 1000 a page by default
+    # (the provider narrows the list to the connection's sink organization).
+    /api/v2/org_connections/{connection_id}: {path: "/api/v2/org_connections", list: data, field: id}
+    # GetTeamMemberships, by the member's user ID.
+    /api/v2/team/{team_id}/memberships/{user_id}: {path: "/api/v2/team/{team_id}/memberships", list: data, field: relationships.user.data.id}
+    # GetTeamPermissionSettings answers every action's setting; PUT sets one.
+    /api/v2/team/{team_id}/permission-settings/{action}: {path: "/api/v2/team/{team_id}/permission-settings", list: data, field: attributes.action}
+  # AddUserToRole and RemoveUserFromRole send {"data": {"id": <user>, "type":
+  # "users"}}; ListRoleUsers answers the role's users in data (the provider
+  # reads the user's roles instead: the same link).
+  assocs:
+  - create: /api/v2/roles/{role_id}/users
+    read: /api/v2/roles/{role_id}/users
+    delete: /api/v2/roles/{role_id}/users
+    deleteMethod: delete
+    list: data
+  readQuery:
+    # The operation's links only, 200 a page (the most it answers).
+    /api/v2/rum/operations/strong_links/{rum_operation_id}/{feature_id}: {operation_id: "{attributes.operation_id}", "page[limit]": 200}
+    # 10 users a page unless asked; the link is looked for on every page.
+    /api/v2/roles/{role_id}/users: {"page[size]": 100}
+    # 10 a page unless asked (the provider asks for 100 and pages on); the runtime reads one page.
+    /api/v2/team/{team_id}/memberships/{user_id}: {"page[size]": 100}
+  # Live runs (HFL-618): where a create answers the item's key.
+  idFrom:
+    # A link is named by its journey's ID (the path's {feature_id}).
+    /api/v2/rum/operations/strong_links/{rum_operation_id}/{feature_id}: attributes/feature_id
+    /api/v2/cloud_security_management/custom_frameworks/{handle}/{version}: attributes/version
+    /api/v2/team/{team_id}/memberships/{user_id}: relationships/user/data/id
+    /api/v1/integration/webhooks/configuration/webhooks/{webhook_name}: name
+    /api/v1/integration/webhooks/configuration/custom-variables/{custom_variable_name}: name
+    /api/v1/synthetics/private-locations/{location_id}: private_location/id
+    /api/v2/dashboard/{dashboard_id}/shared/secure-embed/{token}: attributes/token
+  # Live runs (HFL-618): fields a read never returns.
+  writeOnly:
+    # Credentials a read never answers (the provider's sensitive attributes).
+    /api/v1/integration/azure: [client_secret]
+    /api/v1/integration/gcp: [private_key, private_key_id]
+    /api/v2/integration/webhooks/configuration/auth-method/oauth2-client-credentials/{auth_method_id}: [attributes.client_secret]
+    /api/v2/logs/config/custom-destinations/{custom_destination_id}: [attributes.forwarder_destination.auth.header_value]
+    # A secure embed is written as type secure_embed_request and read as secure_embed_get_response.
+    /api/v2/dashboard/{dashboard_id}/shared/secure-embed/{token}: [type]
+    /api/v2/integrations/cloudflare/accounts/{account_id}: [attributes.api_key]
+    /api/v2/integrations/fastly/accounts/{account_id}: [attributes.api_key]
+    /api/v2/integrations/confluent-cloud/accounts/{account_id}: [attributes.api_secret]
+    # RUM application is created as rum_application_create, updated as rum_application_update, read as rum_application.
+    /api/v2/rum/applications/{id}: [type]
+    # On-call escalation policy read returns steps only as relationships, never in attributes.
+    /api/v2/on-call/escalation-policies/{policy_id}: [attributes.steps]
+    # Written as attributes.ccm_config.data_export_configs, read back as attributes.data_export_configs.
+    /api/v2/integration/aws/accounts/{aws_account_config_id}/ccm_config: [attributes.ccm_config]
+  createOnly:
+    # UpdateRUMOperationStrongLink takes the status only.
+    /api/v2/rum/operations/strong_links/{rum_operation_id}/{feature_id}: [attributes.application_id, attributes.feature_id, attributes.operation_id, attributes.operation_name, attributes.tags]
+    # The provider replaces a GCP STS account whose client_email changes.
+    /api/v2/integration/gcp/accounts/{account_id}: [attributes.client_email]
+    # UpdateOrgConnections and UpdateTeamMembership take no relationships.
+    /api/v2/org_connections/{connection_id}: [relationships]
+    /api/v2/team/{team_id}/memberships/{user_id}: [relationships]
+    # Roles are given on create; UpdateUser takes no relationships.
+    /api/v2/users/{service_account_id}: [relationships]
+    /api/v2/integrations/fastly/accounts/{account_id}: [attributes.name, attributes.services]
+    /api/v2/integrations/cloudflare/accounts/{account_id}: [attributes.name]
+  # The order of other objects: a settings kind whose spec lists their IDs,
+  # read from their list and written whole by a reorder call (the provider's
+  # *_order resources; deleting one leaves the order as it is, as the
+  # provider does). The paths are the provider's calls (v4.30.0).
+  orders:
+    # ListApmRetentionFilters, ReorderApmRetentionFilters.
+    datadog_apm_retention_filter_order:
+      read: /api/v2/apm/config/retention-filters
+      list: data
+      write: {method: put, path: /api/v2/apm/config/retention-filters-execution-order}
+      at: data
+      item: {type: apm_retention_filter}
+      field: filter_ids
+    # ListCustomAllocationRules (by attributes.order_id), ReorderCustomAllocationRules:
+    # the rules listed go first; those made elsewhere keep their order after them.
+    datadog_custom_allocation_rules:
+      kind: CustomAllocationRuleOrder
+      read: /api/v2/cost/arbitrary_rule
+      list: data
+      sortBy: attributes.order_id
+      write: {method: post, path: /api/v2/cost/arbitrary_rule/reorder}
+      at: data
+      item: {type: arbitrary_rule}
+      field: rule_ids
+      partial: true
+    # ListRetentionFilters, OrderRetentionFilters.
+    datadog_rum_retention_filters_order:
+      read: /api/v2/rum/applications/{app_id}/retention_filters
+      list: data
+      write: {method: patch, path: "/api/v2/rum/applications/{app_id}/relationships/retention_filters"}
+      at: data
+      item: {type: retention_filters}
+      field: retention_filter_ids
+    # ListSecurityFindingsAutomation*Rules, ReorderSecurityFindingsAutomation*Rules:
+    # every rule's ID, in order.
+    datadog_security_findings_due_date_rules_order:
+      read: /api/v2/security/findings/automation/due_date_rules
+      list: data
+      write: {method: post, path: /api/v2/security/findings/automation/due_date_rules/reorder}
+      at: data
+      item: {type: due_date_rules}
+      field: rule_ids
+    datadog_security_findings_inbox_rules_order:
+      read: /api/v2/security/findings/automation/inbox_rules
+      list: data
+      write: {method: post, path: /api/v2/security/findings/automation/inbox_rules/reorder}
+      at: data
+      item: {type: inbox_rules}
+      field: rule_ids
+    datadog_security_findings_mute_rules_order:
+      read: /api/v2/security/findings/automation/mute_rules
+      list: data
+      write: {method: post, path: /api/v2/security/findings/automation/mute_rules/reorder}
+      at: data
+      item: {type: mute_rules}
+      field: rule_ids
+    datadog_security_findings_severity_modifier_rules_order:
+      read: /api/v2/security/findings/automation/severity_modifier_rules
+      list: data
+      write: {method: post, path: /api/v2/security/findings/automation/severity_modifier_rules/reorder}
+      at: data
+      item: {type: severity_modifier_rules}
+      field: rule_ids
+    datadog_security_findings_ticket_creation_rules_order:
+      read: /api/v2/security/findings/automation/ticket_creation_rules
+      list: data
+      write: {method: post, path: /api/v2/security/findings/automation/ticket_creation_rules/reorder}
+      at: data
+      item: {type: ticket_creation_rules}
+      field: rule_ids
+    # ListScanningGroups, ReorderScanningGroups: the configuration's groups,
+    # in order; the PATCH names the configuration by the ID the read answers,
+    # beside {"meta": {}} (its version is optional, as for the groups and
+    # rules below; should the API want it, carry: [meta.version] in place of
+    # outer sends the version the read answered).
+    datadog_sensitive_data_scanner_group_order:
+      read: /api/v2/sensitive-data-scanner/config
+      list: data/relationships/groups/data
+      write: {method: patch, path: /api/v2/sensitive-data-scanner/config}
+      at: data/relationships/groups/data
+      item: {type: sensitive_data_scanner_group}
+      body: {data: {type: sensitive_data_scanner_configuration, id: "{current.data.id}"}}
+      outer: {meta: {}}
+      field: group_ids
+    # ListTagIndexingRules (by attributes.rule_order), ReorderTagIndexingRules:
+    # every active rule's ID, in order, as attributes.rule_ids.
+    datadog_tag_indexing_rule_order:
+      read: /api/v2/metrics/tag-indexing-rules
+      list: data
+      sortBy: attributes.rule_order
+      write: {method: post, path: /api/v2/metrics/tag-indexing-rules/order}
+      at: data/attributes/rule_ids
+      body: {data: {type: tag_indexing_rules}}
+      field: rule_ids
+    # ListTagPipelinesRulesets (by attributes.position), ReorderTagPipelinesRulesets:
+    # the rulesets listed go first; those made elsewhere keep their order after them.
+    datadog_tag_pipeline_rulesets:
+      kind: TagPipelineRulesetOrder
+      read: /api/v2/tags/enrichment
+      list: data
+      sortBy: attributes.position
+      write: {method: post, path: /api/v2/tags/enrichment/reorder}
+      at: data
+      item: {type: ruleset}
+      field: ruleset_ids
+      partial: true
+  # Every write of a scanner group or rule, and its DELETE, sends
+  # {"meta": {}} beside data (the version is optional; the DELETE's whole
+  # body is the meta).
+  outerBody:
+    /api/v2/sensitive-data-scanner/config/groups/{group_id}: {meta: {}}
+    /api/v2/sensitive-data-scanner/config/rules/{rule_id}: {meta: {}}
+  # The v1 Azure and GCP integrations: one per tenant (project), named by
+  # that body field on the collection; POST adds one, PUT changes it, DELETE
+  # with its body removes it, GET lists them all.
+  keyedBy:
+    /api/v1/integration/azure: tenant_name
+    /api/v1/integration/gcp: project_id
+  updates:
+    /api/v2/cost/budget/{budget_id}: {path: /api/v2/cost/budget, method: put}
+    # UpsertCustomForecast: a PUT naming the budget in its body.
+    /api/v2/cost/budget/{budget_id}/custom-forecast: {path: /api/v2/cost/budget/custom-forecast, method: put}
+  # The spec field that fills a path parameter: the budget a custom forecast
+  # is for, data.attributes.budget_uid in the body.
+  paramFields:
+    /api/v2/cost/budget/{budget_id}/custom-forecast: {budget_id: attributes.budget_uid}
+    /api/v2/rum/operations/strong_links/{rum_operation_id}/{feature_id}: {rum_operation_id: attributes.operation_id}
+    /api/v2/cloud_security_management/custom_frameworks/{handle}/{version}: {handle: attributes.handle}
+  # DeleteSyntheticsSuites: a POST that names the suites to delete.
+  deleteBody:
+    /api/v2/synthetics/suites/{public_id}:
+      method: POST
+      path: /api/v2/synthetics/suites/bulk-delete
+      body: {type: delete_suites_request, attributes: {public_ids: ['{public_id}']}}
+  states:
+    /api/v2/security/findings/automation/default_inbox_rules/{rule_id}:
+      terraform: datadog_security_findings_default_inbox_rule
+      field: enabled
+      calls:
+        "true": {method: POST, path: "/api/v2/security/findings/automation/default_inbox_rules/{rule_id}/enable"}
+        "false": {method: POST, path: "/api/v2/security/findings/automation/default_inbox_rules/{rule_id}/disable"}
+  envelope:
+    /api/v2/security/findings/automation/default_inbox_rules/{rule_id}: {response: data/attributes}
+  updateBody:
+    /api/v2/rum/applications/{id}: {type: rum_application_update}
+# Terraform gap types no kind will cover, and why: no draft kind is made for them
+# (krm-rest-runtime's README, "Draft kinds"). The README's "Not covered" table is
+# generated from these and draftNotes.
+hardBlocks:
+  datadog_integration_aws_external_id: >-
+    Not a resource (nothing to read back or delete): generates a new external ID; an
+    action, not an object.
+  datadog_saml_idp_metadata: >-
+    Not a resource (nothing to read back or delete): uploads IdP metadata; an action.

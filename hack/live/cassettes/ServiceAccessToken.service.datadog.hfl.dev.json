@@ -1,0 +1,112 @@
+{
+  "recorded": "2026-11-20T23:57:06Z",
+  "target": "Datadog trial",
+  "vars": {
+    "dashboard": "ur8-afc-sum",
+    "sa": "16307311-e53e-11f1-b3f2-e693e7c43799",
+    "slo": "3704e6ae4bac5b54b241a727ff6ab03b",
+    "subteam": "d4c1dd6f-4ea7-42e9-9847-c995ec31b739",
+    "team": "48e3aed2-a7e1-4fee-9037-ce9c9f4b4952"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/api/v2/service_accounts",
+      "body": "{\"data\":{\"attributes\":{\"email\":\"{{name}}@example.com\",\"name\":\"{{name}}\",\"service_account\":true},\"type\":\"users\"}}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"allowed_login_methods\":[],\"created_at\":\"2026-11-20T23:57:04.820326+00:00\",\"disabled\":false,\"email\":\"{{name}}@example.com\",\"handle\":\"{{redacted}}\",\"icon\":\"{{redacted}}\",\"last_login_time\":null,\"modified_at\":\"2026-11-20T23:57:04.820326+00:00\",\"name\":\"{{name}}\",\"service_account\":true,\"status\":\"Active\",\"title\":null,\"uuid\":\"{{redacted}}\",\"verified\":true},\"id\":\"16307311-e53e-11f1-b3f2-e693e7c43799\",\"relationships\":{\"org\":{\"data\":{\"id\":\"9ad015a7-e189-11f1-b5a4-c2e2e3362876\",\"type\":\"orgs\"}},\"roles\":{\"data\":[]}},\"type\":\"users\"}}"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v2/service_accounts/16307311-e53e-11f1-b3f2-e693e7c43799/access_tokens",
+      "body": "{\"data\":{\"attributes\":{\"name\":\"{{name}}\",\"scopes\":[\"dashboards_read\"]},\"type\":\"service_access_tokens\"}}",
+      "status": 201,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"attributes\":{\"created_at\":\"2026-11-20T23:57:05.071248837Z\",\"expires_at\":null,\"key\":\"{{redacted}}\",\"name\":\"{{name}}\",\"public_portion\":\"{{redacted}}\",\"scopes\":[\"dashboards_read\"]},\"id\":\"6051ae44-00e7-45a6-8219-698197652eeb\",\"relationships\":{\"owned_by\":{\"data\":{\"id\":\"16307311-e53e-11f1-b3f2-e693e7c43799\",\"type\":\"service_account\"}}},\"type\":\"service_access_tokens\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/service_accounts/16307311-e53e-11f1-b3f2-e693e7c43799/access_tokens/6051ae44-00e7-45a6-8219-698197652eeb",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"attributes\":{\"created_at\":\"2026-11-20T23:57:05.071248Z\",\"expires_at\":null,\"last_used_at\":null,\"name\":\"{{name}}\",\"public_portion\":\"{{redacted}}\",\"scopes\":[\"dashboards_read\"]},\"id\":\"6051ae44-00e7-45a6-8219-698197652eeb\",\"relationships\":{\"leak_information\":{\"data\":null},\"owned_by\":{\"data\":{\"id\":\"16307311-e53e-11f1-b3f2-e693e7c43799\",\"type\":\"service_account\"}}},\"type\":\"service_access_tokens\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/service_accounts/16307311-e53e-11f1-b3f2-e693e7c43799/access_tokens/6051ae44-00e7-45a6-8219-698197652eeb",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"attributes\":{\"created_at\":\"2026-11-20T23:57:05.071248Z\",\"expires_at\":null,\"last_used_at\":null,\"name\":\"{{name}}\",\"public_portion\":\"{{redacted}}\",\"scopes\":[\"dashboards_read\"]},\"id\":\"6051ae44-00e7-45a6-8219-698197652eeb\",\"relationships\":{\"leak_information\":{\"data\":null},\"owned_by\":{\"data\":{\"id\":\"16307311-e53e-11f1-b3f2-e693e7c43799\",\"type\":\"service_account\"}}},\"type\":\"service_access_tokens\"}}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v2/service_accounts/16307311-e53e-11f1-b3f2-e693e7c43799/access_tokens/6051ae44-00e7-45a6-8219-698197652eeb",
+      "body": "{\"data\":{\"attributes\":{\"name\":\"{{name}}-changed\",\"scopes\":[\"dashboards_read\"]},\"id\":\"6051ae44-00e7-45a6-8219-698197652eeb\",\"type\":\"service_access_tokens\"}}",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"attributes\":{\"created_at\":\"2026-11-20T23:57:05.071248Z\",\"expires_at\":null,\"last_used_at\":null,\"modified_at\":\"2026-11-20T23:57:05.479731Z\",\"name\":\"{{name}}-changed\",\"public_portion\":\"{{redacted}}\",\"scopes\":[\"dashboards_read\"]},\"id\":\"6051ae44-00e7-45a6-8219-698197652eeb\",\"relationships\":{\"owned_by\":{\"data\":{\"id\":\"16307311-e53e-11f1-b3f2-e693e7c43799\",\"type\":\"service_account\"}}},\"type\":\"service_access_tokens\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/service_accounts/16307311-e53e-11f1-b3f2-e693e7c43799/access_tokens/6051ae44-00e7-45a6-8219-698197652eeb",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"attributes\":{\"created_at\":\"2026-11-20T23:57:05.071248Z\",\"expires_at\":null,\"last_used_at\":null,\"modified_at\":\"2026-11-20T23:57:05.479731Z\",\"name\":\"{{name}}-changed\",\"public_portion\":\"{{redacted}}\",\"scopes\":[\"dashboards_read\"]},\"id\":\"6051ae44-00e7-45a6-8219-698197652eeb\",\"relationships\":{\"leak_information\":{\"data\":null},\"owned_by\":{\"data\":{\"id\":\"16307311-e53e-11f1-b3f2-e693e7c43799\",\"type\":\"service_account\"}}},\"type\":\"service_access_tokens\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/service_accounts/16307311-e53e-11f1-b3f2-e693e7c43799/access_tokens/6051ae44-00e7-45a6-8219-698197652eeb",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"attributes\":{\"created_at\":\"2026-11-20T23:57:05.071248Z\",\"expires_at\":null,\"last_used_at\":null,\"modified_at\":\"2026-11-20T23:57:05.479731Z\",\"name\":\"{{name}}-changed\",\"public_portion\":\"{{redacted}}\",\"scopes\":[\"dashboards_read\"]},\"id\":\"6051ae44-00e7-45a6-8219-698197652eeb\",\"relationships\":{\"leak_information\":{\"data\":null},\"owned_by\":{\"data\":{\"id\":\"16307311-e53e-11f1-b3f2-e693e7c43799\",\"type\":\"service_account\"}}},\"type\":\"service_access_tokens\"}}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v2/service_accounts/16307311-e53e-11f1-b3f2-e693e7c43799/access_tokens/6051ae44-00e7-45a6-8219-698197652eeb",
+      "body": "{\"data\":{\"attributes\":{\"name\":\"{{name}}-drift\",\"scopes\":[\"dashboards_read\"]},\"id\":\"6051ae44-00e7-45a6-8219-698197652eeb\",\"relationships\":{\"leak_information\":{\"data\":null},\"owned_by\":{\"data\":{\"id\":\"16307311-e53e-11f1-b3f2-e693e7c43799\",\"type\":\"service_account\"}}},\"type\":\"service_access_tokens\"}}",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"attributes\":{\"created_at\":\"2026-11-20T23:57:05.071248Z\",\"expires_at\":null,\"last_used_at\":null,\"modified_at\":\"2026-11-20T23:57:05.874327Z\",\"name\":\"{{name}}-drift\",\"public_portion\":\"{{redacted}}\",\"scopes\":[\"dashboards_read\"]},\"id\":\"6051ae44-00e7-45a6-8219-698197652eeb\",\"relationships\":{\"owned_by\":{\"data\":{\"id\":\"16307311-e53e-11f1-b3f2-e693e7c43799\",\"type\":\"service_account\"}}},\"type\":\"service_access_tokens\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/service_accounts/16307311-e53e-11f1-b3f2-e693e7c43799/access_tokens/6051ae44-00e7-45a6-8219-698197652eeb",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"attributes\":{\"created_at\":\"2026-11-20T23:57:05.071248Z\",\"expires_at\":null,\"last_used_at\":null,\"modified_at\":\"2026-11-20T23:57:05.874327Z\",\"name\":\"{{name}}-drift\",\"public_portion\":\"{{redacted}}\",\"scopes\":[\"dashboards_read\"]},\"id\":\"6051ae44-00e7-45a6-8219-698197652eeb\",\"relationships\":{\"leak_information\":{\"data\":null},\"owned_by\":{\"data\":{\"id\":\"16307311-e53e-11f1-b3f2-e693e7c43799\",\"type\":\"service_account\"}}},\"type\":\"service_access_tokens\"}}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v2/service_accounts/16307311-e53e-11f1-b3f2-e693e7c43799/access_tokens/6051ae44-00e7-45a6-8219-698197652eeb",
+      "body": "{\"data\":{\"attributes\":{\"name\":\"{{name}}-changed\",\"scopes\":[\"dashboards_read\"]},\"id\":\"6051ae44-00e7-45a6-8219-698197652eeb\",\"type\":\"service_access_tokens\"}}",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"attributes\":{\"created_at\":\"2026-11-20T23:57:05.071248Z\",\"expires_at\":null,\"last_used_at\":null,\"modified_at\":\"2026-11-20T23:57:06.15631Z\",\"name\":\"{{name}}-changed\",\"public_portion\":\"{{redacted}}\",\"scopes\":[\"dashboards_read\"]},\"id\":\"6051ae44-00e7-45a6-8219-698197652eeb\",\"relationships\":{\"owned_by\":{\"data\":{\"id\":\"16307311-e53e-11f1-b3f2-e693e7c43799\",\"type\":\"service_account\"}}},\"type\":\"service_access_tokens\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/service_accounts/16307311-e53e-11f1-b3f2-e693e7c43799/access_tokens/6051ae44-00e7-45a6-8219-698197652eeb",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"attributes\":{\"created_at\":\"2026-11-20T23:57:05.071248Z\",\"expires_at\":null,\"last_used_at\":null,\"modified_at\":\"2026-11-20T23:57:06.15631Z\",\"name\":\"{{name}}-changed\",\"public_portion\":\"{{redacted}}\",\"scopes\":[\"dashboards_read\"]},\"id\":\"6051ae44-00e7-45a6-8219-698197652eeb\",\"relationships\":{\"leak_information\":{\"data\":null},\"owned_by\":{\"data\":{\"id\":\"16307311-e53e-11f1-b3f2-e693e7c43799\",\"type\":\"service_account\"}}},\"type\":\"service_access_tokens\"}}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v2/service_accounts/16307311-e53e-11f1-b3f2-e693e7c43799/access_tokens/6051ae44-00e7-45a6-8219-698197652eeb",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/service_accounts/16307311-e53e-11f1-b3f2-e693e7c43799/access_tokens/6051ae44-00e7-45a6-8219-698197652eeb",
+      "status": 404,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"errors\":[{\"title\":\"Generic Error\",\"detail\":\"service account access token not found\"}]}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v2/users/16307311-e53e-11f1-b3f2-e693e7c43799",
+      "status": 204
+    }
+  ]
+}

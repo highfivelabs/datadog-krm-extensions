@@ -1,0 +1,118 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "component": "rehearsal-component",
+    "dashboard": 280000002,
+    "itype": "rehearsal-itype",
+    "member": "rehearsal-member",
+    "org": "rehearsal-org",
+    "orgsa": "rehearsal-orgsa",
+    "page": "rehearsal-page",
+    "role": "rehearsal-role",
+    "roleUser": "rehearsal-roleUser",
+    "routingPolicy": "rehearsal-routingPolicy",
+    "ruleA": "rehearsal-ruleA",
+    "ruleB": "rehearsal-ruleB",
+    "rum": "rehearsal-rum",
+    "sa": "rehearsal-sa",
+    "slo": "rehearsal-slo",
+    "subteam": "rehearsal-subteam",
+    "team": "rehearsal-team"
+  },
+  "interactions": [
+    {
+      "method": "GET",
+      "path": "/api/v2/services/definitions/{{name}}",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v2/services/definitions",
+      "body": "{\"dd-service\":\"{{name}}\",\"description\":\"first\",\"schema-version\":\"v2.2\",\"team\":\"{{run}}\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":[{\"attributes\":{\"schema\":{\"dd-service\":\"{{name}}\",\"description\":\"first\",\"schema-version\":\"v2.2\",\"team\":\"{{run}}\"}}}]}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/services/definitions/{{name}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"schema\":{\"dd-service\":\"{{name}}\",\"description\":\"first\",\"schema-version\":\"v2.2\",\"team\":\"{{run}}\"}}}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/services/definitions/{{name}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"schema\":{\"dd-service\":\"{{name}}\",\"description\":\"first\",\"schema-version\":\"v2.2\",\"team\":\"{{run}}\"}}}}\n"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v2/services/definitions",
+      "body": "{\"dd-service\":\"{{name}}\",\"description\":\"second\",\"schema-version\":\"v2.2\",\"team\":\"{{run}}\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":[{\"attributes\":{\"schema\":{\"dd-service\":\"{{name}}\",\"description\":\"second\",\"schema-version\":\"v2.2\",\"team\":\"{{run}}\"}}}]}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/services/definitions/{{name}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"schema\":{\"dd-service\":\"{{name}}\",\"description\":\"second\",\"schema-version\":\"v2.2\",\"team\":\"{{run}}\"}}}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/services/definitions/{{name}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"schema\":{\"dd-service\":\"{{name}}\",\"description\":\"second\",\"schema-version\":\"v2.2\",\"team\":\"{{run}}\"}}}}\n"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v2/services/definitions",
+      "body": "{\"dd-service\":\"{{name}}\",\"description\":\"hfl-live-drift\",\"schema-version\":\"v2.2\",\"team\":\"{{run}}\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":[{\"attributes\":{\"schema\":{\"dd-service\":\"{{name}}\",\"description\":\"hfl-live-drift\",\"schema-version\":\"v2.2\",\"team\":\"{{run}}\"}}}]}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/services/definitions/{{name}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"schema\":{\"dd-service\":\"{{name}}\",\"description\":\"hfl-live-drift\",\"schema-version\":\"v2.2\",\"team\":\"{{run}}\"}}}}\n"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v2/services/definitions",
+      "body": "{\"dd-service\":\"{{name}}\",\"description\":\"second\",\"schema-version\":\"v2.2\",\"team\":\"{{run}}\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":[{\"attributes\":{\"schema\":{\"dd-service\":\"{{name}}\",\"description\":\"second\",\"schema-version\":\"v2.2\",\"team\":\"{{run}}\"}}}]}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/services/definitions/{{name}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"schema\":{\"dd-service\":\"{{name}}\",\"description\":\"second\",\"schema-version\":\"v2.2\",\"team\":\"{{run}}\"}}}}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v2/services/definitions/{{name}}",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/services/definitions/{{name}}",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

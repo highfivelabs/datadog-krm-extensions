@@ -1,0 +1,76 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "component": "rehearsal-component",
+    "dashboard": 280000002,
+    "itype": "rehearsal-itype",
+    "member": "rehearsal-member",
+    "org": "rehearsal-org",
+    "orgsa": "rehearsal-orgsa",
+    "page": "rehearsal-page",
+    "role": "rehearsal-role",
+    "roleUser": "rehearsal-roleUser",
+    "routingPolicy": "rehearsal-routingPolicy",
+    "ruleA": "rehearsal-ruleA",
+    "ruleB": "rehearsal-ruleB",
+    "rum": "rehearsal-rum",
+    "sa": "rehearsal-sa",
+    "slo": "rehearsal-slo",
+    "subteam": "rehearsal-subteam",
+    "team": "rehearsal-team"
+  },
+  "interactions": [
+    {
+      "method": "GET",
+      "path": "/api/v2/apm/config/retention-filters",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":[]}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/apm/config/retention-filters",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":[]}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v2/apm/config/retention-filters-execution-order",
+      "body": "{\"data\":[{\"id\":\"example-id-1\",\"type\":\"apm_retention_filter\"},{\"id\":\"example-id-2\",\"type\":\"apm_retention_filter\"}]}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":[{\"id\":\"example-id-1\",\"type\":\"apm_retention_filter\"},{\"id\":\"example-id-2\",\"type\":\"apm_retention_filter\"}]}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/apm/config/retention-filters",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":[{\"id\":\"example-id-1\",\"type\":\"apm_retention_filter\"},{\"id\":\"example-id-2\",\"type\":\"apm_retention_filter\"}]}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/apm/config/retention-filters",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":[{\"id\":\"example-id-1\",\"type\":\"apm_retention_filter\"},{\"id\":\"example-id-2\",\"type\":\"apm_retention_filter\"}]}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/apm/config/retention-filters",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":[{\"id\":\"example-id-1\",\"type\":\"apm_retention_filter\"},{\"id\":\"example-id-2\",\"type\":\"apm_retention_filter\"}]}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v2/apm/config/retention-filters-execution-order",
+      "body": "{\"data\":[]}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":[]}\n"
+    }
+  ]
+}

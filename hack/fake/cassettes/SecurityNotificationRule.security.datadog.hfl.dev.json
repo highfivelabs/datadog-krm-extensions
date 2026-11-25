@@ -1,0 +1,102 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "dashboard": 280000002,
+    "itype": "rehearsal-itype",
+    "role": "rehearsal-role",
+    "rum": "rehearsal-rum",
+    "sa": "rehearsal-sa",
+    "slo": "rehearsal-slo",
+    "subteam": "rehearsal-subteam",
+    "team": "rehearsal-team"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/api/v2/security/signals/notification_rules",
+      "body": "{\"data\":{\"attributes\":{\"enabled\":false,\"name\":\"{{name}}\",\"selectors\":{\"query\":\"service:{{name}}\",\"rule_types\":[\"cloud_configuration\"],\"severities\":[\"critical\"],\"trigger_source\":\"security_findings\"},\"targets\":[\"@{{name}}@example.com\"]},\"type\":\"notification_rules\"}}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"enabled\":false,\"name\":\"{{name}}\",\"selectors\":{\"query\":\"service:{{name}}\",\"rule_types\":[\"cloud_configuration\"],\"severities\":[\"critical\"],\"trigger_source\":\"security_findings\"},\"targets\":[\"@{{name}}@example.com\"]},\"id\":270000044,\"type\":\"notification_rules\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/security/signals/notification_rules/270000044",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"enabled\":false,\"name\":\"{{name}}\",\"selectors\":{\"query\":\"service:{{name}}\",\"rule_types\":[\"cloud_configuration\"],\"severities\":[\"critical\"],\"trigger_source\":\"security_findings\"},\"targets\":[\"@{{name}}@example.com\"]},\"id\":270000044,\"type\":\"notification_rules\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/security/signals/notification_rules/270000044",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"enabled\":false,\"name\":\"{{name}}\",\"selectors\":{\"query\":\"service:{{name}}\",\"rule_types\":[\"cloud_configuration\"],\"severities\":[\"critical\"],\"trigger_source\":\"security_findings\"},\"targets\":[\"@{{name}}@example.com\"]},\"id\":270000044,\"type\":\"notification_rules\"}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v2/security/signals/notification_rules/270000044",
+      "body": "{\"data\":{\"attributes\":{\"enabled\":false,\"name\":\"{{name}}-changed\",\"selectors\":{\"query\":\"service:{{name}}\",\"rule_types\":[\"cloud_configuration\"],\"severities\":[\"critical\"],\"trigger_source\":\"security_findings\"},\"targets\":[\"@{{name}}@example.com\"]},\"id\":\"270000044\",\"type\":\"notification_rules\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"enabled\":false,\"name\":\"{{name}}-changed\",\"selectors\":{\"query\":\"service:{{name}}\",\"rule_types\":[\"cloud_configuration\"],\"severities\":[\"critical\"],\"trigger_source\":\"security_findings\"},\"targets\":[\"@{{name}}@example.com\"]},\"id\":\"270000044\",\"type\":\"notification_rules\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/security/signals/notification_rules/270000044",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"enabled\":false,\"name\":\"{{name}}-changed\",\"selectors\":{\"query\":\"service:{{name}}\",\"rule_types\":[\"cloud_configuration\"],\"severities\":[\"critical\"],\"trigger_source\":\"security_findings\"},\"targets\":[\"@{{name}}@example.com\"]},\"id\":\"270000044\",\"type\":\"notification_rules\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/security/signals/notification_rules/270000044",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"enabled\":false,\"name\":\"{{name}}-changed\",\"selectors\":{\"query\":\"service:{{name}}\",\"rule_types\":[\"cloud_configuration\"],\"severities\":[\"critical\"],\"trigger_source\":\"security_findings\"},\"targets\":[\"@{{name}}@example.com\"]},\"id\":\"270000044\",\"type\":\"notification_rules\"}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v2/security/signals/notification_rules/270000044",
+      "body": "{\"data\":{\"attributes\":{\"enabled\":false,\"name\":\"{{name}}-drift\",\"selectors\":{\"query\":\"service:{{name}}\",\"rule_types\":[\"cloud_configuration\"],\"severities\":[\"critical\"],\"trigger_source\":\"security_findings\"},\"targets\":[\"@{{name}}@example.com\"]},\"id\":\"270000044\",\"type\":\"notification_rules\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"enabled\":false,\"name\":\"{{name}}-drift\",\"selectors\":{\"query\":\"service:{{name}}\",\"rule_types\":[\"cloud_configuration\"],\"severities\":[\"critical\"],\"trigger_source\":\"security_findings\"},\"targets\":[\"@{{name}}@example.com\"]},\"id\":\"270000044\",\"type\":\"notification_rules\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/security/signals/notification_rules/270000044",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"enabled\":false,\"name\":\"{{name}}-drift\",\"selectors\":{\"query\":\"service:{{name}}\",\"rule_types\":[\"cloud_configuration\"],\"severities\":[\"critical\"],\"trigger_source\":\"security_findings\"},\"targets\":[\"@{{name}}@example.com\"]},\"id\":\"270000044\",\"type\":\"notification_rules\"}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v2/security/signals/notification_rules/270000044",
+      "body": "{\"data\":{\"attributes\":{\"enabled\":false,\"name\":\"{{name}}-changed\",\"selectors\":{\"query\":\"service:{{name}}\",\"rule_types\":[\"cloud_configuration\"],\"severities\":[\"critical\"],\"trigger_source\":\"security_findings\"},\"targets\":[\"@{{name}}@example.com\"]},\"id\":\"270000044\",\"type\":\"notification_rules\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"enabled\":false,\"name\":\"{{name}}-changed\",\"selectors\":{\"query\":\"service:{{name}}\",\"rule_types\":[\"cloud_configuration\"],\"severities\":[\"critical\"],\"trigger_source\":\"security_findings\"},\"targets\":[\"@{{name}}@example.com\"]},\"id\":\"270000044\",\"type\":\"notification_rules\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/security/signals/notification_rules/270000044",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"enabled\":false,\"name\":\"{{name}}-changed\",\"selectors\":{\"query\":\"service:{{name}}\",\"rule_types\":[\"cloud_configuration\"],\"severities\":[\"critical\"],\"trigger_source\":\"security_findings\"},\"targets\":[\"@{{name}}@example.com\"]},\"id\":\"270000044\",\"type\":\"notification_rules\"}}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v2/security/signals/notification_rules/270000044",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/security/signals/notification_rules/270000044",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

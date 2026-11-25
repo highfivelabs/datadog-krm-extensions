@@ -1,0 +1,111 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "dashboard": 280000002,
+    "slo": "rehearsal-slo",
+    "subteam": "rehearsal-subteam",
+    "team": "rehearsal-team"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/api/v1/slo",
+      "body": "{\"name\":\"{{name}}\",\"query\":{\"denominator\":\"sum:hfl.live.total{*}.as_count()\",\"numerator\":\"sum:hfl.live.good{*}.as_count()\"},\"thresholds\":[{\"target\":99,\"timeframe\":\"7d\"}],\"type\":\"metric\"}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"_stub\":\"rehearsal stand-in: the fake API has no such resource\",\"id\":280000004,\"name\":\"{{name}}\",\"query\":{\"denominator\":\"sum:hfl.live.total{*}.as_count()\",\"numerator\":\"sum:hfl.live.good{*}.as_count()\"},\"thresholds\":[{\"target\":99,\"timeframe\":\"7d\"}],\"type\":\"metric\"}\n"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/slo/correction",
+      "body": "{\"data\":{\"attributes\":{\"category\":\"Scheduled Maintenance\",\"description\":\"{{name}} first\",\"end\":1767229200,\"slo_id\":\"rehearsal-slo\",\"start\":1767225600,\"timezone\":\"UTC\"},\"type\":\"correction\"}}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"category\":\"Scheduled Maintenance\",\"description\":\"{{name}} first\",\"end\":1767229200,\"slo_id\":\"rehearsal-slo\",\"start\":1767225600,\"timezone\":\"UTC\"},\"id\":270000011,\"type\":\"correction\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/slo/correction/270000011",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"category\":\"Scheduled Maintenance\",\"description\":\"{{name}} first\",\"end\":1767229200,\"slo_id\":\"rehearsal-slo\",\"start\":1767225600,\"timezone\":\"UTC\"},\"id\":270000011,\"type\":\"correction\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/slo/correction/270000011",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"category\":\"Scheduled Maintenance\",\"description\":\"{{name}} first\",\"end\":1767229200,\"slo_id\":\"rehearsal-slo\",\"start\":1767225600,\"timezone\":\"UTC\"},\"id\":270000011,\"type\":\"correction\"}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v1/slo/correction/270000011",
+      "body": "{\"data\":{\"attributes\":{\"category\":\"Scheduled Maintenance\",\"description\":\"{{name}} second\",\"end\":1767229200,\"slo_id\":\"rehearsal-slo\",\"start\":1767225600,\"timezone\":\"UTC\"},\"type\":\"correction\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"category\":\"Scheduled Maintenance\",\"description\":\"{{name}} second\",\"end\":1767229200,\"slo_id\":\"rehearsal-slo\",\"start\":1767225600,\"timezone\":\"UTC\"},\"id\":270000011,\"type\":\"correction\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/slo/correction/270000011",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"category\":\"Scheduled Maintenance\",\"description\":\"{{name}} second\",\"end\":1767229200,\"slo_id\":\"rehearsal-slo\",\"start\":1767225600,\"timezone\":\"UTC\"},\"id\":270000011,\"type\":\"correction\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/slo/correction/270000011",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"category\":\"Scheduled Maintenance\",\"description\":\"{{name}} second\",\"end\":1767229200,\"slo_id\":\"rehearsal-slo\",\"start\":1767225600,\"timezone\":\"UTC\"},\"id\":270000011,\"type\":\"correction\"}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v1/slo/correction/270000011",
+      "body": "{\"data\":{\"attributes\":{\"category\":\"Scheduled Maintenance\",\"description\":\"{{name}} drift\",\"end\":1767229200,\"slo_id\":\"rehearsal-slo\",\"start\":1767225600,\"timezone\":\"UTC\"},\"id\":270000011,\"type\":\"correction\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"category\":\"Scheduled Maintenance\",\"description\":\"{{name}} drift\",\"end\":1767229200,\"slo_id\":\"rehearsal-slo\",\"start\":1767225600,\"timezone\":\"UTC\"},\"id\":270000011,\"type\":\"correction\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/slo/correction/270000011",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"category\":\"Scheduled Maintenance\",\"description\":\"{{name}} drift\",\"end\":1767229200,\"slo_id\":\"rehearsal-slo\",\"start\":1767225600,\"timezone\":\"UTC\"},\"id\":270000011,\"type\":\"correction\"}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v1/slo/correction/270000011",
+      "body": "{\"data\":{\"attributes\":{\"category\":\"Scheduled Maintenance\",\"description\":\"{{name}} second\",\"end\":1767229200,\"slo_id\":\"rehearsal-slo\",\"start\":1767225600,\"timezone\":\"UTC\"},\"type\":\"correction\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"category\":\"Scheduled Maintenance\",\"description\":\"{{name}} second\",\"end\":1767229200,\"slo_id\":\"rehearsal-slo\",\"start\":1767225600,\"timezone\":\"UTC\"},\"id\":270000011,\"type\":\"correction\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/slo/correction/270000011",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"category\":\"Scheduled Maintenance\",\"description\":\"{{name}} second\",\"end\":1767229200,\"slo_id\":\"rehearsal-slo\",\"start\":1767225600,\"timezone\":\"UTC\"},\"id\":270000011,\"type\":\"correction\"}}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/slo/correction/270000011",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/slo/correction/270000011",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/slo/rehearsal-slo",
+      "status": 204
+    }
+  ]
+}

@@ -1,0 +1,167 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "component": "rehearsal-component",
+    "dashboard": 280000002,
+    "itype": "rehearsal-itype",
+    "member": "rehearsal-member",
+    "org": "rehearsal-org",
+    "orgsa": "rehearsal-orgsa",
+    "page": "rehearsal-page",
+    "role": "rehearsal-role",
+    "routingPolicy": "rehearsal-routingPolicy",
+    "ruleA": "rehearsal-ruleA",
+    "ruleB": "rehearsal-ruleB",
+    "rum": "rehearsal-rum",
+    "sa": "rehearsal-sa",
+    "slo": "rehearsal-slo",
+    "subteam": "rehearsal-subteam",
+    "team": "rehearsal-team"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/api/v2/metrics/tag-indexing-rules",
+      "body": "{\"data\":{\"attributes\":{\"metric_name_matches\":[\"hfl.live.{{name_}}_a\"],\"name\":\"{{name}}-a\"},\"type\":\"tag_indexing_rules\"}}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"_stub\":\"rehearsal stand-in: the fake API has no such resource\",\"data\":{\"attributes\":{\"metric_name_matches\":[\"hfl.live.{{name_}}_a\"],\"name\":\"{{name}}-a\"},\"type\":\"tag_indexing_rules\"},\"id\":280000032}\n"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v2/metrics/tag-indexing-rules",
+      "body": "{\"data\":{\"attributes\":{\"metric_name_matches\":[\"hfl.live.{{name_}}_b\"],\"name\":\"{{name}}-b\"},\"type\":\"tag_indexing_rules\"}}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"_stub\":\"rehearsal stand-in: the fake API has no such resource\",\"data\":{\"attributes\":{\"metric_name_matches\":[\"hfl.live.{{name_}}_b\"],\"name\":\"{{name}}-b\"},\"type\":\"tag_indexing_rules\"},\"id\":280000033}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/metrics/tag-indexing-rules",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":[],\"links\":{},\"meta\":{}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/metrics/tag-indexing-rules",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":[],\"links\":{},\"meta\":{}}\n"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v2/metrics/tag-indexing-rules/order",
+      "body": "{\"data\":{\"attributes\":{\"rule_ids\":[\"rehearsal-ruleA\",\"rehearsal-ruleB\"]},\"type\":\"tag_indexing_rules\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":[{\"attributes\":{\"rule_order\":2},\"id\":\"rehearsal-ruleB\"},{\"attributes\":{\"rule_order\":1},\"id\":\"rehearsal-ruleA\"}],\"links\":{},\"meta\":{}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/metrics/tag-indexing-rules",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":[{\"attributes\":{\"rule_order\":2},\"id\":\"rehearsal-ruleB\"},{\"attributes\":{\"rule_order\":1},\"id\":\"rehearsal-ruleA\"}],\"links\":{},\"meta\":{}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/metrics/tag-indexing-rules",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":[{\"attributes\":{\"rule_order\":2},\"id\":\"rehearsal-ruleB\"},{\"attributes\":{\"rule_order\":1},\"id\":\"rehearsal-ruleA\"}],\"links\":{},\"meta\":{}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/metrics/tag-indexing-rules",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":[{\"attributes\":{\"rule_order\":2},\"id\":\"rehearsal-ruleB\"},{\"attributes\":{\"rule_order\":1},\"id\":\"rehearsal-ruleA\"}],\"links\":{},\"meta\":{}}\n"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v2/metrics/tag-indexing-rules/order",
+      "body": "{\"data\":{\"attributes\":{\"rule_ids\":[\"rehearsal-ruleB\",\"rehearsal-ruleA\"]},\"type\":\"tag_indexing_rules\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":[{\"attributes\":{\"rule_order\":2},\"id\":\"rehearsal-ruleA\"},{\"attributes\":{\"rule_order\":1},\"id\":\"rehearsal-ruleB\"}],\"links\":{},\"meta\":{}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/metrics/tag-indexing-rules",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":[{\"attributes\":{\"rule_order\":2},\"id\":\"rehearsal-ruleA\"},{\"attributes\":{\"rule_order\":1},\"id\":\"rehearsal-ruleB\"}],\"links\":{},\"meta\":{}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/metrics/tag-indexing-rules",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":[{\"attributes\":{\"rule_order\":2},\"id\":\"rehearsal-ruleA\"},{\"attributes\":{\"rule_order\":1},\"id\":\"rehearsal-ruleB\"}],\"links\":{},\"meta\":{}}\n"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v2/metrics/tag-indexing-rules/order",
+      "body": "{\"data\":{\"attributes\":{\"rule_ids\":[\"rehearsal-ruleA\",\"rehearsal-ruleB\"]},\"type\":\"tag_indexing_rules\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":[{\"attributes\":{\"rule_order\":2},\"id\":\"rehearsal-ruleB\"},{\"attributes\":{\"rule_order\":1},\"id\":\"rehearsal-ruleA\"}],\"links\":{},\"meta\":{}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/metrics/tag-indexing-rules",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":[{\"attributes\":{\"rule_order\":2},\"id\":\"rehearsal-ruleB\"},{\"attributes\":{\"rule_order\":1},\"id\":\"rehearsal-ruleA\"}],\"links\":{},\"meta\":{}}\n"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v2/metrics/tag-indexing-rules/order",
+      "body": "{\"data\":{\"attributes\":{\"rule_ids\":[\"rehearsal-ruleB\",\"rehearsal-ruleA\"]},\"type\":\"tag_indexing_rules\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":[{\"attributes\":{\"rule_order\":2},\"id\":\"rehearsal-ruleA\"},{\"attributes\":{\"rule_order\":1},\"id\":\"rehearsal-ruleB\"}],\"links\":{},\"meta\":{}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/metrics/tag-indexing-rules",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":[{\"attributes\":{\"rule_order\":2},\"id\":\"rehearsal-ruleA\"},{\"attributes\":{\"rule_order\":1},\"id\":\"rehearsal-ruleB\"}],\"links\":{},\"meta\":{}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/metrics/tag-indexing-rules",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":[{\"attributes\":{\"rule_order\":2},\"id\":\"rehearsal-ruleA\"},{\"attributes\":{\"rule_order\":1},\"id\":\"rehearsal-ruleB\"}],\"links\":{},\"meta\":{}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/metrics/tag-indexing-rules",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":[{\"attributes\":{\"rule_order\":2},\"id\":\"rehearsal-ruleA\"},{\"attributes\":{\"rule_order\":1},\"id\":\"rehearsal-ruleB\"}],\"links\":{},\"meta\":{}}\n"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v2/metrics/tag-indexing-rules/order",
+      "body": "{\"data\":{\"attributes\":{\"rule_ids\":[]},\"type\":\"tag_indexing_rules\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":[],\"links\":{},\"meta\":{}}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v2/metrics/tag-indexing-rules/rehearsal-ruleA",
+      "status": 204
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v2/metrics/tag-indexing-rules/rehearsal-ruleB",
+      "status": 204
+    }
+  ]
+}

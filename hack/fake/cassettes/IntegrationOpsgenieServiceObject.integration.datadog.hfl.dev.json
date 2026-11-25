@@ -1,0 +1,104 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "component": "rehearsal-component",
+    "dashboard": 280000002,
+    "itype": "rehearsal-itype",
+    "member": "rehearsal-member",
+    "org": "rehearsal-org",
+    "orgsa": "rehearsal-orgsa",
+    "page": "rehearsal-page",
+    "role": "rehearsal-role",
+    "roleUser": "rehearsal-roleUser",
+    "routingPolicy": "rehearsal-routingPolicy",
+    "ruleA": "rehearsal-ruleA",
+    "ruleB": "rehearsal-ruleB",
+    "rum": "rehearsal-rum",
+    "sa": "rehearsal-sa",
+    "slo": "rehearsal-slo",
+    "subteam": "rehearsal-subteam",
+    "team": "rehearsal-team"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/api/v2/integration/opsgenie/services",
+      "body": "{\"data\":{\"attributes\":{\"name\":\"fake-opsgenie-service-name\",\"opsgenie_api_key\":\"{{redacted}}\",\"region\":\"us\"},\"type\":\"opsgenie-service\"}}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"name\":\"fake-opsgenie-service-name\",\"opsgenie_api_key\":\"{{redacted}}\",\"region\":\"us\"},\"id\":270000093,\"type\":\"opsgenie-service\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/integration/opsgenie/services/270000093",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"name\":\"fake-opsgenie-service-name\",\"opsgenie_api_key\":\"{{redacted}}\",\"region\":\"us\"},\"id\":270000093,\"type\":\"opsgenie-service\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/integration/opsgenie/services/270000093",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"name\":\"fake-opsgenie-service-name\",\"opsgenie_api_key\":\"{{redacted}}\",\"region\":\"us\"},\"id\":270000093,\"type\":\"opsgenie-service\"}}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v2/integration/opsgenie/services/270000093",
+      "body": "{\"data\":{\"attributes\":{\"name\":\"fake-opsgenie-service-name\",\"opsgenie_api_key\":\"{{redacted}}\",\"region\":\"us\"},\"id\":\"270000093\",\"type\":\"changed-type\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"name\":\"fake-opsgenie-service-name\",\"opsgenie_api_key\":\"{{redacted}}\",\"region\":\"us\"},\"id\":\"270000093\",\"type\":\"changed-type\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/integration/opsgenie/services/270000093",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"name\":\"fake-opsgenie-service-name\",\"opsgenie_api_key\":\"{{redacted}}\",\"region\":\"us\"},\"id\":\"270000093\",\"type\":\"changed-type\"}}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v2/integration/opsgenie/services/270000093",
+      "body": "{\"data\":{\"id\":\"270000093\",\"type\":\"hfl-live-drift\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"name\":\"fake-opsgenie-service-name\",\"opsgenie_api_key\":\"{{redacted}}\",\"region\":\"us\"},\"id\":\"270000093\",\"type\":\"hfl-live-drift\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/integration/opsgenie/services/270000093",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"name\":\"fake-opsgenie-service-name\",\"opsgenie_api_key\":\"{{redacted}}\",\"region\":\"us\"},\"id\":\"270000093\",\"type\":\"hfl-live-drift\"}}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v2/integration/opsgenie/services/270000093",
+      "body": "{\"data\":{\"attributes\":{\"name\":\"fake-opsgenie-service-name\",\"opsgenie_api_key\":\"{{redacted}}\",\"region\":\"us\"},\"id\":\"270000093\",\"type\":\"changed-type\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"name\":\"fake-opsgenie-service-name\",\"opsgenie_api_key\":\"{{redacted}}\",\"region\":\"us\"},\"id\":\"270000093\",\"type\":\"changed-type\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/integration/opsgenie/services/270000093",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"name\":\"fake-opsgenie-service-name\",\"opsgenie_api_key\":\"{{redacted}}\",\"region\":\"us\"},\"id\":\"270000093\",\"type\":\"changed-type\"}}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v2/integration/opsgenie/services/270000093",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/integration/opsgenie/services/270000093",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

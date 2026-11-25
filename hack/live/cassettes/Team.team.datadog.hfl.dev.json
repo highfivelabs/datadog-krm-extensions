@@ -1,0 +1,96 @@
+{
+  "recorded": "2026-11-20T23:56:43Z",
+  "target": "Datadog trial",
+  "vars": {
+    "dashboard": "ur8-afc-sum",
+    "team": "48e3aed2-a7e1-4fee-9037-ce9c9f4b4952"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/api/v2/team",
+      "body": "{\"data\":{\"attributes\":{\"description\":\"first\",\"handle\":\"{{name}}\",\"name\":\"{{name}}\"},\"type\":\"team\"}}",
+      "status": 201,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"id\":\"1ccdcdba-cd01-4b73-af30-19e3685cc812\",\"type\":\"team\",\"attributes\":{\"avatar\":null,\"banner\":4,\"created_at\":\"2026-11-20T23:56:42.694859+00:00\",\"description\":\"first\",\"handle\":\"{{name}}\",\"hidden_modules\":null,\"is_managed\":false,\"link_count\":0,\"modified_at\":\"2026-11-20T23:56:42.694859+00:00\",\"name\":\"{{name}}\",\"summary\":\"first\",\"user_count\":0,\"visible_modules\":null},\"relationships\":{\"team_links\":{\"data\":[],\"links\":{\"related\":\"/api/v2/team/1ccdcdba-cd01-4b73-af30-19e3685cc812/links\"}},\"user_team_permissions\":{\"data\":null,\"links\":{\"related\":\"/api/v2/team/1ccdcdba-cd01-4b73-af30-19e3685cc812/permission-settings\"}}}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/team/1ccdcdba-cd01-4b73-af30-19e3685cc812",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"id\":\"1ccdcdba-cd01-4b73-af30-19e3685cc812\",\"type\":\"team\",\"attributes\":{\"created_at\":\"2026-11-20T23:56:42.694859+00:00\",\"description\":\"first\",\"handle\":\"{{name}}\",\"is_managed\":false,\"link_count\":0,\"modified_at\":\"2026-11-20T23:56:42.694859+00:00\",\"name\":\"{{name}}\",\"summary\":\"first\",\"user_count\":0},\"relationships\":{\"team_links\":{\"data\":[],\"links\":{\"related\":\"/api/v2/team/1ccdcdba-cd01-4b73-af30-19e3685cc812/links\"}},\"user_team_permissions\":{\"data\":null,\"links\":{\"related\":\"/api/v2/team/1ccdcdba-cd01-4b73-af30-19e3685cc812/permission-settings\"}}}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/team/1ccdcdba-cd01-4b73-af30-19e3685cc812",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"id\":\"1ccdcdba-cd01-4b73-af30-19e3685cc812\",\"type\":\"team\",\"attributes\":{\"created_at\":\"2026-11-20T23:56:42.694859+00:00\",\"description\":\"first\",\"handle\":\"{{name}}\",\"is_managed\":false,\"link_count\":0,\"modified_at\":\"2026-11-20T23:56:42.694859+00:00\",\"name\":\"{{name}}\",\"summary\":\"first\",\"user_count\":0},\"relationships\":{\"team_links\":{\"data\":[],\"links\":{\"related\":\"/api/v2/team/1ccdcdba-cd01-4b73-af30-19e3685cc812/links\"}},\"user_team_permissions\":{\"data\":null,\"links\":{\"related\":\"/api/v2/team/1ccdcdba-cd01-4b73-af30-19e3685cc812/permission-settings\"}}}}}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v2/team/1ccdcdba-cd01-4b73-af30-19e3685cc812",
+      "body": "{\"data\":{\"attributes\":{\"description\":\"second\",\"handle\":\"{{name}}\",\"name\":\"{{name}}\"},\"type\":\"team\"}}",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"id\":\"1ccdcdba-cd01-4b73-af30-19e3685cc812\",\"type\":\"team\",\"attributes\":{\"avatar\":null,\"banner\":4,\"created_at\":\"2026-11-20T23:56:42.694859+00:00\",\"description\":\"second\",\"handle\":\"{{name}}\",\"hidden_modules\":null,\"is_managed\":false,\"link_count\":0,\"modified_at\":\"2026-11-20T23:56:43.015531+00:00\",\"name\":\"{{name}}\",\"summary\":\"second\",\"user_count\":0,\"visible_modules\":null},\"relationships\":{\"team_links\":{\"data\":[],\"links\":{\"related\":\"/api/v2/team/1ccdcdba-cd01-4b73-af30-19e3685cc812/links\"}},\"user_team_permissions\":{\"data\":null,\"links\":{\"related\":\"/api/v2/team/1ccdcdba-cd01-4b73-af30-19e3685cc812/permission-settings\"}}}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/team/1ccdcdba-cd01-4b73-af30-19e3685cc812",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"id\":\"1ccdcdba-cd01-4b73-af30-19e3685cc812\",\"type\":\"team\",\"attributes\":{\"created_at\":\"2026-11-20T23:56:42.694859+00:00\",\"description\":\"second\",\"handle\":\"{{name}}\",\"is_managed\":false,\"link_count\":0,\"modified_at\":\"2026-11-20T23:56:43.015531+00:00\",\"name\":\"{{name}}\",\"summary\":\"second\",\"user_count\":0},\"relationships\":{\"team_links\":{\"data\":[],\"links\":{\"related\":\"/api/v2/team/1ccdcdba-cd01-4b73-af30-19e3685cc812/links\"}},\"user_team_permissions\":{\"data\":null,\"links\":{\"related\":\"/api/v2/team/1ccdcdba-cd01-4b73-af30-19e3685cc812/permission-settings\"}}}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/team/1ccdcdba-cd01-4b73-af30-19e3685cc812",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"id\":\"1ccdcdba-cd01-4b73-af30-19e3685cc812\",\"type\":\"team\",\"attributes\":{\"created_at\":\"2026-11-20T23:56:42.694859+00:00\",\"description\":\"second\",\"handle\":\"{{name}}\",\"is_managed\":false,\"link_count\":0,\"modified_at\":\"2026-11-20T23:56:43.015531+00:00\",\"name\":\"{{name}}\",\"summary\":\"second\",\"user_count\":0},\"relationships\":{\"team_links\":{\"data\":[],\"links\":{\"related\":\"/api/v2/team/1ccdcdba-cd01-4b73-af30-19e3685cc812/links\"}},\"user_team_permissions\":{\"data\":null,\"links\":{\"related\":\"/api/v2/team/1ccdcdba-cd01-4b73-af30-19e3685cc812/permission-settings\"}}}}}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v2/team/1ccdcdba-cd01-4b73-af30-19e3685cc812",
+      "body": "{\"data\":{\"attributes\":{\"description\":\"drift\",\"handle\":\"{{name}}\",\"name\":\"{{name}}\"},\"id\":\"1ccdcdba-cd01-4b73-af30-19e3685cc812\",\"relationships\":{\"team_links\":{\"data\":[],\"links\":{\"related\":\"/api/v2/team/1ccdcdba-cd01-4b73-af30-19e3685cc812/links\"}},\"user_team_permissions\":{\"data\":null,\"links\":{\"related\":\"/api/v2/team/1ccdcdba-cd01-4b73-af30-19e3685cc812/permission-settings\"}}},\"type\":\"team\"}}",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"id\":\"1ccdcdba-cd01-4b73-af30-19e3685cc812\",\"type\":\"team\",\"attributes\":{\"avatar\":null,\"banner\":4,\"created_at\":\"2026-11-20T23:56:42.694859+00:00\",\"description\":\"drift\",\"handle\":\"{{name}}\",\"hidden_modules\":null,\"is_managed\":false,\"link_count\":0,\"modified_at\":\"2026-11-20T23:56:43.352279+00:00\",\"name\":\"{{name}}\",\"summary\":\"drift\",\"user_count\":0,\"visible_modules\":null},\"relationships\":{\"team_links\":{\"data\":[],\"links\":{\"related\":\"/api/v2/team/1ccdcdba-cd01-4b73-af30-19e3685cc812/links\"}},\"user_team_permissions\":{\"data\":null,\"links\":{\"related\":\"/api/v2/team/1ccdcdba-cd01-4b73-af30-19e3685cc812/permission-settings\"}}}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/team/1ccdcdba-cd01-4b73-af30-19e3685cc812",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"id\":\"1ccdcdba-cd01-4b73-af30-19e3685cc812\",\"type\":\"team\",\"attributes\":{\"created_at\":\"2026-11-20T23:56:42.694859+00:00\",\"description\":\"drift\",\"handle\":\"{{name}}\",\"is_managed\":false,\"link_count\":0,\"modified_at\":\"2026-11-20T23:56:43.352279+00:00\",\"name\":\"{{name}}\",\"summary\":\"drift\",\"user_count\":0},\"relationships\":{\"team_links\":{\"data\":[],\"links\":{\"related\":\"/api/v2/team/1ccdcdba-cd01-4b73-af30-19e3685cc812/links\"}},\"user_team_permissions\":{\"data\":null,\"links\":{\"related\":\"/api/v2/team/1ccdcdba-cd01-4b73-af30-19e3685cc812/permission-settings\"}}}}}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v2/team/1ccdcdba-cd01-4b73-af30-19e3685cc812",
+      "body": "{\"data\":{\"attributes\":{\"description\":\"second\",\"handle\":\"{{name}}\",\"name\":\"{{name}}\"},\"type\":\"team\"}}",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"id\":\"1ccdcdba-cd01-4b73-af30-19e3685cc812\",\"type\":\"team\",\"attributes\":{\"avatar\":null,\"banner\":4,\"created_at\":\"2026-11-20T23:56:42.694859+00:00\",\"description\":\"second\",\"handle\":\"{{name}}\",\"hidden_modules\":null,\"is_managed\":false,\"link_count\":0,\"modified_at\":\"2026-11-20T23:56:43.610942+00:00\",\"name\":\"{{name}}\",\"summary\":\"second\",\"user_count\":0,\"visible_modules\":null},\"relationships\":{\"team_links\":{\"data\":[],\"links\":{\"related\":\"/api/v2/team/1ccdcdba-cd01-4b73-af30-19e3685cc812/links\"}},\"user_team_permissions\":{\"data\":null,\"links\":{\"related\":\"/api/v2/team/1ccdcdba-cd01-4b73-af30-19e3685cc812/permission-settings\"}}}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/team/1ccdcdba-cd01-4b73-af30-19e3685cc812",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"id\":\"1ccdcdba-cd01-4b73-af30-19e3685cc812\",\"type\":\"team\",\"attributes\":{\"created_at\":\"2026-11-20T23:56:42.694859+00:00\",\"description\":\"second\",\"handle\":\"{{name}}\",\"is_managed\":false,\"link_count\":0,\"modified_at\":\"2026-11-20T23:56:43.610942+00:00\",\"name\":\"{{name}}\",\"summary\":\"second\",\"user_count\":0},\"relationships\":{\"team_links\":{\"data\":[],\"links\":{\"related\":\"/api/v2/team/1ccdcdba-cd01-4b73-af30-19e3685cc812/links\"}},\"user_team_permissions\":{\"data\":null,\"links\":{\"related\":\"/api/v2/team/1ccdcdba-cd01-4b73-af30-19e3685cc812/permission-settings\"}}}}}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v2/team/1ccdcdba-cd01-4b73-af30-19e3685cc812",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/team/1ccdcdba-cd01-4b73-af30-19e3685cc812",
+      "status": 404,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"errors\":[\"Not Found: team not found\"]}"
+    }
+  ]
+}

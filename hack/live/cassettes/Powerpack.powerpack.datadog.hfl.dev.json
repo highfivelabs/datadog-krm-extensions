@@ -1,0 +1,97 @@
+{
+  "recorded": "2026-11-20T23:56:56Z",
+  "target": "Datadog trial",
+  "vars": {
+    "dashboard": "ur8-afc-sum",
+    "subteam": "d4c1dd6f-4ea7-42e9-9847-c995ec31b739",
+    "team": "48e3aed2-a7e1-4fee-9037-ce9c9f4b4952"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/api/v2/powerpacks",
+      "body": "{\"data\":{\"attributes\":{\"description\":\"first\",\"group_widget\":{\"definition\":{\"layout_type\":\"ordered\",\"type\":\"group\",\"widgets\":[{\"definition\":{\"content\":\"hfl live test\",\"type\":\"note\"}}]}},\"name\":\"{{name}}\"},\"type\":\"powerpack\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"description\":\"first\",\"group_widget\":{\"definition\":{\"layout_type\":\"ordered\",\"type\":\"group\",\"widgets\":[{\"definition\":{\"content\":\"hfl live test\",\"type\":\"note\"},\"id\":7232479291143064}]},\"layout\":{\"height\":1,\"width\":12,\"x\":0,\"y\":0}},\"name\":\"{{name}}\",\"tags\":[],\"template_variables\":null},\"id\":\"103f3280-e53e-11f1-90a0-da7ad0900005\",\"relationships\":{\"author\":{\"data\":{\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"type\":\"users\"}}},\"type\":\"powerpack\"},\"included\":[{\"attributes\":{\"email\":\"{{redacted}}\",\"name\":\"{{redacted}}\"},\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"type\":\"users\"}]}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/powerpacks/103f3280-e53e-11f1-90a0-da7ad0900005",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"description\":\"first\",\"group_widget\":{\"definition\":{\"layout_type\":\"ordered\",\"type\":\"group\",\"widgets\":[{\"definition\":{\"content\":\"hfl live test\",\"type\":\"note\"},\"id\":7232479291143064}]},\"layout\":{\"height\":1,\"width\":12,\"x\":0,\"y\":0}},\"name\":\"{{name}}\",\"tags\":[],\"template_variables\":null},\"id\":\"103f3280-e53e-11f1-90a0-da7ad0900005\",\"relationships\":{\"author\":{\"data\":{\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"type\":\"users\"}}},\"type\":\"powerpack\"},\"included\":[{\"attributes\":{\"email\":\"{{redacted}}\",\"name\":\"{{redacted}}\"},\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"type\":\"users\"}]}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/powerpacks/103f3280-e53e-11f1-90a0-da7ad0900005",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"description\":\"first\",\"group_widget\":{\"definition\":{\"layout_type\":\"ordered\",\"type\":\"group\",\"widgets\":[{\"definition\":{\"content\":\"hfl live test\",\"type\":\"note\"},\"id\":7232479291143064}]},\"layout\":{\"height\":1,\"width\":12,\"x\":0,\"y\":0}},\"name\":\"{{name}}\",\"tags\":[],\"template_variables\":null},\"id\":\"103f3280-e53e-11f1-90a0-da7ad0900005\",\"relationships\":{\"author\":{\"data\":{\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"type\":\"users\"}}},\"type\":\"powerpack\"},\"included\":[{\"attributes\":{\"email\":\"{{redacted}}\",\"name\":\"{{redacted}}\"},\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"type\":\"users\"}]}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v2/powerpacks/103f3280-e53e-11f1-90a0-da7ad0900005",
+      "body": "{\"data\":{\"attributes\":{\"description\":\"second\",\"group_widget\":{\"definition\":{\"layout_type\":\"ordered\",\"type\":\"group\",\"widgets\":[{\"definition\":{\"content\":\"hfl live test\",\"type\":\"note\"}}]}},\"name\":\"{{name}}\"},\"id\":\"103f3280-e53e-11f1-90a0-da7ad0900005\",\"type\":\"powerpack\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"description\":\"second\",\"group_widget\":{\"definition\":{\"layout_type\":\"ordered\",\"type\":\"group\",\"widgets\":[{\"definition\":{\"content\":\"hfl live test\",\"type\":\"note\"},\"id\":7685068026447033}]},\"layout\":{\"height\":1,\"width\":12,\"x\":0,\"y\":0}},\"name\":\"{{name}}\",\"tags\":[],\"template_variables\":null},\"id\":\"103f3280-e53e-11f1-90a0-da7ad0900005\",\"relationships\":{\"author\":{\"data\":{\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"type\":\"users\"}}},\"type\":\"powerpack\"},\"included\":[{\"attributes\":{\"email\":\"{{redacted}}\",\"name\":\"{{redacted}}\"},\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"type\":\"users\"}]}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/powerpacks/103f3280-e53e-11f1-90a0-da7ad0900005",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"description\":\"second\",\"group_widget\":{\"definition\":{\"layout_type\":\"ordered\",\"type\":\"group\",\"widgets\":[{\"definition\":{\"content\":\"hfl live test\",\"type\":\"note\"},\"id\":7685068026447033}]},\"layout\":{\"height\":1,\"width\":12,\"x\":0,\"y\":0}},\"name\":\"{{name}}\",\"tags\":[],\"template_variables\":null},\"id\":\"103f3280-e53e-11f1-90a0-da7ad0900005\",\"relationships\":{\"author\":{\"data\":{\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"type\":\"users\"}}},\"type\":\"powerpack\"},\"included\":[{\"attributes\":{\"email\":\"{{redacted}}\",\"name\":\"{{redacted}}\"},\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"type\":\"users\"}]}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/powerpacks/103f3280-e53e-11f1-90a0-da7ad0900005",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"description\":\"second\",\"group_widget\":{\"definition\":{\"layout_type\":\"ordered\",\"type\":\"group\",\"widgets\":[{\"definition\":{\"content\":\"hfl live test\",\"type\":\"note\"},\"id\":7685068026447033}]},\"layout\":{\"height\":1,\"width\":12,\"x\":0,\"y\":0}},\"name\":\"{{name}}\",\"tags\":[],\"template_variables\":null},\"id\":\"103f3280-e53e-11f1-90a0-da7ad0900005\",\"relationships\":{\"author\":{\"data\":{\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"type\":\"users\"}}},\"type\":\"powerpack\"},\"included\":[{\"attributes\":{\"email\":\"{{redacted}}\",\"name\":\"{{redacted}}\"},\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"type\":\"users\"}]}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v2/powerpacks/103f3280-e53e-11f1-90a0-da7ad0900005",
+      "body": "{\"data\":{\"attributes\":{\"description\":\"drift\",\"group_widget\":{\"definition\":{\"layout_type\":\"ordered\",\"type\":\"group\",\"widgets\":[{\"definition\":{\"content\":\"hfl live test\",\"type\":\"note\"}}]}},\"name\":\"{{name}}\"},\"id\":\"103f3280-e53e-11f1-90a0-da7ad0900005\",\"relationships\":{\"author\":{\"data\":{\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"type\":\"users\"}}},\"type\":\"powerpack\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"description\":\"drift\",\"group_widget\":{\"definition\":{\"layout_type\":\"ordered\",\"type\":\"group\",\"widgets\":[{\"definition\":{\"content\":\"hfl live test\",\"type\":\"note\"},\"id\":7347588248917793}]},\"layout\":{\"height\":1,\"width\":12,\"x\":0,\"y\":0}},\"name\":\"{{name}}\",\"tags\":[],\"template_variables\":null},\"id\":\"103f3280-e53e-11f1-90a0-da7ad0900005\",\"relationships\":{\"author\":{\"data\":{\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"type\":\"users\"}}},\"type\":\"powerpack\"},\"included\":[{\"attributes\":{\"email\":\"{{redacted}}\",\"name\":\"{{redacted}}\"},\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"type\":\"users\"}]}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/powerpacks/103f3280-e53e-11f1-90a0-da7ad0900005",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"description\":\"drift\",\"group_widget\":{\"definition\":{\"layout_type\":\"ordered\",\"type\":\"group\",\"widgets\":[{\"definition\":{\"content\":\"hfl live test\",\"type\":\"note\"},\"id\":7347588248917793}]},\"layout\":{\"height\":1,\"width\":12,\"x\":0,\"y\":0}},\"name\":\"{{name}}\",\"tags\":[],\"template_variables\":null},\"id\":\"103f3280-e53e-11f1-90a0-da7ad0900005\",\"relationships\":{\"author\":{\"data\":{\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"type\":\"users\"}}},\"type\":\"powerpack\"},\"included\":[{\"attributes\":{\"email\":\"{{redacted}}\",\"name\":\"{{redacted}}\"},\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"type\":\"users\"}]}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v2/powerpacks/103f3280-e53e-11f1-90a0-da7ad0900005",
+      "body": "{\"data\":{\"attributes\":{\"description\":\"second\",\"group_widget\":{\"definition\":{\"layout_type\":\"ordered\",\"type\":\"group\",\"widgets\":[{\"definition\":{\"content\":\"hfl live test\",\"type\":\"note\"}}]}},\"name\":\"{{name}}\"},\"id\":\"103f3280-e53e-11f1-90a0-da7ad0900005\",\"type\":\"powerpack\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"description\":\"second\",\"group_widget\":{\"definition\":{\"layout_type\":\"ordered\",\"type\":\"group\",\"widgets\":[{\"definition\":{\"content\":\"hfl live test\",\"type\":\"note\"},\"id\":5061874989021673}]},\"layout\":{\"height\":1,\"width\":12,\"x\":0,\"y\":0}},\"name\":\"{{name}}\",\"tags\":[],\"template_variables\":null},\"id\":\"103f3280-e53e-11f1-90a0-da7ad0900005\",\"relationships\":{\"author\":{\"data\":{\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"type\":\"users\"}}},\"type\":\"powerpack\"},\"included\":[{\"attributes\":{\"email\":\"{{redacted}}\",\"name\":\"{{redacted}}\"},\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"type\":\"users\"}]}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/powerpacks/103f3280-e53e-11f1-90a0-da7ad0900005",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"description\":\"second\",\"group_widget\":{\"definition\":{\"layout_type\":\"ordered\",\"type\":\"group\",\"widgets\":[{\"definition\":{\"content\":\"hfl live test\",\"type\":\"note\"},\"id\":5061874989021673}]},\"layout\":{\"height\":1,\"width\":12,\"x\":0,\"y\":0}},\"name\":\"{{name}}\",\"tags\":[],\"template_variables\":null},\"id\":\"103f3280-e53e-11f1-90a0-da7ad0900005\",\"relationships\":{\"author\":{\"data\":{\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"type\":\"users\"}}},\"type\":\"powerpack\"},\"included\":[{\"attributes\":{\"email\":\"{{redacted}}\",\"name\":\"{{redacted}}\"},\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"type\":\"users\"}]}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v2/powerpacks/103f3280-e53e-11f1-90a0-da7ad0900005",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/powerpacks/103f3280-e53e-11f1-90a0-da7ad0900005",
+      "status": 404,
+      "contentType": "application/json",
+      "response": "{\"errors\":[\"Powerpack with ID 103f3280-e53e-11f1-90a0-da7ad0900005 not found\"]}"
+    }
+  ]
+}

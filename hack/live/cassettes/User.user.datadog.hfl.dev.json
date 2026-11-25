@@ -1,0 +1,54 @@
+{
+  "recorded": "2026-11-20T23:57:02Z",
+  "target": "Datadog trial",
+  "vars": {
+    "dashboard": "ur8-afc-sum",
+    "slo": "3704e6ae4bac5b54b241a727ff6ab03b",
+    "subteam": "d4c1dd6f-4ea7-42e9-9847-c995ec31b739",
+    "team": "48e3aed2-a7e1-4fee-9037-ce9c9f4b4952"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/api/v2/users",
+      "body": "{\"data\":{\"attributes\":{\"email\":\"{{name}}@example.com\",\"name\":\"{{name}}\"},\"type\":\"users\"}}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"allowed_login_methods\":[],\"created_at\":\"2026-11-20T23:57:01.679781+00:00\",\"disabled\":false,\"email\":\"{{name}}@example.com\",\"handle\":\"{{name}}@example.com\",\"icon\":\"{{redacted}}\",\"last_login_time\":null,\"modified_at\":\"2026-11-20T23:57:01.679781+00:00\",\"name\":\"{{name}}\",\"service_account\":false,\"status\":\"Pending\",\"title\":null,\"uuid\":\"2a739344-08a3-473a-9572-7bd1d0c9ebf3\",\"verified\":false},\"id\":\"2a739344-08a3-473a-9572-7bd1d0c9ebf3\",\"relationships\":{\"org\":{\"data\":{\"id\":\"9ad015a7-e189-11f1-b5a4-c2e2e3362876\",\"type\":\"orgs\"}},\"roles\":{\"data\":[]}},\"type\":\"users\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/users/2a739344-08a3-473a-9572-7bd1d0c9ebf3",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"allowed_login_methods\":[\"google_oidc\",\"standard\"],\"created_at\":\"2026-11-20T23:57:01.679781+00:00\",\"disabled\":false,\"email\":\"{{name}}@example.com\",\"handle\":\"{{name}}@example.com\",\"icon\":\"{{redacted}}\",\"is_access_configurable_bot\":false,\"last_login_time\":null,\"mfa_enabled\":false,\"modified_at\":\"2026-11-20T23:57:01.679781+00:00\",\"name\":\"{{name}}\",\"service_account\":false,\"status\":\"Pending\",\"title\":null,\"uuid\":\"2a739344-08a3-473a-9572-7bd1d0c9ebf3\",\"verified\":false},\"id\":\"2a739344-08a3-473a-9572-7bd1d0c9ebf3\",\"relationships\":{\"org\":{\"data\":{\"id\":\"9ad015a7-e189-11f1-b5a4-c2e2e3362876\",\"type\":\"orgs\"}},\"roles\":{\"data\":[]}},\"type\":\"users\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/users/2a739344-08a3-473a-9572-7bd1d0c9ebf3",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"allowed_login_methods\":[\"google_oidc\",\"standard\"],\"created_at\":\"2026-11-20T23:57:01.679781+00:00\",\"disabled\":false,\"email\":\"{{name}}@example.com\",\"handle\":\"{{name}}@example.com\",\"icon\":\"{{redacted}}\",\"is_access_configurable_bot\":false,\"last_login_time\":null,\"mfa_enabled\":false,\"modified_at\":\"2026-11-20T23:57:01.679781+00:00\",\"name\":\"{{name}}\",\"service_account\":false,\"status\":\"Pending\",\"title\":null,\"uuid\":\"2a739344-08a3-473a-9572-7bd1d0c9ebf3\",\"verified\":false},\"id\":\"2a739344-08a3-473a-9572-7bd1d0c9ebf3\",\"relationships\":{\"org\":{\"data\":{\"id\":\"9ad015a7-e189-11f1-b5a4-c2e2e3362876\",\"type\":\"orgs\"}},\"roles\":{\"data\":[]}},\"type\":\"users\"}}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v2/users/2a739344-08a3-473a-9572-7bd1d0c9ebf3",
+      "body": "{\"data\":{\"attributes\":{\"email\":\"{{name}}@example.com\",\"name\":\"{{name}}-changed\"},\"id\":\"2a739344-08a3-473a-9572-7bd1d0c9ebf3\",\"type\":\"users\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"allowed_login_methods\":[],\"created_at\":\"2026-11-20T23:57:01.679781+00:00\",\"disabled\":false,\"email\":\"{{name}}@example.com\",\"handle\":\"{{name}}@example.com\",\"icon\":\"{{redacted}}\",\"last_login_time\":null,\"modified_at\":\"2026-11-20T23:57:02.165370+00:00\",\"name\":\"{{name}}-changed\",\"service_account\":false,\"status\":\"Pending\",\"title\":null,\"uuid\":\"2a739344-08a3-473a-9572-7bd1d0c9ebf3\",\"verified\":false},\"id\":\"2a739344-08a3-473a-9572-7bd1d0c9ebf3\",\"relationships\":{\"org\":{\"data\":{\"id\":\"9ad015a7-e189-11f1-b5a4-c2e2e3362876\",\"type\":\"orgs\"}},\"roles\":{\"data\":[]}},\"type\":\"users\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/users/2a739344-08a3-473a-9572-7bd1d0c9ebf3",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"allowed_login_methods\":[\"google_oidc\",\"standard\"],\"created_at\":\"2026-11-20T23:57:01.679781+00:00\",\"disabled\":false,\"email\":\"{{name}}@example.com\",\"handle\":\"{{name}}@example.com\",\"icon\":\"{{redacted}}\",\"is_access_configurable_bot\":false,\"last_login_time\":null,\"mfa_enabled\":false,\"modified_at\":\"2026-11-20T23:57:02.165370+00:00\",\"name\":\"{{name}}-changed\",\"service_account\":false,\"status\":\"Pending\",\"title\":null,\"uuid\":\"2a739344-08a3-473a-9572-7bd1d0c9ebf3\",\"verified\":false},\"id\":\"2a739344-08a3-473a-9572-7bd1d0c9ebf3\",\"relationships\":{\"org\":{\"data\":{\"id\":\"9ad015a7-e189-11f1-b5a4-c2e2e3362876\",\"type\":\"orgs\"}},\"roles\":{\"data\":[]}},\"type\":\"users\"}}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v2/users/2a739344-08a3-473a-9572-7bd1d0c9ebf3",
+      "status": 204
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "dashboard": 280000002,
+    "sa": "rehearsal-sa",
+    "slo": "rehearsal-slo",
+    "subteam": "rehearsal-subteam",
+    "team": "rehearsal-team"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/api/v1/integration/webhooks/configuration/custom-variables",
+      "body": "{\"is_secret\":false,\"name\":\"{{NAME_}}\",\"value\":\"first\"}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"is_secret\":false,\"name\":\"{{NAME_}}\",\"value\":\"first\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/integration/webhooks/configuration/custom-variables/{{NAME_}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"is_secret\":false,\"name\":\"{{NAME_}}\",\"value\":\"first\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/integration/webhooks/configuration/custom-variables/{{NAME_}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"is_secret\":false,\"name\":\"{{NAME_}}\",\"value\":\"first\"}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/integration/webhooks/configuration/custom-variables/{{NAME_}}",
+      "body": "{\"is_secret\":false,\"name\":\"{{NAME_}}\",\"value\":\"second\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"is_secret\":false,\"name\":\"{{NAME_}}\",\"value\":\"second\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/integration/webhooks/configuration/custom-variables/{{NAME_}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"is_secret\":false,\"name\":\"{{NAME_}}\",\"value\":\"second\"}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/integration/webhooks/configuration/custom-variables/{{NAME_}}",
+      "body": "{\"value\":\"hfl-live-drift\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"is_secret\":false,\"name\":\"{{NAME_}}\",\"value\":\"hfl-live-drift\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/integration/webhooks/configuration/custom-variables/{{NAME_}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"is_secret\":false,\"name\":\"{{NAME_}}\",\"value\":\"hfl-live-drift\"}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/integration/webhooks/configuration/custom-variables/{{NAME_}}",
+      "body": "{\"is_secret\":false,\"name\":\"{{NAME_}}\",\"value\":\"second\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"is_secret\":false,\"name\":\"{{NAME_}}\",\"value\":\"second\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/integration/webhooks/configuration/custom-variables/{{NAME_}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"is_secret\":false,\"name\":\"{{NAME_}}\",\"value\":\"second\"}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/integration/webhooks/configuration/custom-variables/{{NAME_}}",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/integration/webhooks/configuration/custom-variables/{{NAME_}}",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

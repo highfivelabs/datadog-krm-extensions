@@ -1,0 +1,96 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "dashboard": 280000002,
+    "team": "rehearsal-team"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/api/v2/team/rehearsal-team/links",
+      "body": "{\"data\":{\"attributes\":{\"label\":\"{{name}}\",\"url\":\"https://example.com/first\"},\"type\":\"team_links\"}}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"label\":\"{{name}}\",\"url\":\"https://example.com/first\"},\"id\":270000003,\"type\":\"team_links\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/team/rehearsal-team/links/270000003",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"label\":\"{{name}}\",\"url\":\"https://example.com/first\"},\"id\":270000003,\"type\":\"team_links\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/team/rehearsal-team/links/270000003",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"label\":\"{{name}}\",\"url\":\"https://example.com/first\"},\"id\":270000003,\"type\":\"team_links\"}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v2/team/rehearsal-team/links/270000003",
+      "body": "{\"data\":{\"attributes\":{\"label\":\"{{name}}\",\"url\":\"https://example.com/second\"},\"type\":\"team_links\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"label\":\"{{name}}\",\"url\":\"https://example.com/second\"},\"id\":270000003,\"type\":\"team_links\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/team/rehearsal-team/links/270000003",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"label\":\"{{name}}\",\"url\":\"https://example.com/second\"},\"id\":270000003,\"type\":\"team_links\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/team/rehearsal-team/links/270000003",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"label\":\"{{name}}\",\"url\":\"https://example.com/second\"},\"id\":270000003,\"type\":\"team_links\"}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v2/team/rehearsal-team/links/270000003",
+      "body": "{\"data\":{\"attributes\":{\"label\":\"{{name}}\",\"url\":\"https://example.com/drift\"},\"id\":270000003,\"type\":\"team_links\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"label\":\"{{name}}\",\"url\":\"https://example.com/drift\"},\"id\":270000003,\"type\":\"team_links\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/team/rehearsal-team/links/270000003",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"label\":\"{{name}}\",\"url\":\"https://example.com/drift\"},\"id\":270000003,\"type\":\"team_links\"}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v2/team/rehearsal-team/links/270000003",
+      "body": "{\"data\":{\"attributes\":{\"label\":\"{{name}}\",\"url\":\"https://example.com/second\"},\"type\":\"team_links\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"label\":\"{{name}}\",\"url\":\"https://example.com/second\"},\"id\":270000003,\"type\":\"team_links\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/team/rehearsal-team/links/270000003",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"label\":\"{{name}}\",\"url\":\"https://example.com/second\"},\"id\":270000003,\"type\":\"team_links\"}}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v2/team/rehearsal-team/links/270000003",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/team/rehearsal-team/links/270000003",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

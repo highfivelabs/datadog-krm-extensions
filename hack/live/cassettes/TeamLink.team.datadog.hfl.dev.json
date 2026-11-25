@@ -1,0 +1,96 @@
+{
+  "recorded": "2026-11-20T23:56:45Z",
+  "target": "Datadog trial",
+  "vars": {
+    "dashboard": "ur8-afc-sum",
+    "team": "48e3aed2-a7e1-4fee-9037-ce9c9f4b4952"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/api/v2/team/48e3aed2-a7e1-4fee-9037-ce9c9f4b4952/links",
+      "body": "{\"data\":{\"attributes\":{\"label\":\"{{name}}\",\"url\":\"https://example.com/first\"},\"type\":\"team_links\"}}",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"id\":\"09d6591e-e53e-11f1-92a2-da7ad0900005\",\"type\":\"team_links\",\"attributes\":{\"label\":\"{{name}}\",\"position\":0,\"team_id\":\"48e3aed2-a7e1-4fee-9037-ce9c9f4b4952\",\"url\":\"https://example.com/first\"}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/team/48e3aed2-a7e1-4fee-9037-ce9c9f4b4952/links/09d6591e-e53e-11f1-92a2-da7ad0900005",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"id\":\"09d6591e-e53e-11f1-92a2-da7ad0900005\",\"type\":\"team_links\",\"attributes\":{\"label\":\"{{name}}\",\"position\":0,\"team_id\":\"48e3aed2-a7e1-4fee-9037-ce9c9f4b4952\",\"url\":\"https://example.com/first\"}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/team/48e3aed2-a7e1-4fee-9037-ce9c9f4b4952/links/09d6591e-e53e-11f1-92a2-da7ad0900005",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"id\":\"09d6591e-e53e-11f1-92a2-da7ad0900005\",\"type\":\"team_links\",\"attributes\":{\"label\":\"{{name}}\",\"position\":0,\"team_id\":\"48e3aed2-a7e1-4fee-9037-ce9c9f4b4952\",\"url\":\"https://example.com/first\"}}}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v2/team/48e3aed2-a7e1-4fee-9037-ce9c9f4b4952/links/09d6591e-e53e-11f1-92a2-da7ad0900005",
+      "body": "{\"data\":{\"attributes\":{\"label\":\"{{name}}\",\"url\":\"https://example.com/second\"},\"type\":\"team_links\"}}",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"id\":\"09d6591e-e53e-11f1-92a2-da7ad0900005\",\"type\":\"team_links\",\"attributes\":{\"label\":\"{{name}}\",\"position\":0,\"team_id\":\"48e3aed2-a7e1-4fee-9037-ce9c9f4b4952\",\"url\":\"https://example.com/second\"}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/team/48e3aed2-a7e1-4fee-9037-ce9c9f4b4952/links/09d6591e-e53e-11f1-92a2-da7ad0900005",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"id\":\"09d6591e-e53e-11f1-92a2-da7ad0900005\",\"type\":\"team_links\",\"attributes\":{\"label\":\"{{name}}\",\"position\":0,\"team_id\":\"48e3aed2-a7e1-4fee-9037-ce9c9f4b4952\",\"url\":\"https://example.com/second\"}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/team/48e3aed2-a7e1-4fee-9037-ce9c9f4b4952/links/09d6591e-e53e-11f1-92a2-da7ad0900005",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"id\":\"09d6591e-e53e-11f1-92a2-da7ad0900005\",\"type\":\"team_links\",\"attributes\":{\"label\":\"{{name}}\",\"position\":0,\"team_id\":\"48e3aed2-a7e1-4fee-9037-ce9c9f4b4952\",\"url\":\"https://example.com/second\"}}}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v2/team/48e3aed2-a7e1-4fee-9037-ce9c9f4b4952/links/09d6591e-e53e-11f1-92a2-da7ad0900005",
+      "body": "{\"data\":{\"attributes\":{\"label\":\"{{name}}\",\"url\":\"https://example.com/drift\"},\"id\":\"09d6591e-e53e-11f1-92a2-da7ad0900005\",\"type\":\"team_links\"}}",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"id\":\"09d6591e-e53e-11f1-92a2-da7ad0900005\",\"type\":\"team_links\",\"attributes\":{\"label\":\"{{name}}\",\"position\":0,\"team_id\":\"48e3aed2-a7e1-4fee-9037-ce9c9f4b4952\",\"url\":\"https://example.com/drift\"}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/team/48e3aed2-a7e1-4fee-9037-ce9c9f4b4952/links/09d6591e-e53e-11f1-92a2-da7ad0900005",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"id\":\"09d6591e-e53e-11f1-92a2-da7ad0900005\",\"type\":\"team_links\",\"attributes\":{\"label\":\"{{name}}\",\"position\":0,\"team_id\":\"48e3aed2-a7e1-4fee-9037-ce9c9f4b4952\",\"url\":\"https://example.com/drift\"}}}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v2/team/48e3aed2-a7e1-4fee-9037-ce9c9f4b4952/links/09d6591e-e53e-11f1-92a2-da7ad0900005",
+      "body": "{\"data\":{\"attributes\":{\"label\":\"{{name}}\",\"url\":\"https://example.com/second\"},\"type\":\"team_links\"}}",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"id\":\"09d6591e-e53e-11f1-92a2-da7ad0900005\",\"type\":\"team_links\",\"attributes\":{\"label\":\"{{name}}\",\"position\":0,\"team_id\":\"48e3aed2-a7e1-4fee-9037-ce9c9f4b4952\",\"url\":\"https://example.com/second\"}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/team/48e3aed2-a7e1-4fee-9037-ce9c9f4b4952/links/09d6591e-e53e-11f1-92a2-da7ad0900005",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"id\":\"09d6591e-e53e-11f1-92a2-da7ad0900005\",\"type\":\"team_links\",\"attributes\":{\"label\":\"{{name}}\",\"position\":0,\"team_id\":\"48e3aed2-a7e1-4fee-9037-ce9c9f4b4952\",\"url\":\"https://example.com/second\"}}}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v2/team/48e3aed2-a7e1-4fee-9037-ce9c9f4b4952/links/09d6591e-e53e-11f1-92a2-da7ad0900005",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/team/48e3aed2-a7e1-4fee-9037-ce9c9f4b4952/links/09d6591e-e53e-11f1-92a2-da7ad0900005",
+      "status": 404,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"errors\":[\"Not Found: team link not found\"]}"
+    }
+  ]
+}

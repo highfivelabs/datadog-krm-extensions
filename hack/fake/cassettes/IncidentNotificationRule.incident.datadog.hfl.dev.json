@@ -1,0 +1,113 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "dashboard": 280000002,
+    "itype": "rehearsal-itype",
+    "sa": "rehearsal-sa",
+    "slo": "rehearsal-slo",
+    "subteam": "rehearsal-subteam",
+    "team": "rehearsal-team"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/api/v2/incidents/config/types",
+      "body": "{\"data\":{\"attributes\":{\"name\":\"{{name}}\"},\"type\":\"incident_types\"}}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"_stub\":\"rehearsal stand-in: the fake API has no such resource\",\"data\":{\"attributes\":{\"name\":\"{{name}}\"},\"type\":\"incident_types\"},\"id\":280000011}\n"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v2/incidents/config/notification-rules",
+      "body": "{\"data\":{\"attributes\":{\"conditions\":[{\"field\":\"severity\",\"values\":[\"SEV-1\"]}],\"enabled\":false,\"handles\":[\"@{{name}}@example.com\"],\"trigger\":\"incident_created_trigger\",\"visibility\":\"organization\"},\"relationships\":{\"incident_type\":{\"data\":{\"id\":\"rehearsal-itype\",\"type\":\"incident_types\"}}},\"type\":\"incident_notification_rules\"}}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"conditions\":[{\"field\":\"severity\",\"values\":[\"SEV-1\"]}],\"enabled\":false,\"handles\":[\"@{{name}}@example.com\"],\"trigger\":\"incident_created_trigger\",\"visibility\":\"organization\"},\"id\":270000025,\"relationships\":{\"incident_type\":{\"data\":{\"id\":\"rehearsal-itype\",\"type\":\"incident_types\"}}},\"type\":\"incident_notification_rules\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/incidents/config/notification-rules/270000025",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"conditions\":[{\"field\":\"severity\",\"values\":[\"SEV-1\"]}],\"enabled\":false,\"handles\":[\"@{{name}}@example.com\"],\"trigger\":\"incident_created_trigger\",\"visibility\":\"organization\"},\"id\":270000025,\"relationships\":{\"incident_type\":{\"data\":{\"id\":\"rehearsal-itype\",\"type\":\"incident_types\"}}},\"type\":\"incident_notification_rules\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/incidents/config/notification-rules/270000025",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"conditions\":[{\"field\":\"severity\",\"values\":[\"SEV-1\"]}],\"enabled\":false,\"handles\":[\"@{{name}}@example.com\"],\"trigger\":\"incident_created_trigger\",\"visibility\":\"organization\"},\"id\":270000025,\"relationships\":{\"incident_type\":{\"data\":{\"id\":\"rehearsal-itype\",\"type\":\"incident_types\"}}},\"type\":\"incident_notification_rules\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v2/incidents/config/notification-rules/270000025",
+      "body": "{\"data\":{\"attributes\":{\"conditions\":[{\"field\":\"severity\",\"values\":[\"SEV-2\"]}],\"enabled\":false,\"handles\":[\"@{{name}}@example.com\"],\"trigger\":\"incident_created_trigger\",\"visibility\":\"organization\"},\"id\":\"270000025\",\"relationships\":{\"incident_type\":{\"data\":{\"id\":\"rehearsal-itype\",\"type\":\"incident_types\"}}},\"type\":\"incident_notification_rules\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"conditions\":[{\"field\":\"severity\",\"values\":[\"SEV-2\"]}],\"enabled\":false,\"handles\":[\"@{{name}}@example.com\"],\"trigger\":\"incident_created_trigger\",\"visibility\":\"organization\"},\"id\":\"270000025\",\"relationships\":{\"incident_type\":{\"data\":{\"id\":\"rehearsal-itype\",\"type\":\"incident_types\"}}},\"type\":\"incident_notification_rules\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/incidents/config/notification-rules/270000025",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"conditions\":[{\"field\":\"severity\",\"values\":[\"SEV-2\"]}],\"enabled\":false,\"handles\":[\"@{{name}}@example.com\"],\"trigger\":\"incident_created_trigger\",\"visibility\":\"organization\"},\"id\":\"270000025\",\"relationships\":{\"incident_type\":{\"data\":{\"id\":\"rehearsal-itype\",\"type\":\"incident_types\"}}},\"type\":\"incident_notification_rules\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/incidents/config/notification-rules/270000025",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"conditions\":[{\"field\":\"severity\",\"values\":[\"SEV-2\"]}],\"enabled\":false,\"handles\":[\"@{{name}}@example.com\"],\"trigger\":\"incident_created_trigger\",\"visibility\":\"organization\"},\"id\":\"270000025\",\"relationships\":{\"incident_type\":{\"data\":{\"id\":\"rehearsal-itype\",\"type\":\"incident_types\"}}},\"type\":\"incident_notification_rules\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v2/incidents/config/notification-rules/270000025",
+      "body": "{\"data\":{\"attributes\":{\"conditions\":[{\"field\":\"severity\",\"values\":[\"SEV-3\"]}],\"enabled\":false,\"handles\":[\"@{{name}}@example.com\"],\"trigger\":\"incident_created_trigger\",\"visibility\":\"organization\"},\"id\":\"270000025\",\"relationships\":{\"incident_type\":{\"data\":{\"id\":\"rehearsal-itype\",\"type\":\"incident_types\"}}},\"type\":\"incident_notification_rules\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"conditions\":[{\"field\":\"severity\",\"values\":[\"SEV-3\"]}],\"enabled\":false,\"handles\":[\"@{{name}}@example.com\"],\"trigger\":\"incident_created_trigger\",\"visibility\":\"organization\"},\"id\":\"270000025\",\"relationships\":{\"incident_type\":{\"data\":{\"id\":\"rehearsal-itype\",\"type\":\"incident_types\"}}},\"type\":\"incident_notification_rules\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/incidents/config/notification-rules/270000025",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"conditions\":[{\"field\":\"severity\",\"values\":[\"SEV-3\"]}],\"enabled\":false,\"handles\":[\"@{{name}}@example.com\"],\"trigger\":\"incident_created_trigger\",\"visibility\":\"organization\"},\"id\":\"270000025\",\"relationships\":{\"incident_type\":{\"data\":{\"id\":\"rehearsal-itype\",\"type\":\"incident_types\"}}},\"type\":\"incident_notification_rules\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v2/incidents/config/notification-rules/270000025",
+      "body": "{\"data\":{\"attributes\":{\"conditions\":[{\"field\":\"severity\",\"values\":[\"SEV-2\"]}],\"enabled\":false,\"handles\":[\"@{{name}}@example.com\"],\"trigger\":\"incident_created_trigger\",\"visibility\":\"organization\"},\"id\":\"270000025\",\"relationships\":{\"incident_type\":{\"data\":{\"id\":\"rehearsal-itype\",\"type\":\"incident_types\"}}},\"type\":\"incident_notification_rules\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"conditions\":[{\"field\":\"severity\",\"values\":[\"SEV-2\"]}],\"enabled\":false,\"handles\":[\"@{{name}}@example.com\"],\"trigger\":\"incident_created_trigger\",\"visibility\":\"organization\"},\"id\":\"270000025\",\"relationships\":{\"incident_type\":{\"data\":{\"id\":\"rehearsal-itype\",\"type\":\"incident_types\"}}},\"type\":\"incident_notification_rules\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/incidents/config/notification-rules/270000025",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"conditions\":[{\"field\":\"severity\",\"values\":[\"SEV-2\"]}],\"enabled\":false,\"handles\":[\"@{{name}}@example.com\"],\"trigger\":\"incident_created_trigger\",\"visibility\":\"organization\"},\"id\":\"270000025\",\"relationships\":{\"incident_type\":{\"data\":{\"id\":\"rehearsal-itype\",\"type\":\"incident_types\"}}},\"type\":\"incident_notification_rules\"}}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v2/incidents/config/notification-rules/270000025",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/incidents/config/notification-rules/270000025",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v2/incidents/config/types/rehearsal-itype",
+      "status": 204
+    }
+  ]
+}

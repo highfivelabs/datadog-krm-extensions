@@ -1,0 +1,104 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "component": "rehearsal-component",
+    "dashboard": 280000002,
+    "itype": "rehearsal-itype",
+    "member": "rehearsal-member",
+    "org": "rehearsal-org",
+    "orgsa": "rehearsal-orgsa",
+    "page": "rehearsal-page",
+    "role": "rehearsal-role",
+    "roleUser": "rehearsal-roleUser",
+    "routingPolicy": "rehearsal-routingPolicy",
+    "ruleA": "rehearsal-ruleA",
+    "ruleB": "rehearsal-ruleB",
+    "rum": "rehearsal-rum",
+    "sa": "rehearsal-sa",
+    "slo": "rehearsal-slo",
+    "subteam": "rehearsal-subteam",
+    "team": "rehearsal-team"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/api/v2/security/findings/automation/ticket_creation_rules",
+      "body": "{\"data\":{\"attributes\":{\"action\":{\"max_tickets_per_day\":100,\"project_id\":\"11111111-1111-1111-1111-111111111111\",\"target\":\"jira\"},\"name\":\"Auto-create Jira tickets for critical findings\",\"rule\":{\"finding_types\":[]}},\"type\":\"ticket_creation_rules\"}}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"action\":{\"max_tickets_per_day\":100,\"project_id\":\"11111111-1111-1111-1111-111111111111\",\"target\":\"jira\"},\"name\":\"Auto-create Jira tickets for critical findings\",\"rule\":{\"finding_types\":[]}},\"id\":270000083,\"type\":\"ticket_creation_rules\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/security/findings/automation/ticket_creation_rules/270000083",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"action\":{\"max_tickets_per_day\":100,\"project_id\":\"11111111-1111-1111-1111-111111111111\",\"target\":\"jira\"},\"name\":\"Auto-create Jira tickets for critical findings\",\"rule\":{\"finding_types\":[]}},\"id\":270000083,\"type\":\"ticket_creation_rules\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/security/findings/automation/ticket_creation_rules/270000083",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"action\":{\"max_tickets_per_day\":100,\"project_id\":\"11111111-1111-1111-1111-111111111111\",\"target\":\"jira\"},\"name\":\"Auto-create Jira tickets for critical findings\",\"rule\":{\"finding_types\":[]}},\"id\":270000083,\"type\":\"ticket_creation_rules\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v2/security/findings/automation/ticket_creation_rules/270000083",
+      "body": "{\"data\":{\"attributes\":{\"action\":{\"max_tickets_per_day\":100,\"project_id\":\"11111111-1111-1111-1111-111111111111\",\"target\":\"jira\"},\"name\":\"Auto-create Jira tickets for critical findings\",\"rule\":{\"finding_types\":[]}},\"id\":\"270000083\",\"type\":\"changed-type\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"action\":{\"max_tickets_per_day\":100,\"project_id\":\"11111111-1111-1111-1111-111111111111\",\"target\":\"jira\"},\"name\":\"Auto-create Jira tickets for critical findings\",\"rule\":{\"finding_types\":[]}},\"id\":\"270000083\",\"type\":\"changed-type\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/security/findings/automation/ticket_creation_rules/270000083",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"action\":{\"max_tickets_per_day\":100,\"project_id\":\"11111111-1111-1111-1111-111111111111\",\"target\":\"jira\"},\"name\":\"Auto-create Jira tickets for critical findings\",\"rule\":{\"finding_types\":[]}},\"id\":\"270000083\",\"type\":\"changed-type\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v2/security/findings/automation/ticket_creation_rules/270000083",
+      "body": "{\"data\":{\"id\":\"270000083\",\"type\":\"hfl-live-drift\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"action\":{\"max_tickets_per_day\":100,\"project_id\":\"11111111-1111-1111-1111-111111111111\",\"target\":\"jira\"},\"name\":\"Auto-create Jira tickets for critical findings\",\"rule\":{\"finding_types\":[]}},\"id\":\"270000083\",\"type\":\"hfl-live-drift\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/security/findings/automation/ticket_creation_rules/270000083",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"action\":{\"max_tickets_per_day\":100,\"project_id\":\"11111111-1111-1111-1111-111111111111\",\"target\":\"jira\"},\"name\":\"Auto-create Jira tickets for critical findings\",\"rule\":{\"finding_types\":[]}},\"id\":\"270000083\",\"type\":\"hfl-live-drift\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v2/security/findings/automation/ticket_creation_rules/270000083",
+      "body": "{\"data\":{\"attributes\":{\"action\":{\"max_tickets_per_day\":100,\"project_id\":\"11111111-1111-1111-1111-111111111111\",\"target\":\"jira\"},\"name\":\"Auto-create Jira tickets for critical findings\",\"rule\":{\"finding_types\":[]}},\"id\":\"270000083\",\"type\":\"changed-type\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"action\":{\"max_tickets_per_day\":100,\"project_id\":\"11111111-1111-1111-1111-111111111111\",\"target\":\"jira\"},\"name\":\"Auto-create Jira tickets for critical findings\",\"rule\":{\"finding_types\":[]}},\"id\":\"270000083\",\"type\":\"changed-type\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/security/findings/automation/ticket_creation_rules/270000083",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"action\":{\"max_tickets_per_day\":100,\"project_id\":\"11111111-1111-1111-1111-111111111111\",\"target\":\"jira\"},\"name\":\"Auto-create Jira tickets for critical findings\",\"rule\":{\"finding_types\":[]}},\"id\":\"270000083\",\"type\":\"changed-type\"}}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v2/security/findings/automation/ticket_creation_rules/270000083",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/security/findings/automation/ticket_creation_rules/270000083",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

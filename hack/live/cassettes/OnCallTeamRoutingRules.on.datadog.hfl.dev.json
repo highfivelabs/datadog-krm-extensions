@@ -1,0 +1,88 @@
+{
+  "recorded": "2026-11-20T23:57:57Z",
+  "target": "Datadog trial",
+  "vars": {
+    "dashboard": "ur8-afc-sum",
+    "itype": "fb183ac5-a636-4c9e-b864-de008dda88bb",
+    "role": "26806b04-e53e-11f1-807b-da7ad0900005",
+    "routingPolicy": "e6743e82-8165-42f1-a930-540f4e9977b1",
+    "sa": "16307311-e53e-11f1-b3f2-e693e7c43799",
+    "slo": "3704e6ae4bac5b54b241a727ff6ab03b",
+    "subteam": "d4c1dd6f-4ea7-42e9-9847-c995ec31b739",
+    "team": "48e3aed2-a7e1-4fee-9037-ce9c9f4b4952"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/api/v2/on-call/escalation-policies",
+      "body": "{\"data\":{\"attributes\":{\"name\":\"{{name}}-ep\",\"steps\":[{\"escalate_after_seconds\":3600,\"targets\":[{\"id\":\"48e3aed2-a7e1-4fee-9037-ce9c9f4b4952\",\"type\":\"teams\"}]}]},\"type\":\"policies\"}}",
+      "status": 201,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"id\":\"e6743e82-8165-42f1-a930-540f4e9977b1\",\"type\":\"policies\",\"attributes\":{\"name\":\"{{name}}-ep\",\"resolve_page_on_policy_end\":false,\"retries\":0,\"tags\":[]},\"relationships\":{\"steps\":{\"data\":[{\"id\":\"0ac01fe1-9871-4ee2-ae15-8e9faeedbba7\",\"type\":\"steps\"}]},\"teams\":{\"data\":[]}}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/on-call/teams/48e3aed2-a7e1-4fee-9037-ce9c9f4b4952/routing-rules",
+      "status": 404,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"errors\":[{\"status\":\"404\",\"title\":\"Not Found\"}]}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/on-call/teams/48e3aed2-a7e1-4fee-9037-ce9c9f4b4952/routing-rules",
+      "status": 404,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"errors\":[{\"status\":\"404\",\"title\":\"Not Found\"}]}"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v2/on-call/teams/48e3aed2-a7e1-4fee-9037-ce9c9f4b4952/routing-rules",
+      "body": "{\"data\":{\"attributes\":{\"rules\":[{\"policy_id\":\"e6743e82-8165-42f1-a930-540f4e9977b1\",\"query\":\"tags.service:{{name}}\",\"urgency\":\"low\"},{\"policy_id\":\"e6743e82-8165-42f1-a930-540f4e9977b1\",\"urgency\":\"low\"}]},\"id\":\"48e3aed2-a7e1-4fee-9037-ce9c9f4b4952\",\"type\":\"team_routing_rules\"}}",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"id\":\"48e3aed2-a7e1-4fee-9037-ce9c9f4b4952\",\"type\":\"team_routing_rules\",\"relationships\":{\"rules\":{\"data\":[{\"id\":\"5334d020-6a74-4820-8552-df6bd5d7c834\",\"type\":\"team_routing_rules\"},{\"id\":\"a75cc989-5347-4a81-a525-b1c62f2f187d\",\"type\":\"team_routing_rules\"}]}}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/on-call/teams/48e3aed2-a7e1-4fee-9037-ce9c9f4b4952/routing-rules",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"id\":\"48e3aed2-a7e1-4fee-9037-ce9c9f4b4952\",\"type\":\"team_routing_rules\",\"relationships\":{\"rules\":{\"data\":[{\"id\":\"5334d020-6a74-4820-8552-df6bd5d7c834\",\"type\":\"team_routing_rules\"},{\"id\":\"a75cc989-5347-4a81-a525-b1c62f2f187d\",\"type\":\"team_routing_rules\"}]}}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/on-call/teams/48e3aed2-a7e1-4fee-9037-ce9c9f4b4952/routing-rules",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"id\":\"48e3aed2-a7e1-4fee-9037-ce9c9f4b4952\",\"type\":\"team_routing_rules\",\"relationships\":{\"rules\":{\"data\":[{\"id\":\"5334d020-6a74-4820-8552-df6bd5d7c834\",\"type\":\"team_routing_rules\"},{\"id\":\"a75cc989-5347-4a81-a525-b1c62f2f187d\",\"type\":\"team_routing_rules\"}]}}}}"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v2/on-call/teams/48e3aed2-a7e1-4fee-9037-ce9c9f4b4952/routing-rules",
+      "body": "{\"data\":{\"attributes\":{\"rules\":[{\"policy_id\":\"e6743e82-8165-42f1-a930-540f4e9977b1\",\"query\":\"tags.service:{{name}}-changed\",\"urgency\":\"high\"},{\"policy_id\":\"e6743e82-8165-42f1-a930-540f4e9977b1\",\"urgency\":\"low\"}]},\"id\":\"48e3aed2-a7e1-4fee-9037-ce9c9f4b4952\",\"type\":\"team_routing_rules\"}}",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"id\":\"48e3aed2-a7e1-4fee-9037-ce9c9f4b4952\",\"type\":\"team_routing_rules\",\"relationships\":{\"rules\":{\"data\":[{\"id\":\"6ec602c4-371c-4358-baf2-c51f1c05ae67\",\"type\":\"team_routing_rules\"},{\"id\":\"4372d445-7fb5-409e-99f8-ffeccacb6b65\",\"type\":\"team_routing_rules\"}]}}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/on-call/teams/48e3aed2-a7e1-4fee-9037-ce9c9f4b4952/routing-rules",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"id\":\"48e3aed2-a7e1-4fee-9037-ce9c9f4b4952\",\"type\":\"team_routing_rules\",\"relationships\":{\"rules\":{\"data\":[{\"id\":\"6ec602c4-371c-4358-baf2-c51f1c05ae67\",\"type\":\"team_routing_rules\"},{\"id\":\"4372d445-7fb5-409e-99f8-ffeccacb6b65\",\"type\":\"team_routing_rules\"}]}}}}"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v2/on-call/teams/48e3aed2-a7e1-4fee-9037-ce9c9f4b4952/routing-rules",
+      "body": "{\"data\":{\"attributes\":{\"rules\":[]},\"id\":\"48e3aed2-a7e1-4fee-9037-ce9c9f4b4952\",\"type\":\"team_routing_rules\"}}",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"id\":\"48e3aed2-a7e1-4fee-9037-ce9c9f4b4952\",\"type\":\"team_routing_rules\",\"relationships\":{\"rules\":{\"data\":[]}}}}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v2/on-call/escalation-policies/e6743e82-8165-42f1-a930-540f4e9977b1",
+      "status": 204
+    }
+  ]
+}

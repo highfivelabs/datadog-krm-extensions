@@ -1,0 +1,104 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "component": "rehearsal-component",
+    "dashboard": 280000002,
+    "itype": "rehearsal-itype",
+    "member": "rehearsal-member",
+    "org": "rehearsal-org",
+    "orgsa": "rehearsal-orgsa",
+    "page": "rehearsal-page",
+    "role": "rehearsal-role",
+    "roleUser": "rehearsal-roleUser",
+    "routingPolicy": "rehearsal-routingPolicy",
+    "ruleA": "rehearsal-ruleA",
+    "ruleB": "rehearsal-ruleB",
+    "rum": "rehearsal-rum",
+    "sa": "rehearsal-sa",
+    "slo": "rehearsal-slo",
+    "subteam": "rehearsal-subteam",
+    "team": "rehearsal-team"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/api/v1/integration/slack/configuration/accounts/example-account-name/channels",
+      "body": "{\"name\":\"example-name\"}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"id\":270000073,\"name\":\"example-name\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/integration/slack/configuration/accounts/example-account-name/channels/270000073",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":270000073,\"name\":\"example-name\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/integration/slack/configuration/accounts/example-account-name/channels/270000073",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":270000073,\"name\":\"example-name\"}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v1/integration/slack/configuration/accounts/example-account-name/channels/270000073",
+      "body": "{\"name\":\"changed-name\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":270000073,\"name\":\"changed-name\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/integration/slack/configuration/accounts/example-account-name/channels/270000073",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":270000073,\"name\":\"changed-name\"}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v1/integration/slack/configuration/accounts/example-account-name/channels/270000073",
+      "body": "{\"name\":\"hfl-live-drift\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":270000073,\"name\":\"hfl-live-drift\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/integration/slack/configuration/accounts/example-account-name/channels/270000073",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":270000073,\"name\":\"hfl-live-drift\"}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v1/integration/slack/configuration/accounts/example-account-name/channels/270000073",
+      "body": "{\"name\":\"changed-name\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":270000073,\"name\":\"changed-name\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/integration/slack/configuration/accounts/example-account-name/channels/270000073",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":270000073,\"name\":\"changed-name\"}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/integration/slack/configuration/accounts/example-account-name/channels/270000073",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/integration/slack/configuration/accounts/example-account-name/channels/270000073",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

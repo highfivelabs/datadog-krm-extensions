@@ -1,0 +1,28 @@
+terraform: [datadog_child_organization]
+shape: crud
+forget: "Datadog has no API to delete an organization (its support does); deleting the object leaves the child organization, as the provider does"
+id: {from: org.public_id}
+fields:
+  name:
+    type: string
+    maxLength: 32
+required: [name]
+secretOutputs: [api_key.key, application_key.hash]
+sample:
+  name: example-child-org
+serverFields:
+  public_id: abc-123
+  description: example-description
+  disabled: false
+  sharing: none
+  url: https://app.datadoghq.com/
+  created_at: '2026-01-01T00:00:00Z'
+  modified_at: '2026-01-01T00:00:00Z'
+create:
+  method: POST
+  path: /api/v1/org
+read:
+  method: GET
+  path: /api/v2/org
+  find: {list: included, field: attributes.public_id}
+  envelope: attributes

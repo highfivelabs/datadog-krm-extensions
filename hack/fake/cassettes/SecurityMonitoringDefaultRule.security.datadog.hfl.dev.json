@@ -1,0 +1,62 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "component": "rehearsal-component",
+    "dashboard": 280000002,
+    "itype": "rehearsal-itype",
+    "member": "rehearsal-member",
+    "org": "rehearsal-org",
+    "orgsa": "rehearsal-orgsa",
+    "page": "rehearsal-page",
+    "role": "rehearsal-role",
+    "roleUser": "rehearsal-roleUser",
+    "routingPolicy": "rehearsal-routingPolicy",
+    "ruleA": "rehearsal-ruleA",
+    "ruleB": "rehearsal-ruleB",
+    "rum": "rehearsal-rum",
+    "sa": "rehearsal-sa",
+    "slo": "rehearsal-slo",
+    "subteam": "rehearsal-subteam",
+    "team": "rehearsal-team"
+  },
+  "interactions": [
+    {
+      "method": "GET",
+      "path": "/api/v2/security_monitoring/rules/abc-def-ghi",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"isDefault\":true,\"name\":\"Example default rule\",\"type\":\"log_detection\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/security_monitoring/rules/abc-def-ghi",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"isDefault\":true,\"name\":\"Example default rule\",\"type\":\"log_detection\"}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v2/security_monitoring/rules/abc-def-ghi",
+      "body": "{\"isEnabled\":true}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"isDefault\":true,\"isEnabled\":true,\"name\":\"Example default rule\",\"type\":\"log_detection\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/security_monitoring/rules/abc-def-ghi",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"isDefault\":true,\"isEnabled\":true,\"name\":\"Example default rule\",\"type\":\"log_detection\"}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v2/security_monitoring/rules/abc-def-ghi",
+      "body": "{}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"isDefault\":true,\"isEnabled\":true,\"name\":\"Example default rule\",\"type\":\"log_detection\"}\n"
+    }
+  ]
+}

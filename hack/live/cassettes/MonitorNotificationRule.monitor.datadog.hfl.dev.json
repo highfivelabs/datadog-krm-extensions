@@ -1,0 +1,100 @@
+{
+  "recorded": "2026-11-20T23:57:17Z",
+  "target": "Datadog trial",
+  "vars": {
+    "dashboard": "ur8-afc-sum",
+    "sa": "16307311-e53e-11f1-b3f2-e693e7c43799",
+    "slo": "3704e6ae4bac5b54b241a727ff6ab03b",
+    "subteam": "d4c1dd6f-4ea7-42e9-9847-c995ec31b739",
+    "team": "48e3aed2-a7e1-4fee-9037-ce9c9f4b4952"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/api/v2/monitor/notification_rule",
+      "body": "{\"data\":{\"attributes\":{\"filter\":{\"tags\":[\"hfl-live:{{name}}\"]},\"name\":\"{{name}}\",\"recipients\":[\"{{name}}@example.com\"]},\"type\":\"monitor-notification-rule\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"created_at\":\"2026-11-20T23:57:15.137899+00:00\",\"filter\":{\"tags\":[\"hfl-live:{{name}}\"]},\"modified_at\":\"2026-11-20T23:57:15.167303+00:00\",\"name\":\"{{name}}\",\"recipients\":[\"{{name}}@example.com\"]},\"id\":\"de1a7bb2-8a3f-4fc6-b069-1d4388a5c5e5\",\"relationships\":{\"created_by\":{\"data\":{\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"type\":\"users\"}}},\"type\":\"monitor-notification-rule\"},\"included\":[{\"attributes\":{\"allowed_login_methods\":[],\"created_at\":\"2026-11-16T06:47:35.400086+00:00\",\"disabled\":false,\"email\":\"{{redacted}}\",\"handle\":\"{{redacted}}\",\"icon\":\"{{redacted}}\",\"last_login_time\":null,\"modified_at\":\"2026-11-16T06:47:58.151789+00:00\",\"name\":\"{{redacted}}\",\"service_account\":false,\"status\":\"Active\",\"title\":null,\"uuid\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"verified\":true},\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"type\":\"users\"}]}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/monitor/notification_rule/de1a7bb2-8a3f-4fc6-b069-1d4388a5c5e5",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"type\":\"monitor-notification-rule\",\"id\":\"de1a7bb2-8a3f-4fc6-b069-1d4388a5c5e5\",\"attributes\":{\"name\":\"{{name}}\",\"created_at\":\"2026-11-20T23:57:15.137899+00:00\",\"modified_at\":\"2026-11-20T23:57:15.167303+00:00\",\"filter\":{\"tags\":[\"hfl-live:{{name}}\"]},\"recipients\":[\"{{name}}@example.com\"]}}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/monitor/notification_rule/de1a7bb2-8a3f-4fc6-b069-1d4388a5c5e5",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"type\":\"monitor-notification-rule\",\"id\":\"de1a7bb2-8a3f-4fc6-b069-1d4388a5c5e5\",\"attributes\":{\"name\":\"{{name}}\",\"created_at\":\"2026-11-20T23:57:15.137899+00:00\",\"modified_at\":\"2026-11-20T23:57:15.167303+00:00\",\"filter\":{\"tags\":[\"hfl-live:{{name}}\"]},\"recipients\":[\"{{name}}@example.com\"]}}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v2/monitor/notification_rule/de1a7bb2-8a3f-4fc6-b069-1d4388a5c5e5",
+      "body": "{\"data\":{\"attributes\":{\"filter\":{\"tags\":[\"hfl-live:{{name}}\"]},\"name\":\"{{name}}-changed\",\"recipients\":[\"{{name}}@example.com\"]},\"id\":\"de1a7bb2-8a3f-4fc6-b069-1d4388a5c5e5\",\"type\":\"monitor-notification-rule\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"created_at\":\"2026-11-20T23:57:15.137899+00:00\",\"filter\":{\"tags\":[\"hfl-live:{{name}}\"]},\"modified_at\":\"2026-11-20T23:57:15.640442+00:00\",\"name\":\"{{name}}-changed\",\"recipients\":[\"{{name}}@example.com\"]},\"id\":\"de1a7bb2-8a3f-4fc6-b069-1d4388a5c5e5\",\"relationships\":{\"created_by\":{\"data\":{\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"type\":\"users\"}}},\"type\":\"monitor-notification-rule\"},\"included\":[{\"attributes\":{\"allowed_login_methods\":[],\"created_at\":\"2026-11-16T06:47:35.400086+00:00\",\"disabled\":false,\"email\":\"{{redacted}}\",\"handle\":\"{{redacted}}\",\"icon\":\"{{redacted}}\",\"last_login_time\":null,\"modified_at\":\"2026-11-16T06:47:58.151789+00:00\",\"name\":\"{{redacted}}\",\"service_account\":false,\"status\":\"Active\",\"title\":null,\"uuid\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"verified\":true},\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"type\":\"users\"}]}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/monitor/notification_rule/de1a7bb2-8a3f-4fc6-b069-1d4388a5c5e5",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"type\":\"monitor-notification-rule\",\"id\":\"de1a7bb2-8a3f-4fc6-b069-1d4388a5c5e5\",\"attributes\":{\"name\":\"{{name}}-changed\",\"created_at\":\"2026-11-20T23:57:15.137899+00:00\",\"modified_at\":\"2026-11-20T23:57:15.640442+00:00\",\"filter\":{\"tags\":[\"hfl-live:{{name}}\"]},\"recipients\":[\"{{name}}@example.com\"]}}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/monitor/notification_rule/de1a7bb2-8a3f-4fc6-b069-1d4388a5c5e5",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"type\":\"monitor-notification-rule\",\"id\":\"de1a7bb2-8a3f-4fc6-b069-1d4388a5c5e5\",\"attributes\":{\"name\":\"{{name}}-changed\",\"created_at\":\"2026-11-20T23:57:15.137899+00:00\",\"modified_at\":\"2026-11-20T23:57:15.640442+00:00\",\"filter\":{\"tags\":[\"hfl-live:{{name}}\"]},\"recipients\":[\"{{name}}@example.com\"]}}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v2/monitor/notification_rule/de1a7bb2-8a3f-4fc6-b069-1d4388a5c5e5",
+      "body": "{\"data\":{\"attributes\":{\"filter\":{\"tags\":[\"hfl-live:{{name}}\"]},\"name\":\"{{name}}-drift\",\"recipients\":[\"{{name}}@example.com\"]},\"id\":\"de1a7bb2-8a3f-4fc6-b069-1d4388a5c5e5\",\"type\":\"monitor-notification-rule\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"created_at\":\"2026-11-20T23:57:15.137899+00:00\",\"filter\":{\"tags\":[\"hfl-live:{{name}}\"]},\"modified_at\":\"2026-11-20T23:57:16.191804+00:00\",\"name\":\"{{name}}-drift\",\"recipients\":[\"{{name}}@example.com\"]},\"id\":\"de1a7bb2-8a3f-4fc6-b069-1d4388a5c5e5\",\"relationships\":{\"created_by\":{\"data\":{\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"type\":\"users\"}}},\"type\":\"monitor-notification-rule\"},\"included\":[{\"attributes\":{\"allowed_login_methods\":[],\"created_at\":\"2026-11-16T06:47:35.400086+00:00\",\"disabled\":false,\"email\":\"{{redacted}}\",\"handle\":\"{{redacted}}\",\"icon\":\"{{redacted}}\",\"last_login_time\":null,\"modified_at\":\"2026-11-16T06:47:58.151789+00:00\",\"name\":\"{{redacted}}\",\"service_account\":false,\"status\":\"Active\",\"title\":null,\"uuid\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"verified\":true},\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"type\":\"users\"}]}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/monitor/notification_rule/de1a7bb2-8a3f-4fc6-b069-1d4388a5c5e5",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"type\":\"monitor-notification-rule\",\"id\":\"de1a7bb2-8a3f-4fc6-b069-1d4388a5c5e5\",\"attributes\":{\"name\":\"{{name}}-drift\",\"created_at\":\"2026-11-20T23:57:15.137899+00:00\",\"modified_at\":\"2026-11-20T23:57:16.191804+00:00\",\"filter\":{\"tags\":[\"hfl-live:{{name}}\"]},\"recipients\":[\"{{name}}@example.com\"]}}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v2/monitor/notification_rule/de1a7bb2-8a3f-4fc6-b069-1d4388a5c5e5",
+      "body": "{\"data\":{\"attributes\":{\"filter\":{\"tags\":[\"hfl-live:{{name}}\"]},\"name\":\"{{name}}-changed\",\"recipients\":[\"{{name}}@example.com\"]},\"id\":\"de1a7bb2-8a3f-4fc6-b069-1d4388a5c5e5\",\"type\":\"monitor-notification-rule\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"created_at\":\"2026-11-20T23:57:15.137899+00:00\",\"filter\":{\"tags\":[\"hfl-live:{{name}}\"]},\"modified_at\":\"2026-11-20T23:57:16.526431+00:00\",\"name\":\"{{name}}-changed\",\"recipients\":[\"{{name}}@example.com\"]},\"id\":\"de1a7bb2-8a3f-4fc6-b069-1d4388a5c5e5\",\"relationships\":{\"created_by\":{\"data\":{\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"type\":\"users\"}}},\"type\":\"monitor-notification-rule\"},\"included\":[{\"attributes\":{\"allowed_login_methods\":[],\"created_at\":\"2026-11-16T06:47:35.400086+00:00\",\"disabled\":false,\"email\":\"{{redacted}}\",\"handle\":\"{{redacted}}\",\"icon\":\"{{redacted}}\",\"last_login_time\":null,\"modified_at\":\"2026-11-16T06:47:58.151789+00:00\",\"name\":\"{{redacted}}\",\"service_account\":false,\"status\":\"Active\",\"title\":null,\"uuid\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"verified\":true},\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"type\":\"users\"}]}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/monitor/notification_rule/de1a7bb2-8a3f-4fc6-b069-1d4388a5c5e5",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"type\":\"monitor-notification-rule\",\"id\":\"de1a7bb2-8a3f-4fc6-b069-1d4388a5c5e5\",\"attributes\":{\"name\":\"{{name}}-changed\",\"created_at\":\"2026-11-20T23:57:15.137899+00:00\",\"modified_at\":\"2026-11-20T23:57:16.526431+00:00\",\"filter\":{\"tags\":[\"hfl-live:{{name}}\"]},\"recipients\":[\"{{name}}@example.com\"]}}}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v2/monitor/notification_rule/de1a7bb2-8a3f-4fc6-b069-1d4388a5c5e5",
+      "status": 204,
+      "contentType": "text/html; charset=utf-8"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/monitor/notification_rule/de1a7bb2-8a3f-4fc6-b069-1d4388a5c5e5",
+      "status": 404,
+      "contentType": "application/json",
+      "response": "{\"errors\":[\"Monitor Notification Rule not found\"]}"
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+terraform: [datadog_security_monitoring_default_rule]
+shape: settings
+params:
+  rule_id:
+fields:
+  isEnabled:
+    type: boolean
+    description: Whether the rule is enabled.
+  customName:
+    type: string
+    description: Custom/Overridden name of the rule (used in case of Default rule update).
+  customMessage:
+    type: string
+    description: Custom/Overridden message for generated signals (used in case of Default rule update).
+  filters:
+    type: array
+    description: Additional queries to filter matched events before they are processed.
+    items:
+      type: object
+      properties:
+        action:
+          type: string
+          enum: [require, suppress]
+          description: The type of filtering action.
+        query:
+          type: string
+          description: Query for selecting logs to apply the filtering action.
+required: [isEnabled]
+sample: {rule_id: abc-def-ghi, isEnabled: true}
+serverFields:
+  name: Example default rule
+  isDefault: true
+  type: log_detection
+read:
+  method: GET
+  path: /api/v2/security_monitoring/rules/{rule_id}
+update:
+  method: PUT
+  path: /api/v2/security_monitoring/rules/{rule_id}

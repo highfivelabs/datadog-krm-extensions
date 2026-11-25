@@ -1,0 +1,112 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "dashboard": 280000002,
+    "sa": "rehearsal-sa",
+    "slo": "rehearsal-slo",
+    "subteam": "rehearsal-subteam",
+    "team": "rehearsal-team"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/api/v2/service_accounts",
+      "body": "{\"data\":{\"attributes\":{\"email\":\"{{name}}@example.com\",\"name\":\"{{name}}\",\"service_account\":true},\"type\":\"users\"}}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"_stub\":\"rehearsal stand-in: the fake API has no such resource\",\"data\":{\"attributes\":{\"email\":\"{{name}}@example.com\",\"name\":\"{{name}}\",\"service_account\":true},\"type\":\"users\"},\"id\":280000006}\n"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v2/service_accounts/rehearsal-sa/access_tokens",
+      "body": "{\"data\":{\"attributes\":{\"name\":\"{{name}}\",\"scopes\":[\"dashboards_read\"]},\"type\":\"service_access_tokens\"}}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"name\":\"{{name}}\",\"scopes\":[\"dashboards_read\"]},\"id\":270000014,\"relationships\":{},\"type\":\"service_access_tokens\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/service_accounts/rehearsal-sa/access_tokens/270000014",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"name\":\"{{name}}\",\"scopes\":[\"dashboards_read\"]},\"id\":270000014,\"relationships\":{},\"type\":\"service_access_tokens\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/service_accounts/rehearsal-sa/access_tokens/270000014",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"name\":\"{{name}}\",\"scopes\":[\"dashboards_read\"]},\"id\":270000014,\"relationships\":{},\"type\":\"service_access_tokens\"}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v2/service_accounts/rehearsal-sa/access_tokens/270000014",
+      "body": "{\"data\":{\"attributes\":{\"name\":\"{{name}}-changed\",\"scopes\":[\"dashboards_read\"]},\"id\":\"270000014\",\"type\":\"service_access_tokens\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"name\":\"{{name}}-changed\",\"scopes\":[\"dashboards_read\"]},\"id\":\"270000014\",\"relationships\":{},\"type\":\"service_access_tokens\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/service_accounts/rehearsal-sa/access_tokens/270000014",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"name\":\"{{name}}-changed\",\"scopes\":[\"dashboards_read\"]},\"id\":\"270000014\",\"relationships\":{},\"type\":\"service_access_tokens\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/service_accounts/rehearsal-sa/access_tokens/270000014",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"name\":\"{{name}}-changed\",\"scopes\":[\"dashboards_read\"]},\"id\":\"270000014\",\"relationships\":{},\"type\":\"service_access_tokens\"}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v2/service_accounts/rehearsal-sa/access_tokens/270000014",
+      "body": "{\"data\":{\"attributes\":{\"name\":\"{{name}}-drift\",\"scopes\":[\"dashboards_read\"]},\"id\":\"270000014\",\"relationships\":{},\"type\":\"service_access_tokens\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"name\":\"{{name}}-drift\",\"scopes\":[\"dashboards_read\"]},\"id\":\"270000014\",\"relationships\":{},\"type\":\"service_access_tokens\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/service_accounts/rehearsal-sa/access_tokens/270000014",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"name\":\"{{name}}-drift\",\"scopes\":[\"dashboards_read\"]},\"id\":\"270000014\",\"relationships\":{},\"type\":\"service_access_tokens\"}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v2/service_accounts/rehearsal-sa/access_tokens/270000014",
+      "body": "{\"data\":{\"attributes\":{\"name\":\"{{name}}-changed\",\"scopes\":[\"dashboards_read\"]},\"id\":\"270000014\",\"type\":\"service_access_tokens\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"name\":\"{{name}}-changed\",\"scopes\":[\"dashboards_read\"]},\"id\":\"270000014\",\"relationships\":{},\"type\":\"service_access_tokens\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/service_accounts/rehearsal-sa/access_tokens/270000014",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"name\":\"{{name}}-changed\",\"scopes\":[\"dashboards_read\"]},\"id\":\"270000014\",\"relationships\":{},\"type\":\"service_access_tokens\"}}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v2/service_accounts/rehearsal-sa/access_tokens/270000014",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/service_accounts/rehearsal-sa/access_tokens/270000014",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v2/users/rehearsal-sa",
+      "status": 204
+    }
+  ]
+}

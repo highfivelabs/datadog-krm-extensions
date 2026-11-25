@@ -1,0 +1,83 @@
+terraform: [datadog_software_catalog]
+shape: crud
+fields:
+  apiVersion:
+    type: string
+    enum: [v3]
+  kind:
+    type: string
+    enum: [service, datastore, queue, system, api]
+    description: The kind of the entity.
+  metadata:
+    type: object
+    required: [name, namespace]
+    properties:
+      name: {type: string, description: Unique name given to an entity under the kind/namespace.}
+      namespace: {type: string, description: "Namespace is a part of unique identifier. It has a default value of 'default'."}
+      displayName: {type: string, description: User friendly name of the entity. The UI can leverage the display name for display.}
+      description: {type: string, description: Short description of the entity. The UI can leverage the description for display.}
+      owner: {type: string, description: The owner of the entity, usually a team.}
+      tags:
+        type: array
+        description: A set of custom tags.
+        items: {type: string}
+      inheritFrom: {type: string, description: The entity reference from which to inherit metadata.}
+      contacts:
+        type: array
+        description: A list of contacts for the entity.
+        items:
+          type: object
+          required: [contact, type]
+          properties:
+            contact: {type: string, description: Contact value.}
+            name: {type: string, description: Contact name.}
+            type: {type: string, description: Contact type.}
+      links:
+        type: array
+        description: A list of links for the entity.
+        items:
+          type: object
+          required: [name, type, url]
+          properties:
+            name: {type: string, description: Link name.}
+            provider: {type: string, description: Link provider.}
+            type: {type: string, description: Link type.}
+            url: {type: string, description: Link URL.}
+      additionalOwners:
+        type: array
+        description: The additional owners of the entity, usually a team.
+        items:
+          type: object
+          required: [name]
+          properties:
+            name: {type: string, description: Team name.}
+            type: {type: string, description: Team type.}
+  spec:
+    type: object
+  integrations:
+    type: object
+  datadog:
+    type: object
+  extensions:
+    type: object
+    description: Custom extensions. This is the free-formed field to send client-side metadata. No Datadog features are affected by this field.
+required: [apiVersion, kind, metadata]
+id: "{kind}:{metadata.namespace}/{metadata.name}"
+sample:
+  apiVersion: v3
+  kind: service
+  metadata: {name: example-service, namespace: default, displayName: Example service}
+create:
+  method: POST
+  path: /api/v2/catalog/entity
+read:
+  method: GET
+  path: /api/v2/catalog/entity
+  query: {"filter[ref]": "{id}", include: schema}
+  envelope: included/0/attributes/schema
+update:
+  method: POST
+  path: /api/v2/catalog/entity
+delete:
+  method: DELETE
+  path: /api/v2/catalog/entity/{+id}

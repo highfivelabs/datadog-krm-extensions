@@ -1,0 +1,115 @@
+{
+  "recorded": "2026-11-20T23:57:33Z",
+  "target": "Datadog trial",
+  "vars": {
+    "dashboard": "ur8-afc-sum",
+    "itype": "fb183ac5-a636-4c9e-b864-de008dda88bb",
+    "role": "26806b04-e53e-11f1-807b-da7ad0900005",
+    "sa": "16307311-e53e-11f1-b3f2-e693e7c43799",
+    "slo": "3704e6ae4bac5b54b241a727ff6ab03b",
+    "subteam": "d4c1dd6f-4ea7-42e9-9847-c995ec31b739",
+    "team": "48e3aed2-a7e1-4fee-9037-ce9c9f4b4952"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/api/v2/roles",
+      "body": "{\"data\":{\"attributes\":{\"name\":\"{{name}}\"},\"type\":\"roles\"}}",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"id\":\"26806b04-e53e-11f1-807b-da7ad0900005\",\"type\":\"roles\",\"attributes\":{\"created_at\":\"2026-11-20T23:57:32.185979Z\",\"modified_at\":\"2026-11-20T23:57:32.186578Z\",\"name\":\"{{name}}\",\"team_count\":0,\"user_count\":0},\"relationships\":{\"permissions\":{\"data\":[{\"id\":\"d90f6830-d3d8-11e9-a77a-b3404e5e9ee2\",\"type\":\"permissions\"},{\"id\":\"4441648c-d8b1-11e9-a77a-1b899a04b304\",\"type\":\"permissions\"},{\"id\":\"417ba636-2dce-11eb-84c0-6bce5b0d9de0\",\"type\":\"permissions\"},{\"id\":\"12efc20e-d36c-11eb-a9b8-da7ad0900002\",\"type\":\"permissions\"},{\"id\":\"df71ef13-d5c6-11eb-aa97-da7ad0900002\",\"type\":\"permissions\"},{\"id\":\"df71ef14-d5c6-11eb-aa97-da7ad0900002\",\"type\":\"permissions\"},{\"id\":\"df71ef12-d5c6-11eb-aa97-da7ad0900002\",\"type\":\"permissions\"},{\"id\":\"aa7ccb44-fa13-11eb-b17c-da7ad0900005\",\"type\":\"permissions\"},{\"id\":\"caea6b48-9a59-11ec-b6fc-da7ad0900005\",\"type\":\"permissions\"},{\"id\":\"74be8a46-d533-11ec-8730-da7ad0900005\",\"type\":\"permissions\"},{\"id\":\"eee67f20-e746-11ec-a905-da7ad0900005\",\"type\":\"permissions\"},{\"id\":\"6f80e6ce-7aff-11ed-836c-da7ad0900005\",\"type\":\"permissions\"},{\"id\":\"fa3415fe-3dd0-11ee-be02-da7ad0900005\",\"type\":\"permissions\"},{\"id\":\"b05a8a26-4e88-11ee-90a7-da7ad0900005\",\"type\":\"permissions\"},{\"id\":\"50559336-69d2-11ee-b70d-da7ad0900005\",\"type\":\"permissions\"},{\"id\":\"8c7b8ba2-030d-11ef-b829-da7ad0900005\",\"type\":\"permissions\"},{\"id\":\"ca9d68de-73b3-11f0-86d0-da7ad0900005\",\"type\":\"permissions\"},{\"id\":\"871820da-7d2d-11f0-b77c-da7ad0900005\",\"type\":\"permissions\"},{\"id\":\"4ff10c3e-a537-11f0-879c-da7ad0900005\",\"type\":\"permissions\"}]}}}}"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v2/datasets",
+      "body": "{\"data\":{\"attributes\":{\"name\":\"{{name}}\",\"principals\":[\"role:26806b04-e53e-11f1-807b-da7ad0900005\"],\"product_filters\":[{\"filters\":[\"@service:{{name}}\"],\"product\":\"logs\"}]},\"type\":\"dataset\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"type\":\"dataset\",\"id\":\"ca387b2d-bd37-494f-8c2b-2b00637771a1\",\"attributes\":{\"name\":\"{{name}}\",\"product_filters\":[{\"product\":\"logs\",\"filters\":[\"@service:{{name}}\"]}],\"principals\":[\"role:26806b04-e53e-11f1-807b-da7ad0900005\"]}}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/datasets/ca387b2d-bd37-494f-8c2b-2b00637771a1",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"type\":\"dataset\",\"id\":\"ca387b2d-bd37-494f-8c2b-2b00637771a1\",\"attributes\":{\"name\":\"{{name}}\",\"product_filters\":[{\"product\":\"logs\",\"filters\":[\"@service:{{name}}\"]}],\"principals\":[\"role:26806b04-e53e-11f1-807b-da7ad0900005\"]}}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/datasets/ca387b2d-bd37-494f-8c2b-2b00637771a1",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"type\":\"dataset\",\"id\":\"ca387b2d-bd37-494f-8c2b-2b00637771a1\",\"attributes\":{\"name\":\"{{name}}\",\"product_filters\":[{\"product\":\"logs\",\"filters\":[\"@service:{{name}}\"]}],\"principals\":[\"role:26806b04-e53e-11f1-807b-da7ad0900005\"]}}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v2/datasets/ca387b2d-bd37-494f-8c2b-2b00637771a1",
+      "body": "{\"data\":{\"attributes\":{\"name\":\"{{name}}-changed\",\"principals\":[\"role:26806b04-e53e-11f1-807b-da7ad0900005\"],\"product_filters\":[{\"filters\":[\"@service:{{name}}\"],\"product\":\"logs\"}]},\"type\":\"dataset\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"type\":\"dataset\",\"id\":\"ca387b2d-bd37-494f-8c2b-2b00637771a1\",\"attributes\":{\"name\":\"{{name}}-changed\",\"product_filters\":[{\"product\":\"logs\",\"filters\":[\"@service:{{name}}\"]}],\"principals\":[\"role:26806b04-e53e-11f1-807b-da7ad0900005\"]}}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/datasets/ca387b2d-bd37-494f-8c2b-2b00637771a1",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"type\":\"dataset\",\"id\":\"ca387b2d-bd37-494f-8c2b-2b00637771a1\",\"attributes\":{\"name\":\"{{name}}-changed\",\"product_filters\":[{\"product\":\"logs\",\"filters\":[\"@service:{{name}}\"]}],\"principals\":[\"role:26806b04-e53e-11f1-807b-da7ad0900005\"]}}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/datasets/ca387b2d-bd37-494f-8c2b-2b00637771a1",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"type\":\"dataset\",\"id\":\"ca387b2d-bd37-494f-8c2b-2b00637771a1\",\"attributes\":{\"name\":\"{{name}}-changed\",\"product_filters\":[{\"product\":\"logs\",\"filters\":[\"@service:{{name}}\"]}],\"principals\":[\"role:26806b04-e53e-11f1-807b-da7ad0900005\"]}}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v2/datasets/ca387b2d-bd37-494f-8c2b-2b00637771a1",
+      "body": "{\"data\":{\"attributes\":{\"name\":\"{{name}}-drift\",\"principals\":[\"role:26806b04-e53e-11f1-807b-da7ad0900005\"],\"product_filters\":[{\"filters\":[\"@service:{{name}}\"],\"product\":\"logs\"}]},\"id\":\"ca387b2d-bd37-494f-8c2b-2b00637771a1\",\"type\":\"dataset\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"type\":\"dataset\",\"id\":\"ca387b2d-bd37-494f-8c2b-2b00637771a1\",\"attributes\":{\"name\":\"{{name}}-drift\",\"product_filters\":[{\"product\":\"logs\",\"filters\":[\"@service:{{name}}\"]}],\"principals\":[\"role:26806b04-e53e-11f1-807b-da7ad0900005\"]}}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/datasets/ca387b2d-bd37-494f-8c2b-2b00637771a1",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"type\":\"dataset\",\"id\":\"ca387b2d-bd37-494f-8c2b-2b00637771a1\",\"attributes\":{\"name\":\"{{name}}-drift\",\"product_filters\":[{\"product\":\"logs\",\"filters\":[\"@service:{{name}}\"]}],\"principals\":[\"role:26806b04-e53e-11f1-807b-da7ad0900005\"]}}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v2/datasets/ca387b2d-bd37-494f-8c2b-2b00637771a1",
+      "body": "{\"data\":{\"attributes\":{\"name\":\"{{name}}-changed\",\"principals\":[\"role:26806b04-e53e-11f1-807b-da7ad0900005\"],\"product_filters\":[{\"filters\":[\"@service:{{name}}\"],\"product\":\"logs\"}]},\"type\":\"dataset\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"type\":\"dataset\",\"id\":\"ca387b2d-bd37-494f-8c2b-2b00637771a1\",\"attributes\":{\"name\":\"{{name}}-changed\",\"product_filters\":[{\"product\":\"logs\",\"filters\":[\"@service:{{name}}\"]}],\"principals\":[\"role:26806b04-e53e-11f1-807b-da7ad0900005\"]}}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/datasets/ca387b2d-bd37-494f-8c2b-2b00637771a1",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"type\":\"dataset\",\"id\":\"ca387b2d-bd37-494f-8c2b-2b00637771a1\",\"attributes\":{\"name\":\"{{name}}-changed\",\"product_filters\":[{\"product\":\"logs\",\"filters\":[\"@service:{{name}}\"]}],\"principals\":[\"role:26806b04-e53e-11f1-807b-da7ad0900005\"]}}}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v2/datasets/ca387b2d-bd37-494f-8c2b-2b00637771a1",
+      "status": 204,
+      "contentType": "application/json"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/datasets/ca387b2d-bd37-494f-8c2b-2b00637771a1",
+      "status": 404,
+      "contentType": "application/json",
+      "response": "{\"errors\":[\"Invalid request: [DatasetNotFound] dataset \\\"ca387b2d-bd37-494f-8c2b-2b00637771a1\\\" not found\"]}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v2/roles/26806b04-e53e-11f1-807b-da7ad0900005",
+      "status": 204
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+terraform: [datadog_cloud_inventory_sync_config]
+shape: crud
+envelope: data
+bodyEnvelope: data
+params:
+  cloud_provider:
+    enum: [aws, azure, gcp]
+fields:
+  type:
+    type: string
+    enum: [cloud_provider]
+    description: The resource type.
+  attributes:
+    type: object
+    properties:
+      aws:
+        type: object
+        required: [aws_account_id, destination_bucket_name, destination_bucket_region]
+        properties:
+          aws_account_id: {type: string, description: AWS Account ID.}
+          destination_bucket_name: {type: string}
+          destination_bucket_region: {type: string}
+          destination_prefix: {type: string}
+      azure:
+        type: object
+        required: [client_id, tenant_id, subscription_id, resource_group, storage_account, container]
+        properties:
+          client_id: {type: string, description: Azure AD application (client) ID.}
+          tenant_id: {type: string, description: Azure AD tenant ID.}
+          subscription_id: {type: string, description: Azure subscription ID.}
+          resource_group: {type: string}
+          storage_account: {type: string}
+          container: {type: string}
+      gcp:
+        type: object
+        required: [project_id, destination_bucket_name, source_bucket_name, service_account_email]
+        properties:
+          project_id: {type: string, description: GCP project ID.}
+          destination_bucket_name: {type: string}
+          source_bucket_name: {type: string}
+          service_account_email: {type: string}
+required: [type, attributes]
+writeOnly: [attributes]
+sample:
+  cloud_provider: aws
+  type: cloud_provider
+  attributes:
+    aws: {aws_account_id: "123456789012", destination_bucket_name: example-inventory-bucket, destination_bucket_region: us-east-1}
+create:
+  method: PUT
+  path: /api/v2/cloudinventoryservice/syncconfigs
+  body: {id: "{cloud_provider}"}
+read:
+  method: GET
+  path: /api/v2/cloudinventoryservice/syncconfigs/{id}
+update:
+  method: PUT
+  path: /api/v2/cloudinventoryservice/syncconfigs
+  body: {id: "{cloud_provider}"}
+delete:
+  method: DELETE
+  path: /api/v2/cloudinventoryservice/syncconfigs/{id}

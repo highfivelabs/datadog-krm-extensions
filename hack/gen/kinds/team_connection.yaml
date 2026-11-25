@@ -1,0 +1,57 @@
+terraform: [datadog_team_connection]
+shape: crud
+envelope: data
+bodyEnvelope: data
+fields:
+  type:
+    type: string
+    enum: [team_connection]
+  attributes:
+    type: object
+    properties:
+      source:
+        type: string
+        description: The name of the external source, such as `github` or `servicenow`.
+  relationships:
+    type: object
+    properties:
+      team:
+        type: object
+        properties:
+          data:
+            type: object
+            required: [id, type]
+            properties:
+              id: {type: string, description: The Datadog team ID.}
+              type: {type: string, enum: [team]}
+      connected_team:
+        type: object
+        properties:
+          data:
+            type: object
+            required: [id, type]
+            properties:
+              id: {type: string}
+              type: {type: string, enum: [github_team, servicenow_team]}
+required: [type, relationships]
+sample:
+  type: team_connection
+  attributes: {source: github}
+  relationships:
+    team: {data: {id: 87654321-4321-8765-dcba-210987654321, type: team}}
+    connected_team: {data: {id: "@example-org/example-team", type: github_team}}
+create:
+  method: POST
+  path: /api/v2/team/connections
+  bodyArray: true
+  envelope: data/0
+read:
+  method: GET
+  path: /api/v2/team/connections
+  query: {"filter[connection_ids]": "{id}"}
+  find: {list: data, field: id}
+delete:
+  method: DELETE
+  path: /api/v2/team/connections
+  bodyArray: true
+  body: {id: "{id}", type: team_connection}

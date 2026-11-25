@@ -1,0 +1,104 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "component": "rehearsal-component",
+    "dashboard": 280000002,
+    "itype": "rehearsal-itype",
+    "member": "rehearsal-member",
+    "org": "rehearsal-org",
+    "orgsa": "rehearsal-orgsa",
+    "page": "rehearsal-page",
+    "role": "rehearsal-role",
+    "roleUser": "rehearsal-roleUser",
+    "routingPolicy": "rehearsal-routingPolicy",
+    "ruleA": "rehearsal-ruleA",
+    "ruleB": "rehearsal-ruleB",
+    "rum": "rehearsal-rum",
+    "sa": "rehearsal-sa",
+    "slo": "rehearsal-slo",
+    "subteam": "rehearsal-subteam",
+    "team": "rehearsal-team"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/api/v1/logs/config/indexes",
+      "body": "{\"filter\":{},\"name\":\"main\"}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"filter\":{},\"is_rate_limited\":false,\"name\":\"main\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/logs/config/indexes/main",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"filter\":{},\"is_rate_limited\":false,\"name\":\"main\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/logs/config/indexes/main",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"filter\":{},\"is_rate_limited\":false,\"name\":\"main\"}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/logs/config/indexes/main",
+      "body": "{\"filter\":{},\"name\":\"changed-name\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"filter\":{},\"is_rate_limited\":false,\"name\":\"changed-name\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/logs/config/indexes/main",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"filter\":{},\"is_rate_limited\":false,\"name\":\"changed-name\"}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/logs/config/indexes/main",
+      "body": "{\"name\":\"hfl-live-drift\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"filter\":{},\"is_rate_limited\":false,\"name\":\"hfl-live-drift\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/logs/config/indexes/main",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"filter\":{},\"is_rate_limited\":false,\"name\":\"hfl-live-drift\"}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/logs/config/indexes/main",
+      "body": "{\"filter\":{},\"name\":\"changed-name\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"filter\":{},\"is_rate_limited\":false,\"name\":\"changed-name\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/logs/config/indexes/main",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"filter\":{},\"is_rate_limited\":false,\"name\":\"changed-name\"}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/logs/config/indexes/main",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/logs/config/indexes/main",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

@@ -1,0 +1,100 @@
+{
+  "recorded": "2026-11-20T23:57:30Z",
+  "target": "Datadog trial",
+  "vars": {
+    "dashboard": "ur8-afc-sum",
+    "itype": "fb183ac5-a636-4c9e-b864-de008dda88bb",
+    "sa": "16307311-e53e-11f1-b3f2-e693e7c43799",
+    "slo": "3704e6ae4bac5b54b241a727ff6ab03b",
+    "subteam": "d4c1dd6f-4ea7-42e9-9847-c995ec31b739",
+    "team": "48e3aed2-a7e1-4fee-9037-ce9c9f4b4952"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/api/v2/actions/connections",
+      "body": "{\"data\":{\"attributes\":{\"integration\":{\"credentials\":{\"account_id\":\"{{redacted}}\",\"role\":\"{{name}}\",\"type\":\"{{redacted}}\"},\"type\":\"AWS\"},\"name\":\"{{name}}\"},\"type\":\"action_connection\"}}",
+      "status": 201,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"attributes\":{\"acting_user_can_resolve\":false,\"environment\":\"DATACENTER\",\"external_secrets_manager\":null,\"integration\":{\"credentials\":{\"account_id\":\"{{redacted}}\",\"external_id\":\"{{redacted}}\",\"principal_id\":\"{{redacted}}\",\"role\":\"{{name}}\",\"type\":\"{{redacted}}\"},\"type\":\"AWS\"},\"is_favorite\":false,\"name\":\"{{name}}\"},\"id\":\"615ab3da-4f15-4c55-a664-f1c539299b36\",\"type\":\"action_connection\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/actions/connections/615ab3da-4f15-4c55-a664-f1c539299b36",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"attributes\":{\"acting_user_can_resolve\":true,\"created_at\":\"2026-11-20 23:57:28.96885 +0000 UTC\",\"environment\":\"DATACENTER\",\"external_secrets_manager\":null,\"integration\":{\"credentials\":{\"account_id\":\"{{redacted}}\",\"external_id\":\"{{redacted}}\",\"principal_id\":\"{{redacted}}\",\"role\":\"{{name}}\",\"type\":\"{{redacted}}\"},\"type\":\"AWS\"},\"is_favorite\":false,\"last_updated\":\"2026-11-20 23:57:28.96885 +0000 UTC\",\"name\":\"{{name}}\"},\"id\":\"615ab3da-4f15-4c55-a664-f1c539299b36\",\"relationships\":{\"created_by\":{\"data\":{\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"type\":\"created_by\"}}},\"type\":\"action_connection\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/actions/connections/615ab3da-4f15-4c55-a664-f1c539299b36",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"attributes\":{\"acting_user_can_resolve\":true,\"created_at\":\"2026-11-20 23:57:28.96885 +0000 UTC\",\"environment\":\"DATACENTER\",\"external_secrets_manager\":null,\"integration\":{\"credentials\":{\"account_id\":\"{{redacted}}\",\"external_id\":\"{{redacted}}\",\"principal_id\":\"{{redacted}}\",\"role\":\"{{name}}\",\"type\":\"{{redacted}}\"},\"type\":\"AWS\"},\"is_favorite\":false,\"last_updated\":\"2026-11-20 23:57:28.96885 +0000 UTC\",\"name\":\"{{name}}\"},\"id\":\"615ab3da-4f15-4c55-a664-f1c539299b36\",\"relationships\":{\"created_by\":{\"data\":{\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"type\":\"created_by\"}}},\"type\":\"action_connection\"}}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v2/actions/connections/615ab3da-4f15-4c55-a664-f1c539299b36",
+      "body": "{\"data\":{\"attributes\":{\"integration\":{\"credentials\":{\"account_id\":\"{{redacted}}\",\"role\":\"{{name}}\",\"type\":\"{{redacted}}\"},\"type\":\"AWS\"},\"name\":\"{{name}}-changed\"},\"type\":\"action_connection\"}}",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"attributes\":{\"acting_user_can_resolve\":false,\"created_at\":\"2026-11-20 23:57:28.96885 +0000 UTC\",\"environment\":\"DATACENTER\",\"external_secrets_manager\":null,\"integration\":{\"credentials\":{\"account_id\":\"{{redacted}}\",\"external_id\":\"{{redacted}}\",\"principal_id\":\"{{redacted}}\",\"role\":\"{{name}}\",\"type\":\"{{redacted}}\"},\"type\":\"AWS\"},\"is_favorite\":false,\"last_updated\":\"2026-11-20 23:57:29.466018 +0000 UTC\",\"name\":\"{{name}}-changed\"},\"id\":\"615ab3da-4f15-4c55-a664-f1c539299b36\",\"relationships\":{\"created_by\":{\"data\":{\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"type\":\"created_by\"}}},\"type\":\"action_connection\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/actions/connections/615ab3da-4f15-4c55-a664-f1c539299b36",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"attributes\":{\"acting_user_can_resolve\":true,\"created_at\":\"2026-11-20 23:57:28.96885 +0000 UTC\",\"environment\":\"DATACENTER\",\"external_secrets_manager\":null,\"integration\":{\"credentials\":{\"account_id\":\"{{redacted}}\",\"external_id\":\"{{redacted}}\",\"principal_id\":\"{{redacted}}\",\"role\":\"{{name}}\",\"type\":\"{{redacted}}\"},\"type\":\"AWS\"},\"is_favorite\":false,\"last_updated\":\"2026-11-20 23:57:29.466018 +0000 UTC\",\"name\":\"{{name}}-changed\"},\"id\":\"615ab3da-4f15-4c55-a664-f1c539299b36\",\"relationships\":{\"created_by\":{\"data\":{\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"type\":\"created_by\"}}},\"type\":\"action_connection\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/actions/connections/615ab3da-4f15-4c55-a664-f1c539299b36",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"attributes\":{\"acting_user_can_resolve\":true,\"created_at\":\"2026-11-20 23:57:28.96885 +0000 UTC\",\"environment\":\"DATACENTER\",\"external_secrets_manager\":null,\"integration\":{\"credentials\":{\"account_id\":\"{{redacted}}\",\"external_id\":\"{{redacted}}\",\"principal_id\":\"{{redacted}}\",\"role\":\"{{name}}\",\"type\":\"{{redacted}}\"},\"type\":\"AWS\"},\"is_favorite\":false,\"last_updated\":\"2026-11-20 23:57:29.466018 +0000 UTC\",\"name\":\"{{name}}-changed\"},\"id\":\"615ab3da-4f15-4c55-a664-f1c539299b36\",\"relationships\":{\"created_by\":{\"data\":{\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"type\":\"created_by\"}}},\"type\":\"action_connection\"}}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v2/actions/connections/615ab3da-4f15-4c55-a664-f1c539299b36",
+      "body": "{\"data\":{\"attributes\":{\"integration\":{\"credentials\":{\"account_id\":\"{{redacted}}\",\"role\":\"{{name}}\",\"type\":\"{{redacted}}\"},\"type\":\"AWS\"},\"name\":\"{{name}}-drift\"},\"id\":\"615ab3da-4f15-4c55-a664-f1c539299b36\",\"relationships\":{\"created_by\":{\"data\":{\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"type\":\"created_by\"}}},\"type\":\"action_connection\"}}",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"attributes\":{\"acting_user_can_resolve\":false,\"created_at\":\"2026-11-20 23:57:28.96885 +0000 UTC\",\"environment\":\"DATACENTER\",\"external_secrets_manager\":null,\"integration\":{\"credentials\":{\"account_id\":\"{{redacted}}\",\"external_id\":\"{{redacted}}\",\"principal_id\":\"{{redacted}}\",\"role\":\"{{name}}\",\"type\":\"{{redacted}}\"},\"type\":\"AWS\"},\"is_favorite\":false,\"last_updated\":\"2026-11-20 23:57:29.922351 +0000 UTC\",\"name\":\"{{name}}-drift\"},\"id\":\"615ab3da-4f15-4c55-a664-f1c539299b36\",\"relationships\":{\"created_by\":{\"data\":{\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"type\":\"created_by\"}}},\"type\":\"action_connection\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/actions/connections/615ab3da-4f15-4c55-a664-f1c539299b36",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"attributes\":{\"acting_user_can_resolve\":true,\"created_at\":\"2026-11-20 23:57:28.96885 +0000 UTC\",\"environment\":\"DATACENTER\",\"external_secrets_manager\":null,\"integration\":{\"credentials\":{\"account_id\":\"{{redacted}}\",\"external_id\":\"{{redacted}}\",\"principal_id\":\"{{redacted}}\",\"role\":\"{{name}}\",\"type\":\"{{redacted}}\"},\"type\":\"AWS\"},\"is_favorite\":false,\"last_updated\":\"2026-11-20 23:57:29.922351 +0000 UTC\",\"name\":\"{{name}}-drift\"},\"id\":\"615ab3da-4f15-4c55-a664-f1c539299b36\",\"relationships\":{\"created_by\":{\"data\":{\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"type\":\"created_by\"}}},\"type\":\"action_connection\"}}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v2/actions/connections/615ab3da-4f15-4c55-a664-f1c539299b36",
+      "body": "{\"data\":{\"attributes\":{\"integration\":{\"credentials\":{\"account_id\":\"{{redacted}}\",\"role\":\"{{name}}\",\"type\":\"{{redacted}}\"},\"type\":\"AWS\"},\"name\":\"{{name}}-changed\"},\"type\":\"action_connection\"}}",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"attributes\":{\"acting_user_can_resolve\":false,\"created_at\":\"2026-11-20 23:57:28.96885 +0000 UTC\",\"environment\":\"DATACENTER\",\"external_secrets_manager\":null,\"integration\":{\"credentials\":{\"account_id\":\"{{redacted}}\",\"external_id\":\"{{redacted}}\",\"principal_id\":\"{{redacted}}\",\"role\":\"{{name}}\",\"type\":\"{{redacted}}\"},\"type\":\"AWS\"},\"is_favorite\":false,\"last_updated\":\"2026-11-20 23:57:30.343968 +0000 UTC\",\"name\":\"{{name}}-changed\"},\"id\":\"615ab3da-4f15-4c55-a664-f1c539299b36\",\"relationships\":{\"created_by\":{\"data\":{\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"type\":\"created_by\"}}},\"type\":\"action_connection\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/actions/connections/615ab3da-4f15-4c55-a664-f1c539299b36",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"attributes\":{\"acting_user_can_resolve\":true,\"created_at\":\"2026-11-20 23:57:28.96885 +0000 UTC\",\"environment\":\"DATACENTER\",\"external_secrets_manager\":null,\"integration\":{\"credentials\":{\"account_id\":\"{{redacted}}\",\"external_id\":\"{{redacted}}\",\"principal_id\":\"{{redacted}}\",\"role\":\"{{name}}\",\"type\":\"{{redacted}}\"},\"type\":\"AWS\"},\"is_favorite\":false,\"last_updated\":\"2026-11-20 23:57:30.343968 +0000 UTC\",\"name\":\"{{name}}-changed\"},\"id\":\"615ab3da-4f15-4c55-a664-f1c539299b36\",\"relationships\":{\"created_by\":{\"data\":{\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"type\":\"created_by\"}}},\"type\":\"action_connection\"}}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v2/actions/connections/615ab3da-4f15-4c55-a664-f1c539299b36",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/actions/connections/615ab3da-4f15-4c55-a664-f1c539299b36",
+      "status": 404,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"errors\":[{\"title\":\"Generic Error\",\"detail\":\"error getting connection: rpc error: code = NotFound desc = connection not found\"}]}"
+    }
+  ]
+}

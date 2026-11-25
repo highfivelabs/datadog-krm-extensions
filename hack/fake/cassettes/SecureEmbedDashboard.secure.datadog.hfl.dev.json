@@ -1,0 +1,97 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "dashboard": 280000002,
+    "subteam": "rehearsal-subteam",
+    "team": "rehearsal-team"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/api/v2/dashboard/280000002/shared/secure-embed",
+      "body": "{\"data\":{\"attributes\":{\"global_time\":{\"live_span\":\"1h\"},\"global_time_selectable\":true,\"selectable_template_vars\":[],\"status\":\"active\",\"title\":\"{{name}}\",\"viewing_preferences\":{\"theme\":\"system\"}},\"type\":\"secure_embed_request\"}}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"global_time\":{\"live_span\":\"1h\"},\"global_time_selectable\":true,\"selectable_template_vars\":[],\"status\":\"active\",\"title\":\"{{name}}\",\"token\":270000008,\"viewing_preferences\":{\"theme\":\"system\"}}}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/dashboard/280000002/shared/secure-embed/270000008",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"global_time\":{\"live_span\":\"1h\"},\"global_time_selectable\":true,\"selectable_template_vars\":[],\"status\":\"active\",\"title\":\"{{name}}\",\"token\":270000008,\"viewing_preferences\":{\"theme\":\"system\"}}}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/dashboard/280000002/shared/secure-embed/270000008",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"global_time\":{\"live_span\":\"1h\"},\"global_time_selectable\":true,\"selectable_template_vars\":[],\"status\":\"active\",\"title\":\"{{name}}\",\"token\":270000008,\"viewing_preferences\":{\"theme\":\"system\"}}}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v2/dashboard/280000002/shared/secure-embed/270000008",
+      "body": "{\"data\":{\"attributes\":{\"global_time\":{\"live_span\":\"1h\"},\"global_time_selectable\":true,\"selectable_template_vars\":[],\"status\":\"paused\",\"title\":\"{{name}}\",\"viewing_preferences\":{\"theme\":\"system\"}},\"type\":\"secure_embed_request\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"global_time\":{\"live_span\":\"1h\"},\"global_time_selectable\":true,\"selectable_template_vars\":[],\"status\":\"paused\",\"title\":\"{{name}}\",\"token\":270000008,\"viewing_preferences\":{\"theme\":\"system\"}}}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/dashboard/280000002/shared/secure-embed/270000008",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"global_time\":{\"live_span\":\"1h\"},\"global_time_selectable\":true,\"selectable_template_vars\":[],\"status\":\"paused\",\"title\":\"{{name}}\",\"token\":270000008,\"viewing_preferences\":{\"theme\":\"system\"}}}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/dashboard/280000002/shared/secure-embed/270000008",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"global_time\":{\"live_span\":\"1h\"},\"global_time_selectable\":true,\"selectable_template_vars\":[],\"status\":\"paused\",\"title\":\"{{name}}\",\"token\":270000008,\"viewing_preferences\":{\"theme\":\"system\"}}}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v2/dashboard/280000002/shared/secure-embed/270000008",
+      "body": "{\"data\":{\"attributes\":{\"global_time\":{\"live_span\":\"1h\"},\"global_time_selectable\":true,\"selectable_template_vars\":[],\"status\":\"active\",\"title\":\"{{name}}\",\"viewing_preferences\":{\"theme\":\"system\"}},\"type\":\"secure_embed_request\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"global_time\":{\"live_span\":\"1h\"},\"global_time_selectable\":true,\"selectable_template_vars\":[],\"status\":\"active\",\"title\":\"{{name}}\",\"token\":270000008,\"viewing_preferences\":{\"theme\":\"system\"}}}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/dashboard/280000002/shared/secure-embed/270000008",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"global_time\":{\"live_span\":\"1h\"},\"global_time_selectable\":true,\"selectable_template_vars\":[],\"status\":\"active\",\"title\":\"{{name}}\",\"token\":270000008,\"viewing_preferences\":{\"theme\":\"system\"}}}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v2/dashboard/280000002/shared/secure-embed/270000008",
+      "body": "{\"data\":{\"attributes\":{\"global_time\":{\"live_span\":\"1h\"},\"global_time_selectable\":true,\"selectable_template_vars\":[],\"status\":\"paused\",\"title\":\"{{name}}\",\"viewing_preferences\":{\"theme\":\"system\"}},\"type\":\"secure_embed_request\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"global_time\":{\"live_span\":\"1h\"},\"global_time_selectable\":true,\"selectable_template_vars\":[],\"status\":\"paused\",\"title\":\"{{name}}\",\"token\":270000008,\"viewing_preferences\":{\"theme\":\"system\"}}}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/dashboard/280000002/shared/secure-embed/270000008",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"global_time\":{\"live_span\":\"1h\"},\"global_time_selectable\":true,\"selectable_template_vars\":[],\"status\":\"paused\",\"title\":\"{{name}}\",\"token\":270000008,\"viewing_preferences\":{\"theme\":\"system\"}}}}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v2/dashboard/280000002/shared/secure-embed/270000008",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/dashboard/280000002/shared/secure-embed/270000008",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

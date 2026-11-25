@@ -1,0 +1,52 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "component": "rehearsal-component",
+    "dashboard": 280000002,
+    "itype": "rehearsal-itype",
+    "member": "rehearsal-member",
+    "org": "rehearsal-org",
+    "orgsa": "rehearsal-orgsa",
+    "page": "rehearsal-page",
+    "role": "rehearsal-role",
+    "roleUser": "rehearsal-roleUser",
+    "routingPolicy": "rehearsal-routingPolicy",
+    "ruleA": "rehearsal-ruleA",
+    "ruleB": "rehearsal-ruleB",
+    "rum": "rehearsal-rum",
+    "sa": "rehearsal-sa",
+    "slo": "rehearsal-slo",
+    "subteam": "rehearsal-subteam",
+    "team": "rehearsal-team"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/api/v2/wif/aws/persona_mapping",
+      "body": "{\"data\":{\"attributes\":{\"account_identifier\":\"{{email}}\",\"arn_pattern\":\"arn:aws:iam::123456789012:user/testuser\"},\"type\":\"aws_cloud_auth_config\"}}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"account_identifier\":\"{{email}}\",\"arn_pattern\":\"arn:aws:iam::123456789012:user/testuser\"},\"id\":270000089,\"type\":\"aws_cloud_auth_config\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/wif/aws/persona_mapping/270000089",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"account_identifier\":\"{{email}}\",\"arn_pattern\":\"arn:aws:iam::123456789012:user/testuser\"},\"id\":270000089,\"type\":\"aws_cloud_auth_config\"}}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v2/wif/aws/persona_mapping/270000089",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/wif/aws/persona_mapping/270000089",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

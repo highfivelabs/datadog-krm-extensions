@@ -1,0 +1,84 @@
+{
+  "recorded": "2026-11-20T23:56:58Z",
+  "target": "Datadog trial",
+  "vars": {
+    "dashboard": "ur8-afc-sum",
+    "subteam": "d4c1dd6f-4ea7-42e9-9847-c995ec31b739",
+    "team": "48e3aed2-a7e1-4fee-9037-ce9c9f4b4952"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/api/v1/downtime",
+      "body": "{\"message\":\"{{name}} first\",\"scope\":[\"hfl-live:{{name}}\"]}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":240773269,\"monitor_id\":null,\"org_id\":1000000000,\"start\":1795219016,\"end\":null,\"canceled\":null,\"created\":1795219016,\"modified\":1795219016,\"message\":\"{{name}} first\",\"active\":true,\"disabled\":false,\"recurrence\":null,\"timezone\":\"UTC\",\"parent_id\":null,\"child_id\":null,\"creator_id\":11329284,\"updater_id\":null,\"downtime_type\":2,\"status\":\"active\",\"monitor_tags\":[\"*\"],\"mute_first_recovery_notification\":false,\"notify_end_types\":[\"expired\"],\"notify_end_states\":[\"alert\",\"no data\",\"warn\"],\"uuid\":\"2a02300d-8acb-4d3a-a9c1-cdda422539c7\",\"scope\":[\"hfl-live:{{name}}\"]}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/downtime/240773269",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":240773269,\"monitor_id\":null,\"org_id\":1000000000,\"start\":1795219016,\"end\":null,\"canceled\":null,\"created\":1795219016,\"modified\":1795219016,\"message\":\"{{name}} first\",\"active\":true,\"disabled\":false,\"recurrence\":null,\"timezone\":\"UTC\",\"parent_id\":null,\"child_id\":null,\"creator_id\":11329284,\"updater_id\":null,\"downtime_type\":2,\"status\":\"active\",\"monitor_tags\":[\"*\"],\"mute_first_recovery_notification\":false,\"notify_end_types\":[\"expired\"],\"notify_end_states\":[\"alert\",\"no data\",\"warn\"],\"uuid\":\"2a02300d-8acb-4d3a-a9c1-cdda422539c7\",\"scope\":[\"hfl-live:{{name}}\"]}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/downtime/240773269",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":240773269,\"monitor_id\":null,\"org_id\":1000000000,\"start\":1795219016,\"end\":null,\"canceled\":null,\"created\":1795219016,\"modified\":1795219016,\"message\":\"{{name}} first\",\"active\":true,\"disabled\":false,\"recurrence\":null,\"timezone\":\"UTC\",\"parent_id\":null,\"child_id\":null,\"creator_id\":11329284,\"updater_id\":null,\"downtime_type\":2,\"status\":\"active\",\"monitor_tags\":[\"*\"],\"mute_first_recovery_notification\":false,\"notify_end_types\":[\"expired\"],\"notify_end_states\":[\"alert\",\"no data\",\"warn\"],\"uuid\":\"2a02300d-8acb-4d3a-a9c1-cdda422539c7\",\"scope\":[\"hfl-live:{{name}}\"]}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/downtime/240773269",
+      "body": "{\"message\":\"{{name}} second\",\"scope\":[\"hfl-live:{{name}}\"]}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":240773269,\"monitor_id\":null,\"org_id\":1000000000,\"start\":1795219016,\"end\":null,\"canceled\":null,\"created\":1795219016,\"modified\":1795219016,\"message\":\"{{name}} second\",\"active\":true,\"disabled\":false,\"recurrence\":null,\"timezone\":\"UTC\",\"parent_id\":null,\"child_id\":null,\"creator_id\":11329284,\"updater_id\":11329284,\"downtime_type\":2,\"status\":\"active\",\"monitor_tags\":[\"*\"],\"mute_first_recovery_notification\":false,\"notify_end_types\":[\"expired\"],\"notify_end_states\":[\"alert\",\"no data\",\"warn\"],\"uuid\":null,\"scope\":[\"hfl-live:{{name}}\"]}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/downtime/240773269",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":240773269,\"monitor_id\":null,\"org_id\":1000000000,\"start\":1795219016,\"end\":null,\"canceled\":null,\"created\":1795219016,\"modified\":1795219016,\"message\":\"{{name}} second\",\"active\":true,\"disabled\":false,\"recurrence\":null,\"timezone\":\"UTC\",\"parent_id\":null,\"child_id\":null,\"creator_id\":11329284,\"updater_id\":11329284,\"downtime_type\":2,\"status\":\"active\",\"monitor_tags\":[\"*\"],\"mute_first_recovery_notification\":false,\"notify_end_types\":[\"expired\"],\"notify_end_states\":[\"alert\",\"no data\",\"warn\"],\"uuid\":\"2a02300d-8acb-4d3a-a9c1-cdda422539c7\",\"scope\":[\"hfl-live:{{name}}\"]}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/downtime/240773269",
+      "body": "{\"message\":\"hfl-live-drift\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":240773269,\"monitor_id\":null,\"org_id\":1000000000,\"start\":1795219016,\"end\":null,\"canceled\":null,\"created\":1795219016,\"modified\":1795219017,\"message\":\"hfl-live-drift\",\"active\":true,\"disabled\":false,\"recurrence\":null,\"timezone\":\"UTC\",\"parent_id\":null,\"child_id\":null,\"creator_id\":11329284,\"updater_id\":11329284,\"downtime_type\":2,\"status\":\"active\",\"monitor_tags\":[\"*\"],\"mute_first_recovery_notification\":false,\"notify_end_types\":[\"expired\"],\"notify_end_states\":[\"alert\",\"no data\",\"warn\"],\"uuid\":null,\"scope\":[\"hfl-live:{{name}}\"]}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/downtime/240773269",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":240773269,\"monitor_id\":null,\"org_id\":1000000000,\"start\":1795219016,\"end\":null,\"canceled\":null,\"created\":1795219016,\"modified\":1795219017,\"message\":\"hfl-live-drift\",\"active\":true,\"disabled\":false,\"recurrence\":null,\"timezone\":\"UTC\",\"parent_id\":null,\"child_id\":null,\"creator_id\":11329284,\"updater_id\":11329284,\"downtime_type\":2,\"status\":\"active\",\"monitor_tags\":[\"*\"],\"mute_first_recovery_notification\":false,\"notify_end_types\":[\"expired\"],\"notify_end_states\":[\"alert\",\"no data\",\"warn\"],\"uuid\":\"2a02300d-8acb-4d3a-a9c1-cdda422539c7\",\"scope\":[\"hfl-live:{{name}}\"]}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/downtime/240773269",
+      "body": "{\"message\":\"{{name}} second\",\"scope\":[\"hfl-live:{{name}}\"]}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":240773269,\"monitor_id\":null,\"org_id\":1000000000,\"start\":1795219016,\"end\":null,\"canceled\":null,\"created\":1795219016,\"modified\":1795219017,\"message\":\"{{name}} second\",\"active\":true,\"disabled\":false,\"recurrence\":null,\"timezone\":\"UTC\",\"parent_id\":null,\"child_id\":null,\"creator_id\":11329284,\"updater_id\":11329284,\"downtime_type\":2,\"status\":\"active\",\"monitor_tags\":[\"*\"],\"mute_first_recovery_notification\":false,\"notify_end_types\":[\"expired\"],\"notify_end_states\":[\"alert\",\"no data\",\"warn\"],\"uuid\":null,\"scope\":[\"hfl-live:{{name}}\"]}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/downtime/240773269",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":240773269,\"monitor_id\":null,\"org_id\":1000000000,\"start\":1795219016,\"end\":null,\"canceled\":null,\"created\":1795219016,\"modified\":1795219017,\"message\":\"{{name}} second\",\"active\":true,\"disabled\":false,\"recurrence\":null,\"timezone\":\"UTC\",\"parent_id\":null,\"child_id\":null,\"creator_id\":11329284,\"updater_id\":11329284,\"downtime_type\":2,\"status\":\"active\",\"monitor_tags\":[\"*\"],\"mute_first_recovery_notification\":false,\"notify_end_types\":[\"expired\"],\"notify_end_states\":[\"alert\",\"no data\",\"warn\"],\"uuid\":\"2a02300d-8acb-4d3a-a9c1-cdda422539c7\",\"scope\":[\"hfl-live:{{name}}\"]}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/downtime/240773269",
+      "status": 204,
+      "contentType": "text/html; charset=utf-8"
+    }
+  ]
+}

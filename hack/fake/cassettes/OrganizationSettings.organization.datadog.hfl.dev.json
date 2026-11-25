@@ -1,0 +1,114 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "component": "rehearsal-component",
+    "dashboard": 280000002,
+    "itype": "rehearsal-itype",
+    "member": "rehearsal-member",
+    "org": "rehearsal-org",
+    "orgsa": "rehearsal-orgsa",
+    "page": "rehearsal-page",
+    "role": "rehearsal-role",
+    "roleUser": "rehearsal-roleUser",
+    "routingPolicy": "rehearsal-routingPolicy",
+    "ruleA": "rehearsal-ruleA",
+    "ruleB": "rehearsal-ruleB",
+    "rum": "rehearsal-rum",
+    "sa": "rehearsal-sa",
+    "slo": "rehearsal-slo",
+    "subteam": "rehearsal-subteam",
+    "team": "rehearsal-team"
+  },
+  "interactions": [
+    {
+      "method": "GET",
+      "path": "/api/v1/org/example-public-id",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"org\":{\"created\":\"2019-09-26T17:28:28Z\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/org/example-public-id",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"org\":{\"created\":\"2019-09-26T17:28:28Z\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/org/example-public-id",
+      "body": "{\"description\":\"example-description\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"org\":{\"created\":\"2019-09-26T17:28:28Z\",\"description\":\"example-description\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/org/example-public-id",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"org\":{\"created\":\"2019-09-26T17:28:28Z\",\"description\":\"example-description\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/org/example-public-id",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"org\":{\"created\":\"2019-09-26T17:28:28Z\",\"description\":\"example-description\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/org/example-public-id",
+      "body": "{\"description\":\"changed-description\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"org\":{\"created\":\"2019-09-26T17:28:28Z\",\"description\":\"changed-description\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/org/example-public-id",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"org\":{\"created\":\"2019-09-26T17:28:28Z\",\"description\":\"changed-description\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/org/example-public-id",
+      "body": "{\"description\":\"hfl-live-drift\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"org\":{\"created\":\"2019-09-26T17:28:28Z\",\"description\":\"hfl-live-drift\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/org/example-public-id",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"org\":{\"created\":\"2019-09-26T17:28:28Z\",\"description\":\"hfl-live-drift\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/org/example-public-id",
+      "body": "{\"description\":\"changed-description\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"org\":{\"created\":\"2019-09-26T17:28:28Z\",\"description\":\"changed-description\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/org/example-public-id",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"org\":{\"created\":\"2019-09-26T17:28:28Z\",\"description\":\"changed-description\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/org/example-public-id",
+      "body": "{}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"org\":{\"created\":\"2019-09-26T17:28:28Z\",\"description\":\"changed-description\"}}\n"
+    }
+  ]
+}

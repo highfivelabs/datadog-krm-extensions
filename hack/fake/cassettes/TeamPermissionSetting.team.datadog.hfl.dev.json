@@ -1,0 +1,69 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "dashboard": 280000002,
+    "itype": "rehearsal-itype",
+    "member": "rehearsal-member",
+    "role": "rehearsal-role",
+    "routingPolicy": "rehearsal-routingPolicy",
+    "rum": "rehearsal-rum",
+    "sa": "rehearsal-sa",
+    "slo": "rehearsal-slo",
+    "subteam": "rehearsal-subteam",
+    "team": "rehearsal-team"
+  },
+  "interactions": [
+    {
+      "method": "GET",
+      "path": "/api/v2/team/rehearsal-team/permission-settings",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":[]}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/team/rehearsal-team/permission-settings",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":[]}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v2/team/rehearsal-team/permission-settings/edit",
+      "body": "{\"data\":{\"attributes\":{\"value\":\"admins\"},\"type\":\"team_permission_settings\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"action\":\"edit\",\"value\":\"admins\"},\"type\":\"team_permission_settings\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/team/rehearsal-team/permission-settings",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":[{\"attributes\":{\"action\":\"edit\",\"value\":\"admins\"},\"type\":\"team_permission_settings\"}]}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/team/rehearsal-team/permission-settings",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":[{\"attributes\":{\"action\":\"edit\",\"value\":\"admins\"},\"type\":\"team_permission_settings\"}]}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v2/team/rehearsal-team/permission-settings/edit",
+      "body": "{\"data\":{\"attributes\":{\"value\":\"members\"},\"type\":\"team_permission_settings\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"action\":\"edit\",\"value\":\"members\"},\"type\":\"team_permission_settings\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/team/rehearsal-team/permission-settings",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":[{\"attributes\":{\"action\":\"edit\",\"value\":\"members\"},\"type\":\"team_permission_settings\"}]}\n"
+    }
+  ]
+}

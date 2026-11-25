@@ -1,0 +1,106 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "dashboard": 280000002,
+    "itype": "rehearsal-itype",
+    "member": "rehearsal-member",
+    "org": "rehearsal-org",
+    "orgsa": "rehearsal-orgsa",
+    "role": "rehearsal-role",
+    "routingPolicy": "rehearsal-routingPolicy",
+    "rum": "rehearsal-rum",
+    "sa": "rehearsal-sa",
+    "slo": "rehearsal-slo",
+    "subteam": "rehearsal-subteam",
+    "team": "rehearsal-team"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/api/v1/logs/config/pipelines",
+      "body": "{\"filter\":{\"query\":\"service:{{name}}\"},\"is_enabled\":false,\"name\":\"{{name}}\",\"processors\":[]}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"filter\":{\"query\":\"service:{{name}}\"},\"id\":270000053,\"is_enabled\":false,\"is_read_only\":true,\"name\":\"{{name}}\",\"processors\":[],\"type\":\"pipeline\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/logs/config/pipelines/270000053",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"filter\":{\"query\":\"service:{{name}}\"},\"id\":270000053,\"is_enabled\":false,\"is_read_only\":true,\"name\":\"{{name}}\",\"processors\":[],\"type\":\"pipeline\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/logs/config/pipelines/270000053",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"filter\":{\"query\":\"service:{{name}}\"},\"id\":270000053,\"is_enabled\":false,\"is_read_only\":true,\"name\":\"{{name}}\",\"processors\":[],\"type\":\"pipeline\"}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/logs/config/pipelines/270000053",
+      "body": "{\"filter\":{\"query\":\"service:{{name}}-changed\"},\"is_enabled\":false,\"name\":\"{{name}}\",\"processors\":[]}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"filter\":{\"query\":\"service:{{name}}-changed\"},\"id\":270000053,\"is_enabled\":false,\"is_read_only\":true,\"name\":\"{{name}}\",\"processors\":[],\"type\":\"pipeline\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/logs/config/pipelines/270000053",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"filter\":{\"query\":\"service:{{name}}-changed\"},\"id\":270000053,\"is_enabled\":false,\"is_read_only\":true,\"name\":\"{{name}}\",\"processors\":[],\"type\":\"pipeline\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/logs/config/pipelines/270000053",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"filter\":{\"query\":\"service:{{name}}-changed\"},\"id\":270000053,\"is_enabled\":false,\"is_read_only\":true,\"name\":\"{{name}}\",\"processors\":[],\"type\":\"pipeline\"}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/logs/config/pipelines/270000053",
+      "body": "{\"filter\":{\"query\":\"service:{{name}}-drift\"},\"id\":270000053,\"is_enabled\":false,\"is_read_only\":true,\"name\":\"{{name}}\",\"processors\":[],\"type\":\"pipeline\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"filter\":{\"query\":\"service:{{name}}-drift\"},\"id\":270000053,\"is_enabled\":false,\"is_read_only\":true,\"name\":\"{{name}}\",\"processors\":[],\"type\":\"pipeline\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/logs/config/pipelines/270000053",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"filter\":{\"query\":\"service:{{name}}-drift\"},\"id\":270000053,\"is_enabled\":false,\"is_read_only\":true,\"name\":\"{{name}}\",\"processors\":[],\"type\":\"pipeline\"}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/logs/config/pipelines/270000053",
+      "body": "{\"filter\":{\"query\":\"service:{{name}}-changed\"},\"is_enabled\":false,\"name\":\"{{name}}\",\"processors\":[]}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"filter\":{\"query\":\"service:{{name}}-changed\"},\"id\":270000053,\"is_enabled\":false,\"is_read_only\":true,\"name\":\"{{name}}\",\"processors\":[],\"type\":\"pipeline\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/logs/config/pipelines/270000053",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"filter\":{\"query\":\"service:{{name}}-changed\"},\"id\":270000053,\"is_enabled\":false,\"is_read_only\":true,\"name\":\"{{name}}\",\"processors\":[],\"type\":\"pipeline\"}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/logs/config/pipelines/270000053",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/logs/config/pipelines/270000053",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

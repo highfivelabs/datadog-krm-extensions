@@ -1,0 +1,962 @@
+# Copyright 2026 High Five Labs
+# SPDX-License-Identifier: Apache-2.0
+#
+# Live tests (TestEveryKindLive, krm-rest-runtime's kindtest.Live): these
+# kinds, in this order, against a real Datadog organization. Kinds not listed
+# are not run live. They skip, naming the secret, until it exists in Secret
+# Manager; then
+#   KRM_LIVE=1 go test -tags live -run TestEveryKindLive -v .
+# Everything a run makes is named hfl-live-<stamp>-<hex> (or hfl_live_...),
+# deleted at the end; the sweep deletes older leftovers. How it works and
+# what the {{...}} templates mean: krm-rest-runtime docs/live.md.
+#
+# The organization is a 14-day trial with no card. Nothing listed is billed
+# by usage or turns on a paid product: no hosts, no log indexes or archives,
+# no synthetic test runs, no Cloud SIEM, no metric submission. Users are
+# hfl-live-...@example.com and never invited; notifications name no real
+# person or integration. Kinds that would need any of that, a third-party
+# account, or a change to the organization's settings or authentication are
+# listed with skip: and why.
+#
+# Datadog's v2 API is JSON:API: a spec is the request's data object (type,
+# attributes, relationships). A PATCH must name the type, so the drift step
+# sends the object as read with attributes replaced (driftFull), and change:
+# and drift: give the whole attributes object.
+secret: krm-live-datadog        # JSON: {"apiKey": "...", "appKey": "...", "site": "us5.datadoghq.com", "baseURL": "https://api.us5.datadoghq.com"}
+target: Datadog trial
+
+# One team and one dashboard the kinds hang off; deleted at the end.
+before:
+- {method: POST, path: /api/v2/team, body: {data: {type: team, attributes: {handle: "{{run}}", name: "{{run}}"}}}, save: {team: data/id}}
+- {method: POST, path: /api/v1/dashboard, body: {title: "{{run}}", layout_type: ordered, widgets: []}, save: {dashboard: id}}
+after:
+- {method: DELETE, path: "/api/v1/dashboard/{{var:dashboard}}", ok: [404]}
+- {method: DELETE, path: "/api/v2/team/{{var:team}}", ok: [404]}
+
+sweep:
+- {list: "/api/v2/roles?filter=hfl-live-&page[size]=100", items: data, name: attributes/name, id: id, delete: "/api/v2/roles/{id}"}
+- {list: "/api/v2/team?filter[keyword]=hfl-live-&page[size]=100", items: data, name: attributes/handle, id: id, delete: "/api/v2/team/{id}"}
+- {list: "/api/v1/dashboard/lists/manual", items: dashboard_lists, name: name, id: id, delete: "/api/v1/dashboard/lists/manual/{id}"}
+- {list: "/api/v1/dashboard?filter[shared]=false", items: dashboards, name: title, id: id, delete: "/api/v1/dashboard/{id}"}
+- {list: "/api/v2/powerpacks?page[limit]=100", items: data, name: attributes/name, id: id, delete: "/api/v2/powerpacks/{id}"}
+- {list: "/api/v1/downtime?current_only=false", name: message, id: id, delete: "/api/v1/downtime/{id}"}
+- {list: "/api/v1/slo?query=hfl-live-", items: data, name: name, id: id, delete: "/api/v1/slo/{id}"}
+- {list: /api/v2/incidents/config/types, items: data, name: attributes/name, id: id, delete: "/api/v2/incidents/config/types/{id}"}
+- {list: /api/v2/rum/applications, items: data, name: attributes/name, id: id, delete: "/api/v2/rum/applications/{id}"}
+- {list: "/api/v2/users?filter=hfl-live-&filter[status]=Active,Pending&page[size]=100", items: data, name: attributes/email, id: id, delete: "/api/v2/users/{id}"}
+- {list: /api/v1/synthetics/private-locations, name: name, id: id, delete: "/api/v1/synthetics/private-locations/{id}"}
+- {list: "/api/v2/api_keys?filter=hfl-live-", items: data, name: attributes/name, id: id, delete: "/api/v2/api_keys/{id}"}
+- {list: /api/v2/monitor/notification_rule, items: data, name: attributes/name, id: id, delete: "/api/v2/monitor/notification_rule/{id}"}
+- {list: /api/v2/monitor/policy, items: data, name: attributes/policy/tag_key, id: id, delete: "/api/v2/monitor/policy/{id}"}
+- {list: /api/v2/incidents/config/notification-templates, items: data, name: attributes/name, id: id, delete: "/api/v2/incidents/config/notification-templates/{id}"}
+- {list: /api/v2/actions-datastores, items: data, name: attributes/name, id: id, delete: "/api/v2/actions-datastores/{id}"}
+- {list: "/api/v2/app-builder/apps?filter[query]=hfl-live-", items: data, name: attributes/name, id: id, delete: "/api/v2/app-builder/apps/{id}"}
+- {list: /api/v2/actions/execution-policies, items: data, name: attributes/name, id: id, delete: "/api/v2/actions/execution-policies/{id}"}
+- {list: /api/v2/datasets, items: data, name: attributes/name, id: id, delete: "/api/v2/datasets/{id}"}
+- {list: /api/v2/deployment_gates, items: data, name: attributes/service, id: id, delete: "/api/v2/deployment_gates/{id}"}
+- {list: /api/v2/governance/tag_rules, items: data, name: attributes/name, id: id, delete: "/api/v2/governance/tag_rules/{id}"}
+- {list: /api/v2/metrics/tag-indexing-rules, items: data, name: attributes/name, id: id, delete: "/api/v2/metrics/tag-indexing-rules/{id}"}
+- {list: /api/v2/logs/config/metrics, items: data, name: id, delete: "/api/v2/logs/config/metrics/{id}"}
+- {list: /api/v2/logs/config/custom-destinations, items: data, name: attributes/name, id: id, delete: "/api/v2/logs/config/custom-destinations/{id}"}
+- {list: /api/v2/rum/config/metrics, items: data, name: id, delete: "/api/v2/rum/config/metrics/{id}"}
+- {list: /api/v2/security/findings/automation/mute_rules, items: data, name: attributes/name, id: id, delete: "/api/v2/security/findings/automation/mute_rules/{id}"}
+- {list: /api/v2/security/findings/automation/inbox_rules, items: data, name: attributes/name, id: id, delete: "/api/v2/security/findings/automation/inbox_rules/{id}"}
+- {list: /api/v2/security/findings/automation/due_date_rules, items: data, name: attributes/name, id: id, delete: "/api/v2/security/findings/automation/due_date_rules/{id}"}
+- {list: /api/v2/security/findings/automation/severity_modifier_rules, items: data, name: attributes/name, id: id, delete: "/api/v2/security/findings/automation/severity_modifier_rules/{id}"}
+- {list: "/api/v2/current_user/application_keys?filter=hfl-live-&page[size]=100", items: data, name: attributes/name, id: id, delete: "/api/v2/current_user/application_keys/{id}"}
+- {list: "/api/v1/monitor?name=hfl-live-", name: name, id: id, delete: "/api/v1/monitor/{id}"}
+- {list: /api/v1/synthetics/variables, items: variables, name: name, id: id, delete: "/api/v1/synthetics/variables/{id}"}
+- {list: /api/v1/logs/config/pipelines, name: name, id: id, delete: "/api/v1/logs/config/pipelines/{id}"}
+- {list: /api/v2/workflows, items: data, name: attributes/name, id: id, delete: "/api/v2/workflows/{id}"}
+- {list: /api/v2/statuspages, items: data, name: attributes/name, id: id, delete: "/api/v2/statuspages/{id}"}
+- {list: "/api/v2/services/definitions?page[size]=100", items: data, name: attributes/schema/dd-service, delete: "/api/v2/services/definitions/{id}"}
+
+kinds:
+- kind: Role
+  replaceSample: true
+  spec: {type: roles, attributes: {name: "{{name}}"}}
+  change: {attributes: {name: "{{name}}-changed"}}
+  drift: {name: "{{name}}-drift"}
+  driftFull: true
+
+- kind: Team
+  replaceSample: true
+  spec: {type: team, attributes: {handle: "{{name}}", name: "{{name}}", description: first}}
+  change: {attributes: {handle: "{{name}}", name: "{{name}}", description: second}}
+  drift: {handle: "{{name}}", name: "{{name}}", description: drift}
+  driftFull: true
+
+- kind: TeamLink
+  replaceSample: true
+  spec: {teamID: "{{var:team}}", type: team_links, attributes: {label: "{{name}}", url: "https://example.com/first"}}
+  change: {attributes: {label: "{{name}}", url: "https://example.com/second"}}
+  drift: {label: "{{name}}", url: "https://example.com/drift"}
+  driftFull: true
+
+- kind: TeamNotificationRule
+  replaceSample: true
+  spec: {teamID: "{{var:team}}", type: team_notification_rules, attributes: {email: {enabled: false}}}
+  change: {attributes: {email: {enabled: true}}}
+  drift: {email: {enabled: false}}
+  driftFull: true
+
+- kind: TeamHierarchyLinks
+  replaceSample: true
+  before:
+  - {method: POST, path: /api/v2/team, body: {data: {type: team, attributes: {handle: "{{name}}-sub", name: "{{name}}-sub"}}}, save: {subteam: data/id}}
+  after:
+  - {method: DELETE, path: "/api/v2/team/{{var:subteam}}", ok: [404]}
+  spec:
+    type: team_hierarchy_links
+    relationships:
+      parent_team: {data: {id: "{{var:team}}", type: team}}
+      sub_team: {data: {id: "{{var:subteam}}", type: team}}
+
+- kind: DashboardList
+  replaceSample: true
+  spec: {name: "{{name}}"}
+  change: {name: "{{name}}-changed"}
+
+- kind: DashboardV2
+  replaceSample: true
+  spec: {title: "{{name}}", layout_type: ordered, widgets: [], description: first}
+  change: {description: second}
+  driftFull: true
+
+- kind: SecureEmbedDashboard
+  replaceSample: true
+  spec:
+    dashboardID: "{{var:dashboard}}"
+    type: secure_embed_request
+    attributes: {status: active, title: "{{name}}", global_time_selectable: true, selectable_template_vars: [], viewing_preferences: {theme: system}, global_time: {live_span: 1h}}
+  change:
+    attributes: {status: paused, title: "{{name}}", global_time_selectable: true, selectable_template_vars: [], viewing_preferences: {theme: system}, global_time: {live_span: 1h}}
+  drift: {status: active, title: "{{name}}", global_time_selectable: true, selectable_template_vars: [], viewing_preferences: {theme: system}, global_time: {live_span: 1h}}
+  driftFull: true
+
+- kind: Powerpack
+  replaceSample: true
+  spec:
+    type: powerpack
+    attributes:
+      name: "{{name}}"
+      description: first
+      group_widget:
+        definition: {type: group, layout_type: ordered, widgets: [{definition: {type: note, content: hfl live test}}]}
+  change:
+    attributes:
+      name: "{{name}}"
+      description: second
+      group_widget:
+        definition: {type: group, layout_type: ordered, widgets: [{definition: {type: note, content: hfl live test}}]}
+  drift:
+    name: "{{name}}"
+    description: drift
+    group_widget:
+      definition: {type: group, layout_type: ordered, widgets: [{definition: {type: note, content: hfl live test}}]}
+  driftFull: true
+
+- kind: Downtime
+  replaceSample: true
+  spec: {scope: ["hfl-live:{{name}}"], message: "{{name}} first"}
+  change: {message: "{{name}} second"}
+  stays: a deleted downtime is canceled, and a read still answers it (with canceled set)
+
+- kind: SloCorrection
+  replaceSample: true
+  before:
+  - method: POST
+    path: /api/v1/slo
+    body: {name: "{{name}}", type: metric, query: {numerator: "sum:hfl.live.good{*}.as_count()", denominator: "sum:hfl.live.total{*}.as_count()"}, thresholds: [{timeframe: 7d, target: 99}]}
+    save: {slo: data/0/id}
+  after:
+  - {method: DELETE, path: "/api/v1/slo/{{var:slo}}", ok: [404]}
+  spec:
+    type: correction
+    attributes: {slo_id: "{{var:slo}}", start: 1767225600, end: 1767229200, category: Scheduled Maintenance, description: "{{name}} first", timezone: UTC}
+  change:
+    attributes: {slo_id: "{{var:slo}}", start: 1767225600, end: 1767229200, category: Scheduled Maintenance, description: "{{name}} second", timezone: UTC}
+  drift: {slo_id: "{{var:slo}}", start: 1767225600, end: 1767229200, category: Scheduled Maintenance, description: "{{name}} drift", timezone: UTC}
+  driftFull: true
+
+- kind: User
+  replaceSample: true
+  spec: {type: users, attributes: {email: "{{name}}@example.com", name: "{{name}}"}}
+  change: {attributes: {email: "{{name}}@example.com", name: "{{name}}-changed"}}
+  drift: {email: "{{name}}@example.com", name: "{{name}}-drift"}
+  driftFull: true
+  noDrift: a write of the user as read is refused (relationships org and roles are not allowed in an update), and a write of attributes alone lacks the type
+  stays: Datadog never deletes a user; a delete disables it and a read still answers
+
+- kind: ServiceAccountApplicationKey
+  replaceSample: true
+  before:
+  - {method: POST, path: /api/v2/service_accounts, body: {data: {type: users, attributes: {name: "{{name}}", email: "{{name}}@example.com", service_account: true}}}, save: {sa: data/id}}
+  after:
+  - {method: DELETE, path: "/api/v2/users/{{var:sa}}", ok: [404]}
+  spec: {serviceAccountID: "{{var:sa}}", type: application_keys, attributes: {name: "{{name}}"}}
+  change: {attributes: {name: "{{name}}-changed"}}
+  drift: {name: "{{name}}-drift"}
+  driftFull: true
+
+- kind: ServiceAccessToken
+  replaceSample: true
+  before:
+  - {method: POST, path: /api/v2/service_accounts, body: {data: {type: users, attributes: {name: "{{name}}", email: "{{name}}@example.com", service_account: true}}}, save: {sa: data/id}}
+  after:
+  - {method: DELETE, path: "/api/v2/users/{{var:sa}}", ok: [404]}
+  spec: {serviceAccountID: "{{var:sa}}", type: service_access_tokens, attributes: {name: "{{name}}", scopes: [dashboards_read]}}
+  change: {attributes: {name: "{{name}}-changed", scopes: [dashboards_read]}}
+  drift: {name: "{{name}}-drift", scopes: [dashboards_read]}
+  driftFull: true
+
+- kind: ApiKey
+  skip: the v1 key API answers the new key under api_key with no id, and this organization's own keys must not be touched
+
+- kind: Webhook
+  replaceSample: true
+  spec: {name: "{{name}}", url: "https://example.com/hfl-live/first"}
+  change: {url: "https://example.com/hfl-live/second"}
+  drift: "https://example.com/hfl-live/drift"
+
+- kind: WebhookCustomVariable
+  replaceSample: true
+  spec: {name: "{{NAME_}}", value: first, is_secret: false}
+  change: {value: second}
+
+- kind: WebhookOauth2ClientCredentials
+  replaceSample: true
+  spec:
+    type: webhooks-auth-method-oauth2-client-credentials
+    attributes: {name: "{{name}}", access_token_url: "https://example.com/oauth/token", client_id: first, client_secret: hfl-live-not-a-secret}
+  change:
+    attributes: {name: "{{name}}", access_token_url: "https://example.com/oauth/token", client_id: second, client_secret: hfl-live-not-a-secret}
+  drift: {name: "{{name}}", access_token_url: "https://example.com/oauth/token", client_id: drift, client_secret: hfl-live-not-a-secret}
+  driftFull: true
+
+- kind: SyntheticsPrivateLocation
+  replaceSample: true
+  spec: {name: "{{name}}", description: first, tags: ["hfl-live"]}
+  change: {description: second}
+
+- kind: MonitorConfigPolicy
+  replaceSample: true
+  spec: {type: monitor-config-policy, attributes: {policy_type: tag, policy: {tag_key: "{{name}}", tag_key_required: false, valid_tag_values: [first]}}}
+  change: {attributes: {policy_type: tag, policy: {tag_key: "{{name}}", tag_key_required: false, valid_tag_values: [second]}}}
+  drift: {policy_type: tag, policy: {tag_key: "{{name}}", tag_key_required: false, valid_tag_values: [drift]}}
+  driftFull: true
+
+- kind: MonitorNotificationRule
+  replaceSample: true
+  spec: {type: monitor-notification-rule, attributes: {name: "{{name}}", filter: {tags: ["hfl-live:{{name}}"]}, recipients: ["{{name}}@example.com"]}}
+  change: {attributes: {name: "{{name}}-changed", filter: {tags: ["hfl-live:{{name}}"]}, recipients: ["{{name}}@example.com"]}}
+  drift: {name: "{{name}}-drift", filter: {tags: ["hfl-live:{{name}}"]}, recipients: ["{{name}}@example.com"]}
+  driftFull: true
+
+- kind: IncidentType
+  replaceSample: true
+  spec: {type: incident_types, attributes: {name: "{{name}}", description: first}}
+  change: {attributes: {name: "{{name}}", description: second}}
+  drift: {name: "{{name}}", description: drift}
+  driftFull: true
+
+- kind: IncidentUserDefinedField
+  replaceSample: true
+  before:
+  - {method: POST, path: /api/v2/incidents/config/types, body: {data: {type: incident_types, attributes: {name: "{{name}}"}}}, save: {itype: data/id}}
+  after:
+  - {method: DELETE, path: "/api/v2/incidents/config/types/{{var:itype}}", ok: [404]}
+  spec:
+    type: user_defined_field
+    attributes: {name: "{{name_}}", display_name: first, type: 3}
+    relationships: {incident_type: {data: {id: "{{var:itype}}", type: incident_types}}}
+  change: {attributes: {name: "{{name_}}", display_name: second, type: 3}}
+  drift: {name: "{{name_}}", display_name: drift, type: 3}
+  driftFull: true
+
+- kind: IncidentUserDefinedRole
+  replaceSample: true
+  before:
+  - {method: POST, path: /api/v2/incidents/config/types, body: {data: {type: incident_types, attributes: {name: "{{name}}"}}}, save: {itype: data/id}}
+  after:
+  - {method: DELETE, path: "/api/v2/incidents/config/types/{{var:itype}}", ok: [404]}
+  spec:
+    type: incident_user_defined_roles
+    attributes: {name: "{{name}}", description: first}
+    relationships: {incident_type: {data: {id: "{{var:itype}}", type: incident_types}}}
+  change: {attributes: {name: "{{name}}", description: second}}
+  drift: {name: "{{name}}", description: drift}
+  driftFull: true
+
+- kind: IncidentNotificationTemplate
+  replaceSample: true
+  before:
+  - {method: POST, path: /api/v2/incidents/config/types, body: {data: {type: incident_types, attributes: {name: "{{name}}"}}}, save: {itype: data/id}}
+  after:
+  - {method: DELETE, path: "/api/v2/incidents/config/types/{{var:itype}}", ok: [404]}
+  spec: {type: notification_templates, attributes: {name: "{{name}}", subject: first, content: hfl live test, category: alert}, relationships: {incident_type: {data: {id: "{{var:itype}}", type: incident_types}}}}
+  change: {attributes: {name: "{{name}}", subject: second, content: hfl live test, category: alert}}
+  drift: {name: "{{name}}", subject: drift, content: hfl live test, category: alert}
+  driftFull: true
+
+- kind: IncidentPostmortemTemplate
+  replaceSample: true
+  before:
+  - {method: POST, path: /api/v2/incidents/config/types, body: {data: {type: incident_types, attributes: {name: "{{name}}"}}}, save: {itype: data/id}}
+  after:
+  - {method: DELETE, path: "/api/v2/incidents/config/types/{{var:itype}}", ok: [404]}
+  spec: {type: postmortem_templates, attributes: {name: "{{name}}"}, relationships: {incident_type: {data: {id: "{{var:itype}}", type: incident_types}}}}
+  change: {attributes: {name: "{{name}}-changed"}}
+  drift: {name: "{{name}}-drift"}
+  driftFull: true
+
+- kind: IncidentNotificationRule
+  skip: a trial organization refuses email handles as recipients, and other handles name real people or integrations
+  replaceSample: true
+  before:
+  - {method: POST, path: /api/v2/incidents/config/types, body: {data: {type: incident_types, attributes: {name: "{{name}}"}}}, save: {itype: data/id}}
+  after:
+  - {method: DELETE, path: "/api/v2/incidents/config/types/{{var:itype}}", ok: [404]}
+  spec:
+    type: incident_notification_rules
+    relationships: {incident_type: {data: {id: "{{var:itype}}", type: incident_types}}}
+    attributes: {conditions: [{field: severity, values: [SEV-1]}], handles: ["@{{name}}@example.com"], trigger: incident_created_trigger, visibility: organization, enabled: false}
+  change:
+    attributes: {conditions: [{field: severity, values: [SEV-2]}], handles: ["@{{name}}@example.com"], trigger: incident_created_trigger, visibility: organization, enabled: false}
+  drift: {conditions: [{field: severity, values: [SEV-3]}], handles: ["@{{name}}@example.com"], trigger: incident_created_trigger, visibility: organization, enabled: false}
+  driftFull: true
+
+- kind: Datastore
+  replaceSample: true
+  spec: {type: datastores, attributes: {name: "{{name}}", primary_column_name: id, description: first}}
+  change: {attributes: {name: "{{name}}", primary_column_name: id, description: second}}
+  drift: {name: "{{name}}", primary_column_name: id, description: drift}
+  driftFull: true
+
+- kind: AppBuilderApp
+  replaceSample: true
+  spec: {type: appDefinitions, attributes: {name: "{{name}}", description: first, components: [], queries: [], rootInstanceName: grid0}}
+  change: {attributes: {name: "{{name}}", description: second, components: [], queries: [], rootInstanceName: grid0}}
+  drift: {name: "{{name}}", description: drift, components: [], queries: [], rootInstanceName: grid0}
+  driftFull: true
+
+- kind: ActionConnection
+  replaceSample: true
+  spec:
+    type: action_connection
+    attributes: {name: "{{name}}", integration: {type: AWS, credentials: {type: AWSAssumeRole, account_id: "111222333444", role: "{{name}}"}}}
+  change:
+    attributes: {name: "{{name}}-changed", integration: {type: AWS, credentials: {type: AWSAssumeRole, account_id: "111222333444", role: "{{name}}"}}}
+  drift: {name: "{{name}}-drift", integration: {type: AWS, credentials: {type: AWSAssumeRole, account_id: "111222333444", role: "{{name}}"}}}
+  driftFull: true
+
+- kind: ActionExecutionPolicy
+  replaceSample: true
+  spec: {type: execution_policy, attributes: {name: "{{name}}", effect: allow, action_pattern: {integration: INTEGRATION_SCRIPT, action_fqns: ["com.datadoghq.script.*"]}}}
+  change: {attributes: {name: "{{name}}-changed", effect: allow, action_pattern: {integration: INTEGRATION_SCRIPT, action_fqns: ["com.datadoghq.script.*"]}}}
+  drift: {name: "{{name}}-drift", effect: allow, action_pattern: {integration: INTEGRATION_SCRIPT, action_fqns: ["com.datadoghq.script.*"]}}
+  driftFull: true
+
+- kind: Dataset
+  replaceSample: true
+  before:
+  - {method: POST, path: /api/v2/roles, body: {data: {type: roles, attributes: {name: "{{name}}"}}}, save: {role: data/id}}
+  after:
+  - {method: DELETE, path: "/api/v2/roles/{{var:role}}", ok: [404]}
+  spec: {type: dataset, attributes: {name: "{{name}}", product_filters: [{product: logs, filters: ["@service:{{name}}"]}], principals: ["role:{{var:role}}"]}}
+  change: {attributes: {name: "{{name}}-changed", product_filters: [{product: logs, filters: ["@service:{{name}}"]}], principals: ["role:{{var:role}}"]}}
+  drift: {name: "{{name}}-drift", product_filters: [{product: logs, filters: ["@service:{{name}}"]}], principals: ["role:{{var:role}}"]}
+  driftFull: true
+
+- kind: DeploymentGate
+  replaceSample: true
+  spec: {type: deployment_gate, attributes: {env: hfl-live, service: "{{name}}", identifier: default, dry_run: true}}
+  change: {attributes: {env: hfl-live, service: "{{name}}", identifier: default, dry_run: false}}
+  drift: {env: hfl-live, service: "{{name}}", identifier: default, dry_run: true}
+  driftFull: true
+
+- kind: TagRule
+  replaceSample: true
+  spec: {type: tag_policy, attributes: {name: "{{name}}", source: logs, scope: "env:hfl-live", tag_key: service, tag_value_patterns: [first], rule_type: surfacing}}
+  change: {attributes: {name: "{{name}}", source: logs, scope: "env:hfl-live", tag_key: service, tag_value_patterns: [second], rule_type: surfacing}}
+  drift: {name: "{{name}}", source: logs, scope: "env:hfl-live", tag_key: service, tag_value_patterns: [drift], rule_type: surfacing}
+  driftFull: true
+
+- kind: TagIndexingRule
+  replaceSample: true
+  spec: {type: tag_indexing_rules, attributes: {name: "{{name}}", metric_name_matches: ["hfl.live.{{name_}}"]}}
+  change: {attributes: {name: "{{name}}-changed", metric_name_matches: ["hfl.live.{{name_}}"]}}
+  drift: {name: "{{name}}-drift", metric_name_matches: ["hfl.live.{{name_}}"]}
+  driftFull: true
+
+- kind: LogsMetric
+  replaceSample: true
+  spec: {id: "{{name_}}", type: logs_metrics, attributes: {compute: {aggregation_type: count}, filter: {query: "service:{{name}}"}}}
+  change: {attributes: {filter: {query: "service:{{name}}-changed"}}}
+  drift: {filter: {query: "service:{{name}}-drift"}}
+  driftFull: true
+
+- kind: LogsRestrictionQuery
+  skip: every query is refused ("Invalid query") in an organization without Log Management
+  replaceSample: true
+  spec: {type: logs_restriction_queries, attributes: {restriction_query: "service:{{name}}"}}
+  change: {attributes: {restriction_query: "service:{{name}}-changed"}}
+  drift: {restriction_query: "service:{{name}}-drift"}
+  driftFull: true
+
+- kind: RumApplication
+  replaceSample: true
+  spec: {type: rum_application_create, attributes: {name: "{{name}}", type: browser}}
+  change: {attributes: {name: "{{name}}-changed", type: browser}}
+  drift: {name: "{{name}}-drift", type: browser}
+  stays: Datadog soft-deletes RUM applications, so a read still answers after delete
+  driftFull: true
+
+- kind: RumMetric
+  replaceSample: true
+  spec: {id: "{{name_}}", type: rum_metrics, attributes: {event_type: action, compute: {aggregation_type: count}, filter: {query: "@service:{{name}}"}}}
+  change: {attributes: {filter: {query: "@service:{{name}}-changed"}}}
+  drift: {filter: {query: "@service:{{name}}-drift"}}
+  driftFull: true
+
+- kind: RumRetentionFilter
+  skip: Datadog answers HTTP 500 "internal server error related to retention filter data" to every create in this trial organization
+  replaceSample: true
+  before:
+  - {method: POST, path: /api/v2/rum/applications, body: {data: {type: rum_application_create, attributes: {name: "{{name}}", type: browser}}}, save: {rum: data/id}}
+  after:
+  - {method: DELETE, path: "/api/v2/rum/applications/{{var:rum}}", ok: [404]}
+  spec: {appID: "{{var:rum}}", type: retention_filters, attributes: {event_type: session, name: "{{name}}", sample_rate: 10, query: "@service:{{name}}", enabled: false}}
+  change: {attributes: {event_type: session, name: "{{name}}", sample_rate: 20, query: "@service:{{name}}", enabled: false}}
+  drift: {event_type: session, name: "{{name}}", sample_rate: 30, query: "@service:{{name}}", enabled: false}
+  driftFull: true
+
+- kind: RumExclusionFilter
+  skip: Datadog answers HTTP 500 "internal server error related to retention filter data" to every create in this trial organization
+  replaceSample: true
+  before:
+  - {method: POST, path: /api/v2/rum/applications, body: {data: {type: rum_application_create, attributes: {name: "{{name}}", type: browser}}}, save: {rum: data/id}}
+  after:
+  - {method: DELETE, path: "/api/v2/rum/applications/{{var:rum}}", ok: [404]}
+  spec: {appID: "{{var:rum}}", type: exclusion_filters, attributes: {name: "{{name}}", query: "@service:{{name}}", enabled: false}}
+  change: {attributes: {name: "{{name}}-changed", query: "@service:{{name}}", enabled: false}}
+  drift: {name: "{{name}}-drift", query: "@service:{{name}}", enabled: false}
+  driftFull: true
+
+- kind: RumOperation
+  replaceSample: true
+  spec: {type: operations, attributes: {name: "{{name_}}", tags: [], journey_rum: {rum_steps: [{type: start, nodes: [{query: "@type:action @action.target.name:hfl"}]}]}}}
+  change: {attributes: {name: "{{name_}}", tags: ["hfl:live"], journey_rum: {rum_steps: [{type: start, nodes: [{query: "@type:action @action.target.name:hfl"}]}]}}}
+  drift: {name: "{{name_}}", tags: ["hfl:drift"], journey_rum: {rum_steps: [{type: start, nodes: [{query: "@type:action @action.target.name:hfl"}]}]}}
+  driftFull: true
+
+- kind: OnCallEscalationPolicy
+  replaceSample: true
+  spec: {type: policies, attributes: {name: "{{name}}", steps: [{escalate_after_seconds: 3600, targets: [{id: "{{var:team}}", type: teams}]}]}}
+  change: {attributes: {name: "{{name}}-changed", steps: [{escalate_after_seconds: 3600, targets: [{id: "{{var:team}}", type: teams}]}]}}
+  drift: {name: "{{name}}-drift", steps: [{escalate_after_seconds: 3600, targets: [{id: "{{var:team}}", type: teams}]}]}
+  driftFull: true
+
+- kind: SecurityFindingsMuteRule
+  replaceSample: true
+  spec: {type: mute_rules, attributes: {name: "{{name}}", enabled: false, rule: {finding_types: [misconfiguration], query: "service:{{name}}"}, action: {reason: risk_accepted, reason_description: first}}}
+  change: {attributes: {name: "{{name}}", enabled: false, rule: {finding_types: [misconfiguration], query: "service:{{name}}"}, action: {reason: risk_accepted, reason_description: second}}}
+  drift: {name: "{{name}}", enabled: false, rule: {finding_types: [misconfiguration], query: "service:{{name}}"}, action: {reason: risk_accepted, reason_description: drift}}
+  driftFull: true
+
+- kind: SecurityFindingsInboxRule
+  replaceSample: true
+  spec: {type: inbox_rules, attributes: {name: "{{name}}", enabled: false, rule: {finding_types: [misconfiguration], query: "service:{{name}}"}, action: {}}}
+  change: {attributes: {name: "{{name}}-changed", enabled: false, rule: {finding_types: [misconfiguration], query: "service:{{name}}"}, action: {}}}
+  drift: {name: "{{name}}-drift", enabled: false, rule: {finding_types: [misconfiguration], query: "service:{{name}}"}, action: {}}
+  driftFull: true
+
+- kind: SecurityFindingsDueDateRule
+  replaceSample: true
+  spec: {type: due_date_rules, attributes: {name: "{{name}}", enabled: false, rule: {finding_types: [misconfiguration], query: "service:{{name}}"}, action: {due_days_per_severity: [{severity: critical, due_in_days: 7}], due_from: first_seen}}}
+  change: {attributes: {name: "{{name}}", enabled: false, rule: {finding_types: [misconfiguration], query: "service:{{name}}"}, action: {due_days_per_severity: [{severity: critical, due_in_days: 14}], due_from: first_seen}}}
+  drift: {name: "{{name}}", enabled: false, rule: {finding_types: [misconfiguration], query: "service:{{name}}"}, action: {due_days_per_severity: [{severity: critical, due_in_days: 21}], due_from: first_seen}}
+  driftFull: true
+
+- kind: SecurityFindingsSeverityModifierRule
+  replaceSample: true
+  spec: {type: severity_modifier_rules, attributes: {name: "{{name}}", enabled: false, rule: {finding_types: [misconfiguration], query: "service:{{name}}"}, action: {type: set, severity: low}}}
+  change: {attributes: {name: "{{name}}", enabled: false, rule: {finding_types: [misconfiguration], query: "service:{{name}}"}, action: {type: set, severity: high}}}
+  drift: {name: "{{name}}", enabled: false, rule: {finding_types: [misconfiguration], query: "service:{{name}}"}, action: {type: set, severity: medium}}
+  driftFull: true
+
+- kind: SecurityNotificationRule
+  skip: a trial organization refuses external email addresses as targets, which leaves only real users' handles, and a test must notify no one
+  replaceSample: true
+  spec: {type: notification_rules, attributes: {name: "{{name}}", enabled: false, selectors: {trigger_source: security_findings, rule_types: [cloud_configuration], severities: [critical], query: "service:{{name}}"}, targets: ["@{{name}}@example.com"]}}
+  change: {attributes: {name: "{{name}}-changed", enabled: false, selectors: {trigger_source: security_findings, rule_types: [cloud_configuration], severities: [critical], query: "service:{{name}}"}, targets: ["@{{name}}@example.com"]}}
+  drift: {name: "{{name}}-drift", enabled: false, selectors: {trigger_source: security_findings, rule_types: [cloud_configuration], severities: [critical], query: "service:{{name}}"}, targets: ["@{{name}}@example.com"]}
+  driftFull: true
+- kind: DerivedMetric
+  replaceSample: true
+  spec:
+    id: "{{name_}}"
+    type: derived_metrics
+    attributes: {definition: {formula: a, queries: [{data_source: metrics, name: a, query: "avg:hfl.live.none{*}"}]}}
+  change:
+    attributes: {definition: {formula: a * 2, queries: [{data_source: metrics, name: a, query: "avg:hfl.live.none{*}"}]}}
+  drift: {definition: {formula: a * 3, queries: [{data_source: metrics, name: a, query: "avg:hfl.live.none{*}"}]}}
+  driftFull: true
+
+- kind: OnCallTeamRoutingRules
+  replaceSample: true
+  before:
+  - method: POST
+    path: /api/v2/on-call/escalation-policies
+    body: {data: {type: policies, attributes: {name: "{{name}}-ep", steps: [{escalate_after_seconds: 3600, targets: [{id: "{{var:team}}", type: teams}]}]}}}
+    save: {routingPolicy: data/id}
+  after:
+  - method: PUT
+    path: /api/v2/on-call/teams/{{var:team}}/routing-rules
+    body: {data: {id: "{{var:team}}", type: team_routing_rules, attributes: {rules: []}}}
+  - {method: DELETE, path: "/api/v2/on-call/escalation-policies/{{var:routingPolicy}}", ok: [404]}
+  spec: {teamID: "{{var:team}}", id: "{{var:team}}", type: team_routing_rules, attributes: {rules: [{query: "tags.service:{{name}}", policy_id: "{{var:routingPolicy}}", urgency: low}, {policy_id: "{{var:routingPolicy}}", urgency: low}]}}
+  change: {attributes: {rules: [{query: "tags.service:{{name}}-changed", policy_id: "{{var:routingPolicy}}", urgency: high}, {policy_id: "{{var:routingPolicy}}", urgency: low}]}}
+  noDrift: attributes are write-only in the descriptor (the spec does not describe the read), so drift in them is never seen
+
+- kind: LogsCustomDestination
+  replaceSample: true
+  spec:
+    type: custom_destination
+    attributes: {name: "{{name}}", query: "service:{{name}}", enabled: false, forward_tags: false, forwarder_destination: {type: http, endpoint: "https://example.com/hfl-live", auth: {type: custom_header, header_name: X-Hfl-Live, header_value: hfl-live-not-a-secret}}}
+  change:
+    attributes: {name: "{{name}}-changed", query: "service:{{name}}", enabled: false, forward_tags: false, forwarder_destination: {type: http, endpoint: "https://example.com/hfl-live", auth: {type: custom_header, header_name: X-Hfl-Live, header_value: hfl-live-not-a-secret}}}
+  drift: {name: "{{name}}-drift", query: "service:{{name}}", enabled: false, forward_tags: false, forwarder_destination: {type: http, endpoint: "https://example.com/hfl-live", auth: {type: custom_header, header_name: X-Hfl-Live, header_value: hfl-live-not-a-secret}}}
+  driftFull: true
+
+- kind: IntegrationMsTeamsWorkflowsWebhookHandle
+  skip: the URL must be a real Microsoft Teams workflow URL ("not a valid workflow url")
+  replaceSample: true
+  spec: {type: workflows-webhook-handle, attributes: {name: "{{name}}", url: "https://example.com/hfl-live/first"}}
+  change: {attributes: {name: "{{name}}", url: "https://example.com/hfl-live/second"}}
+  drift: {name: "{{name}}", url: "https://example.com/hfl-live/drift"}
+  driftFull: true
+
+- kind: IntegrationFastlyAccount
+  replaceSample: true
+  spec: {type: fastly-accounts, attributes: {name: "{{name}}", api_key: hfl-live-not-a-key, services: []}}
+  change: {attributes: {name: "{{name}}", api_key: hfl-live-not-a-key-2, services: []}}
+  noDrift: api_key is write-only and name and services are create-only
+
+- kind: IntegrationCloudflareAccount
+  replaceSample: true
+  spec: {type: cloudflare-accounts, attributes: {name: "{{name}}", api_key: "{{env:DD_LIVE_CF_API_TOKEN}}", resources: [dns]}}
+  change: {attributes: {name: "{{name}}", api_key: "{{env:DD_LIVE_CF_API_TOKEN}}", resources: [web, dns]}}
+  drift: {name: "{{name}}", api_key: "{{env:DD_LIVE_CF_API_TOKEN}}", resources: [lb]}
+  driftFull: true
+
+- kind: ServiceAccount
+  replaceSample: true
+  spec: {type: users, attributes: {name: "{{name}}", email: "{{name}}@example.com", service_account: true}}
+  change: {attributes: {name: "{{name}}-changed", email: "{{name}}@example.com", service_account: true}}
+  noDrift: a write of the service account as read is refused (relationships org and roles are not allowed in an update), as for User
+  stays: Datadog never deletes a service account; a delete disables it and a read still answers
+
+# A key of the run's own user, scoped to reading dashboards; deleted at the end.
+- kind: ApplicationKey
+  replaceSample: true
+  spec: {type: application_keys, attributes: {name: "{{name}}", scopes: [dashboards_read]}}
+  change: {attributes: {name: "{{name}}-changed", scopes: [dashboards_read]}}
+  drift: {name: "{{name}}-drift", scopes: [dashboards_read]}
+  driftFull: true
+
+# A user made for the purpose (never invited), a plain member of the run's team, then its admin.
+- kind: TeamMembership
+  replaceSample: true
+  before:
+  - {method: POST, path: /api/v2/users, body: {data: {type: users, attributes: {email: "{{name}}@example.com", name: "{{name}}"}}}, save: {member: data/id}}
+  after:
+  - {method: DELETE, path: "/api/v2/users/{{var:member}}", ok: [404]}
+  spec: {teamID: "{{var:team}}", type: team_memberships, relationships: {user: {data: {id: "{{var:member}}", type: users}}}}
+  change: {attributes: {role: admin}}
+  noDrift: admin is the only role a membership names (none is a plain member), so there is no other value to write behind the controller's back
+
+# Who may edit the run's team.
+- kind: TeamPermissionSetting
+  replaceSample: true
+  spec: {teamID: "{{var:team}}", action: edit, type: team_permission_settings, attributes: {value: admins}}
+  change: {attributes: {value: members}}
+  noDrift: a write behind the controller's back needs the type, and the setting as read names it TeamPermission-<team>-<action>, which the update refuses as not the ID in its path
+
+# Editors of the run's dashboard: the whole organization (whose ID a service account made for it reports).
+- kind: RestrictionPolicy
+  replaceSample: true
+  before:
+  - {method: POST, path: /api/v2/service_accounts, body: {data: {type: users, attributes: {name: "{{name}}", email: "{{name}}@example.com", service_account: true}}}, save: {orgsa: data/id, org: data/relationships/org/data/id}}
+  after:
+  - {method: DELETE, path: "/api/v2/users/{{var:orgsa}}", ok: [404]}
+  spec:
+    resourceID: "dashboard:{{var:dashboard}}"
+    id: "dashboard:{{var:dashboard}}"
+    type: restriction_policy
+    attributes: {bindings: [{relation: editor, principals: ["org:{{var:org}}"]}]}
+  change:
+    attributes: {bindings: [{relation: editor, principals: ["org:{{var:org}}", "team:{{var:team}}"]}]}
+  drift: {bindings: [{relation: editor, principals: ["org:{{var:org}}"]}]}
+  driftFull: true
+  stays: a resource without a restriction policy still reads, with no bindings
+
+- kind: Monitor
+  replaceSample: true
+  spec: {name: "{{name}}", type: query alert, query: "avg(last_5m):avg:hfl.live.none{*} > 100", message: "{{name}} first", tags: ["hfl-live"]}
+  change: {message: "{{name}} second"}
+
+- kind: SyntheticsGlobalVariable
+  replaceSample: true
+  spec: {name: "{{NAME_}}", description: first, tags: ["hfl-live"], value: {value: hfl-live-not-a-secret, secure: false}}
+  change: {description: second}
+  driftFull: true
+
+- kind: LogsCustomPipeline
+  replaceSample: true
+  spec: {name: "{{name}}", is_enabled: false, filter: {query: "service:{{name}}"}, processors: []}
+  change: {filter: {query: "service:{{name}}-changed"}}
+  drift: {query: "service:{{name}}-drift"}
+  driftFull: true
+
+- kind: WorkflowAutomation
+  replaceSample: true
+  spec:
+    type: workflows
+    attributes: {name: "{{name}}", description: first, published: false, tags: ["service:hfl-live"], spec: {steps: [], triggers: [{startStepNames: [], workflowTrigger: {}}]}}
+  change:
+    attributes: {name: "{{name}}", description: second, published: false, tags: ["service:hfl-live"], spec: {steps: [], triggers: [{startStepNames: [], workflowTrigger: {}}]}}
+  drift: {name: "{{name}}", description: drift, published: false, tags: ["service:hfl-live"], spec: {steps: [], triggers: [{startStepNames: [], workflowTrigger: {}}]}}
+  driftFull: true
+
+# Internal status pages, never published (enabled: false).
+- kind: StatusPage
+  replaceSample: true
+  spec: {type: status_pages, attributes: {name: "{{name}}", domain_prefix: "{{name}}", type: internal, visualization_type: bars_and_uptime_percentage}}
+  change: {attributes: {name: "{{name}}", domain_prefix: "{{name}}", type: internal, visualization_type: bars_only}}
+  drift: {name: "{{name}}", domain_prefix: "{{name}}", type: internal, visualization_type: component_name_only}
+  driftFull: true
+
+- kind: StatusPageComponent
+  replaceSample: true
+  before:
+  - {method: POST, path: /api/v2/statuspages, body: {data: {type: status_pages, attributes: {name: "{{name}}-page", domain_prefix: "{{name}}-page", type: internal, visualization_type: bars_and_uptime_percentage}}}, save: {page: data/id}}
+  after:
+  - {method: DELETE, path: "/api/v2/statuspages/{{var:page}}", ok: [404]}
+  spec: {pageID: "{{var:page}}", type: components, attributes: {name: "{{name}}", position: 0, type: component}}
+  change: {attributes: {name: "{{name}}-changed", position: 0, type: component}}
+  drift: {name: "{{name}}-drift", position: 0, type: component}
+  driftFull: true
+
+- kind: StatusPageDegradationTemplate
+  replaceSample: true
+  before:
+  - {method: POST, path: /api/v2/statuspages, body: {data: {type: status_pages, attributes: {name: "{{name}}-page", domain_prefix: "{{name}}-page", type: internal, visualization_type: bars_and_uptime_percentage}}}, save: {page: data/id}}
+  - {method: POST, path: "/api/v2/statuspages/{{var:page}}/components", body: {data: {type: components, attributes: {name: "{{name}}", position: 0, type: component}}}, save: {component: data/id}}
+  after:
+  - {method: DELETE, path: "/api/v2/statuspages/{{var:page}}", ok: [404]}
+  spec:
+    pageID: "{{var:page}}"
+    type: degradation_templates
+    attributes: {name: "{{name}}", degradation_title: first, components_affected: [{id: "{{var:component}}", status: degraded}], updates: [{message: hfl live test, status: investigating}]}
+  change:
+    attributes: {name: "{{name}}", degradation_title: second, components_affected: [{id: "{{var:component}}", status: degraded}], updates: [{message: hfl live test, status: investigating}]}
+  drift: {name: "{{name}}", degradation_title: drift, components_affected: [{id: "{{var:component}}", status: degraded}], updates: [{message: hfl live test, status: investigating}]}
+  driftFull: true
+
+- kind: StatusPageMaintenanceTemplate
+  replaceSample: true
+  before:
+  - {method: POST, path: /api/v2/statuspages, body: {data: {type: status_pages, attributes: {name: "{{name}}-page", domain_prefix: "{{name}}-page", type: internal, visualization_type: bars_and_uptime_percentage}}}, save: {page: data/id}}
+  - {method: POST, path: "/api/v2/statuspages/{{var:page}}/components", body: {data: {type: components, attributes: {name: "{{name}}", position: 0, type: component}}}, save: {component: data/id}}
+  after:
+  - {method: DELETE, path: "/api/v2/statuspages/{{var:page}}", ok: [404]}
+  spec:
+    pageID: "{{var:page}}"
+    type: maintenance_templates
+    attributes: {name: "{{name}}", maintenance_title: first, component_ids: ["{{var:component}}"], scheduled_description: hfl live test}
+  change:
+    attributes: {name: "{{name}}", maintenance_title: second, component_ids: ["{{var:component}}"], scheduled_description: hfl live test}
+  drift: {name: "{{name}}", maintenance_title: drift, component_ids: ["{{var:component}}"], scheduled_description: hfl live test}
+  driftFull: true
+
+# The order kinds hold every object's ID: two rules made for the kind (the
+# trial has no others), put in order, swapped, and deleted after it; the
+# old order is put back first.
+- kind: SecurityFindingsMuteRulesOrder
+  before:
+  - {method: POST, path: /api/v2/security/findings/automation/mute_rules, body: {data: {type: mute_rules, attributes: {name: "{{name}}-a", enabled: false, rule: {finding_types: [misconfiguration], query: "service:{{name}}-a"}, action: {reason: risk_accepted, reason_description: hfl live test}}}}, save: {ruleA: data/id}}
+  - {method: POST, path: /api/v2/security/findings/automation/mute_rules, body: {data: {type: mute_rules, attributes: {name: "{{name}}-b", enabled: false, rule: {finding_types: [misconfiguration], query: "service:{{name}}-b"}, action: {reason: risk_accepted, reason_description: hfl live test}}}}, save: {ruleB: data/id}}
+  after:
+  - {method: DELETE, path: "/api/v2/security/findings/automation/mute_rules/{{var:ruleA}}", ok: [404]}
+  - {method: DELETE, path: "/api/v2/security/findings/automation/mute_rules/{{var:ruleB}}", ok: [404]}
+  replaceSample: true
+  spec: {rule_ids: ["{{var:ruleA}}", "{{var:ruleB}}"]}
+  change: {rule_ids: ["{{var:ruleB}}", "{{var:ruleA}}"]}
+  drift: ["{{var:ruleA}}", "{{var:ruleB}}"]
+
+- kind: SecurityFindingsInboxRulesOrder
+  before:
+  - {method: POST, path: /api/v2/security/findings/automation/inbox_rules, body: {data: {type: inbox_rules, attributes: {name: "{{name}}-a", enabled: false, rule: {finding_types: [misconfiguration], query: "service:{{name}}-a"}, action: {}}}}, save: {ruleA: data/id}}
+  - {method: POST, path: /api/v2/security/findings/automation/inbox_rules, body: {data: {type: inbox_rules, attributes: {name: "{{name}}-b", enabled: false, rule: {finding_types: [misconfiguration], query: "service:{{name}}-b"}, action: {}}}}, save: {ruleB: data/id}}
+  after:
+  - {method: DELETE, path: "/api/v2/security/findings/automation/inbox_rules/{{var:ruleA}}", ok: [404]}
+  - {method: DELETE, path: "/api/v2/security/findings/automation/inbox_rules/{{var:ruleB}}", ok: [404]}
+  replaceSample: true
+  spec: {rule_ids: ["{{var:ruleA}}", "{{var:ruleB}}"]}
+  change: {rule_ids: ["{{var:ruleB}}", "{{var:ruleA}}"]}
+  drift: ["{{var:ruleA}}", "{{var:ruleB}}"]
+
+- kind: SecurityFindingsDueDateRulesOrder
+  before:
+  - {method: POST, path: /api/v2/security/findings/automation/due_date_rules, body: {data: {type: due_date_rules, attributes: {name: "{{name}}-a", enabled: false, rule: {finding_types: [misconfiguration], query: "service:{{name}}-a"}, action: {due_days_per_severity: [{severity: critical, due_in_days: 7}], due_from: first_seen}}}}, save: {ruleA: data/id}}
+  - {method: POST, path: /api/v2/security/findings/automation/due_date_rules, body: {data: {type: due_date_rules, attributes: {name: "{{name}}-b", enabled: false, rule: {finding_types: [misconfiguration], query: "service:{{name}}-b"}, action: {due_days_per_severity: [{severity: critical, due_in_days: 7}], due_from: first_seen}}}}, save: {ruleB: data/id}}
+  after:
+  - {method: DELETE, path: "/api/v2/security/findings/automation/due_date_rules/{{var:ruleA}}", ok: [404]}
+  - {method: DELETE, path: "/api/v2/security/findings/automation/due_date_rules/{{var:ruleB}}", ok: [404]}
+  replaceSample: true
+  spec: {rule_ids: ["{{var:ruleA}}", "{{var:ruleB}}"]}
+  change: {rule_ids: ["{{var:ruleB}}", "{{var:ruleA}}"]}
+  drift: ["{{var:ruleA}}", "{{var:ruleB}}"]
+
+- kind: SecurityFindingsSeverityModifierRulesOrder
+  before:
+  - {method: POST, path: /api/v2/security/findings/automation/severity_modifier_rules, body: {data: {type: severity_modifier_rules, attributes: {name: "{{name}}-a", enabled: false, rule: {finding_types: [misconfiguration], query: "service:{{name}}-a"}, action: {type: set, severity: low}}}}, save: {ruleA: data/id}}
+  - {method: POST, path: /api/v2/security/findings/automation/severity_modifier_rules, body: {data: {type: severity_modifier_rules, attributes: {name: "{{name}}-b", enabled: false, rule: {finding_types: [misconfiguration], query: "service:{{name}}-b"}, action: {type: set, severity: low}}}}, save: {ruleB: data/id}}
+  after:
+  - {method: DELETE, path: "/api/v2/security/findings/automation/severity_modifier_rules/{{var:ruleA}}", ok: [404]}
+  - {method: DELETE, path: "/api/v2/security/findings/automation/severity_modifier_rules/{{var:ruleB}}", ok: [404]}
+  replaceSample: true
+  spec: {rule_ids: ["{{var:ruleA}}", "{{var:ruleB}}"]}
+  change: {rule_ids: ["{{var:ruleB}}", "{{var:ruleA}}"]}
+  drift: ["{{var:ruleA}}", "{{var:ruleB}}"]
+
+- kind: TagIndexingRuleOrder
+  before:
+  - {method: POST, path: /api/v2/metrics/tag-indexing-rules, body: {data: {type: tag_indexing_rules, attributes: {name: "{{name}}-a", metric_name_matches: ["hfl.live.{{name_}}_a"]}}}, save: {ruleA: data/id}}
+  - {method: POST, path: /api/v2/metrics/tag-indexing-rules, body: {data: {type: tag_indexing_rules, attributes: {name: "{{name}}-b", metric_name_matches: ["hfl.live.{{name_}}_b"]}}}, save: {ruleB: data/id}}
+  after:
+  - {method: DELETE, path: "/api/v2/metrics/tag-indexing-rules/{{var:ruleA}}", ok: [404]}
+  - {method: DELETE, path: "/api/v2/metrics/tag-indexing-rules/{{var:ruleB}}", ok: [404]}
+  replaceSample: true
+  spec: {rule_ids: ["{{var:ruleA}}", "{{var:ruleB}}"]}
+  change: {rule_ids: ["{{var:ruleB}}", "{{var:ruleA}}"]}
+  drift: ["{{var:ruleA}}", "{{var:ruleB}}"]
+
+# A role made for the kind given to a user made for it (never invited).
+- kind: UserRole
+  before:
+  - {method: POST, path: /api/v2/roles, body: {data: {type: roles, attributes: {name: "{{name}}"}}}, save: {role: data/id}}
+  - {method: POST, path: /api/v2/users, body: {data: {type: users, attributes: {email: "{{name}}@example.com", name: "{{name}}"}}}, save: {roleUser: data/id}}
+  after:
+  - {method: DELETE, path: "/api/v2/users/{{var:roleUser}}", ok: [404]}
+  - {method: DELETE, path: "/api/v2/roles/{{var:role}}", ok: [404]}
+  replaceSample: true
+  spec: {roleID: "{{var:role}}", id: "{{var:roleUser}}", type: users}
+
+# A software catalog entry (schema v2.2) owned by the run's team.
+- kind: ServiceDefinitionYaml
+  replaceSample: true
+  spec: {schema-version: v2.2, dd-service: "{{name}}", team: "{{run}}", description: first}
+  change: {description: second}
+  driftFull: true                # the POST needs the whole definition
+
+# A suite of synthetic tests with none in it: nothing runs.
+- kind: SyntheticsSuite
+  replaceSample: true
+  spec: {type: suites, attributes: {name: "{{name}}", type: suite, tests: [], options: {}, message: first}}
+  change: {attributes: {name: "{{name}}", type: suite, tests: [], options: {}, message: second}}
+  drift: {name: "{{name}}", type: suite, tests: [], options: {}, message: drift}
+  driftFull: true
+
+# Not run, and why.
+- kind: AuthnMapping
+  skip: maps SAML attributes to roles; the organization's authentication configuration is off limits
+- kind: AwsWifIntakeMapping
+  skip: an AWS workload-identity intake mapping is authentication configuration, off limits
+- kind: DomainAllowlist
+  skip: an organization setting (the notification email domain allowlist), off limits
+- kind: IpAllowlist
+  skip: an organization setting that can lock every API client out, off limits
+- kind: GovernanceControl
+  skip: an organization-wide governance setting, off limits
+- kind: AppKeyRegistration
+  skip: registers an application key for Actions; the only keys are the organization's own, off limits
+- kind: ApmRetentionFilter
+  skip: APM configuration; APM is a paid product and is not to be turned on in the trial
+- kind: AwsCurConfig
+  skip: needs a real AWS account with a cost-and-usage report bucket
+- kind: AzureUcConfig
+  skip: needs a real Azure account with a cost export
+- kind: GcpUcConfig
+  skip: needs a real Google Cloud billing export
+- kind: IntegrationAwsAccount
+  skip: needs a real AWS account and role; a made-up account ID may be someone's
+- kind: IntegrationConfluentAccount
+  replaceSample: true
+  spec: {type: confluent-cloud-accounts, attributes: {api_key: "{{env:DD_LIVE_CONFLUENT_API_KEY}}", api_secret: "{{env:DD_LIVE_CONFLUENT_API_SECRET}}", tags: ["env:{{name}}"]}}
+  change: {attributes: {api_key: "{{env:DD_LIVE_CONFLUENT_API_KEY}}", api_secret: "{{env:DD_LIVE_CONFLUENT_API_SECRET}}", tags: ["env:{{name}}-changed"]}}
+  drift: {api_key: "{{env:DD_LIVE_CONFLUENT_API_KEY}}", api_secret: "{{env:DD_LIVE_CONFLUENT_API_SECRET}}", tags: ["env:{{name}}-drift"]}
+  driftFull: true
+- kind: IntegrationConfluentResource
+  skip: needs a real Confluent Cloud resource (e.g., Kafka cluster) in the Confluent account
+- kind: IntegrationFastlyService
+  skip: needs a Fastly service in a real Fastly account
+- kind: IntegrationDatabricksAccount
+  skip: needs a Databricks workspace and OAuth client
+- kind: IntegrationElasticCloudAccount
+  skip: needs an Elastic Cloud deployment and credentials
+- kind: IntegrationSnowflakeAccount
+  skip: needs a Snowflake user with an RSA key pair (krm-live-snowflake holds a PAT only)
+- kind: IntegrationTwilioAccount
+  skip: needs a Twilio account
+- kind: IntegrationMsTeamsTenantBasedHandle
+  skip: needs the Microsoft Teams integration installed in a real tenant
+- kind: IntegrationPagerduty
+  replaceSample: true
+  spec: {service_name: "{{name}}", service_key: "00000000000000000000000000000000"}
+  change: {service_key: "11111111111111111111111111111111"}
+  drift: {service_key: "22222222222222222222222222222222"}
+  noDrift: service_key is writeOnly
+- kind: IntegrationSlackChannel
+  skip: needs the Slack integration installed in a real workspace
+- kind: LogsArchive
+  skip: needs a real storage bucket and log ingestion; logs are a usage-billed product
+- kind: LogsArchiveOrder
+  skip: the organization has no archives to order (LogsArchive is skipped)
+- kind: LogsIndex
+  skip: an index with retention bills for indexed logs; not to be created in the trial
+- kind: LogsIndexOrder
+  skip: needs two log indexes to reorder (LogsIndex is skipped)
+- kind: LogsPipelineOrder
+  skip: needs log pipelines to reorder; Log Management is not turned on in the trial
+- kind: OnCallSchedule
+  skip: a schedule's layers need members, and the only active user is the organization's owner, who must not be paged
+- kind: OnCallUserNotificationChannel
+  skip: a user's own notification channels; the only active user is the organization's owner, off limits
+- kind: OnCallUserNotificationRule
+  skip: a user's own notification rules; the only active user is the organization's owner, off limits
+- kind: OpenapiApi
+  skip: needs an API registered in the API catalog from an OpenAPI upload (APM's software catalog)
+- kind: OrgGroup
+  skip: multi-organization groups need a parent organization account; organization settings are off limits
+- kind: OrgGroupMembership
+  skip: needs an OrgGroup (multi-organization account)
+- kind: OrgGroupPolicy
+  skip: needs an OrgGroup (multi-organization account)
+- kind: OrgGroupPolicyOverride
+  skip: needs an OrgGroup (multi-organization account)
+- kind: ReferenceTable
+  skip: needs a file upload or a cloud storage bucket to read the table from
+- kind: RumRetentionQuota
+  skip: an organization-wide RUM quota setting; RUM is usage-billed
+- kind: SecurityFindingsTicketCreationRule
+  skip: needs a Jira or ServiceNow integration project to file tickets in
+- kind: SecurityMonitoringCriticalAsset
+  skip: Cloud SIEM configuration; Cloud SIEM is not to be turned on in the trial
+- kind: SecurityMonitoringFilter
+  skip: Cloud SIEM security filters decide which logs are analyzed (billed); not to be turned on in the trial
+- kind: SecurityMonitoringRule
+  skip: a Cloud SIEM detection rule; Cloud SIEM is not to be turned on in the trial
+- kind: SecurityMonitoringSuppression
+  skip: Cloud SIEM configuration; Cloud SIEM is not to be turned on in the trial
+- kind: OrganizationSettings
+  skip: the organization's own settings, off limits
+- kind: OrgConnection
+  skip: needs a second Datadog organization to connect to (multi-organization account)
+- kind: AwsWifIdentityMapping
+  skip: maps an AWS principal to a Datadog account it then acts as; authentication configuration, off limits
+- kind: GithubOidcIdentityMapping
+  skip: maps GitHub Actions workloads to a Datadog account they then act as; authentication configuration, off limits
+- kind: GithubOidcIntakeMapping
+  skip: lets GitHub Actions workloads send data to the organization without a key; authentication configuration, off limits
+- kind: SyntheticsConcurrencyCap
+  skip: an organization-wide Synthetics setting (how many on-demand tests run in parallel, billed by slot), off limits
+- kind: ComplianceResourceEvaluationFilter
+  skip: an organization-wide Cloud Security setting (which cloud resources are evaluated), off limits; it also names a real cloud account
+- kind: AgentlessScanningAwsScanOptions
+  skip: needs a real AWS account integrated with Datadog; Agentless Scanning is part of Cloud Security, a paid product not to be turned on in the trial
+- kind: AgentlessScanningAzureScanOptions
+  skip: needs a real Azure subscription integrated with Datadog; Agentless Scanning is part of Cloud Security, a paid product not to be turned on in the trial
+- kind: AgentlessScanningGcpScanOptions
+  skip: needs a real Google Cloud project integrated with Datadog; Agentless Scanning is part of Cloud Security, a paid product not to be turned on in the trial
+- kind: IntegrationAwsAccountCcmConfig
+  skip: needs a real AWS account integration (IntegrationAwsAccount is skipped) and a cost-and-usage report bucket
+- kind: IntegrationGcpSts
+  skip: needs a real Google Cloud service account that grants Datadog's delegate; a made-up one may be someone's
+- kind: IntegrationOpsgenieServiceObject
+  skip: the API never reads opsgenie_api_key back and the kind does not mark it write-only (it needs overrides.writeOnly, as Fastly's api_key has), so the read right after create reports drift
+- kind: IntegrationPagerdutySettings
+  skip: the organization's PagerDuty integration settings (subdomain and API token); needs a real PagerDuty account, and other vendors' credentials are not borrowed (DDINTEGCREDS)
+- kind: CustomAllocationRule
+  skip: Cloud Cost Management configuration; CCM is a paid product and needs a real cloud billing export
+- kind: TagPipelineRuleset
+  skip: Cloud Cost Management tag pipelines; CCM is a paid product and needs a real cloud billing export
+- kind: SpansMetric
+  skip: APM configuration (metrics from spans); APM is a paid product and is not to be turned on in the trial
+- kind: AppsecWafCustomRule
+  skip: App and API Protection (WAF) configuration; a paid product, not to be turned on in the trial
+- kind: AppsecWafExclusionFilter
+  skip: App and API Protection (WAF) configuration; a paid product, not to be turned on in the trial
+- kind: CsmThreatsAgentRule
+  skip: Workload Protection (CSM Threats) configuration; a paid product, not to be turned on in the trial
+- kind: CsmThreatsPolicy
+  skip: Workload Protection (CSM Threats) configuration; a paid product, not to be turned on in the trial
+- kind: ObservabilityPipeline
+  skip: Observability Pipelines is a paid product; not to be turned on in the trial
+- kind: MetricMetadata
+  skip: a metric's metadata; the metric must have been submitted, and this organization submits no metrics
+- kind: MetricTagConfiguration
+  skip: the metric must have been submitted before its tags can be configured, and this organization submits no metrics
+- kind: TagIndexingRuleExemption
+  skip: the metric must already exist as a submitted custom metric, and this organization submits no metrics
+- kind: FleetSchedule
+  skip: 'not yet tried: the API reads rule.start_maintenance_window back as "0300" when sent "03:00", and the kind has no update to put it back; whether a create takes "0300" is unknown (the create is on /api/unstable)'
+- kind: SoftwareCatalog
+  # An upsert names the entity by its body: the drift step sends it whole.
+  driftFull: true
+  skip: 'not yet run live: a hand-written kind (hack/gen/kinds/software_catalog.yaml)'
+- kind: SecurityFindingsTicketCreationRulesOrder
+  skip: needs ticket creation rules, which need a Jira or ServiceNow integration project to file tickets in (SecurityFindingsTicketCreationRule is skipped)
+- kind: SecurityFindingsDefaultInboxRule
+  skip: turns one of Datadog's default inbox rules on or off for the whole organization; organization settings are off limits
+- kind: SecurityMonitoringDefaultRule
+  skip: a Cloud SIEM default detection rule; Cloud SIEM is not to be turned on in the trial
+- kind: ComplianceCustomFramework
+  skip: Cloud Security compliance configuration; Cloud Security is a paid product, not to be turned on in the trial
+- kind: SensitiveDataScannerGroup
+  skip: Sensitive Data Scanner is a paid product, billed by the data it scans; not to be turned on in the trial
+- kind: SensitiveDataScannerRule
+  skip: Sensitive Data Scanner is a paid product, billed by the data it scans; not to be turned on in the trial
+- kind: SensitiveDataScannerGroupOrder
+  skip: Sensitive Data Scanner is a paid product, billed by the data it scans; not to be turned on in the trial
+- kind: ApmRetentionFilterOrder
+  skip: APM configuration; APM is a paid product and is not to be turned on in the trial
+- kind: RumRetentionFiltersOrder
+  skip: needs RUM retention filters to reorder, and Datadog answers HTTP 500 to every retention filter create in this trial organization (RumRetentionFilter is skipped)
+- kind: CustomAllocationRuleOrder
+  skip: Cloud Cost Management configuration; CCM is a paid product and needs a real cloud billing export
+- kind: TagPipelineRulesetOrder
+  skip: Cloud Cost Management tag pipelines; CCM is a paid product and needs a real cloud billing export
+- kind: CostBudget
+  skip: Cloud Cost Management budgets; CCM is a paid product and needs a real cloud billing export
+- kind: CostCustomForecast
+  skip: Cloud Cost Management budgets; CCM is a paid product and needs a real cloud billing export (CostBudget is skipped)
+- kind: CloudInventorySyncConfig
+  skip: needs a real AWS account and an inventory destination bucket; a made-up account ID may be someone's
+- kind: IntegrationAwsEventBridge
+  skip: needs a real AWS account integrated with Datadog (IntegrationAwsAccount is skipped)
+- kind: IntegrationAzure
+  skip: needs a real Azure tenant and app registration (client ID and secret)
+- kind: IntegrationGcp
+  skip: needs a real Google Cloud service account key; a made-up project may be someone's
+- kind: LogsIntegrationPipeline
+  skip: needs an integration's logs pipeline, which Datadog makes only once the integration sends logs; the organization sends no logs
+- kind: RumOperationJourneyLink
+  skip: "not yet tried: needs a RUM journey (feature_id) to link the operation to; none exists in the trial and no kind makes one"
+- kind: TeamConnection
+  skip: needs the GitHub integration installed for a real GitHub organization, whose team the run's team connects to
+- kind: TeamSync
+  skip: syncs teams from a GitHub organization through the GitHub integration; needs it installed for a real GitHub organization
+- {kind: ChildOrganization, skip: "off limits: makes a child organization of the trial org, which the API cannot delete (deleting the object forgets it)"}
+- {kind: DatastoreItem, skip: "not yet tried: needs a datastore made in a before call"}

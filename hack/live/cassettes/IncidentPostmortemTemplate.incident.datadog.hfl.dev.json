@@ -1,0 +1,113 @@
+{
+  "recorded": "2026-11-20T23:57:25Z",
+  "target": "Datadog trial",
+  "vars": {
+    "dashboard": "ur8-afc-sum",
+    "itype": "fb183ac5-a636-4c9e-b864-de008dda88bb",
+    "sa": "16307311-e53e-11f1-b3f2-e693e7c43799",
+    "slo": "3704e6ae4bac5b54b241a727ff6ab03b",
+    "subteam": "d4c1dd6f-4ea7-42e9-9847-c995ec31b739",
+    "team": "48e3aed2-a7e1-4fee-9037-ce9c9f4b4952"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/api/v2/incidents/config/types",
+      "body": "{\"data\":{\"attributes\":{\"name\":\"{{name}}\"},\"type\":\"incident_types\"}}",
+      "status": 201,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"id\":\"fb183ac5-a636-4c9e-b864-de008dda88bb\",\"type\":\"incident_types\",\"attributes\":{\"configuration\":{\"private_incidents\":false,\"private_incidents_by_default\":false,\"allow_workflows\":true,\"allow_incident_deletion\":false,\"editable_timestamps\":false,\"test_incidents\":true,\"create_message\":\"\",\"slug_source\":\"default\"},\"createdAt\":\"2026-11-20T23:57:24.303912647Z\",\"createdBy\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"description\":\"\",\"is_default\":false,\"lastModifiedBy\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"modifiedAt\":\"2026-11-20T23:57:24.303912697Z\",\"name\":\"{{name}}\",\"prefix\":\"IR\"},\"relationships\":{\"created_by_user\":{\"data\":{\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"type\":\"users\"}},\"google_chat_configuration\":{\"data\":null},\"google_meet_configuration\":{\"data\":null},\"last_modified_by_user\":{\"data\":{\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"type\":\"users\"}},\"microsoft_teams_configuration\":{\"data\":null},\"zoom_configuration\":{\"data\":null}}}}"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v2/incidents/config/postmortem-templates",
+      "body": "{\"data\":{\"attributes\":{\"name\":\"{{name}}\"},\"relationships\":{\"incident_type\":{\"data\":{\"id\":\"fb183ac5-a636-4c9e-b864-de008dda88bb\",\"type\":\"incident_types\"}}},\"type\":\"postmortem_templates\"}}",
+      "status": 201,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"id\":\"3b1201f9-1e51-4258-8036-25e5fe9bea96\",\"type\":\"postmortem_templates\",\"attributes\":{\"content\":\"\",\"created\":\"2026-11-20T23:57:24.725006Z\",\"is_default\":null,\"location\":\"datadog_notebooks\",\"modified\":\"2026-11-20T23:57:24.725006Z\",\"name\":\"{{name}}\"},\"relationships\":{\"created_by_user\":{\"data\":{\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"type\":\"users\"}},\"incident_type\":{\"data\":{\"id\":\"fb183ac5-a636-4c9e-b864-de008dda88bb\",\"type\":\"incident_types\"}},\"last_modified_by_user\":{\"data\":{\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"type\":\"users\"}}}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/incidents/config/postmortem-templates/3b1201f9-1e51-4258-8036-25e5fe9bea96",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"id\":\"3b1201f9-1e51-4258-8036-25e5fe9bea96\",\"type\":\"postmortem_templates\",\"attributes\":{\"content\":\"\",\"created\":\"2026-11-20T23:57:24.725006Z\",\"is_default\":null,\"location\":\"datadog_notebooks\",\"modified\":\"2026-11-20T23:57:24.725006Z\",\"name\":\"{{name}}\"},\"relationships\":{\"created_by_user\":{\"data\":{\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"type\":\"users\"}},\"incident_type\":{\"data\":{\"id\":\"fb183ac5-a636-4c9e-b864-de008dda88bb\",\"type\":\"incident_types\"}},\"last_modified_by_user\":{\"data\":{\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"type\":\"users\"}}}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/incidents/config/postmortem-templates/3b1201f9-1e51-4258-8036-25e5fe9bea96",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"id\":\"3b1201f9-1e51-4258-8036-25e5fe9bea96\",\"type\":\"postmortem_templates\",\"attributes\":{\"content\":\"\",\"created\":\"2026-11-20T23:57:24.725006Z\",\"is_default\":null,\"location\":\"datadog_notebooks\",\"modified\":\"2026-11-20T23:57:24.725006Z\",\"name\":\"{{name}}\"},\"relationships\":{\"created_by_user\":{\"data\":{\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"type\":\"users\"}},\"incident_type\":{\"data\":{\"id\":\"fb183ac5-a636-4c9e-b864-de008dda88bb\",\"type\":\"incident_types\"}},\"last_modified_by_user\":{\"data\":{\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"type\":\"users\"}}}}}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v2/incidents/config/postmortem-templates/3b1201f9-1e51-4258-8036-25e5fe9bea96",
+      "body": "{\"data\":{\"attributes\":{\"name\":\"{{name}}-changed\"},\"id\":\"3b1201f9-1e51-4258-8036-25e5fe9bea96\",\"relationships\":{\"incident_type\":{\"data\":{\"id\":\"fb183ac5-a636-4c9e-b864-de008dda88bb\",\"type\":\"incident_types\"}}},\"type\":\"postmortem_templates\"}}",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"id\":\"3b1201f9-1e51-4258-8036-25e5fe9bea96\",\"type\":\"postmortem_templates\",\"attributes\":{\"content\":\"\",\"created\":\"2026-11-20T23:57:24.725006Z\",\"is_default\":null,\"location\":\"datadog_notebooks\",\"modified\":\"2026-11-20T23:57:25.001987Z\",\"name\":\"{{name}}-changed\"},\"relationships\":{\"created_by_user\":{\"data\":{\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"type\":\"users\"}},\"incident_type\":{\"data\":{\"id\":\"fb183ac5-a636-4c9e-b864-de008dda88bb\",\"type\":\"incident_types\"}},\"last_modified_by_user\":{\"data\":{\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"type\":\"users\"}}}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/incidents/config/postmortem-templates/3b1201f9-1e51-4258-8036-25e5fe9bea96",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"id\":\"3b1201f9-1e51-4258-8036-25e5fe9bea96\",\"type\":\"postmortem_templates\",\"attributes\":{\"content\":\"\",\"created\":\"2026-11-20T23:57:24.725006Z\",\"is_default\":null,\"location\":\"datadog_notebooks\",\"modified\":\"2026-11-20T23:57:25.001987Z\",\"name\":\"{{name}}-changed\"},\"relationships\":{\"created_by_user\":{\"data\":{\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"type\":\"users\"}},\"incident_type\":{\"data\":{\"id\":\"fb183ac5-a636-4c9e-b864-de008dda88bb\",\"type\":\"incident_types\"}},\"last_modified_by_user\":{\"data\":{\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"type\":\"users\"}}}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/incidents/config/postmortem-templates/3b1201f9-1e51-4258-8036-25e5fe9bea96",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"id\":\"3b1201f9-1e51-4258-8036-25e5fe9bea96\",\"type\":\"postmortem_templates\",\"attributes\":{\"content\":\"\",\"created\":\"2026-11-20T23:57:24.725006Z\",\"is_default\":null,\"location\":\"datadog_notebooks\",\"modified\":\"2026-11-20T23:57:25.001987Z\",\"name\":\"{{name}}-changed\"},\"relationships\":{\"created_by_user\":{\"data\":{\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"type\":\"users\"}},\"incident_type\":{\"data\":{\"id\":\"fb183ac5-a636-4c9e-b864-de008dda88bb\",\"type\":\"incident_types\"}},\"last_modified_by_user\":{\"data\":{\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"type\":\"users\"}}}}}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v2/incidents/config/postmortem-templates/3b1201f9-1e51-4258-8036-25e5fe9bea96",
+      "body": "{\"data\":{\"attributes\":{\"name\":\"{{name}}-drift\"},\"id\":\"3b1201f9-1e51-4258-8036-25e5fe9bea96\",\"relationships\":{\"created_by_user\":{\"data\":{\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"type\":\"users\"}},\"incident_type\":{\"data\":{\"id\":\"fb183ac5-a636-4c9e-b864-de008dda88bb\",\"type\":\"incident_types\"}},\"last_modified_by_user\":{\"data\":{\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"type\":\"users\"}}},\"type\":\"postmortem_templates\"}}",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"id\":\"3b1201f9-1e51-4258-8036-25e5fe9bea96\",\"type\":\"postmortem_templates\",\"attributes\":{\"content\":\"\",\"created\":\"2026-11-20T23:57:24.725006Z\",\"is_default\":null,\"location\":\"datadog_notebooks\",\"modified\":\"2026-11-20T23:57:25.270898Z\",\"name\":\"{{name}}-drift\"},\"relationships\":{\"created_by_user\":{\"data\":{\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"type\":\"users\"}},\"incident_type\":{\"data\":{\"id\":\"fb183ac5-a636-4c9e-b864-de008dda88bb\",\"type\":\"incident_types\"}},\"last_modified_by_user\":{\"data\":{\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"type\":\"users\"}}}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/incidents/config/postmortem-templates/3b1201f9-1e51-4258-8036-25e5fe9bea96",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"id\":\"3b1201f9-1e51-4258-8036-25e5fe9bea96\",\"type\":\"postmortem_templates\",\"attributes\":{\"content\":\"\",\"created\":\"2026-11-20T23:57:24.725006Z\",\"is_default\":null,\"location\":\"datadog_notebooks\",\"modified\":\"2026-11-20T23:57:25.270898Z\",\"name\":\"{{name}}-drift\"},\"relationships\":{\"created_by_user\":{\"data\":{\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"type\":\"users\"}},\"incident_type\":{\"data\":{\"id\":\"fb183ac5-a636-4c9e-b864-de008dda88bb\",\"type\":\"incident_types\"}},\"last_modified_by_user\":{\"data\":{\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"type\":\"users\"}}}}}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v2/incidents/config/postmortem-templates/3b1201f9-1e51-4258-8036-25e5fe9bea96",
+      "body": "{\"data\":{\"attributes\":{\"name\":\"{{name}}-changed\"},\"id\":\"3b1201f9-1e51-4258-8036-25e5fe9bea96\",\"relationships\":{\"incident_type\":{\"data\":{\"id\":\"fb183ac5-a636-4c9e-b864-de008dda88bb\",\"type\":\"incident_types\"}}},\"type\":\"postmortem_templates\"}}",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"id\":\"3b1201f9-1e51-4258-8036-25e5fe9bea96\",\"type\":\"postmortem_templates\",\"attributes\":{\"content\":\"\",\"created\":\"2026-11-20T23:57:24.725006Z\",\"is_default\":null,\"location\":\"datadog_notebooks\",\"modified\":\"2026-11-20T23:57:25.455616Z\",\"name\":\"{{name}}-changed\"},\"relationships\":{\"created_by_user\":{\"data\":{\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"type\":\"users\"}},\"incident_type\":{\"data\":{\"id\":\"fb183ac5-a636-4c9e-b864-de008dda88bb\",\"type\":\"incident_types\"}},\"last_modified_by_user\":{\"data\":{\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"type\":\"users\"}}}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/incidents/config/postmortem-templates/3b1201f9-1e51-4258-8036-25e5fe9bea96",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"id\":\"3b1201f9-1e51-4258-8036-25e5fe9bea96\",\"type\":\"postmortem_templates\",\"attributes\":{\"content\":\"\",\"created\":\"2026-11-20T23:57:24.725006Z\",\"is_default\":null,\"location\":\"datadog_notebooks\",\"modified\":\"2026-11-20T23:57:25.455616Z\",\"name\":\"{{name}}-changed\"},\"relationships\":{\"created_by_user\":{\"data\":{\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"type\":\"users\"}},\"incident_type\":{\"data\":{\"id\":\"fb183ac5-a636-4c9e-b864-de008dda88bb\",\"type\":\"incident_types\"}},\"last_modified_by_user\":{\"data\":{\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"type\":\"users\"}}}}}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v2/incidents/config/postmortem-templates/3b1201f9-1e51-4258-8036-25e5fe9bea96",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/incidents/config/postmortem-templates/3b1201f9-1e51-4258-8036-25e5fe9bea96",
+      "status": 404,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"errors\":[{\"status\":\"404\",\"title\":\"Not Found\"}]}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v2/incidents/config/types/fb183ac5-a636-4c9e-b864-de008dda88bb",
+      "status": 204
+    }
+  ]
+}

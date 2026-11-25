@@ -1,0 +1,102 @@
+{
+  "recorded": "2026-11-20T23:57:39Z",
+  "target": "Datadog trial",
+  "vars": {
+    "dashboard": "ur8-afc-sum",
+    "itype": "fb183ac5-a636-4c9e-b864-de008dda88bb",
+    "role": "26806b04-e53e-11f1-807b-da7ad0900005",
+    "sa": "16307311-e53e-11f1-b3f2-e693e7c43799",
+    "slo": "3704e6ae4bac5b54b241a727ff6ab03b",
+    "subteam": "d4c1dd6f-4ea7-42e9-9847-c995ec31b739",
+    "team": "48e3aed2-a7e1-4fee-9037-ce9c9f4b4952"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/api/v2/logs/config/metrics",
+      "body": "{\"data\":{\"attributes\":{\"compute\":{\"aggregation_type\":\"count\"},\"filter\":{\"query\":\"service:{{name}}\"}},\"id\":\"{{name_}}\",\"type\":\"logs_metrics\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"id\":\"{{name_}}\",\"attributes\":{\"filter\":{\"query\":\"service:{{name}}\"},\"group_by\":[],\"compute\":{\"aggregation_type\":\"count\"}},\"type\":\"logs_metrics\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/logs/config/metrics/{{name_}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"id\":\"{{name_}}\",\"attributes\":{\"filter\":{\"query\":\"service:{{name}}\"},\"group_by\":[],\"compute\":{\"aggregation_type\":\"count\"}},\"type\":\"logs_metrics\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/logs/config/metrics/{{name_}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"id\":\"{{name_}}\",\"attributes\":{\"filter\":{\"query\":\"service:{{name}}\"},\"group_by\":[],\"compute\":{\"aggregation_type\":\"count\"}},\"type\":\"logs_metrics\"}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v2/logs/config/metrics/{{name_}}",
+      "body": "{\"data\":{\"attributes\":{\"filter\":{\"query\":\"service:{{name}}-changed\"}},\"id\":\"{{name_}}\",\"type\":\"logs_metrics\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"id\":\"{{name_}}\",\"attributes\":{\"filter\":{\"query\":\"service:{{name}}-changed\"},\"group_by\":[],\"compute\":{\"aggregation_type\":\"count\"}},\"type\":\"logs_metrics\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/logs/config/metrics/{{name_}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"id\":\"{{name_}}\",\"attributes\":{\"filter\":{\"query\":\"service:{{name}}-changed\"},\"group_by\":[],\"compute\":{\"aggregation_type\":\"count\"}},\"type\":\"logs_metrics\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/logs/config/metrics/{{name_}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"id\":\"{{name_}}\",\"attributes\":{\"filter\":{\"query\":\"service:{{name}}-changed\"},\"group_by\":[],\"compute\":{\"aggregation_type\":\"count\"}},\"type\":\"logs_metrics\"}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v2/logs/config/metrics/{{name_}}",
+      "body": "{\"data\":{\"attributes\":{\"filter\":{\"query\":\"service:{{name}}-drift\"}},\"id\":\"{{name_}}\",\"type\":\"logs_metrics\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"id\":\"{{name_}}\",\"attributes\":{\"filter\":{\"query\":\"service:{{name}}-drift\"},\"group_by\":[],\"compute\":{\"aggregation_type\":\"count\"}},\"type\":\"logs_metrics\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/logs/config/metrics/{{name_}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"id\":\"{{name_}}\",\"attributes\":{\"filter\":{\"query\":\"service:{{name}}-drift\"},\"group_by\":[],\"compute\":{\"aggregation_type\":\"count\"}},\"type\":\"logs_metrics\"}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v2/logs/config/metrics/{{name_}}",
+      "body": "{\"data\":{\"attributes\":{\"filter\":{\"query\":\"service:{{name}}-changed\"}},\"id\":\"{{name_}}\",\"type\":\"logs_metrics\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"id\":\"{{name_}}\",\"attributes\":{\"filter\":{\"query\":\"service:{{name}}-changed\"},\"group_by\":[],\"compute\":{\"aggregation_type\":\"count\"}},\"type\":\"logs_metrics\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/logs/config/metrics/{{name_}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"id\":\"{{name_}}\",\"attributes\":{\"filter\":{\"query\":\"service:{{name}}-changed\"},\"group_by\":[],\"compute\":{\"aggregation_type\":\"count\"}},\"type\":\"logs_metrics\"}}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v2/logs/config/metrics/{{name_}}",
+      "status": 204,
+      "contentType": "text/html; charset=utf-8"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/logs/config/metrics/{{name_}}",
+      "status": 404,
+      "contentType": "application/json",
+      "response": "{\"errors\":[\"not_found(Metric with name '{{name_}}' not found)\"]}\n"
+    }
+  ]
+}

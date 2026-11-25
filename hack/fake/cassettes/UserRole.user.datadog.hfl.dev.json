@@ -1,0 +1,81 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "component": "rehearsal-component",
+    "dashboard": 280000002,
+    "itype": "rehearsal-itype",
+    "member": "rehearsal-member",
+    "org": "rehearsal-org",
+    "orgsa": "rehearsal-orgsa",
+    "page": "rehearsal-page",
+    "role": "rehearsal-role",
+    "roleUser": "rehearsal-roleUser",
+    "routingPolicy": "rehearsal-routingPolicy",
+    "ruleA": "rehearsal-ruleA",
+    "ruleB": "rehearsal-ruleB",
+    "rum": "rehearsal-rum",
+    "sa": "rehearsal-sa",
+    "slo": "rehearsal-slo",
+    "subteam": "rehearsal-subteam",
+    "team": "rehearsal-team"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/api/v2/roles",
+      "body": "{\"data\":{\"attributes\":{\"name\":\"{{name}}\"},\"type\":\"roles\"}}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"_stub\":\"rehearsal stand-in: the fake API has no such resource\",\"data\":{\"attributes\":{\"name\":\"{{name}}\"},\"type\":\"roles\"},\"id\":280000034}\n"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v2/users",
+      "body": "{\"data\":{\"attributes\":{\"email\":\"{{name}}@example.com\",\"name\":\"{{name}}\"},\"type\":\"users\"}}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"_stub\":\"rehearsal stand-in: the fake API has no such resource\",\"data\":{\"attributes\":{\"email\":\"{{name}}@example.com\",\"name\":\"{{name}}\"},\"type\":\"users\"},\"id\":280000035}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/roles/rehearsal-role/users?page%5Bsize%5D=100",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":[]}\n"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v2/roles/rehearsal-role/users",
+      "body": "{\"data\":{\"id\":\"rehearsal-roleUser\",\"type\":\"users\"}}",
+      "status": 200,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"status\":\"ok\"}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/roles/rehearsal-role/users?page%5Bsize%5D=100",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":[{\"id\":\"rehearsal-roleUser\",\"type\":\"users\"}]}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v2/roles/rehearsal-role/users",
+      "body": "{\"data\":{\"id\":\"rehearsal-roleUser\",\"type\":\"users\"}}",
+      "status": 200,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"status\":\"ok\"}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v2/users/rehearsal-roleUser",
+      "status": 204
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v2/roles/rehearsal-role",
+      "status": 204
+    }
+  ]
+}

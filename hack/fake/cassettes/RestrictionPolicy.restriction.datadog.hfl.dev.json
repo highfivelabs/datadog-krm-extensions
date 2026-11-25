@@ -1,0 +1,119 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "dashboard": 280000002,
+    "itype": "rehearsal-itype",
+    "member": "rehearsal-member",
+    "org": "rehearsal-org",
+    "orgsa": "rehearsal-orgsa",
+    "role": "rehearsal-role",
+    "routingPolicy": "rehearsal-routingPolicy",
+    "rum": "rehearsal-rum",
+    "sa": "rehearsal-sa",
+    "slo": "rehearsal-slo",
+    "subteam": "rehearsal-subteam",
+    "team": "rehearsal-team"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/api/v2/service_accounts",
+      "body": "{\"data\":{\"attributes\":{\"email\":\"{{name}}@example.com\",\"name\":\"{{name}}\",\"service_account\":true},\"type\":\"users\"}}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"_stub\":\"rehearsal stand-in: the fake API has no such resource\",\"data\":{\"attributes\":{\"email\":\"{{name}}@example.com\",\"name\":\"{{name}}\",\"service_account\":true},\"type\":\"users\"},\"id\":280000018}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/restriction_policy/dashboard:280000002",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v2/restriction_policy/dashboard:280000002",
+      "body": "{\"data\":{\"attributes\":{\"bindings\":[{\"principals\":[\"org:rehearsal-org\"],\"relation\":\"editor\"}]},\"id\":\"dashboard:280000002\",\"type\":\"restriction_policy\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"bindings\":[{\"principals\":[\"org:rehearsal-org\"],\"relation\":\"editor\"}]},\"id\":\"dashboard:280000002\",\"type\":\"restriction_policy\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/restriction_policy/dashboard:280000002",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"bindings\":[{\"principals\":[\"org:rehearsal-org\"],\"relation\":\"editor\"}]},\"id\":\"dashboard:280000002\",\"type\":\"restriction_policy\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/restriction_policy/dashboard:280000002",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"bindings\":[{\"principals\":[\"org:rehearsal-org\"],\"relation\":\"editor\"}]},\"id\":\"dashboard:280000002\",\"type\":\"restriction_policy\"}}\n"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v2/restriction_policy/dashboard:280000002",
+      "body": "{\"data\":{\"attributes\":{\"bindings\":[{\"principals\":[\"org:rehearsal-org\",\"team:rehearsal-team\"],\"relation\":\"editor\"}]},\"id\":\"dashboard:280000002\",\"type\":\"restriction_policy\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"bindings\":[{\"principals\":[\"org:rehearsal-org\",\"team:rehearsal-team\"],\"relation\":\"editor\"}]},\"id\":\"dashboard:280000002\",\"type\":\"restriction_policy\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/restriction_policy/dashboard:280000002",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"bindings\":[{\"principals\":[\"org:rehearsal-org\",\"team:rehearsal-team\"],\"relation\":\"editor\"}]},\"id\":\"dashboard:280000002\",\"type\":\"restriction_policy\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/restriction_policy/dashboard:280000002",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"bindings\":[{\"principals\":[\"org:rehearsal-org\",\"team:rehearsal-team\"],\"relation\":\"editor\"}]},\"id\":\"dashboard:280000002\",\"type\":\"restriction_policy\"}}\n"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v2/restriction_policy/dashboard:280000002",
+      "body": "{\"data\":{\"attributes\":{\"bindings\":[{\"principals\":[\"org:rehearsal-org\"],\"relation\":\"editor\"}]},\"id\":\"dashboard:280000002\",\"type\":\"restriction_policy\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"bindings\":[{\"principals\":[\"org:rehearsal-org\"],\"relation\":\"editor\"}]},\"id\":\"dashboard:280000002\",\"type\":\"restriction_policy\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/restriction_policy/dashboard:280000002",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"bindings\":[{\"principals\":[\"org:rehearsal-org\"],\"relation\":\"editor\"}]},\"id\":\"dashboard:280000002\",\"type\":\"restriction_policy\"}}\n"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v2/restriction_policy/dashboard:280000002",
+      "body": "{\"data\":{\"attributes\":{\"bindings\":[{\"principals\":[\"org:rehearsal-org\",\"team:rehearsal-team\"],\"relation\":\"editor\"}]},\"id\":\"dashboard:280000002\",\"type\":\"restriction_policy\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"bindings\":[{\"principals\":[\"org:rehearsal-org\",\"team:rehearsal-team\"],\"relation\":\"editor\"}]},\"id\":\"dashboard:280000002\",\"type\":\"restriction_policy\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/restriction_policy/dashboard:280000002",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"bindings\":[{\"principals\":[\"org:rehearsal-org\",\"team:rehearsal-team\"],\"relation\":\"editor\"}]},\"id\":\"dashboard:280000002\",\"type\":\"restriction_policy\"}}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v2/restriction_policy/dashboard:280000002",
+      "status": 204
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v2/users/rehearsal-orgsa",
+      "status": 204
+    }
+  ]
+}

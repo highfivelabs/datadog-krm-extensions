@@ -1,0 +1,40 @@
+terraform: [datadog_datastore_item]
+shape: upsert
+envelope: data/attributes
+params:
+  datastore_id:
+    description: The unique identifier of the datastore containing this item.
+  item_key:
+fields:
+  value:
+    type: object
+    additionalProperties: {type: string}
+required: [value]
+sample:
+  datastore_id: example-datastore-id
+  item_key: example-key
+  value: {id: example-key, name: example-name}
+serverFields:
+  primary_column_name: id
+  store_id: example-datastore-id
+  org_id: 1
+  created_at: '2026-01-01T00:00:00Z'
+  modified_at: '2026-01-01T00:00:00Z'
+  signature: example-signature
+create:
+  method: POST
+  path: /api/v2/actions-datastores/{datastore_id}/items/bulk
+  request: {data: {type: items, attributes: {values: ["{value}"], conflict_mode: fail_on_conflict}}}
+read:
+  method: GET
+  path: /api/v2/actions-datastores/{datastore_id}/items
+  query: {item_key: "{item_key}"}
+  envelope: data/0/attributes
+update:
+  method: PATCH
+  path: /api/v2/actions-datastores/{datastore_id}/items
+  request: {data: {type: items, attributes: {item_key: "{item_key}", item_changes: {ops_set: "{value}"}}}}
+delete:
+  method: DELETE
+  path: /api/v2/actions-datastores/{datastore_id}/items
+  request: {data: {type: items, attributes: {item_key: "{item_key}"}}}

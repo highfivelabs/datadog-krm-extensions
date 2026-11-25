@@ -1,0 +1,60 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "component": "rehearsal-component",
+    "dashboard": 280000002,
+    "itype": "rehearsal-itype",
+    "member": "rehearsal-member",
+    "org": "rehearsal-org",
+    "orgsa": "rehearsal-orgsa",
+    "page": "rehearsal-page",
+    "role": "rehearsal-role",
+    "roleUser": "rehearsal-roleUser",
+    "routingPolicy": "rehearsal-routingPolicy",
+    "ruleA": "rehearsal-ruleA",
+    "ruleB": "rehearsal-ruleB",
+    "rum": "rehearsal-rum",
+    "sa": "rehearsal-sa",
+    "slo": "rehearsal-slo",
+    "subteam": "rehearsal-subteam",
+    "team": "rehearsal-team"
+  },
+  "interactions": [
+    {
+      "method": "GET",
+      "path": "/api/v2/security/findings/automation/default_inbox_rules/example-rule-id",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"data\":{\"attributes\":{\"action\":{},\"created_at\":1722439510282,\"created_by\":{\"id\":\"00000000-0000-0000-0000-000000000000\",\"name\":\"{{redacted}}\",\"type\":\"user\"},\"enabled\":true,\"modified_at\":1722439510282,\"modified_by\":{\"id\":\"00000000-0000-0000-0000-000000000000\",\"name\":\"{{redacted}}\",\"type\":\"user\"},\"name\":\"Secrets\",\"rule\":{\"finding_types\":[]}},\"id\":\"secret_default_rule\",\"type\":\"default_inbox_rules\"}}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/security/findings/automation/default_inbox_rules/example-rule-id",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"data\":{\"attributes\":{\"action\":{},\"created_at\":1722439510282,\"created_by\":{\"id\":\"00000000-0000-0000-0000-000000000000\",\"name\":\"{{redacted}}\",\"type\":\"user\"},\"enabled\":true,\"modified_at\":1722439510282,\"modified_by\":{\"id\":\"00000000-0000-0000-0000-000000000000\",\"name\":\"{{redacted}}\",\"type\":\"user\"},\"name\":\"Secrets\",\"rule\":{\"finding_types\":[]}},\"id\":\"secret_default_rule\",\"type\":\"default_inbox_rules\"}}}}"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v2/security/findings/automation/default_inbox_rules/example-rule-id/enable",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"data\":{\"attributes\":{\"action\":{},\"created_at\":1722439510282,\"created_by\":{\"id\":\"00000000-0000-0000-0000-000000000000\",\"name\":\"{{redacted}}\",\"type\":\"user\"},\"enabled\":true,\"modified_at\":1722439510282,\"modified_by\":{\"id\":\"00000000-0000-0000-0000-000000000000\",\"name\":\"{{redacted}}\",\"type\":\"user\"},\"name\":\"Secrets\",\"rule\":{\"finding_types\":[]}},\"id\":\"secret_default_rule\",\"type\":\"default_inbox_rules\"},\"enabled\":\"true\"}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/security/findings/automation/default_inbox_rules/example-rule-id",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"data\":{\"attributes\":{\"action\":{},\"created_at\":1722439510282,\"created_by\":{\"id\":\"00000000-0000-0000-0000-000000000000\",\"name\":\"{{redacted}}\",\"type\":\"user\"},\"enabled\":true,\"modified_at\":1722439510282,\"modified_by\":{\"id\":\"00000000-0000-0000-0000-000000000000\",\"name\":\"{{redacted}}\",\"type\":\"user\"},\"name\":\"Secrets\",\"rule\":{\"finding_types\":[]}},\"id\":\"secret_default_rule\",\"type\":\"default_inbox_rules\"},\"enabled\":\"true\"}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/security/findings/automation/default_inbox_rules/example-rule-id",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"data\":{\"attributes\":{\"action\":{},\"created_at\":1722439510282,\"created_by\":{\"id\":\"00000000-0000-0000-0000-000000000000\",\"name\":\"{{redacted}}\",\"type\":\"user\"},\"enabled\":true,\"modified_at\":1722439510282,\"modified_by\":{\"id\":\"00000000-0000-0000-0000-000000000000\",\"name\":\"{{redacted}}\",\"type\":\"user\"},\"name\":\"Secrets\",\"rule\":{\"finding_types\":[]}},\"id\":\"secret_default_rule\",\"type\":\"default_inbox_rules\"},\"enabled\":\"true\"}}}"
+    }
+  ]
+}

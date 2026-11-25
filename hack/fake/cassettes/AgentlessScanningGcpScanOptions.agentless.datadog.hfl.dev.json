@@ -1,0 +1,104 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "component": "rehearsal-component",
+    "dashboard": 280000002,
+    "itype": "rehearsal-itype",
+    "member": "rehearsal-member",
+    "org": "rehearsal-org",
+    "orgsa": "rehearsal-orgsa",
+    "page": "rehearsal-page",
+    "role": "rehearsal-role",
+    "roleUser": "rehearsal-roleUser",
+    "routingPolicy": "rehearsal-routingPolicy",
+    "ruleA": "rehearsal-ruleA",
+    "ruleB": "rehearsal-ruleB",
+    "rum": "rehearsal-rum",
+    "sa": "rehearsal-sa",
+    "slo": "rehearsal-slo",
+    "subteam": "rehearsal-subteam",
+    "team": "rehearsal-team"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/api/v2/agentless_scanning/accounts/gcp",
+      "body": "{\"data\":{\"id\":\"example-id\",\"type\":\"gcp_scan_options\"}}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"id\":\"example-id\",\"type\":\"gcp_scan_options\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/agentless_scanning/accounts/gcp/example-id",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"id\":\"example-id\",\"type\":\"gcp_scan_options\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/agentless_scanning/accounts/gcp/example-id",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"id\":\"example-id\",\"type\":\"gcp_scan_options\"}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v2/agentless_scanning/accounts/gcp/example-id",
+      "body": "{\"data\":{\"id\":\"changed-id\",\"type\":\"gcp_scan_options\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"id\":\"changed-id\",\"type\":\"gcp_scan_options\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/agentless_scanning/accounts/gcp/example-id",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"id\":\"changed-id\",\"type\":\"gcp_scan_options\"}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v2/agentless_scanning/accounts/gcp/example-id",
+      "body": "{\"data\":{\"id\":\"hfl-live-drift\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"id\":\"hfl-live-drift\",\"type\":\"gcp_scan_options\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/agentless_scanning/accounts/gcp/example-id",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"id\":\"hfl-live-drift\",\"type\":\"gcp_scan_options\"}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v2/agentless_scanning/accounts/gcp/example-id",
+      "body": "{\"data\":{\"id\":\"changed-id\",\"type\":\"gcp_scan_options\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"id\":\"changed-id\",\"type\":\"gcp_scan_options\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/agentless_scanning/accounts/gcp/example-id",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"id\":\"changed-id\",\"type\":\"gcp_scan_options\"}}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v2/agentless_scanning/accounts/gcp/example-id",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/agentless_scanning/accounts/gcp/example-id",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

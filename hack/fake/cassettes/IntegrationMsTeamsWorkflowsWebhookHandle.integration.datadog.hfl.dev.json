@@ -1,0 +1,103 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "dashboard": 280000002,
+    "itype": "rehearsal-itype",
+    "role": "rehearsal-role",
+    "routingPolicy": "rehearsal-routingPolicy",
+    "rum": "rehearsal-rum",
+    "sa": "rehearsal-sa",
+    "slo": "rehearsal-slo",
+    "subteam": "rehearsal-subteam",
+    "team": "rehearsal-team"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/api/v2/integration/ms-teams/configuration/workflows-webhook-handles",
+      "body": "{\"data\":{\"attributes\":{\"name\":\"{{name}}\",\"url\":\"https://example.com/hfl-live/first\"},\"type\":\"workflows-webhook-handle\"}}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"name\":\"{{name}}\",\"url\":\"https://example.com/hfl-live/first\"},\"id\":270000046,\"type\":\"workflows-webhook-handle\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/integration/ms-teams/configuration/workflows-webhook-handles/270000046",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"name\":\"{{name}}\",\"url\":\"https://example.com/hfl-live/first\"},\"id\":270000046,\"type\":\"workflows-webhook-handle\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/integration/ms-teams/configuration/workflows-webhook-handles/270000046",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"name\":\"{{name}}\",\"url\":\"https://example.com/hfl-live/first\"},\"id\":270000046,\"type\":\"workflows-webhook-handle\"}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v2/integration/ms-teams/configuration/workflows-webhook-handles/270000046",
+      "body": "{\"data\":{\"attributes\":{\"name\":\"{{name}}\",\"url\":\"https://example.com/hfl-live/second\"},\"type\":\"workflows-webhook-handle\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"name\":\"{{name}}\",\"url\":\"https://example.com/hfl-live/second\"},\"id\":270000046,\"type\":\"workflows-webhook-handle\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/integration/ms-teams/configuration/workflows-webhook-handles/270000046",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"name\":\"{{name}}\",\"url\":\"https://example.com/hfl-live/second\"},\"id\":270000046,\"type\":\"workflows-webhook-handle\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/integration/ms-teams/configuration/workflows-webhook-handles/270000046",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"name\":\"{{name}}\",\"url\":\"https://example.com/hfl-live/second\"},\"id\":270000046,\"type\":\"workflows-webhook-handle\"}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v2/integration/ms-teams/configuration/workflows-webhook-handles/270000046",
+      "body": "{\"data\":{\"attributes\":{\"name\":\"{{name}}\",\"url\":\"https://example.com/hfl-live/drift\"},\"id\":270000046,\"type\":\"workflows-webhook-handle\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"name\":\"{{name}}\",\"url\":\"https://example.com/hfl-live/drift\"},\"id\":270000046,\"type\":\"workflows-webhook-handle\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/integration/ms-teams/configuration/workflows-webhook-handles/270000046",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"name\":\"{{name}}\",\"url\":\"https://example.com/hfl-live/drift\"},\"id\":270000046,\"type\":\"workflows-webhook-handle\"}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v2/integration/ms-teams/configuration/workflows-webhook-handles/270000046",
+      "body": "{\"data\":{\"attributes\":{\"name\":\"{{name}}\",\"url\":\"https://example.com/hfl-live/second\"},\"type\":\"workflows-webhook-handle\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"name\":\"{{name}}\",\"url\":\"https://example.com/hfl-live/second\"},\"id\":270000046,\"type\":\"workflows-webhook-handle\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/integration/ms-teams/configuration/workflows-webhook-handles/270000046",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"name\":\"{{name}}\",\"url\":\"https://example.com/hfl-live/second\"},\"id\":270000046,\"type\":\"workflows-webhook-handle\"}}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v2/integration/ms-teams/configuration/workflows-webhook-handles/270000046",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/integration/ms-teams/configuration/workflows-webhook-handles/270000046",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

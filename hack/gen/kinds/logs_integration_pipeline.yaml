@@ -1,0 +1,20 @@
+terraform: [datadog_logs_integration_pipeline]
+shape: settings
+params:
+  pipeline_id:
+fields:
+  is_enabled:
+    type: boolean
+required: [is_enabled]
+sample: {pipeline_id: example-pipeline-id, is_enabled: true}
+serverFields:
+  name: Nginx
+  is_read_only: true
+  type: pipeline
+read:
+  method: GET
+  path: /api/v1/logs/config/pipelines/{pipeline_id}
+update:
+  method: PUT
+  path: /api/v1/logs/config/pipelines/{pipeline_id}
+  body: {name: ""}

@@ -1,0 +1,22 @@
+{
+  "recorded": "2026-11-20T23:56:40Z",
+  "target": "Datadog trial",
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/api/v2/team",
+      "body": "{\"data\":{\"attributes\":{\"handle\":\"{{run}}\",\"name\":\"{{run}}\"},\"type\":\"team\"}}",
+      "status": 201,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"id\":\"48e3aed2-a7e1-4fee-9037-ce9c9f4b4952\",\"type\":\"team\",\"attributes\":{\"avatar\":null,\"banner\":13,\"created_at\":\"2026-11-20T23:56:40.436123+00:00\",\"description\":null,\"handle\":\"{{run}}\",\"hidden_modules\":null,\"is_managed\":false,\"link_count\":0,\"modified_at\":\"2026-11-20T23:56:40.436124+00:00\",\"name\":\"{{run}}\",\"summary\":null,\"user_count\":0,\"visible_modules\":null},\"relationships\":{\"team_links\":{\"data\":[],\"links\":{\"related\":\"/api/v2/team/48e3aed2-a7e1-4fee-9037-ce9c9f4b4952/links\"}},\"user_team_permissions\":{\"data\":null,\"links\":{\"related\":\"/api/v2/team/48e3aed2-a7e1-4fee-9037-ce9c9f4b4952/permission-settings\"}}}}}"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/dashboard",
+      "body": "{\"layout_type\":\"ordered\",\"title\":\"{{run}}\",\"widgets\":[]}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"author_handle\":\"{{email}}\",\"author_name\":\"{{redacted}}\",\"created_at\":\"2026-11-20T23:56:40.613239+00:00\",\"description\":null,\"experience_type\":\"default\",\"id\":\"ur8-afc-sum\",\"layout_type\":\"ordered\",\"modified_at\":\"2026-11-20T23:56:40.613239+00:00\",\"notify_list\":null,\"restricted_roles\":[],\"template_variables\":null,\"title\":\"{{run}}\",\"url\":\"/dashboard/ur8-afc-sum/{{run}}\",\"widgets\":[]}"
+    }
+  ]
+}

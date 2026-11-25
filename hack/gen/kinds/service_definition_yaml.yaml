@@ -1,0 +1,70 @@
+terraform: [datadog_service_definition_yaml]
+shape: upsert
+envelope: data/attributes/schema
+params:
+  service_name: {field: dd-service}
+fields:
+  schema-version:
+    type: string
+    enum: [v2.2, v2.1, v2]
+  dd-service:
+    type: string
+    description: Unique identifier of the service. Must be unique across all services and is used to match with a service in Datadog.
+  team: {type: string, description: Team that owns the service. It is used to locate a team defined in Datadog Teams if it exists.}
+  application: {type: string, description: Identifier for a group of related services serving a product feature, which the service is a part of.}
+  description: {type: string, description: A short description of the service.}
+  tier: {type: string}
+  lifecycle: {type: string, description: The current life cycle phase of the service.}
+  type: {type: string}
+  languages:
+    type: array
+    items: {type: string}
+  tags:
+    type: array
+    description: A set of custom tags.
+    items: {type: string}
+  contacts:
+    type: array
+    description: A list of contacts related to the services.
+    items:
+      type: object
+      required: [contact, type]
+      properties:
+        contact: {type: string, description: Contact value.}
+        name: {type: string, description: Contact Name.}
+        type: {type: string}
+  links:
+    type: array
+    description: A list of links related to the services.
+    items:
+      type: object
+      required: [name, type, url]
+      properties:
+        name: {type: string, description: Link name.}
+        provider: {type: string, description: Link provider.}
+        type: {type: string}
+        url: {type: string, description: Link URL.}
+  ci-pipeline-fingerprints:
+    type: array
+    description: A set of CI fingerprints.
+    items: {type: string}
+  integrations:
+    type: object
+  extensions:
+    type: object
+    description: Extensions to v2.2 schema.
+required: [schema-version, dd-service]
+sample:
+  schema-version: v2.2
+  dd-service: example-service
+  team: example-team
+read:
+  method: GET
+  path: /api/v2/services/definitions/{service_name}
+update:
+  method: POST
+  path: /api/v2/services/definitions
+  envelope: data/0/attributes/schema
+delete:
+  method: DELETE
+  path: /api/v2/services/definitions/{service_name}

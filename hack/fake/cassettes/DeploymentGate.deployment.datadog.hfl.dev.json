@@ -1,0 +1,101 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "dashboard": 280000002,
+    "itype": "rehearsal-itype",
+    "role": "rehearsal-role",
+    "sa": "rehearsal-sa",
+    "slo": "rehearsal-slo",
+    "subteam": "rehearsal-subteam",
+    "team": "rehearsal-team"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/api/v2/deployment_gates",
+      "body": "{\"data\":{\"attributes\":{\"dry_run\":true,\"env\":\"hfl-live\",\"identifier\":\"default\",\"service\":\"{{name}}\"},\"type\":\"deployment_gate\"}}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"dry_run\":true,\"env\":\"hfl-live\",\"identifier\":\"default\",\"service\":\"{{name}}\"},\"id\":270000031,\"type\":\"deployment_gate\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/deployment_gates/270000031",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"dry_run\":true,\"env\":\"hfl-live\",\"identifier\":\"default\",\"service\":\"{{name}}\"},\"id\":270000031,\"type\":\"deployment_gate\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/deployment_gates/270000031",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"dry_run\":true,\"env\":\"hfl-live\",\"identifier\":\"default\",\"service\":\"{{name}}\"},\"id\":270000031,\"type\":\"deployment_gate\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v2/deployment_gates/270000031",
+      "body": "{\"data\":{\"attributes\":{\"dry_run\":false,\"env\":\"hfl-live\",\"identifier\":\"default\",\"service\":\"{{name}}\"},\"id\":\"270000031\",\"type\":\"deployment_gate\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"dry_run\":false,\"env\":\"hfl-live\",\"identifier\":\"default\",\"service\":\"{{name}}\"},\"id\":\"270000031\",\"type\":\"deployment_gate\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/deployment_gates/270000031",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"dry_run\":false,\"env\":\"hfl-live\",\"identifier\":\"default\",\"service\":\"{{name}}\"},\"id\":\"270000031\",\"type\":\"deployment_gate\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/deployment_gates/270000031",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"dry_run\":false,\"env\":\"hfl-live\",\"identifier\":\"default\",\"service\":\"{{name}}\"},\"id\":\"270000031\",\"type\":\"deployment_gate\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v2/deployment_gates/270000031",
+      "body": "{\"data\":{\"attributes\":{\"dry_run\":true,\"env\":\"hfl-live\",\"identifier\":\"default\",\"service\":\"{{name}}\"},\"id\":\"270000031\",\"type\":\"deployment_gate\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"dry_run\":true,\"env\":\"hfl-live\",\"identifier\":\"default\",\"service\":\"{{name}}\"},\"id\":\"270000031\",\"type\":\"deployment_gate\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/deployment_gates/270000031",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"dry_run\":true,\"env\":\"hfl-live\",\"identifier\":\"default\",\"service\":\"{{name}}\"},\"id\":\"270000031\",\"type\":\"deployment_gate\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v2/deployment_gates/270000031",
+      "body": "{\"data\":{\"attributes\":{\"dry_run\":false,\"env\":\"hfl-live\",\"identifier\":\"default\",\"service\":\"{{name}}\"},\"id\":\"270000031\",\"type\":\"deployment_gate\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"dry_run\":false,\"env\":\"hfl-live\",\"identifier\":\"default\",\"service\":\"{{name}}\"},\"id\":\"270000031\",\"type\":\"deployment_gate\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/deployment_gates/270000031",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"dry_run\":false,\"env\":\"hfl-live\",\"identifier\":\"default\",\"service\":\"{{name}}\"},\"id\":\"270000031\",\"type\":\"deployment_gate\"}}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v2/deployment_gates/270000031",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/deployment_gates/270000031",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

@@ -1,0 +1,100 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "dashboard": 280000002,
+    "itype": "rehearsal-itype",
+    "sa": "rehearsal-sa",
+    "slo": "rehearsal-slo",
+    "subteam": "rehearsal-subteam",
+    "team": "rehearsal-team"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/api/v2/actions/execution-policies",
+      "body": "{\"data\":{\"attributes\":{\"action_pattern\":{\"action_fqns\":[\"com.datadoghq.script.*\"],\"integration\":\"INTEGRATION_SCRIPT\"},\"effect\":\"allow\",\"name\":\"{{name}}\"},\"type\":\"execution_policy\"}}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"action_pattern\":{\"action_fqns\":[\"com.datadoghq.script.*\"],\"integration\":\"INTEGRATION_SCRIPT\"},\"effect\":\"allow\",\"name\":\"{{name}}\"},\"id\":270000029,\"type\":\"execution_policy\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/actions/execution-policies/270000029",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"action_pattern\":{\"action_fqns\":[\"com.datadoghq.script.*\"],\"integration\":\"INTEGRATION_SCRIPT\"},\"effect\":\"allow\",\"name\":\"{{name}}\"},\"id\":270000029,\"type\":\"execution_policy\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/actions/execution-policies/270000029",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"action_pattern\":{\"action_fqns\":[\"com.datadoghq.script.*\"],\"integration\":\"INTEGRATION_SCRIPT\"},\"effect\":\"allow\",\"name\":\"{{name}}\"},\"id\":270000029,\"type\":\"execution_policy\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v2/actions/execution-policies/270000029",
+      "body": "{\"data\":{\"attributes\":{\"action_pattern\":{\"action_fqns\":[\"com.datadoghq.script.*\"],\"integration\":\"INTEGRATION_SCRIPT\"},\"effect\":\"allow\",\"name\":\"{{name}}-changed\"},\"id\":\"270000029\",\"type\":\"execution_policy\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"action_pattern\":{\"action_fqns\":[\"com.datadoghq.script.*\"],\"integration\":\"INTEGRATION_SCRIPT\"},\"effect\":\"allow\",\"name\":\"{{name}}-changed\"},\"id\":\"270000029\",\"type\":\"execution_policy\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/actions/execution-policies/270000029",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"action_pattern\":{\"action_fqns\":[\"com.datadoghq.script.*\"],\"integration\":\"INTEGRATION_SCRIPT\"},\"effect\":\"allow\",\"name\":\"{{name}}-changed\"},\"id\":\"270000029\",\"type\":\"execution_policy\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/actions/execution-policies/270000029",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"action_pattern\":{\"action_fqns\":[\"com.datadoghq.script.*\"],\"integration\":\"INTEGRATION_SCRIPT\"},\"effect\":\"allow\",\"name\":\"{{name}}-changed\"},\"id\":\"270000029\",\"type\":\"execution_policy\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v2/actions/execution-policies/270000029",
+      "body": "{\"data\":{\"attributes\":{\"action_pattern\":{\"action_fqns\":[\"com.datadoghq.script.*\"],\"integration\":\"INTEGRATION_SCRIPT\"},\"effect\":\"allow\",\"name\":\"{{name}}-drift\"},\"id\":\"270000029\",\"type\":\"execution_policy\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"action_pattern\":{\"action_fqns\":[\"com.datadoghq.script.*\"],\"integration\":\"INTEGRATION_SCRIPT\"},\"effect\":\"allow\",\"name\":\"{{name}}-drift\"},\"id\":\"270000029\",\"type\":\"execution_policy\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/actions/execution-policies/270000029",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"action_pattern\":{\"action_fqns\":[\"com.datadoghq.script.*\"],\"integration\":\"INTEGRATION_SCRIPT\"},\"effect\":\"allow\",\"name\":\"{{name}}-drift\"},\"id\":\"270000029\",\"type\":\"execution_policy\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v2/actions/execution-policies/270000029",
+      "body": "{\"data\":{\"attributes\":{\"action_pattern\":{\"action_fqns\":[\"com.datadoghq.script.*\"],\"integration\":\"INTEGRATION_SCRIPT\"},\"effect\":\"allow\",\"name\":\"{{name}}-changed\"},\"id\":\"270000029\",\"type\":\"execution_policy\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"action_pattern\":{\"action_fqns\":[\"com.datadoghq.script.*\"],\"integration\":\"INTEGRATION_SCRIPT\"},\"effect\":\"allow\",\"name\":\"{{name}}-changed\"},\"id\":\"270000029\",\"type\":\"execution_policy\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/actions/execution-policies/270000029",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"action_pattern\":{\"action_fqns\":[\"com.datadoghq.script.*\"],\"integration\":\"INTEGRATION_SCRIPT\"},\"effect\":\"allow\",\"name\":\"{{name}}-changed\"},\"id\":\"270000029\",\"type\":\"execution_policy\"}}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v2/actions/execution-policies/270000029",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/actions/execution-policies/270000029",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

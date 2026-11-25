@@ -1,0 +1,99 @@
+{
+  "recorded": "2026-11-20T23:57:15Z",
+  "target": "Datadog trial",
+  "vars": {
+    "dashboard": "ur8-afc-sum",
+    "sa": "16307311-e53e-11f1-b3f2-e693e7c43799",
+    "slo": "3704e6ae4bac5b54b241a727ff6ab03b",
+    "subteam": "d4c1dd6f-4ea7-42e9-9847-c995ec31b739",
+    "team": "48e3aed2-a7e1-4fee-9037-ce9c9f4b4952"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/api/v2/monitor/policy",
+      "body": "{\"data\":{\"attributes\":{\"policy\":{\"tag_key\":\"{{name}}\",\"tag_key_required\":false,\"valid_tag_values\":[\"first\"]},\"policy_type\":\"tag\"},\"type\":\"monitor-config-policy\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"type\":\"monitor-config-policy\",\"id\":\"534aa4c6-22b4-4d2c-b604-1c56ea4e2a75\",\"attributes\":{\"policy_type\":\"tag\",\"policy\":{\"tag_key\":\"{{name}}\",\"valid_tag_values\":[\"first\"],\"tag_key_required\":false}}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/monitor/policy/534aa4c6-22b4-4d2c-b604-1c56ea4e2a75",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"type\":\"monitor-config-policy\",\"id\":\"534aa4c6-22b4-4d2c-b604-1c56ea4e2a75\",\"attributes\":{\"policy_type\":\"tag\",\"policy\":{\"tag_key\":\"{{name}}\",\"valid_tag_values\":[\"first\"],\"tag_key_required\":false}}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/monitor/policy/534aa4c6-22b4-4d2c-b604-1c56ea4e2a75",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"type\":\"monitor-config-policy\",\"id\":\"534aa4c6-22b4-4d2c-b604-1c56ea4e2a75\",\"attributes\":{\"policy_type\":\"tag\",\"policy\":{\"tag_key\":\"{{name}}\",\"valid_tag_values\":[\"first\"],\"tag_key_required\":false}}}}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v2/monitor/policy/534aa4c6-22b4-4d2c-b604-1c56ea4e2a75",
+      "body": "{\"data\":{\"attributes\":{\"policy\":{\"tag_key\":\"{{name}}\",\"tag_key_required\":false,\"valid_tag_values\":[\"second\"]},\"policy_type\":\"tag\"},\"id\":\"534aa4c6-22b4-4d2c-b604-1c56ea4e2a75\",\"type\":\"monitor-config-policy\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"type\":\"monitor-config-policy\",\"id\":\"534aa4c6-22b4-4d2c-b604-1c56ea4e2a75\",\"attributes\":{\"policy_type\":\"tag\",\"policy\":{\"tag_key\":\"{{name}}\",\"valid_tag_values\":[\"second\"],\"tag_key_required\":false}}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/monitor/policy/534aa4c6-22b4-4d2c-b604-1c56ea4e2a75",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"type\":\"monitor-config-policy\",\"id\":\"534aa4c6-22b4-4d2c-b604-1c56ea4e2a75\",\"attributes\":{\"policy_type\":\"tag\",\"policy\":{\"tag_key\":\"{{name}}\",\"valid_tag_values\":[\"second\"],\"tag_key_required\":false}}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/monitor/policy/534aa4c6-22b4-4d2c-b604-1c56ea4e2a75",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"type\":\"monitor-config-policy\",\"id\":\"534aa4c6-22b4-4d2c-b604-1c56ea4e2a75\",\"attributes\":{\"policy_type\":\"tag\",\"policy\":{\"tag_key\":\"{{name}}\",\"valid_tag_values\":[\"second\"],\"tag_key_required\":false}}}}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v2/monitor/policy/534aa4c6-22b4-4d2c-b604-1c56ea4e2a75",
+      "body": "{\"data\":{\"attributes\":{\"policy\":{\"tag_key\":\"{{name}}\",\"tag_key_required\":false,\"valid_tag_values\":[\"drift\"]},\"policy_type\":\"tag\"},\"id\":\"534aa4c6-22b4-4d2c-b604-1c56ea4e2a75\",\"type\":\"monitor-config-policy\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"type\":\"monitor-config-policy\",\"id\":\"534aa4c6-22b4-4d2c-b604-1c56ea4e2a75\",\"attributes\":{\"policy_type\":\"tag\",\"policy\":{\"tag_key\":\"{{name}}\",\"valid_tag_values\":[\"drift\"],\"tag_key_required\":false}}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/monitor/policy/534aa4c6-22b4-4d2c-b604-1c56ea4e2a75",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"type\":\"monitor-config-policy\",\"id\":\"534aa4c6-22b4-4d2c-b604-1c56ea4e2a75\",\"attributes\":{\"policy_type\":\"tag\",\"policy\":{\"tag_key\":\"{{name}}\",\"valid_tag_values\":[\"drift\"],\"tag_key_required\":false}}}}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v2/monitor/policy/534aa4c6-22b4-4d2c-b604-1c56ea4e2a75",
+      "body": "{\"data\":{\"attributes\":{\"policy\":{\"tag_key\":\"{{name}}\",\"tag_key_required\":false,\"valid_tag_values\":[\"second\"]},\"policy_type\":\"tag\"},\"id\":\"534aa4c6-22b4-4d2c-b604-1c56ea4e2a75\",\"type\":\"monitor-config-policy\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"type\":\"monitor-config-policy\",\"id\":\"534aa4c6-22b4-4d2c-b604-1c56ea4e2a75\",\"attributes\":{\"policy_type\":\"tag\",\"policy\":{\"tag_key\":\"{{name}}\",\"valid_tag_values\":[\"second\"],\"tag_key_required\":false}}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/monitor/policy/534aa4c6-22b4-4d2c-b604-1c56ea4e2a75",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"type\":\"monitor-config-policy\",\"id\":\"534aa4c6-22b4-4d2c-b604-1c56ea4e2a75\",\"attributes\":{\"policy_type\":\"tag\",\"policy\":{\"tag_key\":\"{{name}}\",\"valid_tag_values\":[\"second\"],\"tag_key_required\":false}}}}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v2/monitor/policy/534aa4c6-22b4-4d2c-b604-1c56ea4e2a75",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/monitor/policy/534aa4c6-22b4-4d2c-b604-1c56ea4e2a75",
+      "status": 404,
+      "contentType": "application/json",
+      "response": "{\"errors\":[\"Monitor configuration policy not found\"]}"
+    }
+  ]
+}

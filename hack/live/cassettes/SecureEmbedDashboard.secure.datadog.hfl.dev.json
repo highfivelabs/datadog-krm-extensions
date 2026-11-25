@@ -1,0 +1,97 @@
+{
+  "recorded": "2026-11-20T23:56:54Z",
+  "target": "Datadog trial",
+  "vars": {
+    "dashboard": "ur8-afc-sum",
+    "subteam": "d4c1dd6f-4ea7-42e9-9847-c995ec31b739",
+    "team": "48e3aed2-a7e1-4fee-9037-ce9c9f4b4952"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/api/v2/dashboard/ur8-afc-sum/shared/secure-embed",
+      "body": "{\"data\":{\"attributes\":{\"global_time\":{\"live_span\":\"1h\"},\"global_time_selectable\":true,\"selectable_template_vars\":[],\"status\":\"active\",\"title\":\"{{name}}\",\"viewing_preferences\":{\"theme\":\"system\"}},\"type\":\"secure_embed_request\"}}",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"attributes\":{\"created_at\":\"2026-11-20 23:56:52.837912\",\"credential\":\"{{redacted}}\",\"dashboard_id\":\"ur8-afc-sum\",\"global_time\":{\"live_span\":\"1h\"},\"global_time_selectable\":true,\"selectable_template_vars\":[],\"share_type\":\"secure-embed\",\"status\":\"active\",\"title\":\"{{name}}\",\"token\":\"{{id:1}}\",\"url\":\"https://p.{{cred:site}}/sb/secure-embed/{{id:1}}\",\"viewing_preferences\":{\"high_density\":false,\"theme\":\"system\"}},\"id\":\"611743\",\"type\":\"secure_embed_create_response\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/dashboard/ur8-afc-sum/shared/secure-embed/{{id:1}}",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"id\":\"611743\",\"type\":\"secure_embed_get_response\",\"attributes\":{\"token\":\"{{id:1}}\",\"title\":\"{{name}}\",\"url\":\"https://p.{{cred:site}}/sb/secure-embed/{{id:1}}\",\"status\":\"active\",\"share_type\":\"secure-embed\",\"dashboard_id\":\"ur8-afc-sum\",\"global_time_selectable\":true,\"selectable_template_vars\":[],\"viewing_preferences\":{\"high_density\":false,\"theme\":\"system\"},\"global_time\":{\"live_span\":\"1h\"},\"created_at\":\"2026-11-20 23:56:52.837912\",\"credential_suffix\":\"zcks\"}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/dashboard/ur8-afc-sum/shared/secure-embed/{{id:1}}",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"id\":\"611743\",\"type\":\"secure_embed_get_response\",\"attributes\":{\"token\":\"{{id:1}}\",\"title\":\"{{name}}\",\"url\":\"https://p.{{cred:site}}/sb/secure-embed/{{id:1}}\",\"status\":\"active\",\"share_type\":\"secure-embed\",\"dashboard_id\":\"ur8-afc-sum\",\"global_time_selectable\":true,\"selectable_template_vars\":[],\"viewing_preferences\":{\"high_density\":false,\"theme\":\"system\"},\"global_time\":{\"live_span\":\"1h\"},\"created_at\":\"2026-11-20 23:56:52.837912\",\"credential_suffix\":\"zcks\"}}}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v2/dashboard/ur8-afc-sum/shared/secure-embed/{{id:1}}",
+      "body": "{\"data\":{\"attributes\":{\"global_time\":{\"live_span\":\"1h\"},\"global_time_selectable\":true,\"selectable_template_vars\":[],\"status\":\"paused\",\"title\":\"{{name}}\",\"viewing_preferences\":{\"theme\":\"system\"}},\"type\":\"secure_embed_request\"}}",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"attributes\":{\"created_at\":\"2026-11-20 23:56:52.837912\",\"credential_suffix\":\"{{redacted}}\",\"dashboard_id\":\"ur8-afc-sum\",\"global_time\":{\"live_span\":\"1h\"},\"global_time_selectable\":true,\"selectable_template_vars\":[],\"share_type\":\"secure-embed\",\"status\":\"paused\",\"title\":\"{{name}}\",\"token\":\"{{id:1}}\",\"url\":\"https://p.{{cred:site}}/sb/secure-embed/{{id:1}}\",\"viewing_preferences\":{\"high_density\":false,\"theme\":\"system\"}},\"id\":\"611743\",\"type\":\"secure_embed_update_response\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/dashboard/ur8-afc-sum/shared/secure-embed/{{id:1}}",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"id\":\"611743\",\"type\":\"secure_embed_get_response\",\"attributes\":{\"token\":\"{{id:1}}\",\"title\":\"{{name}}\",\"url\":\"https://p.{{cred:site}}/sb/secure-embed/{{id:1}}\",\"status\":\"paused\",\"share_type\":\"secure-embed\",\"dashboard_id\":\"ur8-afc-sum\",\"global_time_selectable\":true,\"selectable_template_vars\":[],\"viewing_preferences\":{\"high_density\":false,\"theme\":\"system\"},\"global_time\":{\"live_span\":\"1h\"},\"created_at\":\"2026-11-20 23:56:52.837912\",\"credential_suffix\":\"zcks\"}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/dashboard/ur8-afc-sum/shared/secure-embed/{{id:1}}",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"id\":\"611743\",\"type\":\"secure_embed_get_response\",\"attributes\":{\"token\":\"{{id:1}}\",\"title\":\"{{name}}\",\"url\":\"https://p.{{cred:site}}/sb/secure-embed/{{id:1}}\",\"status\":\"paused\",\"share_type\":\"secure-embed\",\"dashboard_id\":\"ur8-afc-sum\",\"global_time_selectable\":true,\"selectable_template_vars\":[],\"viewing_preferences\":{\"high_density\":false,\"theme\":\"system\"},\"global_time\":{\"live_span\":\"1h\"},\"created_at\":\"2026-11-20 23:56:52.837912\",\"credential_suffix\":\"zcks\"}}}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v2/dashboard/ur8-afc-sum/shared/secure-embed/{{id:1}}",
+      "body": "{\"data\":{\"attributes\":{\"global_time\":{\"live_span\":\"1h\"},\"global_time_selectable\":true,\"selectable_template_vars\":[],\"status\":\"active\",\"title\":\"{{name}}\",\"viewing_preferences\":{\"theme\":\"system\"}},\"id\":\"611743\",\"type\":\"secure_embed_get_response\"}}",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"attributes\":{\"created_at\":\"2026-11-20 23:56:52.837912\",\"credential_suffix\":\"{{redacted}}\",\"dashboard_id\":\"ur8-afc-sum\",\"global_time\":{\"live_span\":\"1h\"},\"global_time_selectable\":true,\"selectable_template_vars\":[],\"share_type\":\"secure-embed\",\"status\":\"active\",\"title\":\"{{name}}\",\"token\":\"{{id:1}}\",\"url\":\"https://p.{{cred:site}}/sb/secure-embed/{{id:1}}\",\"viewing_preferences\":{\"high_density\":false,\"theme\":\"system\"}},\"id\":\"611743\",\"type\":\"secure_embed_update_response\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/dashboard/ur8-afc-sum/shared/secure-embed/{{id:1}}",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"id\":\"611743\",\"type\":\"secure_embed_get_response\",\"attributes\":{\"token\":\"{{id:1}}\",\"title\":\"{{name}}\",\"url\":\"https://p.{{cred:site}}/sb/secure-embed/{{id:1}}\",\"status\":\"active\",\"share_type\":\"secure-embed\",\"dashboard_id\":\"ur8-afc-sum\",\"global_time_selectable\":true,\"selectable_template_vars\":[],\"viewing_preferences\":{\"high_density\":false,\"theme\":\"system\"},\"global_time\":{\"live_span\":\"1h\"},\"created_at\":\"2026-11-20 23:56:52.837912\",\"credential_suffix\":\"zcks\"}}}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v2/dashboard/ur8-afc-sum/shared/secure-embed/{{id:1}}",
+      "body": "{\"data\":{\"attributes\":{\"global_time\":{\"live_span\":\"1h\"},\"global_time_selectable\":true,\"selectable_template_vars\":[],\"status\":\"paused\",\"title\":\"{{name}}\",\"viewing_preferences\":{\"theme\":\"system\"}},\"type\":\"secure_embed_request\"}}",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"attributes\":{\"created_at\":\"2026-11-20 23:56:52.837912\",\"credential_suffix\":\"{{redacted}}\",\"dashboard_id\":\"ur8-afc-sum\",\"global_time\":{\"live_span\":\"1h\"},\"global_time_selectable\":true,\"selectable_template_vars\":[],\"share_type\":\"secure-embed\",\"status\":\"paused\",\"title\":\"{{name}}\",\"token\":\"{{id:1}}\",\"url\":\"https://p.{{cred:site}}/sb/secure-embed/{{id:1}}\",\"viewing_preferences\":{\"high_density\":false,\"theme\":\"system\"}},\"id\":\"611743\",\"type\":\"secure_embed_update_response\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/dashboard/ur8-afc-sum/shared/secure-embed/{{id:1}}",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"id\":\"611743\",\"type\":\"secure_embed_get_response\",\"attributes\":{\"token\":\"{{id:1}}\",\"title\":\"{{name}}\",\"url\":\"https://p.{{cred:site}}/sb/secure-embed/{{id:1}}\",\"status\":\"paused\",\"share_type\":\"secure-embed\",\"dashboard_id\":\"ur8-afc-sum\",\"global_time_selectable\":true,\"selectable_template_vars\":[],\"viewing_preferences\":{\"high_density\":false,\"theme\":\"system\"},\"global_time\":{\"live_span\":\"1h\"},\"created_at\":\"2026-11-20 23:56:52.837912\",\"credential_suffix\":\"zcks\"}}}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v2/dashboard/ur8-afc-sum/shared/secure-embed/{{id:1}}",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/dashboard/ur8-afc-sum/shared/secure-embed/{{id:1}}",
+      "status": 404,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"errors\":[{\"status\":\"404\",\"title\":\"Not Found\",\"detail\":\"Secure embed with token {{id:1}} not found\"}]}"
+    }
+  ]
+}

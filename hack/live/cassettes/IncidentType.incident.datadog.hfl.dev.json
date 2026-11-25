@@ -1,0 +1,99 @@
+{
+  "recorded": "2026-11-20T23:57:18Z",
+  "target": "Datadog trial",
+  "vars": {
+    "dashboard": "ur8-afc-sum",
+    "sa": "16307311-e53e-11f1-b3f2-e693e7c43799",
+    "slo": "3704e6ae4bac5b54b241a727ff6ab03b",
+    "subteam": "d4c1dd6f-4ea7-42e9-9847-c995ec31b739",
+    "team": "48e3aed2-a7e1-4fee-9037-ce9c9f4b4952"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/api/v2/incidents/config/types",
+      "body": "{\"data\":{\"attributes\":{\"description\":\"first\",\"name\":\"{{name}}\"},\"type\":\"incident_types\"}}",
+      "status": 201,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"id\":\"df2f0f33-6ef2-4ff3-813c-4bc7bfb6e290\",\"type\":\"incident_types\",\"attributes\":{\"configuration\":{\"private_incidents\":false,\"private_incidents_by_default\":false,\"allow_workflows\":true,\"allow_incident_deletion\":false,\"editable_timestamps\":false,\"test_incidents\":true,\"create_message\":\"\",\"slug_source\":\"default\"},\"createdAt\":\"2026-11-20T23:57:17.231886057Z\",\"createdBy\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"description\":\"first\",\"is_default\":false,\"lastModifiedBy\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"modifiedAt\":\"2026-11-20T23:57:17.231886107Z\",\"name\":\"{{name}}\",\"prefix\":\"IR\"},\"relationships\":{\"created_by_user\":{\"data\":{\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"type\":\"users\"}},\"google_chat_configuration\":{\"data\":null},\"google_meet_configuration\":{\"data\":null},\"last_modified_by_user\":{\"data\":{\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"type\":\"users\"}},\"microsoft_teams_configuration\":{\"data\":null},\"zoom_configuration\":{\"data\":null}}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/incidents/config/types/df2f0f33-6ef2-4ff3-813c-4bc7bfb6e290",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"id\":\"df2f0f33-6ef2-4ff3-813c-4bc7bfb6e290\",\"type\":\"incident_types\",\"attributes\":{\"configuration\":{\"private_incidents\":false,\"private_incidents_by_default\":false,\"allow_workflows\":true,\"allow_incident_deletion\":false,\"editable_timestamps\":false,\"test_incidents\":true,\"create_message\":\"\",\"slug_source\":\"default\"},\"createdAt\":\"2026-11-20T23:57:17.231886Z\",\"createdBy\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"description\":\"first\",\"is_default\":false,\"lastModifiedBy\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"modifiedAt\":\"2026-11-20T23:57:17.231886Z\",\"name\":\"{{name}}\",\"prefix\":\"IR\"},\"relationships\":{\"created_by_user\":{\"data\":{\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"type\":\"users\"}},\"google_chat_configuration\":{\"data\":null},\"google_meet_configuration\":{\"data\":null},\"last_modified_by_user\":{\"data\":{\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"type\":\"users\"}},\"microsoft_teams_configuration\":{\"data\":null},\"zoom_configuration\":{\"data\":null}}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/incidents/config/types/df2f0f33-6ef2-4ff3-813c-4bc7bfb6e290",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"id\":\"df2f0f33-6ef2-4ff3-813c-4bc7bfb6e290\",\"type\":\"incident_types\",\"attributes\":{\"configuration\":{\"private_incidents\":false,\"private_incidents_by_default\":false,\"allow_workflows\":true,\"allow_incident_deletion\":false,\"editable_timestamps\":false,\"test_incidents\":true,\"create_message\":\"\",\"slug_source\":\"default\"},\"createdAt\":\"2026-11-20T23:57:17.231886Z\",\"createdBy\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"description\":\"first\",\"is_default\":false,\"lastModifiedBy\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"modifiedAt\":\"2026-11-20T23:57:17.231886Z\",\"name\":\"{{name}}\",\"prefix\":\"IR\"},\"relationships\":{\"created_by_user\":{\"data\":{\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"type\":\"users\"}},\"google_chat_configuration\":{\"data\":null},\"google_meet_configuration\":{\"data\":null},\"last_modified_by_user\":{\"data\":{\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"type\":\"users\"}},\"microsoft_teams_configuration\":{\"data\":null},\"zoom_configuration\":{\"data\":null}}}}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v2/incidents/config/types/df2f0f33-6ef2-4ff3-813c-4bc7bfb6e290",
+      "body": "{\"data\":{\"attributes\":{\"description\":\"second\",\"name\":\"{{name}}\"},\"id\":\"df2f0f33-6ef2-4ff3-813c-4bc7bfb6e290\",\"type\":\"incident_types\"}}",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"id\":\"df2f0f33-6ef2-4ff3-813c-4bc7bfb6e290\",\"type\":\"incident_types\",\"attributes\":{\"configuration\":{\"private_incidents\":false,\"private_incidents_by_default\":false,\"allow_workflows\":true,\"allow_incident_deletion\":false,\"editable_timestamps\":false,\"test_incidents\":true,\"create_message\":\"\",\"slug_source\":\"default\"},\"createdAt\":\"2026-11-20T23:57:17.231886Z\",\"createdBy\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"description\":\"second\",\"is_default\":false,\"lastModifiedBy\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"modifiedAt\":\"2026-11-20T23:57:18.031393Z\",\"name\":\"{{name}}\",\"prefix\":\"IR\"},\"relationships\":{\"created_by_user\":{\"data\":{\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"type\":\"users\"}},\"google_chat_configuration\":{\"data\":null},\"google_meet_configuration\":{\"data\":null},\"last_modified_by_user\":{\"data\":{\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"type\":\"users\"}},\"microsoft_teams_configuration\":{\"data\":null},\"zoom_configuration\":{\"data\":null}}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/incidents/config/types/df2f0f33-6ef2-4ff3-813c-4bc7bfb6e290",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"id\":\"df2f0f33-6ef2-4ff3-813c-4bc7bfb6e290\",\"type\":\"incident_types\",\"attributes\":{\"configuration\":{\"private_incidents\":false,\"private_incidents_by_default\":false,\"allow_workflows\":true,\"allow_incident_deletion\":false,\"editable_timestamps\":false,\"test_incidents\":true,\"create_message\":\"\",\"slug_source\":\"default\"},\"createdAt\":\"2026-11-20T23:57:17.231886Z\",\"createdBy\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"description\":\"second\",\"is_default\":false,\"lastModifiedBy\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"modifiedAt\":\"2026-11-20T23:57:18.031393Z\",\"name\":\"{{name}}\",\"prefix\":\"IR\"},\"relationships\":{\"created_by_user\":{\"data\":{\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"type\":\"users\"}},\"google_chat_configuration\":{\"data\":null},\"google_meet_configuration\":{\"data\":null},\"last_modified_by_user\":{\"data\":{\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"type\":\"users\"}},\"microsoft_teams_configuration\":{\"data\":null},\"zoom_configuration\":{\"data\":null}}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/incidents/config/types/df2f0f33-6ef2-4ff3-813c-4bc7bfb6e290",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"id\":\"df2f0f33-6ef2-4ff3-813c-4bc7bfb6e290\",\"type\":\"incident_types\",\"attributes\":{\"configuration\":{\"private_incidents\":false,\"private_incidents_by_default\":false,\"allow_workflows\":true,\"allow_incident_deletion\":false,\"editable_timestamps\":false,\"test_incidents\":true,\"create_message\":\"\",\"slug_source\":\"default\"},\"createdAt\":\"2026-11-20T23:57:17.231886Z\",\"createdBy\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"description\":\"second\",\"is_default\":false,\"lastModifiedBy\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"modifiedAt\":\"2026-11-20T23:57:18.031393Z\",\"name\":\"{{name}}\",\"prefix\":\"IR\"},\"relationships\":{\"created_by_user\":{\"data\":{\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"type\":\"users\"}},\"google_chat_configuration\":{\"data\":null},\"google_meet_configuration\":{\"data\":null},\"last_modified_by_user\":{\"data\":{\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"type\":\"users\"}},\"microsoft_teams_configuration\":{\"data\":null},\"zoom_configuration\":{\"data\":null}}}}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v2/incidents/config/types/df2f0f33-6ef2-4ff3-813c-4bc7bfb6e290",
+      "body": "{\"data\":{\"attributes\":{\"description\":\"drift\",\"name\":\"{{name}}\"},\"id\":\"df2f0f33-6ef2-4ff3-813c-4bc7bfb6e290\",\"relationships\":{\"created_by_user\":{\"data\":{\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"type\":\"users\"}},\"google_chat_configuration\":{\"data\":null},\"google_meet_configuration\":{\"data\":null},\"last_modified_by_user\":{\"data\":{\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"type\":\"users\"}},\"microsoft_teams_configuration\":{\"data\":null},\"zoom_configuration\":{\"data\":null}},\"type\":\"incident_types\"}}",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"id\":\"df2f0f33-6ef2-4ff3-813c-4bc7bfb6e290\",\"type\":\"incident_types\",\"attributes\":{\"configuration\":{\"private_incidents\":false,\"private_incidents_by_default\":false,\"allow_workflows\":true,\"allow_incident_deletion\":false,\"editable_timestamps\":false,\"test_incidents\":true,\"create_message\":\"\",\"slug_source\":\"default\"},\"createdAt\":\"2026-11-20T23:57:17.231886Z\",\"createdBy\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"description\":\"drift\",\"is_default\":false,\"lastModifiedBy\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"modifiedAt\":\"2026-11-20T23:57:18.353993Z\",\"name\":\"{{name}}\",\"prefix\":\"IR\"},\"relationships\":{\"created_by_user\":{\"data\":{\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"type\":\"users\"}},\"google_chat_configuration\":{\"data\":null},\"google_meet_configuration\":{\"data\":null},\"last_modified_by_user\":{\"data\":{\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"type\":\"users\"}},\"microsoft_teams_configuration\":{\"data\":null},\"zoom_configuration\":{\"data\":null}}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/incidents/config/types/df2f0f33-6ef2-4ff3-813c-4bc7bfb6e290",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"id\":\"df2f0f33-6ef2-4ff3-813c-4bc7bfb6e290\",\"type\":\"incident_types\",\"attributes\":{\"configuration\":{\"private_incidents\":false,\"private_incidents_by_default\":false,\"allow_workflows\":true,\"allow_incident_deletion\":false,\"editable_timestamps\":false,\"test_incidents\":true,\"create_message\":\"\",\"slug_source\":\"default\"},\"createdAt\":\"2026-11-20T23:57:17.231886Z\",\"createdBy\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"description\":\"drift\",\"is_default\":false,\"lastModifiedBy\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"modifiedAt\":\"2026-11-20T23:57:18.353993Z\",\"name\":\"{{name}}\",\"prefix\":\"IR\"},\"relationships\":{\"created_by_user\":{\"data\":{\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"type\":\"users\"}},\"google_chat_configuration\":{\"data\":null},\"google_meet_configuration\":{\"data\":null},\"last_modified_by_user\":{\"data\":{\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"type\":\"users\"}},\"microsoft_teams_configuration\":{\"data\":null},\"zoom_configuration\":{\"data\":null}}}}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v2/incidents/config/types/df2f0f33-6ef2-4ff3-813c-4bc7bfb6e290",
+      "body": "{\"data\":{\"attributes\":{\"description\":\"second\",\"name\":\"{{name}}\"},\"id\":\"df2f0f33-6ef2-4ff3-813c-4bc7bfb6e290\",\"type\":\"incident_types\"}}",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"id\":\"df2f0f33-6ef2-4ff3-813c-4bc7bfb6e290\",\"type\":\"incident_types\",\"attributes\":{\"configuration\":{\"private_incidents\":false,\"private_incidents_by_default\":false,\"allow_workflows\":true,\"allow_incident_deletion\":false,\"editable_timestamps\":false,\"test_incidents\":true,\"create_message\":\"\",\"slug_source\":\"default\"},\"createdAt\":\"2026-11-20T23:57:17.231886Z\",\"createdBy\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"description\":\"second\",\"is_default\":false,\"lastModifiedBy\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"modifiedAt\":\"2026-11-20T23:57:18.570837Z\",\"name\":\"{{name}}\",\"prefix\":\"IR\"},\"relationships\":{\"created_by_user\":{\"data\":{\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"type\":\"users\"}},\"google_chat_configuration\":{\"data\":null},\"google_meet_configuration\":{\"data\":null},\"last_modified_by_user\":{\"data\":{\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"type\":\"users\"}},\"microsoft_teams_configuration\":{\"data\":null},\"zoom_configuration\":{\"data\":null}}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/incidents/config/types/df2f0f33-6ef2-4ff3-813c-4bc7bfb6e290",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"id\":\"df2f0f33-6ef2-4ff3-813c-4bc7bfb6e290\",\"type\":\"incident_types\",\"attributes\":{\"configuration\":{\"private_incidents\":false,\"private_incidents_by_default\":false,\"allow_workflows\":true,\"allow_incident_deletion\":false,\"editable_timestamps\":false,\"test_incidents\":true,\"create_message\":\"\",\"slug_source\":\"default\"},\"createdAt\":\"2026-11-20T23:57:17.231886Z\",\"createdBy\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"description\":\"second\",\"is_default\":false,\"lastModifiedBy\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"modifiedAt\":\"2026-11-20T23:57:18.570837Z\",\"name\":\"{{name}}\",\"prefix\":\"IR\"},\"relationships\":{\"created_by_user\":{\"data\":{\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"type\":\"users\"}},\"google_chat_configuration\":{\"data\":null},\"google_meet_configuration\":{\"data\":null},\"last_modified_by_user\":{\"data\":{\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"type\":\"users\"}},\"microsoft_teams_configuration\":{\"data\":null},\"zoom_configuration\":{\"data\":null}}}}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v2/incidents/config/types/df2f0f33-6ef2-4ff3-813c-4bc7bfb6e290",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/incidents/config/types/df2f0f33-6ef2-4ff3-813c-4bc7bfb6e290",
+      "status": 404,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"errors\":[{\"title\":\"Generic Error\",\"detail\":\"incident type doesn't exist\"}]}"
+    }
+  ]
+}

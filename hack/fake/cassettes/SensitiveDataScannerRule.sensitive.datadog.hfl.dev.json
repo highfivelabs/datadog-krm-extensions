@@ -1,0 +1,105 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "component": "rehearsal-component",
+    "dashboard": 280000002,
+    "itype": "rehearsal-itype",
+    "member": "rehearsal-member",
+    "org": "rehearsal-org",
+    "orgsa": "rehearsal-orgsa",
+    "page": "rehearsal-page",
+    "role": "rehearsal-role",
+    "roleUser": "rehearsal-roleUser",
+    "routingPolicy": "rehearsal-routingPolicy",
+    "ruleA": "rehearsal-ruleA",
+    "ruleB": "rehearsal-ruleB",
+    "rum": "rehearsal-rum",
+    "sa": "rehearsal-sa",
+    "slo": "rehearsal-slo",
+    "subteam": "rehearsal-subteam",
+    "team": "rehearsal-team"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/api/v2/sensitive-data-scanner/config/rules",
+      "body": "{\"data\":{\"attributes\":{},\"relationships\":{},\"type\":\"sensitive_data_scanner_rule\"},\"meta\":{}}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{},\"id\":270000103,\"relationships\":{},\"type\":\"sensitive_data_scanner_rule\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/sensitive-data-scanner/config",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"included\":[{\"attributes\":{},\"id\":270000103,\"relationships\":{},\"type\":\"sensitive_data_scanner_rule\"}]}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/sensitive-data-scanner/config",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"included\":[{\"attributes\":{},\"id\":270000103,\"relationships\":{},\"type\":\"sensitive_data_scanner_rule\"}]}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v2/sensitive-data-scanner/config/rules/270000103",
+      "body": "{\"data\":{\"attributes\":{},\"id\":\"270000103\",\"relationships\":{},\"type\":\"changed-type\"},\"meta\":{}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{},\"id\":\"270000103\",\"relationships\":{},\"type\":\"changed-type\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/sensitive-data-scanner/config",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"included\":[{\"attributes\":{},\"id\":\"270000103\",\"relationships\":{},\"type\":\"changed-type\"}]}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v2/sensitive-data-scanner/config/rules/270000103",
+      "body": "{\"data\":{\"id\":\"270000103\",\"type\":\"hfl-live-drift\"},\"meta\":{}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{},\"id\":\"270000103\",\"relationships\":{},\"type\":\"hfl-live-drift\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/sensitive-data-scanner/config",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"included\":[{\"attributes\":{},\"id\":\"270000103\",\"relationships\":{},\"type\":\"hfl-live-drift\"}]}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v2/sensitive-data-scanner/config/rules/270000103",
+      "body": "{\"data\":{\"attributes\":{},\"id\":\"270000103\",\"relationships\":{},\"type\":\"changed-type\"},\"meta\":{}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{},\"id\":\"270000103\",\"relationships\":{},\"type\":\"changed-type\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/sensitive-data-scanner/config",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"included\":[{\"attributes\":{},\"id\":\"270000103\",\"relationships\":{},\"type\":\"changed-type\"}]}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v2/sensitive-data-scanner/config/rules/270000103",
+      "body": "{\"meta\":{}}",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/sensitive-data-scanner/config",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"id\":\"example-id\",\"relationships\":{\"groups\":{\"data\":[]}}},\"included\":[],\"meta\":{}}\n"
+    }
+  ]
+}

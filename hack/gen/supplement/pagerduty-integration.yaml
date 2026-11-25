@@ -1,0 +1,68 @@
+openapi: 3.0.0
+info:
+  title: 'Datadog API V1: PagerDuty integration supplement'
+  version: '1.0'
+paths:
+  /api/v1/integration/pagerduty:
+    get:
+      operationId: GetPagerDutyIntegration
+      summary: Get the PagerDuty integration
+      tags:
+      - PagerDuty Integration
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PagerDutyIntegration'
+        '404':
+          description: The integration is not set up
+    put:
+      operationId: UpdatePagerDutyIntegration
+      summary: Set up or update the PagerDuty integration
+      tags:
+      - PagerDuty Integration
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PagerDutyIntegrationRequest'
+      responses:
+        '204':
+          description: OK
+components:
+  schemas:
+    PagerDutyIntegrationRequest:
+      type: object
+      required:
+      - subdomain
+      properties:
+        subdomain:
+          type: string
+          example: my-company
+        api_token:
+          type: string
+        schedules:
+          type: array
+          items:
+            type: string
+    PagerDutyIntegration:
+      type: object
+      properties:
+        subdomain:
+          type: string
+        schedules:
+          type: array
+          items:
+            type: string
+        services:
+          type: array
+          items:
+            type: object
+            properties:
+              service_name:
+                type: string
+              service_key:
+                type: string

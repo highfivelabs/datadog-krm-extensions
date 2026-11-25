@@ -1,0 +1,113 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "dashboard": 280000002,
+    "itype": "rehearsal-itype",
+    "sa": "rehearsal-sa",
+    "slo": "rehearsal-slo",
+    "subteam": "rehearsal-subteam",
+    "team": "rehearsal-team"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/api/v2/incidents/config/types",
+      "body": "{\"data\":{\"attributes\":{\"name\":\"{{name}}\"},\"type\":\"incident_types\"}}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"_stub\":\"rehearsal stand-in: the fake API has no such resource\",\"data\":{\"attributes\":{\"name\":\"{{name}}\"},\"type\":\"incident_types\"},\"id\":280000010}\n"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v2/incidents/config/postmortem-templates",
+      "body": "{\"data\":{\"attributes\":{\"name\":\"{{name}}\"},\"relationships\":{\"incident_type\":{\"data\":{\"id\":\"rehearsal-itype\",\"type\":\"incident_types\"}}},\"type\":\"postmortem_templates\"}}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"name\":\"{{name}}\"},\"id\":270000024,\"relationships\":{\"incident_type\":{\"data\":{\"id\":\"rehearsal-itype\",\"type\":\"incident_types\"}}},\"type\":\"postmortem_templates\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/incidents/config/postmortem-templates/270000024",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"name\":\"{{name}}\"},\"id\":270000024,\"relationships\":{\"incident_type\":{\"data\":{\"id\":\"rehearsal-itype\",\"type\":\"incident_types\"}}},\"type\":\"postmortem_templates\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/incidents/config/postmortem-templates/270000024",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"name\":\"{{name}}\"},\"id\":270000024,\"relationships\":{\"incident_type\":{\"data\":{\"id\":\"rehearsal-itype\",\"type\":\"incident_types\"}}},\"type\":\"postmortem_templates\"}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v2/incidents/config/postmortem-templates/270000024",
+      "body": "{\"data\":{\"attributes\":{\"name\":\"{{name}}-changed\"},\"id\":\"270000024\",\"relationships\":{\"incident_type\":{\"data\":{\"id\":\"rehearsal-itype\",\"type\":\"incident_types\"}}},\"type\":\"postmortem_templates\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"name\":\"{{name}}-changed\"},\"id\":\"270000024\",\"relationships\":{\"incident_type\":{\"data\":{\"id\":\"rehearsal-itype\",\"type\":\"incident_types\"}}},\"type\":\"postmortem_templates\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/incidents/config/postmortem-templates/270000024",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"name\":\"{{name}}-changed\"},\"id\":\"270000024\",\"relationships\":{\"incident_type\":{\"data\":{\"id\":\"rehearsal-itype\",\"type\":\"incident_types\"}}},\"type\":\"postmortem_templates\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/incidents/config/postmortem-templates/270000024",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"name\":\"{{name}}-changed\"},\"id\":\"270000024\",\"relationships\":{\"incident_type\":{\"data\":{\"id\":\"rehearsal-itype\",\"type\":\"incident_types\"}}},\"type\":\"postmortem_templates\"}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v2/incidents/config/postmortem-templates/270000024",
+      "body": "{\"data\":{\"attributes\":{\"name\":\"{{name}}-drift\"},\"id\":\"270000024\",\"relationships\":{\"incident_type\":{\"data\":{\"id\":\"rehearsal-itype\",\"type\":\"incident_types\"}}},\"type\":\"postmortem_templates\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"name\":\"{{name}}-drift\"},\"id\":\"270000024\",\"relationships\":{\"incident_type\":{\"data\":{\"id\":\"rehearsal-itype\",\"type\":\"incident_types\"}}},\"type\":\"postmortem_templates\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/incidents/config/postmortem-templates/270000024",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"name\":\"{{name}}-drift\"},\"id\":\"270000024\",\"relationships\":{\"incident_type\":{\"data\":{\"id\":\"rehearsal-itype\",\"type\":\"incident_types\"}}},\"type\":\"postmortem_templates\"}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v2/incidents/config/postmortem-templates/270000024",
+      "body": "{\"data\":{\"attributes\":{\"name\":\"{{name}}-changed\"},\"id\":\"270000024\",\"relationships\":{\"incident_type\":{\"data\":{\"id\":\"rehearsal-itype\",\"type\":\"incident_types\"}}},\"type\":\"postmortem_templates\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"name\":\"{{name}}-changed\"},\"id\":\"270000024\",\"relationships\":{\"incident_type\":{\"data\":{\"id\":\"rehearsal-itype\",\"type\":\"incident_types\"}}},\"type\":\"postmortem_templates\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/incidents/config/postmortem-templates/270000024",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"name\":\"{{name}}-changed\"},\"id\":\"270000024\",\"relationships\":{\"incident_type\":{\"data\":{\"id\":\"rehearsal-itype\",\"type\":\"incident_types\"}}},\"type\":\"postmortem_templates\"}}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v2/incidents/config/postmortem-templates/270000024",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/incidents/config/postmortem-templates/270000024",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v2/incidents/config/types/rehearsal-itype",
+      "status": 204
+    }
+  ]
+}

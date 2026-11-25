@@ -1,0 +1,55 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "component": "rehearsal-component",
+    "dashboard": 280000002,
+    "itype": "rehearsal-itype",
+    "member": "rehearsal-member",
+    "org": "rehearsal-org",
+    "orgsa": "rehearsal-orgsa",
+    "page": "rehearsal-page",
+    "role": "rehearsal-role",
+    "roleUser": "rehearsal-roleUser",
+    "routingPolicy": "rehearsal-routingPolicy",
+    "ruleA": "rehearsal-ruleA",
+    "ruleB": "rehearsal-ruleB",
+    "rum": "rehearsal-rum",
+    "sa": "rehearsal-sa",
+    "slo": "rehearsal-slo",
+    "subteam": "rehearsal-subteam",
+    "team": "rehearsal-team"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/api/v2/integration/aws/event_bridge",
+      "body": "{\"data\":{\"attributes\":{\"account_id\":\"123456789012\",\"event_generator_name\":\"app-alerts\",\"region\":\"us-east-1\"},\"type\":\"event_bridge\"}}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"account_id\":\"123456789012\",\"event_generator_name\":\"app-alerts\",\"event_source_name\":270000105,\"region\":\"us-east-1\"},\"name\":270000105,\"type\":\"event_bridge\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/integration/aws/event_bridge",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"accounts\":[{\"event_hubs\":[{\"attributes\":{\"account_id\":\"123456789012\",\"event_generator_name\":\"app-alerts\",\"event_source_name\":270000105,\"region\":\"us-east-1\"},\"name\":270000105,\"type\":\"event_bridge\"}]}]}}}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v2/integration/aws/event_bridge",
+      "body": "{\"data\":{\"attributes\":{\"account_id\":\"123456789012\",\"event_generator_name\":\"270000105\",\"region\":\"us-east-1\"},\"type\":\"event_bridge\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/integration/aws/event_bridge",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"accounts\":[{\"event_hubs\":[]}]}}}\n"
+    }
+  ]
+}

@@ -1,0 +1,101 @@
+{
+  "recorded": "2026-11-20T23:57:45Z",
+  "target": "Datadog trial",
+  "vars": {
+    "dashboard": "ur8-afc-sum",
+    "itype": "fb183ac5-a636-4c9e-b864-de008dda88bb",
+    "role": "26806b04-e53e-11f1-807b-da7ad0900005",
+    "sa": "16307311-e53e-11f1-b3f2-e693e7c43799",
+    "slo": "3704e6ae4bac5b54b241a727ff6ab03b",
+    "subteam": "d4c1dd6f-4ea7-42e9-9847-c995ec31b739",
+    "team": "48e3aed2-a7e1-4fee-9037-ce9c9f4b4952"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/api/v2/on-call/escalation-policies",
+      "body": "{\"data\":{\"attributes\":{\"name\":\"{{name}}\",\"steps\":[{\"escalate_after_seconds\":3600,\"targets\":[{\"id\":\"48e3aed2-a7e1-4fee-9037-ce9c9f4b4952\",\"type\":\"teams\"}]}]},\"type\":\"policies\"}}",
+      "status": 201,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"id\":\"c8abe768-bbe7-4d8b-a1f8-2f536262c719\",\"type\":\"policies\",\"attributes\":{\"name\":\"{{name}}\",\"resolve_page_on_policy_end\":false,\"retries\":0,\"tags\":[]},\"relationships\":{\"steps\":{\"data\":[{\"id\":\"e025d6ae-8448-4857-8825-3095df8eb5c3\",\"type\":\"steps\"}]},\"teams\":{\"data\":[]}}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/on-call/escalation-policies/c8abe768-bbe7-4d8b-a1f8-2f536262c719",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"id\":\"c8abe768-bbe7-4d8b-a1f8-2f536262c719\",\"type\":\"policies\",\"attributes\":{\"name\":\"{{name}}\",\"resolve_page_on_policy_end\":false,\"retries\":0,\"tags\":[]},\"relationships\":{\"steps\":{\"data\":[{\"id\":\"e025d6ae-8448-4857-8825-3095df8eb5c3\",\"type\":\"steps\"}]},\"teams\":{\"data\":[]}}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/on-call/escalation-policies/c8abe768-bbe7-4d8b-a1f8-2f536262c719",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"id\":\"c8abe768-bbe7-4d8b-a1f8-2f536262c719\",\"type\":\"policies\",\"attributes\":{\"name\":\"{{name}}\",\"resolve_page_on_policy_end\":false,\"retries\":0,\"tags\":[]},\"relationships\":{\"steps\":{\"data\":[{\"id\":\"e025d6ae-8448-4857-8825-3095df8eb5c3\",\"type\":\"steps\"}]},\"teams\":{\"data\":[]}}}}"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v2/on-call/escalation-policies/c8abe768-bbe7-4d8b-a1f8-2f536262c719",
+      "body": "{\"data\":{\"attributes\":{\"name\":\"{{name}}-changed\",\"steps\":[{\"escalate_after_seconds\":3600,\"targets\":[{\"id\":\"48e3aed2-a7e1-4fee-9037-ce9c9f4b4952\",\"type\":\"teams\"}]}]},\"id\":\"c8abe768-bbe7-4d8b-a1f8-2f536262c719\",\"type\":\"policies\"}}",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"id\":\"c8abe768-bbe7-4d8b-a1f8-2f536262c719\",\"type\":\"policies\",\"attributes\":{\"name\":\"{{name}}-changed\",\"resolve_page_on_policy_end\":false,\"retries\":0,\"tags\":[]},\"relationships\":{\"steps\":{\"data\":[{\"id\":\"fef3f5e5-9356-4569-a870-6f6b17ab245f\",\"type\":\"steps\"}]},\"teams\":{\"data\":[]}}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/on-call/escalation-policies/c8abe768-bbe7-4d8b-a1f8-2f536262c719",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"id\":\"c8abe768-bbe7-4d8b-a1f8-2f536262c719\",\"type\":\"policies\",\"attributes\":{\"name\":\"{{name}}-changed\",\"resolve_page_on_policy_end\":false,\"retries\":0,\"tags\":[]},\"relationships\":{\"steps\":{\"data\":[{\"id\":\"fef3f5e5-9356-4569-a870-6f6b17ab245f\",\"type\":\"steps\"}]},\"teams\":{\"data\":[]}}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/on-call/escalation-policies/c8abe768-bbe7-4d8b-a1f8-2f536262c719",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"id\":\"c8abe768-bbe7-4d8b-a1f8-2f536262c719\",\"type\":\"policies\",\"attributes\":{\"name\":\"{{name}}-changed\",\"resolve_page_on_policy_end\":false,\"retries\":0,\"tags\":[]},\"relationships\":{\"steps\":{\"data\":[{\"id\":\"fef3f5e5-9356-4569-a870-6f6b17ab245f\",\"type\":\"steps\"}]},\"teams\":{\"data\":[]}}}}"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v2/on-call/escalation-policies/c8abe768-bbe7-4d8b-a1f8-2f536262c719",
+      "body": "{\"data\":{\"attributes\":{\"name\":\"{{name}}-drift\",\"steps\":[{\"escalate_after_seconds\":3600,\"targets\":[{\"id\":\"48e3aed2-a7e1-4fee-9037-ce9c9f4b4952\",\"type\":\"teams\"}]}]},\"id\":\"c8abe768-bbe7-4d8b-a1f8-2f536262c719\",\"relationships\":{\"steps\":{\"data\":[{\"id\":\"fef3f5e5-9356-4569-a870-6f6b17ab245f\",\"type\":\"steps\"}]},\"teams\":{\"data\":[]}},\"type\":\"policies\"}}",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"id\":\"c8abe768-bbe7-4d8b-a1f8-2f536262c719\",\"type\":\"policies\",\"attributes\":{\"name\":\"{{name}}-drift\",\"resolve_page_on_policy_end\":false,\"retries\":0,\"tags\":[]},\"relationships\":{\"steps\":{\"data\":[{\"id\":\"6fe254d7-da00-41ac-8f3b-edbcb8917c66\",\"type\":\"steps\"}]},\"teams\":{\"data\":[]}}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/on-call/escalation-policies/c8abe768-bbe7-4d8b-a1f8-2f536262c719",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"id\":\"c8abe768-bbe7-4d8b-a1f8-2f536262c719\",\"type\":\"policies\",\"attributes\":{\"name\":\"{{name}}-drift\",\"resolve_page_on_policy_end\":false,\"retries\":0,\"tags\":[]},\"relationships\":{\"steps\":{\"data\":[{\"id\":\"6fe254d7-da00-41ac-8f3b-edbcb8917c66\",\"type\":\"steps\"}]},\"teams\":{\"data\":[]}}}}"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v2/on-call/escalation-policies/c8abe768-bbe7-4d8b-a1f8-2f536262c719",
+      "body": "{\"data\":{\"attributes\":{\"name\":\"{{name}}-changed\",\"steps\":[{\"escalate_after_seconds\":3600,\"targets\":[{\"id\":\"48e3aed2-a7e1-4fee-9037-ce9c9f4b4952\",\"type\":\"teams\"}]}]},\"id\":\"c8abe768-bbe7-4d8b-a1f8-2f536262c719\",\"type\":\"policies\"}}",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"id\":\"c8abe768-bbe7-4d8b-a1f8-2f536262c719\",\"type\":\"policies\",\"attributes\":{\"name\":\"{{name}}-changed\",\"resolve_page_on_policy_end\":false,\"retries\":0,\"tags\":[]},\"relationships\":{\"steps\":{\"data\":[{\"id\":\"255b60b2-96c4-49eb-917a-5cbc8606a2cf\",\"type\":\"steps\"}]},\"teams\":{\"data\":[]}}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/on-call/escalation-policies/c8abe768-bbe7-4d8b-a1f8-2f536262c719",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"id\":\"c8abe768-bbe7-4d8b-a1f8-2f536262c719\",\"type\":\"policies\",\"attributes\":{\"name\":\"{{name}}-changed\",\"resolve_page_on_policy_end\":false,\"retries\":0,\"tags\":[]},\"relationships\":{\"steps\":{\"data\":[{\"id\":\"255b60b2-96c4-49eb-917a-5cbc8606a2cf\",\"type\":\"steps\"}]},\"teams\":{\"data\":[]}}}}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v2/on-call/escalation-policies/c8abe768-bbe7-4d8b-a1f8-2f536262c719",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/on-call/escalation-policies/c8abe768-bbe7-4d8b-a1f8-2f536262c719",
+      "status": 404,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"errors\":[{\"title\":\"Generic Error\",\"detail\":\"escalation_policy[c8abe768-bbe7-4d8b-a1f8-2f536262c719] not found\"}]}"
+    }
+  ]
+}

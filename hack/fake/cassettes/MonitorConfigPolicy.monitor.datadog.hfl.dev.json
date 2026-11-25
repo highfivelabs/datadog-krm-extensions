@@ -1,0 +1,99 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "dashboard": 280000002,
+    "sa": "rehearsal-sa",
+    "slo": "rehearsal-slo",
+    "subteam": "rehearsal-subteam",
+    "team": "rehearsal-team"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/api/v2/monitor/policy",
+      "body": "{\"data\":{\"attributes\":{\"policy\":{\"tag_key\":\"{{name}}\",\"tag_key_required\":false,\"valid_tag_values\":[\"first\"]},\"policy_type\":\"tag\"},\"type\":\"monitor-config-policy\"}}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"policy\":{\"tag_key\":\"{{name}}\",\"tag_key_required\":false,\"valid_tag_values\":[\"first\"]},\"policy_type\":\"tag\"},\"id\":270000018,\"type\":\"monitor-config-policy\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/monitor/policy/270000018",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"policy\":{\"tag_key\":\"{{name}}\",\"tag_key_required\":false,\"valid_tag_values\":[\"first\"]},\"policy_type\":\"tag\"},\"id\":270000018,\"type\":\"monitor-config-policy\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/monitor/policy/270000018",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"policy\":{\"tag_key\":\"{{name}}\",\"tag_key_required\":false,\"valid_tag_values\":[\"first\"]},\"policy_type\":\"tag\"},\"id\":270000018,\"type\":\"monitor-config-policy\"}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v2/monitor/policy/270000018",
+      "body": "{\"data\":{\"attributes\":{\"policy\":{\"tag_key\":\"{{name}}\",\"tag_key_required\":false,\"valid_tag_values\":[\"second\"]},\"policy_type\":\"tag\"},\"id\":\"270000018\",\"type\":\"monitor-config-policy\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"policy\":{\"tag_key\":\"{{name}}\",\"tag_key_required\":false,\"valid_tag_values\":[\"second\"]},\"policy_type\":\"tag\"},\"id\":\"270000018\",\"type\":\"monitor-config-policy\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/monitor/policy/270000018",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"policy\":{\"tag_key\":\"{{name}}\",\"tag_key_required\":false,\"valid_tag_values\":[\"second\"]},\"policy_type\":\"tag\"},\"id\":\"270000018\",\"type\":\"monitor-config-policy\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/monitor/policy/270000018",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"policy\":{\"tag_key\":\"{{name}}\",\"tag_key_required\":false,\"valid_tag_values\":[\"second\"]},\"policy_type\":\"tag\"},\"id\":\"270000018\",\"type\":\"monitor-config-policy\"}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v2/monitor/policy/270000018",
+      "body": "{\"data\":{\"attributes\":{\"policy\":{\"tag_key\":\"{{name}}\",\"tag_key_required\":false,\"valid_tag_values\":[\"drift\"]},\"policy_type\":\"tag\"},\"id\":\"270000018\",\"type\":\"monitor-config-policy\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"policy\":{\"tag_key\":\"{{name}}\",\"tag_key_required\":false,\"valid_tag_values\":[\"drift\"]},\"policy_type\":\"tag\"},\"id\":\"270000018\",\"type\":\"monitor-config-policy\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/monitor/policy/270000018",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"policy\":{\"tag_key\":\"{{name}}\",\"tag_key_required\":false,\"valid_tag_values\":[\"drift\"]},\"policy_type\":\"tag\"},\"id\":\"270000018\",\"type\":\"monitor-config-policy\"}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v2/monitor/policy/270000018",
+      "body": "{\"data\":{\"attributes\":{\"policy\":{\"tag_key\":\"{{name}}\",\"tag_key_required\":false,\"valid_tag_values\":[\"second\"]},\"policy_type\":\"tag\"},\"id\":\"270000018\",\"type\":\"monitor-config-policy\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"policy\":{\"tag_key\":\"{{name}}\",\"tag_key_required\":false,\"valid_tag_values\":[\"second\"]},\"policy_type\":\"tag\"},\"id\":\"270000018\",\"type\":\"monitor-config-policy\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/monitor/policy/270000018",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"policy\":{\"tag_key\":\"{{name}}\",\"tag_key_required\":false,\"valid_tag_values\":[\"second\"]},\"policy_type\":\"tag\"},\"id\":\"270000018\",\"type\":\"monitor-config-policy\"}}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v2/monitor/policy/270000018",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/monitor/policy/270000018",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

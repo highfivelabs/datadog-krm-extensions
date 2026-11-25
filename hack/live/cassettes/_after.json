@@ -1,0 +1,18 @@
+{
+  "recorded": "2026-11-20T23:58:05Z",
+  "target": "Datadog trial",
+  "interactions": [
+    {
+      "method": "DELETE",
+      "path": "/api/v1/dashboard/ur8-afc-sum",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"deleted_dashboard_id\":\"ur8-afc-sum\"}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v2/team/48e3aed2-a7e1-4fee-9037-ce9c9f4b4952",
+      "status": 204
+    }
+  ]
+}

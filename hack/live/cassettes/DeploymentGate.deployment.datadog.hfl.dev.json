@@ -1,0 +1,101 @@
+{
+  "recorded": "2026-11-20T23:57:34Z",
+  "target": "Datadog trial",
+  "vars": {
+    "dashboard": "ur8-afc-sum",
+    "itype": "fb183ac5-a636-4c9e-b864-de008dda88bb",
+    "role": "26806b04-e53e-11f1-807b-da7ad0900005",
+    "sa": "16307311-e53e-11f1-b3f2-e693e7c43799",
+    "slo": "3704e6ae4bac5b54b241a727ff6ab03b",
+    "subteam": "d4c1dd6f-4ea7-42e9-9847-c995ec31b739",
+    "team": "48e3aed2-a7e1-4fee-9037-ce9c9f4b4952"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/api/v2/deployment_gates",
+      "body": "{\"data\":{\"attributes\":{\"dry_run\":true,\"env\":\"hfl-live\",\"identifier\":\"default\",\"service\":\"{{name}}\"},\"type\":\"deployment_gate\"}}",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"attributes\":{\"created_at\":\"2026-11-20T23:57:33.770733Z\",\"created_by\":{\"handle\":\"{{redacted}}\",\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"name\":\"{{redacted}}\"},\"dry_run\":true,\"env\":\"hfl-live\",\"identifier\":\"default\",\"service\":\"{{name}}\",\"updated_at\":\"2026-11-20T23:57:33.770733Z\",\"updated_by\":{\"handle\":\"{{redacted}}\",\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"name\":\"{{redacted}}\"}},\"id\":\"a3a325e2-ec56-4ac7-bf3b-77fc3c2d78af\",\"type\":\"deployment_gate\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/deployment_gates/a3a325e2-ec56-4ac7-bf3b-77fc3c2d78af",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"attributes\":{\"created_at\":\"2026-11-20T23:57:33.770733Z\",\"created_by\":{\"handle\":\"{{redacted}}\",\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"name\":\"{{redacted}}\"},\"dry_run\":true,\"env\":\"hfl-live\",\"identifier\":\"default\",\"service\":\"{{name}}\",\"updated_at\":\"2026-11-20T23:57:33.770733Z\",\"updated_by\":{\"handle\":\"{{redacted}}\",\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"name\":\"{{redacted}}\"}},\"id\":\"a3a325e2-ec56-4ac7-bf3b-77fc3c2d78af\",\"type\":\"deployment_gate\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/deployment_gates/a3a325e2-ec56-4ac7-bf3b-77fc3c2d78af",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"attributes\":{\"created_at\":\"2026-11-20T23:57:33.770733Z\",\"created_by\":{\"handle\":\"{{redacted}}\",\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"name\":\"{{redacted}}\"},\"dry_run\":true,\"env\":\"hfl-live\",\"identifier\":\"default\",\"service\":\"{{name}}\",\"updated_at\":\"2026-11-20T23:57:33.770733Z\",\"updated_by\":{\"handle\":\"{{redacted}}\",\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"name\":\"{{redacted}}\"}},\"id\":\"a3a325e2-ec56-4ac7-bf3b-77fc3c2d78af\",\"type\":\"deployment_gate\"}}"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v2/deployment_gates/a3a325e2-ec56-4ac7-bf3b-77fc3c2d78af",
+      "body": "{\"data\":{\"attributes\":{\"dry_run\":false,\"env\":\"hfl-live\",\"identifier\":\"default\",\"service\":\"{{name}}\"},\"id\":\"a3a325e2-ec56-4ac7-bf3b-77fc3c2d78af\",\"type\":\"deployment_gate\"}}",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"attributes\":{\"created_at\":\"2026-11-20T23:57:33.770733Z\",\"created_by\":{\"handle\":\"{{redacted}}\",\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"name\":\"{{redacted}}\"},\"dry_run\":false,\"env\":\"hfl-live\",\"identifier\":\"default\",\"service\":\"{{name}}\",\"updated_at\":\"2026-11-20T23:57:34.210611Z\",\"updated_by\":{\"handle\":\"{{redacted}}\",\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"name\":\"{{redacted}}\"}},\"id\":\"a3a325e2-ec56-4ac7-bf3b-77fc3c2d78af\",\"type\":\"deployment_gate\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/deployment_gates/a3a325e2-ec56-4ac7-bf3b-77fc3c2d78af",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"attributes\":{\"created_at\":\"2026-11-20T23:57:33.770733Z\",\"created_by\":{\"handle\":\"{{redacted}}\",\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"name\":\"{{redacted}}\"},\"dry_run\":false,\"env\":\"hfl-live\",\"identifier\":\"default\",\"service\":\"{{name}}\",\"updated_at\":\"2026-11-20T23:57:34.210611Z\",\"updated_by\":{\"handle\":\"{{redacted}}\",\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"name\":\"{{redacted}}\"}},\"id\":\"a3a325e2-ec56-4ac7-bf3b-77fc3c2d78af\",\"type\":\"deployment_gate\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/deployment_gates/a3a325e2-ec56-4ac7-bf3b-77fc3c2d78af",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"attributes\":{\"created_at\":\"2026-11-20T23:57:33.770733Z\",\"created_by\":{\"handle\":\"{{redacted}}\",\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"name\":\"{{redacted}}\"},\"dry_run\":false,\"env\":\"hfl-live\",\"identifier\":\"default\",\"service\":\"{{name}}\",\"updated_at\":\"2026-11-20T23:57:34.210611Z\",\"updated_by\":{\"handle\":\"{{redacted}}\",\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"name\":\"{{redacted}}\"}},\"id\":\"a3a325e2-ec56-4ac7-bf3b-77fc3c2d78af\",\"type\":\"deployment_gate\"}}"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v2/deployment_gates/a3a325e2-ec56-4ac7-bf3b-77fc3c2d78af",
+      "body": "{\"data\":{\"attributes\":{\"dry_run\":true,\"env\":\"hfl-live\",\"identifier\":\"default\",\"service\":\"{{name}}\"},\"id\":\"a3a325e2-ec56-4ac7-bf3b-77fc3c2d78af\",\"type\":\"deployment_gate\"}}",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"attributes\":{\"created_at\":\"2026-11-20T23:57:33.770733Z\",\"created_by\":{\"handle\":\"{{redacted}}\",\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"name\":\"{{redacted}}\"},\"dry_run\":true,\"env\":\"hfl-live\",\"identifier\":\"default\",\"service\":\"{{name}}\",\"updated_at\":\"2026-11-20T23:57:34.483628Z\",\"updated_by\":{\"handle\":\"{{redacted}}\",\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"name\":\"{{redacted}}\"}},\"id\":\"a3a325e2-ec56-4ac7-bf3b-77fc3c2d78af\",\"type\":\"deployment_gate\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/deployment_gates/a3a325e2-ec56-4ac7-bf3b-77fc3c2d78af",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"attributes\":{\"created_at\":\"2026-11-20T23:57:33.770733Z\",\"created_by\":{\"handle\":\"{{redacted}}\",\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"name\":\"{{redacted}}\"},\"dry_run\":true,\"env\":\"hfl-live\",\"identifier\":\"default\",\"service\":\"{{name}}\",\"updated_at\":\"2026-11-20T23:57:34.483628Z\",\"updated_by\":{\"handle\":\"{{redacted}}\",\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"name\":\"{{redacted}}\"}},\"id\":\"a3a325e2-ec56-4ac7-bf3b-77fc3c2d78af\",\"type\":\"deployment_gate\"}}"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v2/deployment_gates/a3a325e2-ec56-4ac7-bf3b-77fc3c2d78af",
+      "body": "{\"data\":{\"attributes\":{\"dry_run\":false,\"env\":\"hfl-live\",\"identifier\":\"default\",\"service\":\"{{name}}\"},\"id\":\"a3a325e2-ec56-4ac7-bf3b-77fc3c2d78af\",\"type\":\"deployment_gate\"}}",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"attributes\":{\"created_at\":\"2026-11-20T23:57:33.770733Z\",\"created_by\":{\"handle\":\"{{redacted}}\",\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"name\":\"{{redacted}}\"},\"dry_run\":false,\"env\":\"hfl-live\",\"identifier\":\"default\",\"service\":\"{{name}}\",\"updated_at\":\"2026-11-20T23:57:34.669131Z\",\"updated_by\":{\"handle\":\"{{redacted}}\",\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"name\":\"{{redacted}}\"}},\"id\":\"a3a325e2-ec56-4ac7-bf3b-77fc3c2d78af\",\"type\":\"deployment_gate\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/deployment_gates/a3a325e2-ec56-4ac7-bf3b-77fc3c2d78af",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"attributes\":{\"created_at\":\"2026-11-20T23:57:33.770733Z\",\"created_by\":{\"handle\":\"{{redacted}}\",\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"name\":\"{{redacted}}\"},\"dry_run\":false,\"env\":\"hfl-live\",\"identifier\":\"default\",\"service\":\"{{name}}\",\"updated_at\":\"2026-11-20T23:57:34.669131Z\",\"updated_by\":{\"handle\":\"{{redacted}}\",\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"name\":\"{{redacted}}\"}},\"id\":\"a3a325e2-ec56-4ac7-bf3b-77fc3c2d78af\",\"type\":\"deployment_gate\"}}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v2/deployment_gates/a3a325e2-ec56-4ac7-bf3b-77fc3c2d78af",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/deployment_gates/a3a325e2-ec56-4ac7-bf3b-77fc3c2d78af",
+      "status": 404,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"errors\":[{\"status\":\"404\",\"title\":\"Not Found\",\"detail\":\"Gate does not exist\"}]}"
+    }
+  ]
+}

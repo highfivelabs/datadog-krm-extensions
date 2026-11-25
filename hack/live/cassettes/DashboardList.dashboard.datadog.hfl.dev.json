@@ -1,0 +1,92 @@
+{
+  "recorded": "2026-11-20T23:56:48Z",
+  "target": "Datadog trial",
+  "vars": {
+    "dashboard": "ur8-afc-sum",
+    "subteam": "d4c1dd6f-4ea7-42e9-9847-c995ec31b739",
+    "team": "48e3aed2-a7e1-4fee-9037-ce9c9f4b4952"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/api/v1/dashboard/lists/manual",
+      "body": "{\"name\":\"{{name}}\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"author\":{\"handle\":\"{{redacted}}\",\"name\":\"{{redacted}}\"},\"created\":\"2026-11-20T23:56:47.576256+00:00\",\"dashboard_count\":0,\"dashboards\":null,\"id\":43602,\"is_favorite\":false,\"modified\":\"2026-11-20T23:56:47.576259+00:00\",\"name\":\"{{name}}\",\"type\":\"manual_dashboard_list\"}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/dashboard/lists/manual/43602",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"author\":{\"handle\":\"{{redacted}}\",\"name\":\"{{redacted}}\"},\"created\":\"2026-11-20T23:56:47.576256+00:00\",\"dashboard_count\":0,\"dashboards\":null,\"id\":43602,\"is_favorite\":false,\"modified\":\"2026-11-20T23:56:47.576259+00:00\",\"name\":\"{{name}}\",\"type\":\"manual_dashboard_list\"}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/dashboard/lists/manual/43602",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"author\":{\"handle\":\"{{redacted}}\",\"name\":\"{{redacted}}\"},\"created\":\"2026-11-20T23:56:47.576256+00:00\",\"dashboard_count\":0,\"dashboards\":null,\"id\":43602,\"is_favorite\":false,\"modified\":\"2026-11-20T23:56:47.576259+00:00\",\"name\":\"{{name}}\",\"type\":\"manual_dashboard_list\"}"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/dashboard/lists/manual/43602",
+      "body": "{\"name\":\"{{name}}-changed\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"author\":{\"handle\":\"{{redacted}}\",\"name\":\"{{redacted}}\"},\"created\":\"2026-11-20T23:56:47.576256+00:00\",\"dashboard_count\":0,\"dashboards\":null,\"id\":43602,\"is_favorite\":false,\"modified\":\"2026-11-20T23:56:47.929542+00:00\",\"name\":\"{{name}}-changed\",\"type\":\"manual_dashboard_list\"}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/dashboard/lists/manual/43602",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"author\":{\"handle\":\"{{redacted}}\",\"name\":\"{{redacted}}\"},\"created\":\"2026-11-20T23:56:47.576256+00:00\",\"dashboard_count\":0,\"dashboards\":null,\"id\":43602,\"is_favorite\":false,\"modified\":\"2026-11-20T23:56:47.929542+00:00\",\"name\":\"{{name}}-changed\",\"type\":\"manual_dashboard_list\"}"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/dashboard/lists/manual/43602",
+      "body": "{\"name\":\"hfl-live-drift\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"author\":{\"handle\":\"{{redacted}}\",\"name\":\"{{redacted}}\"},\"created\":\"2026-11-20T23:56:47.576256+00:00\",\"dashboard_count\":0,\"dashboards\":null,\"id\":43602,\"is_favorite\":false,\"modified\":\"2026-11-20T23:56:48.200479+00:00\",\"name\":\"hfl-live-drift\",\"type\":\"manual_dashboard_list\"}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/dashboard/lists/manual/43602",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"author\":{\"handle\":\"{{redacted}}\",\"name\":\"{{redacted}}\"},\"created\":\"2026-11-20T23:56:47.576256+00:00\",\"dashboard_count\":0,\"dashboards\":null,\"id\":43602,\"is_favorite\":false,\"modified\":\"2026-11-20T23:56:48.200479+00:00\",\"name\":\"hfl-live-drift\",\"type\":\"manual_dashboard_list\"}"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/dashboard/lists/manual/43602",
+      "body": "{\"name\":\"{{name}}-changed\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"author\":{\"handle\":\"{{redacted}}\",\"name\":\"{{redacted}}\"},\"created\":\"2026-11-20T23:56:47.576256+00:00\",\"dashboard_count\":0,\"dashboards\":null,\"id\":43602,\"is_favorite\":false,\"modified\":\"2026-11-20T23:56:48.463472+00:00\",\"name\":\"{{name}}-changed\",\"type\":\"manual_dashboard_list\"}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/dashboard/lists/manual/43602",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"author\":{\"handle\":\"{{redacted}}\",\"name\":\"{{redacted}}\"},\"created\":\"2026-11-20T23:56:47.576256+00:00\",\"dashboard_count\":0,\"dashboards\":null,\"id\":43602,\"is_favorite\":false,\"modified\":\"2026-11-20T23:56:48.463472+00:00\",\"name\":\"{{name}}-changed\",\"type\":\"manual_dashboard_list\"}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/dashboard/lists/manual/43602",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"deleted_dashboard_list_id\":43602}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/dashboard/lists/manual/43602",
+      "status": 404,
+      "contentType": "application/json",
+      "response": "{\"errors\":[\"Manual Dashboard List with id 43602 not found\"]}"
+    }
+  ]
+}

@@ -1,0 +1,113 @@
+{
+  "recorded": "2026-11-20T23:57:01Z",
+  "target": "Datadog trial",
+  "vars": {
+    "dashboard": "ur8-afc-sum",
+    "slo": "3704e6ae4bac5b54b241a727ff6ab03b",
+    "subteam": "d4c1dd6f-4ea7-42e9-9847-c995ec31b739",
+    "team": "48e3aed2-a7e1-4fee-9037-ce9c9f4b4952"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/api/v1/slo",
+      "body": "{\"name\":\"{{name}}\",\"query\":{\"denominator\":\"sum:hfl.live.total{*}.as_count()\",\"numerator\":\"sum:hfl.live.good{*}.as_count()\"},\"thresholds\":[{\"target\":99,\"timeframe\":\"7d\"}],\"type\":\"metric\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":[{\"created_at\":1795219018,\"creator\":{\"email\":\"{{redacted}}\",\"handle\":\"{{redacted}}\",\"name\":\"{{redacted}}\"},\"description\":\"\",\"id\":\"3704e6ae4bac5b54b241a727ff6ab03b\",\"modified_at\":1795219018,\"monitor_tags\":[],\"name\":\"{{name}}\",\"query\":{\"denominator\":\"sum:hfl.live.total{*}.as_count()\",\"numerator\":\"sum:hfl.live.good{*}.as_count()\"},\"sli_specification\":{\"count\":{\"good_events_formula\":{\"formula\":\"query1\"},\"queries\":[{\"data_source\":\"metrics\",\"name\":\"query1\",\"query\":\"sum:hfl.live.good{*}.as_count()\"},{\"data_source\":\"metrics\",\"name\":\"query2\",\"query\":\"sum:hfl.live.total{*}.as_count()\"}],\"total_events_formula\":{\"formula\":\"query2\"}}},\"tags\":[],\"target_threshold\":99,\"thresholds\":[{\"target\":99.0,\"target_display\":\"99.\",\"timeframe\":\"7d\"}],\"timeframe\":\"7d\",\"type\":\"metric\",\"type_id\":1}],\"error\":null}"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/slo/correction",
+      "body": "{\"data\":{\"attributes\":{\"category\":\"Scheduled Maintenance\",\"description\":\"{{name}} first\",\"end\":1767229200,\"slo_id\":\"3704e6ae4bac5b54b241a727ff6ab03b\",\"start\":1767225600,\"timezone\":\"UTC\"},\"type\":\"correction\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"type\":\"correction\",\"id\":\"12a9f802-e53e-11f1-bfd7-da7ad0902008\",\"attributes\":{\"slo_id\":\"3704e6ae4bac5b54b241a727ff6ab03b\",\"start\":1767225600,\"end\":1767229200,\"description\":\"{{name}} first\",\"category\":\"Scheduled Maintenance\",\"timezone\":\"UTC\",\"created_at\":null,\"modified_at\":null,\"rrule\":null,\"duration\":null,\"slo_query\":null,\"creator\":null,\"modifier\":null}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/slo/correction/12a9f802-e53e-11f1-bfd7-da7ad0902008",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"category\":\"Scheduled Maintenance\",\"created_at\":1795219018,\"creator\":{\"data\":{\"attributes\":{\"email\":\"{{redacted}}\",\"handle\":\"{{redacted}}\",\"icon\":\"{{redacted}}\",\"name\":\"{{redacted}}\",\"uuid\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\"},\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"type\":\"users\"}},\"description\":\"{{name}} first\",\"duration\":null,\"end\":1767229200,\"modified_at\":1795219018,\"modifier\":null,\"rrule\":null,\"slo_id\":\"3704e6ae4bac5b54b241a727ff6ab03b\",\"slo_query\":null,\"start\":1767225600,\"timezone\":\"UTC\"},\"id\":\"12a9f802-e53e-11f1-bfd7-da7ad0902008\",\"type\":\"correction\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/slo/correction/12a9f802-e53e-11f1-bfd7-da7ad0902008",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"category\":\"Scheduled Maintenance\",\"created_at\":1795219018,\"creator\":{\"data\":{\"attributes\":{\"email\":\"{{redacted}}\",\"handle\":\"{{redacted}}\",\"icon\":\"{{redacted}}\",\"name\":\"{{redacted}}\",\"uuid\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\"},\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"type\":\"users\"}},\"description\":\"{{name}} first\",\"duration\":null,\"end\":1767229200,\"modified_at\":1795219018,\"modifier\":null,\"rrule\":null,\"slo_id\":\"3704e6ae4bac5b54b241a727ff6ab03b\",\"slo_query\":null,\"start\":1767225600,\"timezone\":\"UTC\"},\"id\":\"12a9f802-e53e-11f1-bfd7-da7ad0902008\",\"type\":\"correction\"}}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v1/slo/correction/12a9f802-e53e-11f1-bfd7-da7ad0902008",
+      "body": "{\"data\":{\"attributes\":{\"category\":\"Scheduled Maintenance\",\"description\":\"{{name}} second\",\"end\":1767229200,\"slo_id\":\"3704e6ae4bac5b54b241a727ff6ab03b\",\"start\":1767225600,\"timezone\":\"UTC\"},\"type\":\"correction\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"type\":\"correction\",\"id\":\"12a9f802-e53e-11f1-bfd7-da7ad0902008\",\"attributes\":{\"slo_id\":\"3704e6ae4bac5b54b241a727ff6ab03b\",\"start\":1767225600,\"end\":1767229200,\"description\":\"{{name}} second\",\"category\":\"Scheduled Maintenance\",\"timezone\":\"UTC\",\"created_at\":1795219018,\"modified_at\":1795219019,\"rrule\":null,\"duration\":null,\"slo_query\":null,\"creator\":null,\"modifier\":null}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/slo/correction/12a9f802-e53e-11f1-bfd7-da7ad0902008",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"category\":\"Scheduled Maintenance\",\"created_at\":1795219018,\"creator\":{\"data\":{\"attributes\":{\"email\":\"{{redacted}}\",\"handle\":\"{{redacted}}\",\"icon\":\"{{redacted}}\",\"name\":\"{{redacted}}\",\"uuid\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\"},\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"type\":\"users\"}},\"description\":\"{{name}} second\",\"duration\":null,\"end\":1767229200,\"modified_at\":1795219019,\"modifier\":{\"data\":{\"attributes\":{\"email\":\"{{redacted}}\",\"handle\":\"{{redacted}}\",\"icon\":\"{{redacted}}\",\"name\":\"{{redacted}}\",\"uuid\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\"},\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"type\":\"users\"}},\"rrule\":null,\"slo_id\":\"3704e6ae4bac5b54b241a727ff6ab03b\",\"slo_query\":null,\"start\":1767225600,\"timezone\":\"UTC\"},\"id\":\"12a9f802-e53e-11f1-bfd7-da7ad0902008\",\"type\":\"correction\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/slo/correction/12a9f802-e53e-11f1-bfd7-da7ad0902008",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"category\":\"Scheduled Maintenance\",\"created_at\":1795219018,\"creator\":{\"data\":{\"attributes\":{\"email\":\"{{redacted}}\",\"handle\":\"{{redacted}}\",\"icon\":\"{{redacted}}\",\"name\":\"{{redacted}}\",\"uuid\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\"},\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"type\":\"users\"}},\"description\":\"{{name}} second\",\"duration\":null,\"end\":1767229200,\"modified_at\":1795219019,\"modifier\":{\"data\":{\"attributes\":{\"email\":\"{{redacted}}\",\"handle\":\"{{redacted}}\",\"icon\":\"{{redacted}}\",\"name\":\"{{redacted}}\",\"uuid\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\"},\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"type\":\"users\"}},\"rrule\":null,\"slo_id\":\"3704e6ae4bac5b54b241a727ff6ab03b\",\"slo_query\":null,\"start\":1767225600,\"timezone\":\"UTC\"},\"id\":\"12a9f802-e53e-11f1-bfd7-da7ad0902008\",\"type\":\"correction\"}}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v1/slo/correction/12a9f802-e53e-11f1-bfd7-da7ad0902008",
+      "body": "{\"data\":{\"attributes\":{\"category\":\"Scheduled Maintenance\",\"description\":\"{{name}} drift\",\"end\":1767229200,\"slo_id\":\"3704e6ae4bac5b54b241a727ff6ab03b\",\"start\":1767225600,\"timezone\":\"UTC\"},\"id\":\"12a9f802-e53e-11f1-bfd7-da7ad0902008\",\"type\":\"correction\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"type\":\"correction\",\"id\":\"12a9f802-e53e-11f1-bfd7-da7ad0902008\",\"attributes\":{\"slo_id\":\"3704e6ae4bac5b54b241a727ff6ab03b\",\"start\":1767225600,\"end\":1767229200,\"description\":\"{{name}} drift\",\"category\":\"Scheduled Maintenance\",\"timezone\":\"UTC\",\"created_at\":1795219018,\"modified_at\":1795219019,\"rrule\":null,\"duration\":null,\"slo_query\":null,\"creator\":null,\"modifier\":null}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/slo/correction/12a9f802-e53e-11f1-bfd7-da7ad0902008",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"category\":\"Scheduled Maintenance\",\"created_at\":1795219018,\"creator\":{\"data\":{\"attributes\":{\"email\":\"{{redacted}}\",\"handle\":\"{{redacted}}\",\"icon\":\"{{redacted}}\",\"name\":\"{{redacted}}\",\"uuid\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\"},\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"type\":\"users\"}},\"description\":\"{{name}} drift\",\"duration\":null,\"end\":1767229200,\"modified_at\":1795219019,\"modifier\":{\"data\":{\"attributes\":{\"email\":\"{{redacted}}\",\"handle\":\"{{redacted}}\",\"icon\":\"{{redacted}}\",\"name\":\"{{redacted}}\",\"uuid\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\"},\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"type\":\"users\"}},\"rrule\":null,\"slo_id\":\"3704e6ae4bac5b54b241a727ff6ab03b\",\"slo_query\":null,\"start\":1767225600,\"timezone\":\"UTC\"},\"id\":\"12a9f802-e53e-11f1-bfd7-da7ad0902008\",\"type\":\"correction\"}}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v1/slo/correction/12a9f802-e53e-11f1-bfd7-da7ad0902008",
+      "body": "{\"data\":{\"attributes\":{\"category\":\"Scheduled Maintenance\",\"description\":\"{{name}} second\",\"end\":1767229200,\"slo_id\":\"3704e6ae4bac5b54b241a727ff6ab03b\",\"start\":1767225600,\"timezone\":\"UTC\"},\"type\":\"correction\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"type\":\"correction\",\"id\":\"12a9f802-e53e-11f1-bfd7-da7ad0902008\",\"attributes\":{\"slo_id\":\"3704e6ae4bac5b54b241a727ff6ab03b\",\"start\":1767225600,\"end\":1767229200,\"description\":\"{{name}} second\",\"category\":\"Scheduled Maintenance\",\"timezone\":\"UTC\",\"created_at\":1795219018,\"modified_at\":1795219020,\"rrule\":null,\"duration\":null,\"slo_query\":null,\"creator\":null,\"modifier\":null}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/slo/correction/12a9f802-e53e-11f1-bfd7-da7ad0902008",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"category\":\"Scheduled Maintenance\",\"created_at\":1795219018,\"creator\":{\"data\":{\"attributes\":{\"email\":\"{{redacted}}\",\"handle\":\"{{redacted}}\",\"icon\":\"{{redacted}}\",\"name\":\"{{redacted}}\",\"uuid\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\"},\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"type\":\"users\"}},\"description\":\"{{name}} second\",\"duration\":null,\"end\":1767229200,\"modified_at\":1795219020,\"modifier\":{\"data\":{\"attributes\":{\"email\":\"{{redacted}}\",\"handle\":\"{{redacted}}\",\"icon\":\"{{redacted}}\",\"name\":\"{{redacted}}\",\"uuid\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\"},\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"type\":\"users\"}},\"rrule\":null,\"slo_id\":\"3704e6ae4bac5b54b241a727ff6ab03b\",\"slo_query\":null,\"start\":1767225600,\"timezone\":\"UTC\"},\"id\":\"12a9f802-e53e-11f1-bfd7-da7ad0902008\",\"type\":\"correction\"}}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/slo/correction/12a9f802-e53e-11f1-bfd7-da7ad0902008",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/slo/correction/12a9f802-e53e-11f1-bfd7-da7ad0902008",
+      "status": 404,
+      "contentType": "application/json",
+      "response": "{\"errors\":[\"slo correction public id 12a9f802-e53e-11f1-bfd7-da7ad0902008 not found\"]}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/slo/3704e6ae4bac5b54b241a727ff6ab03b",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":[\"3704e6ae4bac5b54b241a727ff6ab03b\"],\"error\":null}"
+    }
+  ]
+}

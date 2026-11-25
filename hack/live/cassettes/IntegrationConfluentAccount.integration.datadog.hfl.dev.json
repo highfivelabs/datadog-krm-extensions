@@ -1,0 +1,103 @@
+{
+  "recorded": "2026-11-20T23:58:04Z",
+  "target": "Datadog trial",
+  "vars": {
+    "dashboard": "ur8-afc-sum",
+    "itype": "fb183ac5-a636-4c9e-b864-de008dda88bb",
+    "role": "26806b04-e53e-11f1-807b-da7ad0900005",
+    "routingPolicy": "e6743e82-8165-42f1-a930-540f4e9977b1",
+    "sa": "16307311-e53e-11f1-b3f2-e693e7c43799",
+    "slo": "3704e6ae4bac5b54b241a727ff6ab03b",
+    "subteam": "d4c1dd6f-4ea7-42e9-9847-c995ec31b739",
+    "team": "48e3aed2-a7e1-4fee-9037-ce9c9f4b4952"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/api/v2/integrations/confluent-cloud/accounts",
+      "body": "{\"data\":{\"attributes\":{\"api_key\":\"{{env:DD_LIVE_CONFLUENT_API_KEY}}\",\"api_secret\":\"{{env:DD_LIVE_CONFLUENT_API_SECRET}}\",\"tags\":[\"env:{{name}}\"]},\"type\":\"confluent-cloud-accounts\"}}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"type\":\"confluent-cloud-accounts\",\"id\":\"99d3e8426b301584d13556e91d1b5d14\",\"attributes\":{\"name\":\"{{env:DD_LIVE_CONFLUENT_API_KEY}}\",\"api_key\":\"{{env:DD_LIVE_CONFLUENT_API_KEY}}\",\"sr_api_key\":\"\",\"tags\":[\"env:{{name}}\"],\"resources\":[]}}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/integrations/confluent-cloud/accounts/99d3e8426b301584d13556e91d1b5d14",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"type\":\"confluent-cloud-accounts\",\"id\":\"99d3e8426b301584d13556e91d1b5d14\",\"attributes\":{\"name\":\"{{env:DD_LIVE_CONFLUENT_API_KEY}}\",\"api_key\":\"{{env:DD_LIVE_CONFLUENT_API_KEY}}\",\"sr_api_key\":\"\",\"tags\":[\"env:{{name}}\"],\"resources\":[]}}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/integrations/confluent-cloud/accounts/99d3e8426b301584d13556e91d1b5d14",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"type\":\"confluent-cloud-accounts\",\"id\":\"99d3e8426b301584d13556e91d1b5d14\",\"attributes\":{\"name\":\"{{env:DD_LIVE_CONFLUENT_API_KEY}}\",\"api_key\":\"{{env:DD_LIVE_CONFLUENT_API_KEY}}\",\"sr_api_key\":\"\",\"tags\":[\"env:{{name}}\"],\"resources\":[]}}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v2/integrations/confluent-cloud/accounts/99d3e8426b301584d13556e91d1b5d14",
+      "body": "{\"data\":{\"attributes\":{\"api_key\":\"{{env:DD_LIVE_CONFLUENT_API_KEY}}\",\"api_secret\":\"{{env:DD_LIVE_CONFLUENT_API_SECRET}}\",\"tags\":[\"env:{{name}}-changed\"]},\"type\":\"confluent-cloud-accounts\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"type\":\"confluent-cloud-accounts\",\"id\":\"99d3e8426b301584d13556e91d1b5d14\",\"attributes\":{\"name\":\"{{env:DD_LIVE_CONFLUENT_API_KEY}}\",\"api_key\":\"{{env:DD_LIVE_CONFLUENT_API_KEY}}\",\"sr_api_key\":\"\",\"tags\":[\"env:{{name}}-changed\"],\"resources\":[]}}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/integrations/confluent-cloud/accounts/99d3e8426b301584d13556e91d1b5d14",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"type\":\"confluent-cloud-accounts\",\"id\":\"99d3e8426b301584d13556e91d1b5d14\",\"attributes\":{\"name\":\"{{env:DD_LIVE_CONFLUENT_API_KEY}}\",\"api_key\":\"{{env:DD_LIVE_CONFLUENT_API_KEY}}\",\"sr_api_key\":\"\",\"tags\":[\"env:{{name}}-changed\"],\"resources\":[]}}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/integrations/confluent-cloud/accounts/99d3e8426b301584d13556e91d1b5d14",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"type\":\"confluent-cloud-accounts\",\"id\":\"99d3e8426b301584d13556e91d1b5d14\",\"attributes\":{\"name\":\"{{env:DD_LIVE_CONFLUENT_API_KEY}}\",\"api_key\":\"{{env:DD_LIVE_CONFLUENT_API_KEY}}\",\"sr_api_key\":\"\",\"tags\":[\"env:{{name}}-changed\"],\"resources\":[]}}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v2/integrations/confluent-cloud/accounts/99d3e8426b301584d13556e91d1b5d14",
+      "body": "{\"data\":{\"attributes\":{\"api_key\":\"{{env:DD_LIVE_CONFLUENT_API_KEY}}\",\"api_secret\":\"{{env:DD_LIVE_CONFLUENT_API_SECRET}}\",\"tags\":[\"env:{{name}}-drift\"]},\"id\":\"99d3e8426b301584d13556e91d1b5d14\",\"type\":\"confluent-cloud-accounts\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"type\":\"confluent-cloud-accounts\",\"id\":\"99d3e8426b301584d13556e91d1b5d14\",\"attributes\":{\"name\":\"{{env:DD_LIVE_CONFLUENT_API_KEY}}\",\"api_key\":\"{{env:DD_LIVE_CONFLUENT_API_KEY}}\",\"sr_api_key\":\"\",\"tags\":[\"env:{{name}}-drift\"],\"resources\":[]}}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/integrations/confluent-cloud/accounts/99d3e8426b301584d13556e91d1b5d14",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"type\":\"confluent-cloud-accounts\",\"id\":\"99d3e8426b301584d13556e91d1b5d14\",\"attributes\":{\"name\":\"{{env:DD_LIVE_CONFLUENT_API_KEY}}\",\"api_key\":\"{{env:DD_LIVE_CONFLUENT_API_KEY}}\",\"sr_api_key\":\"\",\"tags\":[\"env:{{name}}-drift\"],\"resources\":[]}}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v2/integrations/confluent-cloud/accounts/99d3e8426b301584d13556e91d1b5d14",
+      "body": "{\"data\":{\"attributes\":{\"api_key\":\"{{env:DD_LIVE_CONFLUENT_API_KEY}}\",\"api_secret\":\"{{env:DD_LIVE_CONFLUENT_API_SECRET}}\",\"tags\":[\"env:{{name}}-changed\"]},\"type\":\"confluent-cloud-accounts\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"type\":\"confluent-cloud-accounts\",\"id\":\"99d3e8426b301584d13556e91d1b5d14\",\"attributes\":{\"name\":\"{{env:DD_LIVE_CONFLUENT_API_KEY}}\",\"api_key\":\"{{env:DD_LIVE_CONFLUENT_API_KEY}}\",\"sr_api_key\":\"\",\"tags\":[\"env:{{name}}-changed\"],\"resources\":[]}}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/integrations/confluent-cloud/accounts/99d3e8426b301584d13556e91d1b5d14",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"type\":\"confluent-cloud-accounts\",\"id\":\"99d3e8426b301584d13556e91d1b5d14\",\"attributes\":{\"name\":\"{{env:DD_LIVE_CONFLUENT_API_KEY}}\",\"api_key\":\"{{env:DD_LIVE_CONFLUENT_API_KEY}}\",\"sr_api_key\":\"\",\"tags\":[\"env:{{name}}-changed\"],\"resources\":[]}}}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v2/integrations/confluent-cloud/accounts/99d3e8426b301584d13556e91d1b5d14",
+      "status": 204,
+      "contentType": "text/html; charset=utf-8"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/integrations/confluent-cloud/accounts/99d3e8426b301584d13556e91d1b5d14",
+      "status": 404,
+      "contentType": "application/json",
+      "response": "{\"errors\":[\"Account not found not found\"]}"
+    }
+  ]
+}

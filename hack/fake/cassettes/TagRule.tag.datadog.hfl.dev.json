@@ -1,0 +1,101 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "dashboard": 280000002,
+    "itype": "rehearsal-itype",
+    "role": "rehearsal-role",
+    "sa": "rehearsal-sa",
+    "slo": "rehearsal-slo",
+    "subteam": "rehearsal-subteam",
+    "team": "rehearsal-team"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/api/v2/governance/tag_rules",
+      "body": "{\"data\":{\"attributes\":{\"name\":\"{{name}}\",\"rule_type\":\"surfacing\",\"scope\":\"env:hfl-live\",\"source\":\"logs\",\"tag_key\":\"service\",\"tag_value_patterns\":[\"first\"]},\"type\":\"tag_policy\"}}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"name\":\"{{name}}\",\"rule_type\":\"surfacing\",\"scope\":\"env:hfl-live\",\"source\":\"logs\",\"tag_key\":\"service\",\"tag_value_patterns\":[\"first\"]},\"id\":270000032,\"relationships\":{},\"type\":\"tag_policy\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/governance/tag_rules/270000032",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"name\":\"{{name}}\",\"rule_type\":\"surfacing\",\"scope\":\"env:hfl-live\",\"source\":\"logs\",\"tag_key\":\"service\",\"tag_value_patterns\":[\"first\"]},\"id\":270000032,\"relationships\":{},\"type\":\"tag_policy\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/governance/tag_rules/270000032",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"name\":\"{{name}}\",\"rule_type\":\"surfacing\",\"scope\":\"env:hfl-live\",\"source\":\"logs\",\"tag_key\":\"service\",\"tag_value_patterns\":[\"first\"]},\"id\":270000032,\"relationships\":{},\"type\":\"tag_policy\"}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v2/governance/tag_rules/270000032",
+      "body": "{\"data\":{\"attributes\":{\"name\":\"{{name}}\",\"rule_type\":\"surfacing\",\"scope\":\"env:hfl-live\",\"source\":\"logs\",\"tag_key\":\"service\",\"tag_value_patterns\":[\"second\"]},\"id\":\"270000032\",\"type\":\"tag_policy\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"name\":\"{{name}}\",\"rule_type\":\"surfacing\",\"scope\":\"env:hfl-live\",\"source\":\"logs\",\"tag_key\":\"service\",\"tag_value_patterns\":[\"second\"]},\"id\":\"270000032\",\"relationships\":{},\"type\":\"tag_policy\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/governance/tag_rules/270000032",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"name\":\"{{name}}\",\"rule_type\":\"surfacing\",\"scope\":\"env:hfl-live\",\"source\":\"logs\",\"tag_key\":\"service\",\"tag_value_patterns\":[\"second\"]},\"id\":\"270000032\",\"relationships\":{},\"type\":\"tag_policy\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/governance/tag_rules/270000032",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"name\":\"{{name}}\",\"rule_type\":\"surfacing\",\"scope\":\"env:hfl-live\",\"source\":\"logs\",\"tag_key\":\"service\",\"tag_value_patterns\":[\"second\"]},\"id\":\"270000032\",\"relationships\":{},\"type\":\"tag_policy\"}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v2/governance/tag_rules/270000032",
+      "body": "{\"data\":{\"attributes\":{\"name\":\"{{name}}\",\"rule_type\":\"surfacing\",\"scope\":\"env:hfl-live\",\"source\":\"logs\",\"tag_key\":\"service\",\"tag_value_patterns\":[\"drift\"]},\"id\":\"270000032\",\"relationships\":{},\"type\":\"tag_policy\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"name\":\"{{name}}\",\"rule_type\":\"surfacing\",\"scope\":\"env:hfl-live\",\"source\":\"logs\",\"tag_key\":\"service\",\"tag_value_patterns\":[\"drift\"]},\"id\":\"270000032\",\"relationships\":{},\"type\":\"tag_policy\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/governance/tag_rules/270000032",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"name\":\"{{name}}\",\"rule_type\":\"surfacing\",\"scope\":\"env:hfl-live\",\"source\":\"logs\",\"tag_key\":\"service\",\"tag_value_patterns\":[\"drift\"]},\"id\":\"270000032\",\"relationships\":{},\"type\":\"tag_policy\"}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v2/governance/tag_rules/270000032",
+      "body": "{\"data\":{\"attributes\":{\"name\":\"{{name}}\",\"rule_type\":\"surfacing\",\"scope\":\"env:hfl-live\",\"source\":\"logs\",\"tag_key\":\"service\",\"tag_value_patterns\":[\"second\"]},\"id\":\"270000032\",\"type\":\"tag_policy\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"name\":\"{{name}}\",\"rule_type\":\"surfacing\",\"scope\":\"env:hfl-live\",\"source\":\"logs\",\"tag_key\":\"service\",\"tag_value_patterns\":[\"second\"]},\"id\":\"270000032\",\"relationships\":{},\"type\":\"tag_policy\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/governance/tag_rules/270000032",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"name\":\"{{name}}\",\"rule_type\":\"surfacing\",\"scope\":\"env:hfl-live\",\"source\":\"logs\",\"tag_key\":\"service\",\"tag_value_patterns\":[\"second\"]},\"id\":\"270000032\",\"relationships\":{},\"type\":\"tag_policy\"}}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v2/governance/tag_rules/270000032",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/governance/tag_rules/270000032",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

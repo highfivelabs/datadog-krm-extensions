@@ -1,0 +1,83 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "dashboard": 280000002,
+    "subteam": "rehearsal-subteam",
+    "team": "rehearsal-team"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/api/v1/downtime",
+      "body": "{\"message\":\"{{name}} first\",\"scope\":[\"hfl-live:{{name}}\"]}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"active\":true,\"active_child\":{},\"canceled\":1412799983,\"creator_id\":123456,\"downtime_type\":2,\"id\":270000010,\"message\":\"{{name}} first\",\"scope\":[\"hfl-live:{{name}}\"],\"updater_id\":123456}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/downtime/270000010",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"active\":true,\"active_child\":{},\"canceled\":1412799983,\"creator_id\":123456,\"downtime_type\":2,\"id\":270000010,\"message\":\"{{name}} first\",\"scope\":[\"hfl-live:{{name}}\"],\"updater_id\":123456}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/downtime/270000010",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"active\":true,\"active_child\":{},\"canceled\":1412799983,\"creator_id\":123456,\"downtime_type\":2,\"id\":270000010,\"message\":\"{{name}} first\",\"scope\":[\"hfl-live:{{name}}\"],\"updater_id\":123456}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/downtime/270000010",
+      "body": "{\"message\":\"{{name}} second\",\"scope\":[\"hfl-live:{{name}}\"]}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"active\":true,\"active_child\":{},\"canceled\":1412799983,\"creator_id\":123456,\"downtime_type\":2,\"id\":270000010,\"message\":\"{{name}} second\",\"scope\":[\"hfl-live:{{name}}\"],\"updater_id\":123456}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/downtime/270000010",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"active\":true,\"active_child\":{},\"canceled\":1412799983,\"creator_id\":123456,\"downtime_type\":2,\"id\":270000010,\"message\":\"{{name}} second\",\"scope\":[\"hfl-live:{{name}}\"],\"updater_id\":123456}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/downtime/270000010",
+      "body": "{\"message\":\"hfl-live-drift\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"active\":true,\"active_child\":{},\"canceled\":1412799983,\"creator_id\":123456,\"downtime_type\":2,\"id\":270000010,\"message\":\"hfl-live-drift\",\"scope\":[\"hfl-live:{{name}}\"],\"updater_id\":123456}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/downtime/270000010",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"active\":true,\"active_child\":{},\"canceled\":1412799983,\"creator_id\":123456,\"downtime_type\":2,\"id\":270000010,\"message\":\"hfl-live-drift\",\"scope\":[\"hfl-live:{{name}}\"],\"updater_id\":123456}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/downtime/270000010",
+      "body": "{\"message\":\"{{name}} second\",\"scope\":[\"hfl-live:{{name}}\"]}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"active\":true,\"active_child\":{},\"canceled\":1412799983,\"creator_id\":123456,\"downtime_type\":2,\"id\":270000010,\"message\":\"{{name}} second\",\"scope\":[\"hfl-live:{{name}}\"],\"updater_id\":123456}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/downtime/270000010",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"active\":true,\"active_child\":{},\"canceled\":1412799983,\"creator_id\":123456,\"downtime_type\":2,\"id\":270000010,\"message\":\"{{name}} second\",\"scope\":[\"hfl-live:{{name}}\"],\"updater_id\":123456}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/downtime/270000010",
+      "status": 204
+    }
+  ]
+}

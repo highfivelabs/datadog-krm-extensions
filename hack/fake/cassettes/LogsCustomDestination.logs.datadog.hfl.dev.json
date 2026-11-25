@@ -1,0 +1,103 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "dashboard": 280000002,
+    "itype": "rehearsal-itype",
+    "role": "rehearsal-role",
+    "routingPolicy": "rehearsal-routingPolicy",
+    "rum": "rehearsal-rum",
+    "sa": "rehearsal-sa",
+    "slo": "rehearsal-slo",
+    "subteam": "rehearsal-subteam",
+    "team": "rehearsal-team"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/api/v2/logs/config/custom-destinations",
+      "body": "{\"data\":{\"attributes\":{\"enabled\":false,\"forward_tags\":false,\"forwarder_destination\":{\"auth\":{\"header_name\":\"X-Hfl-Live\",\"header_value\":\"hfl-live-not-a-secret\",\"type\":\"custom_header\"},\"endpoint\":\"https://example.com/hfl-live\",\"type\":\"http\"},\"name\":\"{{name}}\",\"query\":\"service:{{name}}\"},\"type\":\"custom_destination\"}}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"enabled\":false,\"forward_tags\":false,\"forwarder_destination\":{\"auth\":{\"header_name\":\"X-Hfl-Live\",\"type\":\"custom_header\"},\"endpoint\":\"https://example.com/hfl-live\",\"type\":\"http\"},\"name\":\"{{name}}\",\"query\":\"service:{{name}}\"},\"id\":270000045,\"type\":\"custom_destination\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/logs/config/custom-destinations/270000045",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"enabled\":false,\"forward_tags\":false,\"forwarder_destination\":{\"auth\":{\"header_name\":\"X-Hfl-Live\",\"type\":\"custom_header\"},\"endpoint\":\"https://example.com/hfl-live\",\"type\":\"http\"},\"name\":\"{{name}}\",\"query\":\"service:{{name}}\"},\"id\":270000045,\"type\":\"custom_destination\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/logs/config/custom-destinations/270000045",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"enabled\":false,\"forward_tags\":false,\"forwarder_destination\":{\"auth\":{\"header_name\":\"X-Hfl-Live\",\"type\":\"custom_header\"},\"endpoint\":\"https://example.com/hfl-live\",\"type\":\"http\"},\"name\":\"{{name}}\",\"query\":\"service:{{name}}\"},\"id\":270000045,\"type\":\"custom_destination\"}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v2/logs/config/custom-destinations/270000045",
+      "body": "{\"data\":{\"attributes\":{\"enabled\":false,\"forward_tags\":false,\"forwarder_destination\":{\"auth\":{\"header_name\":\"X-Hfl-Live\",\"header_value\":\"hfl-live-not-a-secret\",\"type\":\"custom_header\"},\"endpoint\":\"https://example.com/hfl-live\",\"type\":\"http\"},\"name\":\"{{name}}-changed\",\"query\":\"service:{{name}}\"},\"id\":\"270000045\",\"type\":\"custom_destination\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"enabled\":false,\"forward_tags\":false,\"forwarder_destination\":{\"auth\":{\"header_name\":\"X-Hfl-Live\",\"type\":\"custom_header\"},\"endpoint\":\"https://example.com/hfl-live\",\"type\":\"http\"},\"name\":\"{{name}}-changed\",\"query\":\"service:{{name}}\"},\"id\":\"270000045\",\"type\":\"custom_destination\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/logs/config/custom-destinations/270000045",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"enabled\":false,\"forward_tags\":false,\"forwarder_destination\":{\"auth\":{\"header_name\":\"X-Hfl-Live\",\"type\":\"custom_header\"},\"endpoint\":\"https://example.com/hfl-live\",\"type\":\"http\"},\"name\":\"{{name}}-changed\",\"query\":\"service:{{name}}\"},\"id\":\"270000045\",\"type\":\"custom_destination\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/logs/config/custom-destinations/270000045",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"enabled\":false,\"forward_tags\":false,\"forwarder_destination\":{\"auth\":{\"header_name\":\"X-Hfl-Live\",\"type\":\"custom_header\"},\"endpoint\":\"https://example.com/hfl-live\",\"type\":\"http\"},\"name\":\"{{name}}-changed\",\"query\":\"service:{{name}}\"},\"id\":\"270000045\",\"type\":\"custom_destination\"}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v2/logs/config/custom-destinations/270000045",
+      "body": "{\"data\":{\"attributes\":{\"enabled\":false,\"forward_tags\":false,\"forwarder_destination\":{\"auth\":{\"header_name\":\"X-Hfl-Live\",\"header_value\":\"hfl-live-not-a-secret\",\"type\":\"custom_header\"},\"endpoint\":\"https://example.com/hfl-live\",\"type\":\"http\"},\"name\":\"{{name}}-drift\",\"query\":\"service:{{name}}\"},\"id\":\"270000045\",\"type\":\"custom_destination\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"enabled\":false,\"forward_tags\":false,\"forwarder_destination\":{\"auth\":{\"header_name\":\"X-Hfl-Live\",\"type\":\"custom_header\"},\"endpoint\":\"https://example.com/hfl-live\",\"type\":\"http\"},\"name\":\"{{name}}-drift\",\"query\":\"service:{{name}}\"},\"id\":\"270000045\",\"type\":\"custom_destination\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/logs/config/custom-destinations/270000045",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"enabled\":false,\"forward_tags\":false,\"forwarder_destination\":{\"auth\":{\"header_name\":\"X-Hfl-Live\",\"type\":\"custom_header\"},\"endpoint\":\"https://example.com/hfl-live\",\"type\":\"http\"},\"name\":\"{{name}}-drift\",\"query\":\"service:{{name}}\"},\"id\":\"270000045\",\"type\":\"custom_destination\"}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v2/logs/config/custom-destinations/270000045",
+      "body": "{\"data\":{\"attributes\":{\"enabled\":false,\"forward_tags\":false,\"forwarder_destination\":{\"auth\":{\"header_name\":\"X-Hfl-Live\",\"header_value\":\"hfl-live-not-a-secret\",\"type\":\"custom_header\"},\"endpoint\":\"https://example.com/hfl-live\",\"type\":\"http\"},\"name\":\"{{name}}-changed\",\"query\":\"service:{{name}}\"},\"id\":\"270000045\",\"type\":\"custom_destination\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"enabled\":false,\"forward_tags\":false,\"forwarder_destination\":{\"auth\":{\"header_name\":\"X-Hfl-Live\",\"type\":\"custom_header\"},\"endpoint\":\"https://example.com/hfl-live\",\"type\":\"http\"},\"name\":\"{{name}}-changed\",\"query\":\"service:{{name}}\"},\"id\":\"270000045\",\"type\":\"custom_destination\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/logs/config/custom-destinations/270000045",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"enabled\":false,\"forward_tags\":false,\"forwarder_destination\":{\"auth\":{\"header_name\":\"X-Hfl-Live\",\"type\":\"custom_header\"},\"endpoint\":\"https://example.com/hfl-live\",\"type\":\"http\"},\"name\":\"{{name}}-changed\",\"query\":\"service:{{name}}\"},\"id\":\"270000045\",\"type\":\"custom_destination\"}}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v2/logs/config/custom-destinations/270000045",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/logs/config/custom-destinations/270000045",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

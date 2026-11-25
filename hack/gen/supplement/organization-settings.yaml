@@ -1,0 +1,285 @@
+openapi: 3.0.0
+info:
+  title: 'Datadog API V1 Collection: organization settings supplement'
+  version: '1.0'
+paths:
+  /api/v1/org/{public_id}:
+    get:
+      description: Get organization information.
+      operationId: GetOrg
+      parameters:
+      - description: The `public_id` of the organization you are operating within.
+        in: path
+        name: public_id
+        required: true
+        schema:
+          example: abc123
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              examples:
+                default:
+                  value:
+                    org:
+                      created: '2019-09-26T17:28:28Z'
+                      name: Example Org
+                      public_id: abc-123
+              schema:
+                $ref: '#/components/schemas/OrganizationResponse'
+          description: OK
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/APIErrorResponse'
+          description: Bad Request
+        '403':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/APIErrorResponse'
+          description: Forbidden
+        '429':
+          $ref: '#/components/responses/TooManyRequestsResponse'
+      summary: Get organization information
+      tags:
+      - Organizations
+    put:
+      description: Update your organization.
+      operationId: UpdateOrg
+      parameters:
+      - description: The `public_id` of the organization you are operating within.
+        in: path
+        name: public_id
+        required: true
+        schema:
+          example: abc123
+          type: string
+      requestBody:
+        content:
+          application/json:
+            examples:
+              default:
+                value:
+                  billing:
+                    type: parent_billing
+                  name: New child org
+                  settings:
+                    saml:
+                      enabled: false
+                    saml_idp_initiated_login:
+                      enabled: false
+                    saml_strict_mode:
+                      enabled: false
+            schema:
+              $ref: '#/components/schemas/Organization'
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              examples:
+                default:
+                  value:
+                    org:
+                      created: '2019-09-26T17:28:28Z'
+                      name: Example Org
+                      public_id: abc-123
+              schema:
+                $ref: '#/components/schemas/OrganizationResponse'
+          description: OK
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/APIErrorResponse'
+          description: Bad Request
+        '403':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/APIErrorResponse'
+          description: Forbidden
+        '429':
+          $ref: '#/components/responses/TooManyRequestsResponse'
+      summary: Update your organization
+      tags:
+      - Organizations
+      x-codegen-request-body-name: body
+components:
+  responses:
+    TooManyRequestsResponse:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/APIErrorResponse'
+      description: Too many requests
+  schemas:
+    APIErrorResponse:
+      description: Error response object.
+      properties:
+        errors:
+          description: Array of errors returned by the API.
+          example:
+          - Bad Request
+          items:
+            description: Error description.
+            example: Bad Request
+            type: string
+          type: array
+      required:
+      - errors
+      type: object
+    AccessRole:
+      description: The access role of the user. Options are **st** (standard user), **adm** (admin user), or **ro** (read-only
+        user).
+      enum:
+      - st
+      - adm
+      - ro
+      - ERROR
+      example: ro
+      nullable: true
+      type: string
+      x-enum-varnames:
+      - STANDARD
+      - ADMIN
+      - READ_ONLY
+      - ERROR
+    Organization:
+      description: Create, edit, and manage organizations.
+      properties:
+        billing:
+          $ref: '#/components/schemas/OrganizationBilling'
+        created:
+          description: Date of the organization creation.
+          example: '2019-09-26T17:28:28Z'
+          readOnly: true
+          type: string
+        description:
+          example: some description
+          type: string
+        name:
+          description: The name of the child organization, limited to 32 characters.
+          example: New child org
+          maxLength: 32
+          type: string
+        public_id:
+          description: The `public_id` of the organization you are operating within.
+          example: abcdef12345
+          type: string
+        settings:
+          $ref: '#/components/schemas/OrganizationSettings'
+        subscription:
+          $ref: '#/components/schemas/OrganizationSubscription'
+        trial:
+          description: Only available for MSP customers. Allows child organizations to be created on a trial plan.
+          example: false
+          type: boolean
+      type: object
+    OrganizationBilling:
+      deprecated: true
+      description: A JSON array of billing type.
+      example:
+        type: parent_billing
+      properties:
+        type:
+          description: The type of billing. Only `parent_billing` is supported.
+          type: string
+      type: object
+    OrganizationResponse:
+      properties:
+        org:
+          $ref: '#/components/schemas/Organization'
+      type: object
+    OrganizationSettings:
+      description: A JSON array of settings.
+      properties:
+        private_widget_share:
+          description: Whether or not the organization users can share widgets outside of Datadog.
+          example: false
+          type: boolean
+        saml:
+          $ref: '#/components/schemas/OrganizationSettingsSaml'
+        saml_autocreate_access_role:
+          $ref: '#/components/schemas/AccessRole'
+        saml_autocreate_users_domains:
+          $ref: '#/components/schemas/OrganizationSettingsSamlAutocreateUsersDomains'
+        saml_can_be_enabled:
+          description: Whether or not SAML can be enabled for this organization.
+          example: false
+          type: boolean
+        saml_idp_endpoint:
+          description: Identity provider endpoint for SAML authentication.
+          example: https://my.saml.endpoint
+          type: string
+        saml_idp_initiated_login:
+          $ref: '#/components/schemas/OrganizationSettingsSamlIdpInitiatedLogin'
+        saml_idp_metadata_uploaded:
+          description: Whether or not a SAML identity provider metadata file was provided to the Datadog organization.
+          example: false
+          type: boolean
+        saml_login_url:
+          description: URL for SAML logging.
+          example: https://my.saml.login.url
+          type: string
+        saml_strict_mode:
+          $ref: '#/components/schemas/OrganizationSettingsSamlStrictMode'
+      type: object
+    OrganizationSettingsSaml:
+      description: |-
+        Set the boolean property enabled to enable or disable single sign on with SAML.
+        See the SAML documentation for more information about all SAML settings.
+      properties:
+        enabled:
+          description: Whether or not SAML is enabled for this organization.
+          example: false
+          type: boolean
+      type: object
+    OrganizationSettingsSamlAutocreateUsersDomains:
+      description: Has two properties, `enabled` (boolean) and `domains`, which is a list of domains without the @ symbol.
+      properties:
+        domains:
+          description: List of domains where the SAML automated user creation is enabled.
+          items:
+            description: Domain to automate user creation from.
+            example: example.com
+            type: string
+          type: array
+        enabled:
+          description: Whether or not the automated user creation based on SAML domain is enabled.
+          example: false
+          type: boolean
+      type: object
+    OrganizationSettingsSamlIdpInitiatedLogin:
+      description: Has one property enabled (boolean).
+      properties:
+        enabled:
+          description: |-
+            Whether SAML IdP initiated login is enabled, learn more
+            in the [SAML documentation](https://docs.datadoghq.com/account_management/saml/#idp-initiated-login).
+          example: false
+          type: boolean
+      type: object
+    OrganizationSettingsSamlStrictMode:
+      description: Has one property enabled (boolean).
+      properties:
+        enabled:
+          description: |-
+            Whether or not the SAML strict mode is enabled. If true, all users must log in with SAML.
+            Learn more on the [SAML Strict documentation](https://docs.datadoghq.com/account_management/saml/#saml-strict).
+          example: false
+          type: boolean
+      type: object
+    OrganizationSubscription:
+      deprecated: true
+      description: Subscription definition.
+      example:
+        type: pro
+      properties:
+        type:
+          description: The subscription type. Types available are `trial`, `free`, and `pro`.
+          type: string
+      type: object

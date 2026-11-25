@@ -1,0 +1,97 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "dashboard": 280000002,
+    "itype": "rehearsal-itype",
+    "role": "rehearsal-role",
+    "routingPolicy": "rehearsal-routingPolicy",
+    "rum": "rehearsal-rum",
+    "sa": "rehearsal-sa",
+    "slo": "rehearsal-slo",
+    "subteam": "rehearsal-subteam",
+    "team": "rehearsal-team"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/api/v2/on-call/escalation-policies",
+      "body": "{\"data\":{\"attributes\":{\"name\":\"{{name}}-ep\",\"steps\":[{\"escalate_after_seconds\":3600,\"targets\":[{\"id\":\"rehearsal-team\",\"type\":\"teams\"}]}]},\"type\":\"policies\"}}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"_stub\":\"rehearsal stand-in: the fake API has no such resource\",\"data\":{\"attributes\":{\"name\":\"{{name}}-ep\",\"steps\":[{\"escalate_after_seconds\":3600,\"targets\":[{\"id\":\"rehearsal-team\",\"type\":\"teams\"}]}]},\"type\":\"policies\"},\"id\":280000015}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/on-call/teams/rehearsal-team/routing-rules",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"relationships\":{}}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/on-call/teams/rehearsal-team/routing-rules",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"relationships\":{}}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v2/on-call/teams/rehearsal-team/routing-rules",
+      "body": "{\"data\":{\"attributes\":{\"rules\":[{\"policy_id\":\"rehearsal-routingPolicy\",\"query\":\"tags.service:{{name}}\",\"urgency\":\"low\"},{\"policy_id\":\"rehearsal-routingPolicy\",\"urgency\":\"low\"}]},\"id\":\"rehearsal-team\",\"type\":\"team_routing_rules\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"id\":\"rehearsal-team\",\"relationships\":{},\"type\":\"team_routing_rules\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/on-call/teams/rehearsal-team/routing-rules",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"id\":\"rehearsal-team\",\"relationships\":{},\"type\":\"team_routing_rules\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/on-call/teams/rehearsal-team/routing-rules",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"id\":\"rehearsal-team\",\"relationships\":{},\"type\":\"team_routing_rules\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v2/on-call/teams/rehearsal-team/routing-rules",
+      "body": "{\"data\":{\"attributes\":{\"rules\":[{\"policy_id\":\"rehearsal-routingPolicy\",\"query\":\"tags.service:{{name}}-changed\",\"urgency\":\"high\"},{\"policy_id\":\"rehearsal-routingPolicy\",\"urgency\":\"low\"}]},\"id\":\"rehearsal-team\",\"type\":\"team_routing_rules\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"id\":\"rehearsal-team\",\"relationships\":{},\"type\":\"team_routing_rules\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/on-call/teams/rehearsal-team/routing-rules",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"id\":\"rehearsal-team\",\"relationships\":{},\"type\":\"team_routing_rules\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v2/on-call/teams/rehearsal-team/routing-rules",
+      "body": "{\"data\":{}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"id\":\"rehearsal-team\",\"relationships\":{},\"type\":\"team_routing_rules\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v2/on-call/teams/rehearsal-team/routing-rules",
+      "body": "{\"data\":{\"attributes\":{\"rules\":[]},\"id\":\"rehearsal-team\",\"type\":\"team_routing_rules\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"_stub\":\"rehearsal stand-in: the fake API has no such resource\",\"data\":{\"attributes\":{\"rules\":[]},\"id\":\"rehearsal-team\",\"type\":\"team_routing_rules\"},\"id\":280000016}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v2/on-call/escalation-policies/rehearsal-routingPolicy",
+      "status": 204
+    }
+  ]
+}

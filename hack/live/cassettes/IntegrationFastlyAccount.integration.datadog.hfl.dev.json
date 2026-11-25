@@ -1,0 +1,66 @@
+{
+  "recorded": "2026-11-20T23:57:59Z",
+  "target": "Datadog trial",
+  "vars": {
+    "dashboard": "ur8-afc-sum",
+    "itype": "fb183ac5-a636-4c9e-b864-de008dda88bb",
+    "role": "26806b04-e53e-11f1-807b-da7ad0900005",
+    "routingPolicy": "e6743e82-8165-42f1-a930-540f4e9977b1",
+    "sa": "16307311-e53e-11f1-b3f2-e693e7c43799",
+    "slo": "3704e6ae4bac5b54b241a727ff6ab03b",
+    "subteam": "d4c1dd6f-4ea7-42e9-9847-c995ec31b739",
+    "team": "48e3aed2-a7e1-4fee-9037-ce9c9f4b4952"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/api/v2/integrations/fastly/accounts",
+      "body": "{\"data\":{\"attributes\":{\"api_key\":\"{{redacted}}\",\"name\":\"{{name}}\",\"services\":[]},\"type\":\"fastly-accounts\"}}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"type\":\"fastly-accounts\",\"id\":\"3dd872823bcdb5825278ac3ba5d408b5\",\"attributes\":{\"name\":\"{{name}}\",\"services\":[]}}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/integrations/fastly/accounts/3dd872823bcdb5825278ac3ba5d408b5",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"type\":\"fastly-accounts\",\"id\":\"3dd872823bcdb5825278ac3ba5d408b5\",\"attributes\":{\"name\":\"{{name}}\",\"services\":[]}}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/integrations/fastly/accounts/3dd872823bcdb5825278ac3ba5d408b5",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"type\":\"fastly-accounts\",\"id\":\"3dd872823bcdb5825278ac3ba5d408b5\",\"attributes\":{\"name\":\"{{name}}\",\"services\":[]}}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v2/integrations/fastly/accounts/3dd872823bcdb5825278ac3ba5d408b5",
+      "body": "{\"data\":{\"attributes\":{\"api_key\":\"{{redacted}}\"},\"type\":\"fastly-accounts\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"type\":\"fastly-accounts\",\"id\":\"3dd872823bcdb5825278ac3ba5d408b5\",\"attributes\":{\"name\":\"{{name}}\",\"services\":[]}}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/integrations/fastly/accounts/3dd872823bcdb5825278ac3ba5d408b5",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"type\":\"fastly-accounts\",\"id\":\"3dd872823bcdb5825278ac3ba5d408b5\",\"attributes\":{\"name\":\"{{name}}\",\"services\":[]}}}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v2/integrations/fastly/accounts/3dd872823bcdb5825278ac3ba5d408b5",
+      "status": 204,
+      "contentType": "text/html; charset=utf-8"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/integrations/fastly/accounts/3dd872823bcdb5825278ac3ba5d408b5",
+      "status": 404,
+      "contentType": "application/json",
+      "response": "{\"errors\":[\"Account not found not found\"]}"
+    }
+  ]
+}

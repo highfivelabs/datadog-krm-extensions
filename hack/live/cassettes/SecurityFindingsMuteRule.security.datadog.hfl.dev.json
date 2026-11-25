@@ -1,0 +1,101 @@
+{
+  "recorded": "2026-11-20T23:57:47Z",
+  "target": "Datadog trial",
+  "vars": {
+    "dashboard": "ur8-afc-sum",
+    "itype": "fb183ac5-a636-4c9e-b864-de008dda88bb",
+    "role": "26806b04-e53e-11f1-807b-da7ad0900005",
+    "sa": "16307311-e53e-11f1-b3f2-e693e7c43799",
+    "slo": "3704e6ae4bac5b54b241a727ff6ab03b",
+    "subteam": "d4c1dd6f-4ea7-42e9-9847-c995ec31b739",
+    "team": "48e3aed2-a7e1-4fee-9037-ce9c9f4b4952"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/api/v2/security/findings/automation/mute_rules",
+      "body": "{\"data\":{\"attributes\":{\"action\":{\"reason\":\"risk_accepted\",\"reason_description\":\"first\"},\"enabled\":false,\"name\":\"{{name}}\",\"rule\":{\"finding_types\":[\"misconfiguration\"],\"query\":\"service:{{name}}\"}},\"type\":\"mute_rules\"}}",
+      "status": 201,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"attributes\":{\"action\":{\"reason\":\"risk_accepted\",\"reason_description\":\"first\"},\"created_at\":1795219065297,\"created_by\":{\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"name\":\"{{redacted}}\",\"type\":\"user\"},\"enabled\":false,\"modified_at\":1795219065297,\"modified_by\":{\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"name\":\"{{redacted}}\",\"type\":\"user\"},\"name\":\"{{name}}\",\"rule\":{\"finding_types\":[\"misconfiguration\"],\"query\":\"service:{{name}}\"}},\"id\":\"ef27618d-8feb-428b-b786-66e50c9ccf19\",\"type\":\"mute_rules\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/security/findings/automation/mute_rules/ef27618d-8feb-428b-b786-66e50c9ccf19",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"attributes\":{\"action\":{\"reason\":\"risk_accepted\",\"reason_description\":\"first\"},\"created_at\":1795219065297,\"created_by\":{\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"name\":\"{{redacted}}\",\"type\":\"user\"},\"enabled\":false,\"modified_at\":1795219065297,\"modified_by\":{\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"name\":\"{{redacted}}\",\"type\":\"user\"},\"name\":\"{{name}}\",\"rule\":{\"finding_types\":[\"misconfiguration\"],\"query\":\"service:{{name}}\"}},\"id\":\"ef27618d-8feb-428b-b786-66e50c9ccf19\",\"type\":\"mute_rules\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/security/findings/automation/mute_rules/ef27618d-8feb-428b-b786-66e50c9ccf19",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"attributes\":{\"action\":{\"reason\":\"risk_accepted\",\"reason_description\":\"first\"},\"created_at\":1795219065297,\"created_by\":{\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"name\":\"{{redacted}}\",\"type\":\"user\"},\"enabled\":false,\"modified_at\":1795219065297,\"modified_by\":{\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"name\":\"{{redacted}}\",\"type\":\"user\"},\"name\":\"{{name}}\",\"rule\":{\"finding_types\":[\"misconfiguration\"],\"query\":\"service:{{name}}\"}},\"id\":\"ef27618d-8feb-428b-b786-66e50c9ccf19\",\"type\":\"mute_rules\"}}"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v2/security/findings/automation/mute_rules/ef27618d-8feb-428b-b786-66e50c9ccf19",
+      "body": "{\"data\":{\"attributes\":{\"action\":{\"reason\":\"risk_accepted\",\"reason_description\":\"second\"},\"enabled\":false,\"name\":\"{{name}}\",\"rule\":{\"finding_types\":[\"misconfiguration\"],\"query\":\"service:{{name}}\"}},\"id\":\"ef27618d-8feb-428b-b786-66e50c9ccf19\",\"type\":\"mute_rules\"}}",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"attributes\":{\"action\":{\"reason\":\"risk_accepted\",\"reason_description\":\"second\"},\"created_at\":1795219065297,\"created_by\":{\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"name\":\"{{redacted}}\",\"type\":\"user\"},\"enabled\":false,\"modified_at\":1795219065875,\"modified_by\":{\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"name\":\"{{redacted}}\",\"type\":\"user\"},\"name\":\"{{name}}\",\"rule\":{\"finding_types\":[\"misconfiguration\"],\"query\":\"service:{{name}}\"}},\"id\":\"ef27618d-8feb-428b-b786-66e50c9ccf19\",\"type\":\"mute_rules\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/security/findings/automation/mute_rules/ef27618d-8feb-428b-b786-66e50c9ccf19",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"attributes\":{\"action\":{\"reason\":\"risk_accepted\",\"reason_description\":\"second\"},\"created_at\":1795219065297,\"created_by\":{\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"name\":\"{{redacted}}\",\"type\":\"user\"},\"enabled\":false,\"modified_at\":1795219065875,\"modified_by\":{\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"name\":\"{{redacted}}\",\"type\":\"user\"},\"name\":\"{{name}}\",\"rule\":{\"finding_types\":[\"misconfiguration\"],\"query\":\"service:{{name}}\"}},\"id\":\"ef27618d-8feb-428b-b786-66e50c9ccf19\",\"type\":\"mute_rules\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/security/findings/automation/mute_rules/ef27618d-8feb-428b-b786-66e50c9ccf19",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"attributes\":{\"action\":{\"reason\":\"risk_accepted\",\"reason_description\":\"second\"},\"created_at\":1795219065297,\"created_by\":{\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"name\":\"{{redacted}}\",\"type\":\"user\"},\"enabled\":false,\"modified_at\":1795219065875,\"modified_by\":{\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"name\":\"{{redacted}}\",\"type\":\"user\"},\"name\":\"{{name}}\",\"rule\":{\"finding_types\":[\"misconfiguration\"],\"query\":\"service:{{name}}\"}},\"id\":\"ef27618d-8feb-428b-b786-66e50c9ccf19\",\"type\":\"mute_rules\"}}"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v2/security/findings/automation/mute_rules/ef27618d-8feb-428b-b786-66e50c9ccf19",
+      "body": "{\"data\":{\"attributes\":{\"action\":{\"reason\":\"risk_accepted\",\"reason_description\":\"drift\"},\"enabled\":false,\"name\":\"{{name}}\",\"rule\":{\"finding_types\":[\"misconfiguration\"],\"query\":\"service:{{name}}\"}},\"id\":\"ef27618d-8feb-428b-b786-66e50c9ccf19\",\"type\":\"mute_rules\"}}",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"attributes\":{\"action\":{\"reason\":\"risk_accepted\",\"reason_description\":\"drift\"},\"created_at\":1795219065297,\"created_by\":{\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"name\":\"{{redacted}}\",\"type\":\"user\"},\"enabled\":false,\"modified_at\":1795219066435,\"modified_by\":{\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"name\":\"{{redacted}}\",\"type\":\"user\"},\"name\":\"{{name}}\",\"rule\":{\"finding_types\":[\"misconfiguration\"],\"query\":\"service:{{name}}\"}},\"id\":\"ef27618d-8feb-428b-b786-66e50c9ccf19\",\"type\":\"mute_rules\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/security/findings/automation/mute_rules/ef27618d-8feb-428b-b786-66e50c9ccf19",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"attributes\":{\"action\":{\"reason\":\"risk_accepted\",\"reason_description\":\"drift\"},\"created_at\":1795219065297,\"created_by\":{\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"name\":\"{{redacted}}\",\"type\":\"user\"},\"enabled\":false,\"modified_at\":1795219066435,\"modified_by\":{\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"name\":\"{{redacted}}\",\"type\":\"user\"},\"name\":\"{{name}}\",\"rule\":{\"finding_types\":[\"misconfiguration\"],\"query\":\"service:{{name}}\"}},\"id\":\"ef27618d-8feb-428b-b786-66e50c9ccf19\",\"type\":\"mute_rules\"}}"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v2/security/findings/automation/mute_rules/ef27618d-8feb-428b-b786-66e50c9ccf19",
+      "body": "{\"data\":{\"attributes\":{\"action\":{\"reason\":\"risk_accepted\",\"reason_description\":\"second\"},\"enabled\":false,\"name\":\"{{name}}\",\"rule\":{\"finding_types\":[\"misconfiguration\"],\"query\":\"service:{{name}}\"}},\"id\":\"ef27618d-8feb-428b-b786-66e50c9ccf19\",\"type\":\"mute_rules\"}}",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"attributes\":{\"action\":{\"reason\":\"risk_accepted\",\"reason_description\":\"second\"},\"created_at\":1795219065297,\"created_by\":{\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"name\":\"{{redacted}}\",\"type\":\"user\"},\"enabled\":false,\"modified_at\":1795219066878,\"modified_by\":{\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"name\":\"{{redacted}}\",\"type\":\"user\"},\"name\":\"{{name}}\",\"rule\":{\"finding_types\":[\"misconfiguration\"],\"query\":\"service:{{name}}\"}},\"id\":\"ef27618d-8feb-428b-b786-66e50c9ccf19\",\"type\":\"mute_rules\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/security/findings/automation/mute_rules/ef27618d-8feb-428b-b786-66e50c9ccf19",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"attributes\":{\"action\":{\"reason\":\"risk_accepted\",\"reason_description\":\"second\"},\"created_at\":1795219065297,\"created_by\":{\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"name\":\"{{redacted}}\",\"type\":\"user\"},\"enabled\":false,\"modified_at\":1795219066878,\"modified_by\":{\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"name\":\"{{redacted}}\",\"type\":\"user\"},\"name\":\"{{name}}\",\"rule\":{\"finding_types\":[\"misconfiguration\"],\"query\":\"service:{{name}}\"}},\"id\":\"ef27618d-8feb-428b-b786-66e50c9ccf19\",\"type\":\"mute_rules\"}}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v2/security/findings/automation/mute_rules/ef27618d-8feb-428b-b786-66e50c9ccf19",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/security/findings/automation/mute_rules/ef27618d-8feb-428b-b786-66e50c9ccf19",
+      "status": 404,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"errors\":[{\"status\":\"404\",\"title\":\"Not Found\",\"detail\":\"rule does not exist\"}]}"
+    }
+  ]
+}

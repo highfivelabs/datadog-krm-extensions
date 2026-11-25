@@ -1,0 +1,106 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "dashboard": 280000002,
+    "itype": "rehearsal-itype",
+    "member": "rehearsal-member",
+    "org": "rehearsal-org",
+    "orgsa": "rehearsal-orgsa",
+    "role": "rehearsal-role",
+    "routingPolicy": "rehearsal-routingPolicy",
+    "rum": "rehearsal-rum",
+    "sa": "rehearsal-sa",
+    "slo": "rehearsal-slo",
+    "subteam": "rehearsal-subteam",
+    "team": "rehearsal-team"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/api/v2/statuspages",
+      "body": "{\"data\":{\"attributes\":{\"domain_prefix\":\"{{name}}\",\"name\":\"{{name}}\",\"type\":\"internal\",\"visualization_type\":\"bars_and_uptime_percentage\"},\"type\":\"status_pages\"}}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"domain_prefix\":\"{{name}}\",\"name\":\"{{name}}\",\"type\":\"internal\",\"visualization_type\":\"bars_and_uptime_percentage\"},\"id\":270000055,\"relationships\":{},\"type\":\"status_pages\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/statuspages/270000055",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"domain_prefix\":\"{{name}}\",\"name\":\"{{name}}\",\"type\":\"internal\",\"visualization_type\":\"bars_and_uptime_percentage\"},\"id\":270000055,\"relationships\":{},\"type\":\"status_pages\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/statuspages/270000055",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"domain_prefix\":\"{{name}}\",\"name\":\"{{name}}\",\"type\":\"internal\",\"visualization_type\":\"bars_and_uptime_percentage\"},\"id\":270000055,\"relationships\":{},\"type\":\"status_pages\"}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v2/statuspages/270000055",
+      "body": "{\"data\":{\"attributes\":{\"domain_prefix\":\"{{name}}\",\"name\":\"{{name}}\",\"type\":\"internal\",\"visualization_type\":\"bars_only\"},\"id\":\"270000055\",\"type\":\"status_pages\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"domain_prefix\":\"{{name}}\",\"name\":\"{{name}}\",\"type\":\"internal\",\"visualization_type\":\"bars_only\"},\"id\":\"270000055\",\"relationships\":{},\"type\":\"status_pages\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/statuspages/270000055",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"domain_prefix\":\"{{name}}\",\"name\":\"{{name}}\",\"type\":\"internal\",\"visualization_type\":\"bars_only\"},\"id\":\"270000055\",\"relationships\":{},\"type\":\"status_pages\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/statuspages/270000055",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"domain_prefix\":\"{{name}}\",\"name\":\"{{name}}\",\"type\":\"internal\",\"visualization_type\":\"bars_only\"},\"id\":\"270000055\",\"relationships\":{},\"type\":\"status_pages\"}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v2/statuspages/270000055",
+      "body": "{\"data\":{\"attributes\":{\"domain_prefix\":\"{{name}}\",\"name\":\"{{name}}\",\"type\":\"internal\",\"visualization_type\":\"component_name_only\"},\"id\":\"270000055\",\"relationships\":{},\"type\":\"status_pages\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"domain_prefix\":\"{{name}}\",\"name\":\"{{name}}\",\"type\":\"internal\",\"visualization_type\":\"component_name_only\"},\"id\":\"270000055\",\"relationships\":{},\"type\":\"status_pages\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/statuspages/270000055",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"domain_prefix\":\"{{name}}\",\"name\":\"{{name}}\",\"type\":\"internal\",\"visualization_type\":\"component_name_only\"},\"id\":\"270000055\",\"relationships\":{},\"type\":\"status_pages\"}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v2/statuspages/270000055",
+      "body": "{\"data\":{\"attributes\":{\"domain_prefix\":\"{{name}}\",\"name\":\"{{name}}\",\"type\":\"internal\",\"visualization_type\":\"bars_only\"},\"id\":\"270000055\",\"type\":\"status_pages\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"domain_prefix\":\"{{name}}\",\"name\":\"{{name}}\",\"type\":\"internal\",\"visualization_type\":\"bars_only\"},\"id\":\"270000055\",\"relationships\":{},\"type\":\"status_pages\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/statuspages/270000055",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"domain_prefix\":\"{{name}}\",\"name\":\"{{name}}\",\"type\":\"internal\",\"visualization_type\":\"bars_only\"},\"id\":\"270000055\",\"relationships\":{},\"type\":\"status_pages\"}}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v2/statuspages/270000055",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/statuspages/270000055",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

@@ -1,0 +1,114 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "component": "rehearsal-component",
+    "dashboard": 280000002,
+    "itype": "rehearsal-itype",
+    "member": "rehearsal-member",
+    "org": "rehearsal-org",
+    "orgsa": "rehearsal-orgsa",
+    "page": "rehearsal-page",
+    "role": "rehearsal-role",
+    "roleUser": "rehearsal-roleUser",
+    "routingPolicy": "rehearsal-routingPolicy",
+    "ruleA": "rehearsal-ruleA",
+    "ruleB": "rehearsal-ruleB",
+    "rum": "rehearsal-rum",
+    "sa": "rehearsal-sa",
+    "slo": "rehearsal-slo",
+    "subteam": "rehearsal-subteam",
+    "team": "rehearsal-team"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/api/v2/synthetics/suites",
+      "body": "{\"data\":{\"attributes\":{\"message\":\"first\",\"name\":\"{{name}}\",\"options\":{},\"tests\":[],\"type\":\"suite\"},\"type\":\"suites\"}}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"message\":\"first\",\"name\":\"{{name}}\",\"options\":{},\"tests\":[],\"type\":\"suite\"},\"id\":270000059,\"type\":\"suites\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/synthetics/suites/270000059",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"message\":\"first\",\"name\":\"{{name}}\",\"options\":{},\"tests\":[],\"type\":\"suite\"},\"id\":270000059,\"type\":\"suites\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/synthetics/suites/270000059",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"message\":\"first\",\"name\":\"{{name}}\",\"options\":{},\"tests\":[],\"type\":\"suite\"},\"id\":270000059,\"type\":\"suites\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v2/synthetics/suites/270000059",
+      "body": "{\"data\":{\"attributes\":{\"message\":\"second\",\"name\":\"{{name}}\",\"options\":{},\"tests\":[],\"type\":\"suite\"},\"type\":\"suites\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"message\":\"second\",\"name\":\"{{name}}\",\"options\":{},\"tests\":[],\"type\":\"suite\"},\"id\":270000059,\"type\":\"suites\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/synthetics/suites/270000059",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"message\":\"second\",\"name\":\"{{name}}\",\"options\":{},\"tests\":[],\"type\":\"suite\"},\"id\":270000059,\"type\":\"suites\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/synthetics/suites/270000059",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"message\":\"second\",\"name\":\"{{name}}\",\"options\":{},\"tests\":[],\"type\":\"suite\"},\"id\":270000059,\"type\":\"suites\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v2/synthetics/suites/270000059",
+      "body": "{\"data\":{\"attributes\":{\"message\":\"drift\",\"name\":\"{{name}}\",\"options\":{},\"tests\":[],\"type\":\"suite\"},\"id\":270000059,\"type\":\"suites\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"message\":\"drift\",\"name\":\"{{name}}\",\"options\":{},\"tests\":[],\"type\":\"suite\"},\"id\":270000059,\"type\":\"suites\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/synthetics/suites/270000059",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"message\":\"drift\",\"name\":\"{{name}}\",\"options\":{},\"tests\":[],\"type\":\"suite\"},\"id\":270000059,\"type\":\"suites\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v2/synthetics/suites/270000059",
+      "body": "{\"data\":{\"attributes\":{\"message\":\"second\",\"name\":\"{{name}}\",\"options\":{},\"tests\":[],\"type\":\"suite\"},\"type\":\"suites\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"message\":\"second\",\"name\":\"{{name}}\",\"options\":{},\"tests\":[],\"type\":\"suite\"},\"id\":270000059,\"type\":\"suites\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/synthetics/suites/270000059",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"message\":\"second\",\"name\":\"{{name}}\",\"options\":{},\"tests\":[],\"type\":\"suite\"},\"id\":270000059,\"type\":\"suites\"}}\n"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v2/synthetics/suites/bulk-delete",
+      "body": "{\"data\":{\"attributes\":{\"public_ids\":[\"270000059\"]},\"type\":\"delete_suites_request\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/synthetics/suites/270000059",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

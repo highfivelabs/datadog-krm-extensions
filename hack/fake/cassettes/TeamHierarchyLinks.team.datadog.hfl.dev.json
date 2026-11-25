@@ -1,0 +1,51 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "dashboard": 280000002,
+    "subteam": "rehearsal-subteam",
+    "team": "rehearsal-team"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/api/v2/team",
+      "body": "{\"data\":{\"attributes\":{\"handle\":\"{{name}}-sub\",\"name\":\"{{name}}-sub\"},\"type\":\"team\"}}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"_stub\":\"rehearsal stand-in: the fake API has no such resource\",\"data\":{\"attributes\":{\"handle\":\"{{name}}-sub\",\"name\":\"{{name}}-sub\"},\"type\":\"team\"},\"id\":280000003}\n"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v2/team-hierarchy-links",
+      "body": "{\"data\":{\"relationships\":{\"parent_team\":{\"data\":{\"id\":\"rehearsal-team\",\"type\":\"team\"}},\"sub_team\":{\"data\":{\"id\":\"rehearsal-subteam\",\"type\":\"team\"}}},\"type\":\"team_hierarchy_links\"}}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"created_at\":\"example-created-at\",\"provisioned_by\":\"system\"},\"id\":270000005,\"relationships\":{\"parent_team\":{\"data\":{\"id\":\"rehearsal-team\",\"type\":\"team\"}},\"sub_team\":{\"data\":{\"id\":\"rehearsal-subteam\",\"type\":\"team\"}}},\"type\":\"team_hierarchy_links\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/team-hierarchy-links/270000005",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"created_at\":\"example-created-at\",\"provisioned_by\":\"system\"},\"id\":270000005,\"relationships\":{\"parent_team\":{\"data\":{\"id\":\"rehearsal-team\",\"type\":\"team\"}},\"sub_team\":{\"data\":{\"id\":\"rehearsal-subteam\",\"type\":\"team\"}}},\"type\":\"team_hierarchy_links\"}}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v2/team-hierarchy-links/270000005",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/team-hierarchy-links/270000005",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v2/team/rehearsal-subteam",
+      "status": 204
+    }
+  ]
+}

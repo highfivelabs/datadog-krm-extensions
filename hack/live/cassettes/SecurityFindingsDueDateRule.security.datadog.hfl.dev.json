@@ -1,0 +1,101 @@
+{
+  "recorded": "2026-11-20T23:57:52Z",
+  "target": "Datadog trial",
+  "vars": {
+    "dashboard": "ur8-afc-sum",
+    "itype": "fb183ac5-a636-4c9e-b864-de008dda88bb",
+    "role": "26806b04-e53e-11f1-807b-da7ad0900005",
+    "sa": "16307311-e53e-11f1-b3f2-e693e7c43799",
+    "slo": "3704e6ae4bac5b54b241a727ff6ab03b",
+    "subteam": "d4c1dd6f-4ea7-42e9-9847-c995ec31b739",
+    "team": "48e3aed2-a7e1-4fee-9037-ce9c9f4b4952"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/api/v2/security/findings/automation/due_date_rules",
+      "body": "{\"data\":{\"attributes\":{\"action\":{\"due_days_per_severity\":[{\"due_in_days\":7,\"severity\":\"critical\"}],\"due_from\":\"first_seen\"},\"enabled\":false,\"name\":\"{{name}}\",\"rule\":{\"finding_types\":[\"misconfiguration\"],\"query\":\"service:{{name}}\"}},\"type\":\"due_date_rules\"}}",
+      "status": 201,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"attributes\":{\"action\":{\"due_days_per_severity\":[{\"due_in_days\":7,\"severity\":\"critical\"}],\"due_from\":\"first_seen\"},\"created_at\":1795219070168,\"created_by\":{\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"name\":\"{{redacted}}\",\"type\":\"user\"},\"enabled\":false,\"modified_at\":1795219070168,\"modified_by\":{\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"name\":\"{{redacted}}\",\"type\":\"user\"},\"name\":\"{{name}}\",\"rule\":{\"finding_types\":[\"misconfiguration\"],\"query\":\"service:{{name}}\"}},\"id\":\"4090c1b0-19b9-4687-95b0-849b6686d990\",\"type\":\"due_date_rules\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/security/findings/automation/due_date_rules/4090c1b0-19b9-4687-95b0-849b6686d990",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"attributes\":{\"action\":{\"due_days_per_severity\":[{\"due_in_days\":7,\"severity\":\"critical\"}],\"due_from\":\"first_seen\"},\"created_at\":1795219070168,\"created_by\":{\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"name\":\"{{redacted}}\",\"type\":\"user\"},\"enabled\":false,\"modified_at\":1795219070168,\"modified_by\":{\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"name\":\"{{redacted}}\",\"type\":\"user\"},\"name\":\"{{name}}\",\"rule\":{\"finding_types\":[\"misconfiguration\"],\"query\":\"service:{{name}}\"}},\"id\":\"4090c1b0-19b9-4687-95b0-849b6686d990\",\"type\":\"due_date_rules\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/security/findings/automation/due_date_rules/4090c1b0-19b9-4687-95b0-849b6686d990",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"attributes\":{\"action\":{\"due_days_per_severity\":[{\"due_in_days\":7,\"severity\":\"critical\"}],\"due_from\":\"first_seen\"},\"created_at\":1795219070168,\"created_by\":{\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"name\":\"{{redacted}}\",\"type\":\"user\"},\"enabled\":false,\"modified_at\":1795219070168,\"modified_by\":{\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"name\":\"{{redacted}}\",\"type\":\"user\"},\"name\":\"{{name}}\",\"rule\":{\"finding_types\":[\"misconfiguration\"],\"query\":\"service:{{name}}\"}},\"id\":\"4090c1b0-19b9-4687-95b0-849b6686d990\",\"type\":\"due_date_rules\"}}"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v2/security/findings/automation/due_date_rules/4090c1b0-19b9-4687-95b0-849b6686d990",
+      "body": "{\"data\":{\"attributes\":{\"action\":{\"due_days_per_severity\":[{\"due_in_days\":14,\"severity\":\"critical\"}],\"due_from\":\"first_seen\"},\"enabled\":false,\"name\":\"{{name}}\",\"rule\":{\"finding_types\":[\"misconfiguration\"],\"query\":\"service:{{name}}\"}},\"id\":\"4090c1b0-19b9-4687-95b0-849b6686d990\",\"type\":\"due_date_rules\"}}",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"attributes\":{\"action\":{\"due_days_per_severity\":[{\"due_in_days\":14,\"severity\":\"critical\"}],\"due_from\":\"first_seen\"},\"created_at\":1795219070168,\"created_by\":{\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"name\":\"{{redacted}}\",\"type\":\"user\"},\"enabled\":false,\"modified_at\":1795219070725,\"modified_by\":{\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"name\":\"{{redacted}}\",\"type\":\"user\"},\"name\":\"{{name}}\",\"rule\":{\"finding_types\":[\"misconfiguration\"],\"query\":\"service:{{name}}\"}},\"id\":\"4090c1b0-19b9-4687-95b0-849b6686d990\",\"type\":\"due_date_rules\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/security/findings/automation/due_date_rules/4090c1b0-19b9-4687-95b0-849b6686d990",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"attributes\":{\"action\":{\"due_days_per_severity\":[{\"due_in_days\":14,\"severity\":\"critical\"}],\"due_from\":\"first_seen\"},\"created_at\":1795219070168,\"created_by\":{\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"name\":\"{{redacted}}\",\"type\":\"user\"},\"enabled\":false,\"modified_at\":1795219070725,\"modified_by\":{\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"name\":\"{{redacted}}\",\"type\":\"user\"},\"name\":\"{{name}}\",\"rule\":{\"finding_types\":[\"misconfiguration\"],\"query\":\"service:{{name}}\"}},\"id\":\"4090c1b0-19b9-4687-95b0-849b6686d990\",\"type\":\"due_date_rules\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/security/findings/automation/due_date_rules/4090c1b0-19b9-4687-95b0-849b6686d990",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"attributes\":{\"action\":{\"due_days_per_severity\":[{\"due_in_days\":14,\"severity\":\"critical\"}],\"due_from\":\"first_seen\"},\"created_at\":1795219070168,\"created_by\":{\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"name\":\"{{redacted}}\",\"type\":\"user\"},\"enabled\":false,\"modified_at\":1795219070725,\"modified_by\":{\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"name\":\"{{redacted}}\",\"type\":\"user\"},\"name\":\"{{name}}\",\"rule\":{\"finding_types\":[\"misconfiguration\"],\"query\":\"service:{{name}}\"}},\"id\":\"4090c1b0-19b9-4687-95b0-849b6686d990\",\"type\":\"due_date_rules\"}}"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v2/security/findings/automation/due_date_rules/4090c1b0-19b9-4687-95b0-849b6686d990",
+      "body": "{\"data\":{\"attributes\":{\"action\":{\"due_days_per_severity\":[{\"due_in_days\":21,\"severity\":\"critical\"}],\"due_from\":\"first_seen\"},\"enabled\":false,\"name\":\"{{name}}\",\"rule\":{\"finding_types\":[\"misconfiguration\"],\"query\":\"service:{{name}}\"}},\"id\":\"4090c1b0-19b9-4687-95b0-849b6686d990\",\"type\":\"due_date_rules\"}}",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"attributes\":{\"action\":{\"due_days_per_severity\":[{\"due_in_days\":21,\"severity\":\"critical\"}],\"due_from\":\"first_seen\"},\"created_at\":1795219070168,\"created_by\":{\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"name\":\"{{redacted}}\",\"type\":\"user\"},\"enabled\":false,\"modified_at\":1795219071383,\"modified_by\":{\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"name\":\"{{redacted}}\",\"type\":\"user\"},\"name\":\"{{name}}\",\"rule\":{\"finding_types\":[\"misconfiguration\"],\"query\":\"service:{{name}}\"}},\"id\":\"4090c1b0-19b9-4687-95b0-849b6686d990\",\"type\":\"due_date_rules\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/security/findings/automation/due_date_rules/4090c1b0-19b9-4687-95b0-849b6686d990",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"attributes\":{\"action\":{\"due_days_per_severity\":[{\"due_in_days\":21,\"severity\":\"critical\"}],\"due_from\":\"first_seen\"},\"created_at\":1795219070168,\"created_by\":{\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"name\":\"{{redacted}}\",\"type\":\"user\"},\"enabled\":false,\"modified_at\":1795219071383,\"modified_by\":{\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"name\":\"{{redacted}}\",\"type\":\"user\"},\"name\":\"{{name}}\",\"rule\":{\"finding_types\":[\"misconfiguration\"],\"query\":\"service:{{name}}\"}},\"id\":\"4090c1b0-19b9-4687-95b0-849b6686d990\",\"type\":\"due_date_rules\"}}"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v2/security/findings/automation/due_date_rules/4090c1b0-19b9-4687-95b0-849b6686d990",
+      "body": "{\"data\":{\"attributes\":{\"action\":{\"due_days_per_severity\":[{\"due_in_days\":14,\"severity\":\"critical\"}],\"due_from\":\"first_seen\"},\"enabled\":false,\"name\":\"{{name}}\",\"rule\":{\"finding_types\":[\"misconfiguration\"],\"query\":\"service:{{name}}\"}},\"id\":\"4090c1b0-19b9-4687-95b0-849b6686d990\",\"type\":\"due_date_rules\"}}",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"attributes\":{\"action\":{\"due_days_per_severity\":[{\"due_in_days\":14,\"severity\":\"critical\"}],\"due_from\":\"first_seen\"},\"created_at\":1795219070168,\"created_by\":{\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"name\":\"{{redacted}}\",\"type\":\"user\"},\"enabled\":false,\"modified_at\":1795219071873,\"modified_by\":{\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"name\":\"{{redacted}}\",\"type\":\"user\"},\"name\":\"{{name}}\",\"rule\":{\"finding_types\":[\"misconfiguration\"],\"query\":\"service:{{name}}\"}},\"id\":\"4090c1b0-19b9-4687-95b0-849b6686d990\",\"type\":\"due_date_rules\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/security/findings/automation/due_date_rules/4090c1b0-19b9-4687-95b0-849b6686d990",
+      "status": 200,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"data\":{\"attributes\":{\"action\":{\"due_days_per_severity\":[{\"due_in_days\":14,\"severity\":\"critical\"}],\"due_from\":\"first_seen\"},\"created_at\":1795219070168,\"created_by\":{\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"name\":\"{{redacted}}\",\"type\":\"user\"},\"enabled\":false,\"modified_at\":1795219071873,\"modified_by\":{\"id\":\"8d489ef3-7a0f-428f-96d0-0b9d71a53624\",\"name\":\"{{redacted}}\",\"type\":\"user\"},\"name\":\"{{name}}\",\"rule\":{\"finding_types\":[\"misconfiguration\"],\"query\":\"service:{{name}}\"}},\"id\":\"4090c1b0-19b9-4687-95b0-849b6686d990\",\"type\":\"due_date_rules\"}}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v2/security/findings/automation/due_date_rules/4090c1b0-19b9-4687-95b0-849b6686d990",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/security/findings/automation/due_date_rules/4090c1b0-19b9-4687-95b0-849b6686d990",
+      "status": 404,
+      "contentType": "application/vnd.api+json",
+      "response": "{\"errors\":[{\"status\":\"404\",\"title\":\"Not Found\",\"detail\":\"rule does not exist\"}]}"
+    }
+  ]
+}

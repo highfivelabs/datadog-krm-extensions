@@ -1,0 +1,104 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "component": "rehearsal-component",
+    "dashboard": 280000002,
+    "itype": "rehearsal-itype",
+    "member": "rehearsal-member",
+    "org": "rehearsal-org",
+    "orgsa": "rehearsal-orgsa",
+    "page": "rehearsal-page",
+    "role": "rehearsal-role",
+    "roleUser": "rehearsal-roleUser",
+    "routingPolicy": "rehearsal-routingPolicy",
+    "ruleA": "rehearsal-ruleA",
+    "ruleB": "rehearsal-ruleB",
+    "rum": "rehearsal-rum",
+    "sa": "rehearsal-sa",
+    "slo": "rehearsal-slo",
+    "subteam": "rehearsal-subteam",
+    "team": "rehearsal-team"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/api/v2/remote_config/products/asm/waf/exclusion_filters",
+      "body": "{\"data\":{\"attributes\":{\"description\":\"Exclude false positives on a path\",\"enabled\":true},\"type\":\"exclusion_filter\"}}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"description\":\"Exclude false positives on a path\",\"enabled\":true},\"id\":270000097,\"type\":\"exclusion_filter\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/remote_config/products/asm/waf/exclusion_filters/270000097",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"description\":\"Exclude false positives on a path\",\"enabled\":true},\"id\":270000097,\"type\":\"exclusion_filter\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/remote_config/products/asm/waf/exclusion_filters/270000097",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"description\":\"Exclude false positives on a path\",\"enabled\":true},\"id\":270000097,\"type\":\"exclusion_filter\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v2/remote_config/products/asm/waf/exclusion_filters/270000097",
+      "body": "{\"data\":{\"attributes\":{\"description\":\"Exclude false positives on a path\",\"enabled\":true},\"type\":\"changed-type\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"description\":\"Exclude false positives on a path\",\"enabled\":true},\"id\":270000097,\"type\":\"changed-type\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/remote_config/products/asm/waf/exclusion_filters/270000097",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"description\":\"Exclude false positives on a path\",\"enabled\":true},\"id\":270000097,\"type\":\"changed-type\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v2/remote_config/products/asm/waf/exclusion_filters/270000097",
+      "body": "{\"data\":{\"type\":\"hfl-live-drift\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"description\":\"Exclude false positives on a path\",\"enabled\":true},\"id\":270000097,\"type\":\"hfl-live-drift\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/remote_config/products/asm/waf/exclusion_filters/270000097",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"description\":\"Exclude false positives on a path\",\"enabled\":true},\"id\":270000097,\"type\":\"hfl-live-drift\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v2/remote_config/products/asm/waf/exclusion_filters/270000097",
+      "body": "{\"data\":{\"attributes\":{\"description\":\"Exclude false positives on a path\",\"enabled\":true},\"type\":\"changed-type\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"description\":\"Exclude false positives on a path\",\"enabled\":true},\"id\":270000097,\"type\":\"changed-type\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/remote_config/products/asm/waf/exclusion_filters/270000097",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"data\":{\"attributes\":{\"description\":\"Exclude false positives on a path\",\"enabled\":true},\"id\":270000097,\"type\":\"changed-type\"}}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v2/remote_config/products/asm/waf/exclusion_filters/270000097",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/api/v2/remote_config/products/asm/waf/exclusion_filters/270000097",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}
