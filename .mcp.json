@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "datadog-krm": {
+      "command": "go",
+      "args": ["run", "./cmd/mcp"]
+    }
+  }
+}
