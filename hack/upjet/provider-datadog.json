@@ -3559,12 +3559,15 @@
        "tags"
       ],
       "values": {
-       "api_key": "TESTAPIKEY123",
+       "api_key": "REDACTED",
        "tags": [
         "mytag",
         "mytag2:myvalue"
        ]
-      }
+      },
+      "redacted": [
+       "api_key"
+      ]
      }
     ],
     "renamed": {
