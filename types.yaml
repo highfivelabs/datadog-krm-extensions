@@ -624,6 +624,8 @@ kinds:
       version: '2'
       name: security-framework
       requirements: []
+  serverFields:
+    id: handle-version
   readiness: fake
 - kind: ComplianceResourceEvaluationFilter
   group: compliance.datadog.hfl.dev
@@ -3094,6 +3096,8 @@ kinds:
     attributes:
       feature_id: journey-123
       operation_id: example-rum-operation-id
+  serverFields:
+    id: abc12345-1234-5678-abcd-ef1234567890:journey-123
   readiness: fake
 - kind: RumRetentionFilter
   group: rum.datadog.hfl.dev
@@ -3201,6 +3205,8 @@ kinds:
       selectable_template_vars: []
       viewing_preferences: {}
       global_time: {}
+  serverFields:
+    id: '12345'
   readiness: live
 - kind: SecurityFindingsDefaultInboxRule
   group: security.datadog.hfl.dev
@@ -4006,6 +4012,7 @@ kinds:
     description: Description of private location
     tags: []
   serverFields:
+    id: example-id
     secrets: {}
   readiness: live
 - kind: SyntheticsSuite
@@ -4309,6 +4316,8 @@ kinds:
   sample:
     teamID: example-team-id
     type: team_memberships
+  serverFields:
+    id: TeamMembership-aeadc05e-98a8-11ec-ac2c-da7ad0900001-38835
   readiness: fake
 - kind: TeamNotificationRule
   group: team.datadog.hfl.dev
